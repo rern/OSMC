@@ -4,6 +4,7 @@
 
 line2='\e[0;36m=========================================================\e[m'
 line='\e[0;36m---------------------------------------------------------\e[m'
+info=$( echo $(tput setab 6; tput setaf 0) i $(tput setab 0; tput setaf 7) )
 osmcgpio=$( echo $(tput setaf 6)OSMC GPIO$(tput setaf 7) )
 title2() {
 		echo -e "\n$line2\n"
@@ -24,8 +25,20 @@ rm install.sh
 
 title2 "Install $osmcgpio ..."
 
+title "$info Update package databases"
+echo -e '  \e[0;36m0\e[m Skip'
+echo -e '  \e[0;36m1\e[m Update'
+echo
+echo -e '\e[0;36m0\e[m / 1 ? '
+read -n 1 answer
+case $answer in
+	* ) echo;;
+	1 ) echo
+		title "Update package databases ..."
+		apt update
+esac
+
 # install XZ Utils #######################################
-apt update
 if ! dpkg -s xz-utils > /dev/null 2>&1; then
 	title "Install XZ Utils ..."
 	apt install -y xz-utils

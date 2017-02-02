@@ -40,7 +40,7 @@ else
 fi
 rm OSMC_GPIO.tar.gz
 
-chmod 444 /etc/nginx/sites-available/default
+#chmod 444 /etc/nginx/sites-available/default
 chmod 755 /home/osmc/*.py
 chmod 666 /home/osmc/gpio.json
 chmod 755 /var/www/html/gpio/*.php

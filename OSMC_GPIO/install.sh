@@ -75,7 +75,7 @@ fi
 
 if ! python -c "import RPi.GPIO" > /dev/null 2>&1; then
 	title "Install Python-RPi.GPIO ..."
-	pip install -y RPi.GPIO
+	yes | pip install RPi.GPIO
 fi
 
 # set initial gpio #######################################

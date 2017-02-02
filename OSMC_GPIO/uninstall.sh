@@ -59,7 +59,6 @@ rm -v /home/osmc/gpioon.py
 rm -v /home/osmc/gpioonsudo.py
 rm -v /home/osmc/gpioset.py
 rm -v /home/osmc/gpiotimer.py
-rm -v /home/osmc/reboot.py
 rm -v /home/osmc/rebootsudo.py
 rm -v /home/osmc/poweroff.py
 rm -v /home/osmc/poweroffsudo.py

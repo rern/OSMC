@@ -52,7 +52,7 @@ rm -v /home/osmc/poweroffsudo.py
 rm -v /home/osmc/soundhdmi.py
 rm -v /home/osmc/soundusb.py
 
-rm -vr /var/www/html/gpio/*
+rm -vr /var/www/html/gpio
 
 title "Remove service ..."
 systemctl disable gpioset

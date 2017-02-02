@@ -25,6 +25,27 @@ rm install.sh
 
 title2 "Install $osmcgpio ..."
 
+# install OSMC GPIO #######################################
+title "Get files ..."
+
+wget -q --show-progress -O OSMC_GPIO.tar.xz "https://github.com/rern/OSMC/blob/master/OSMC_GPIO/_repo/OSMC_GPIO.tar.xz?raw=1"
+wget -q --show-progress -O uninstall.sh "https://github.com/rern/OSMC/blob/master/OSMC_GPIO/uninstall.sh?raw=1"
+chmod 755 uninstall.sh
+
+title "Install files ..."
+if [ ! -f /home/osmc/gpio.json ]; then
+	tar -xzvf OSMC_GPIO.tar.gz -C /
+else
+	tar -xzvf OSMC_GPIO.tar.gz -C / --exclude='home/osmc/gpio.json' 
+fi
+rm OSMC_GPIO.tar.gz
+
+chmod 444 /etc/nginx/sites-available/default
+chmod 755 /home/osmc/*.py
+chmod 666 /home/osmc/gpio.json
+chmod 755 /var/www/html/gpio/*.php
+
+# install packages #######################################
 title "$info Update package databases"
 echo -e '  \e[0;36m0\e[m Skip'
 echo -e '  \e[0;36m1\e[m Update'
@@ -37,34 +58,6 @@ case $answer in
 		title "Update package databases ..."
 		apt update
 esac
-
-# install XZ Utils #######################################
-if ! dpkg -s xz-utils > /dev/null 2>&1; then
-	title "Install XZ Utils ..."
-	apt install -y xz-utils
-fi
-
-# install OSMC GPIO #######################################
-title "Get files ..."
-
-wget -q --show-progress -O OSMC_GPIO.tar.xz "https://github.com/rern/OSMC/blob/master/OSMC_GPIO/_repo/OSMC_GPIO.tar.xz?raw=1"
-wget -q --show-progress -O uninstall.sh "https://github.com/rern/OSMC/blob/master/OSMC_GPIO/uninstall.sh?raw=1"
-chmod 755 uninstall.sh
-
-title "Install files ..."
-if [ ! -f /home/osmc/gpio.json ]; then
-	tar -Jxvf OSMC_GPIO.tar.xz -C /
-else
-	tar -Jxvf OSMC_GPIO.tar.xz -C / --exclude='home/osmc/gpio.json' 
-fi
-rm OSMC_GPIO.tar.xz
-
-chmod 444 /etc/nginx/sites-available/default
-chmod 755 /home/osmc/*.py
-chmod 666 /home/osmc/gpio.json
-chmod 755 /var/www/html/gpio/*.php
-
-# install packages #######################################
 
 if ! dpkg -s python-pip > /dev/null 2>&1; then
 	title "Install Python-Pip ..."

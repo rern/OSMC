@@ -56,7 +56,7 @@ if ! dpkg -s python-pip > /dev/null 2>&1; then
 	title "Install Python-Pip ..."
 	apt install -y python-pip
 fi
-if ! dpkg -s php5-fpm > /dev/null 2>&1; then
+if ! dpkg -s python-dev > /dev/null 2>&1; then
 	title "Install Python-Dev ..."
 	apt install -y python-dev
 fi

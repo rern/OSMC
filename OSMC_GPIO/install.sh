@@ -63,7 +63,8 @@ sed -i '/# location \~ \\.php$ {/ i\
         fastcgi_index index.php;\
         include fastcgi_params;\
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;\
-    }
+    };\
+    s/index index.html/index index.html index.php/
 ' /etc/nginx/sites-available/default
 
 service php5-fpm restart

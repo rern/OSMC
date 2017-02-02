@@ -55,7 +55,6 @@ case $answer in
 		[ dpkg -s gcc > /dev/null 2>&1 ] && apt remove --auto-remove -y gcc
 		[ dpkg -s python-dev > /dev/null 2>&1 ] && apt remove --auto-remove -y python-dev
 		[ dpkg -s python-pip > /dev/null 2>&1 ] && apt remove --auto-remove -y python-pip
-fi
 esac
 
 title "Remove files ..."

@@ -24,6 +24,13 @@ rm install.sh
 
 title2 "Install $osmcgpio ..."
 
+# install XZ Utils #######################################
+apt update
+if ! dpkg -s xz-utils > /dev/null 2>&1; then
+	title "Install XZ Utils ..."
+	apt install -y xz-utils
+fi
+
 # install OSMC GPIO #######################################
 title "Get files ..."
 
@@ -44,7 +51,6 @@ chmod 666 /home/osmc/gpio.json
 chmod 755 /var/www/html/gpio/*.php
 
 # install packages #######################################
-apt update
 
 if ! dpkg -s python-pip > /dev/null 2>&1; then
 	title "Install Python-Pip ..."
@@ -65,10 +71,6 @@ fi
 if ! dpkg -s nginx > /dev/null 2>&1; then
 	title "Install NGINX ..."
 	apt install -y nginx
-fi
-if ! dpkg -s xz-utils > /dev/null 2>&1; then
-	title "Install XZ Utils ..."
-	apt install -y xz-utils
 fi
 
 if ! python -c "import RPi.GPIO" > /dev/null 2>&1; then

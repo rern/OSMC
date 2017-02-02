@@ -49,7 +49,7 @@ case $answer in
 	* ) echo
 		title "Uninstall packages ..."
 		pip uninstall -y RPi.GPIO
-		apt remove --auto-remove -y x-utils nginx php5-fpm gcc python-dev python-pip
+		apt remove --auto-remove -y xz-utils nginx php5-fpm gcc python-dev python-pip
 esac
 
 title "Remove files ..."

@@ -37,8 +37,22 @@ fi
 
 title2 "Uninstall $osmcgpio ..."
 
-title "Remove files ..."
+title "$osmcgpio installed packages"
+echo 'Uninstall Python-Pip, Python-Dev, GCC, PHP-FPM, NGINX, XZ Utils and RPi.GPIO:'
+echo -e '  \e[0;36m0\e[m Uninstall'
+echo -e '  \e[0;36m1\e[m Keep'
+echo
+echo -e '\e[0;36m0\e[m / 1 ? '
+read -n 1 answer
+case $answer in
+	1 ) echo;;
+	* ) echo
+		title "Uninstall packages ..."
+		pip uninstall -y RPi.GPIO
+		apt remove --auto-remove -y x-utils nginx php5-fpm gcc python-dev python-pip
+esac
 
+title "Remove files ..."
 rm -v /home/osmc/gpiooff.py
 rm -v /home/osmc/gpiooffsudo.py
 rm -v /home/osmc/gpioon.py

@@ -49,7 +49,7 @@ case $answer in
 	* ) echo
 		title "Uninstall packages ..."
 		[ python -c "import RPi.GPIO" > /dev/null 2>&1 ] && pip uninstall -y RPi.GPIO
-		[ dpkg -s php5-fpm > /dev/null 2>&1 ] && apt remove --auto-remove -y xz-utils
+		[ dpkg -s xz-utils > /dev/null 2>&1 ] && apt remove --auto-remove -y xz-utils
 		[ dpkg -s nginx > /dev/null 2>&1 ] && apt remove --auto-remove -y nginx
 		[ dpkg -s php5-fpm > /dev/null 2>&1 ] && apt remove --auto-remove -y php5-fpm
 		[ dpkg -s gcc > /dev/null 2>&1 ] && apt remove --auto-remove -y gcc

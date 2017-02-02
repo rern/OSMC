@@ -6,7 +6,7 @@ linered='\e[0;31m---------------------------------------------------------\e[m'
 line2='\e[0;36m=========================================================\e[m'
 line='\e[0;36m---------------------------------------------------------\e[m'
 info=$( echo $(tput setab 6; tput setaf 0) i $(tput setab 0; tput setaf 7) )
-osmcgpio=$( echo $(tput setaf 6)RuneUI GPIO$(tput setaf 7) )
+osmcgpio=$( echo $(tput setaf 6)OSMC GPIO$(tput setaf 7) )
 
 # functions #######################################
 

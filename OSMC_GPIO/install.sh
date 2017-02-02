@@ -24,52 +24,6 @@ rm install.sh
 
 title2 "Install $osmcgpio ..."
 
-# install packages #######################################
-apt-get update
-
-apt-get install -y python-pip python-dev gcc
-
-if ! dpkg -s python-pip > /dev/null 2>&1; then
-	title "Install Python-Pip ..."
-	apt-get install -y python-pip
-fi
-if ! dpkg -s php5-fpm > /dev/null 2>&1; then
-	title "Install Python-dev ..."
-	apt-get install -y python-dev
-fi
-if ! dpkg -s gcc > /dev/null 2>&1; then
-	title "Install gcc ..."
-	apt-get install -y gcc
-fi
-
-pip install -y rpi.gpio
-
-if ! dpkg -s php5-fpm > /dev/null 2>&1; then
-	title "Install PHP ..."
-	apt-get install -y php5-fpm
-fi
-if ! dpkg -s nginx > /dev/null 2>&1; then
-	title "Install NGINX ..."
-	apt-get install -y nginx
-fi
-if ! dpkg -s xz-utils > /dev/null 2>&1; then
-	title "Install xz-utils ..."
-	apt-get install -y xz-utils
-fi
-
-sed -i '/# location \~ \\.php$ {/ i\
-    location ~ \\\.php$ {\
-        fastcgi_pass unix:/var/run/php5-fpm.sock;\
-        fastcgi_index index.php;\
-        include fastcgi_params;\
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;\
-    };\
-    s/index index.html/index index.html index.php/
-' /etc/nginx/sites-available/default
-
-service php5-fpm restart
-service nginx restart
-
 # install OSMC GPIO #######################################
 title "Get files ..."
 
@@ -89,6 +43,40 @@ chmod 755 /home/osmc/*.py
 chmod 666 /home/osmc/gpio.json
 chmod 755 /var/www/html/gpio/*.php
 
+# install packages #######################################
+apt-get update
+
+if ! dpkg -s python-pip > /dev/null 2>&1; then
+	title "Install Python-Pip ..."
+	apt-get install -y python-pip
+fi
+if ! dpkg -s php5-fpm > /dev/null 2>&1; then
+	title "Install Python-dev ..."
+	apt-get install -y python-dev
+fi
+if ! dpkg -s gcc > /dev/null 2>&1; then
+	title "Install gcc ..."
+	apt-get install -y gcc
+fi
+if ! dpkg -s php5-fpm > /dev/null 2>&1; then
+	title "Install PHP ..."
+	apt-get install -y php5-fpm
+fi
+if ! dpkg -s nginx > /dev/null 2>&1; then
+	title "Install NGINX ..."
+	apt-get install -y nginx
+fi
+if ! dpkg -s xz-utils > /dev/null 2>&1; then
+	title "Install xz-utils ..."
+	apt-get install -y xz-utils
+fi
+
+if ! python -c "import RPi.GPIO" > /dev/null 2>&1; then
+	title "Install Python-RPi.GPIO ..."
+	pip install -y rpi.gpio
+fi
+
+# set initial gpio #######################################
 /home/osmc/gpioset.py
 systemctl enable gpioset
 

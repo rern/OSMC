@@ -51,15 +51,15 @@ if ! dpkg -s python-pip > /dev/null 2>&1; then
 	apt install -y python-pip
 fi
 if ! dpkg -s php5-fpm > /dev/null 2>&1; then
-	title "Install Python-dev ..."
+	title "Install Python-Dev ..."
 	apt install -y python-dev
 fi
 if ! dpkg -s gcc > /dev/null 2>&1; then
-	title "Install gcc ..."
+	title "Install GCC ..."
 	apt install -y gcc
 fi
 if ! dpkg -s php5-fpm > /dev/null 2>&1; then
-	title "Install PHP ..."
+	title "Install PHP-FPM ..."
 	apt install -y php5-fpm
 fi
 if ! dpkg -s nginx > /dev/null 2>&1; then
@@ -67,13 +67,13 @@ if ! dpkg -s nginx > /dev/null 2>&1; then
 	apt install -y nginx
 fi
 if ! dpkg -s xz-utils > /dev/null 2>&1; then
-	title "Install xz-utils ..."
+	title "Install XZ Utils ..."
 	apt install -y xz-utils
 fi
 
 if ! python -c "import RPi.GPIO" > /dev/null 2>&1; then
 	title "Install Python-RPi.GPIO ..."
-	pip install -y python-rpi.gpio
+	pip install -y RPi.GPIO
 fi
 
 # set initial gpio #######################################

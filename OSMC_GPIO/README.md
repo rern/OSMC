@@ -5,7 +5,7 @@ OSMC_GPIO
 
 **Install**
 ```sh
-wget -q --show-progress -O gpioinstall.sh "https://github.com/rern/RuneUI_GPIO/blob/master/gpioinstall.sh?raw=1"; chmod +x gpioinstall.sh; ./gpioinstall.sh
+wget -q --show-progress -O install.sh "https://github.com/rern/OSMC/blob/master/OSMC_GPIO/install.sh?raw=1"; chmod +x install.sh; ./install.sh
 ```
 
 **Settings**  

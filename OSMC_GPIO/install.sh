@@ -27,7 +27,7 @@ title2 "Install $osmcgpio ..."
 # install packages #######################################
 apt-get update
 
-apt-get install python-pip python-dev gcc
+apt-get install -y python-pip python-dev gcc
 
 if ! dpkg -s python-pip > /dev/null 2>&1; then
 	title "Install Python-Pip ..."

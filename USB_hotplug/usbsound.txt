@@ -1,0 +1,53 @@
+Get device path
+	# udevadm monitor --udev
+		plug in USB
+			KERNEL[64901.631458] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3 (usb)
+			KERNEL[64901.633094] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0 (usb)
+			KERNEL[64901.686805] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1 (sound)  ***<<<
+			KERNEL[64901.687448] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1/controlC1 (sound)
+			KERNEL[64901.688074] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1/pcmC1D0p (sound)
+			KERNEL[64901.688718] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1/pcmC1D0c (sound)
+			KERNEL[64901.689462] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.1 (usb)
+		copy /device/path
+	
+Get device parameter
+	# udevadm info --path=/devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1 --attribute-walk
+		...
+			looking at parent device '/devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1':
+				KERNELS=="card1"  ***>>> usbsound.rules
+				SUBSYSTEMS=="sound"  ***>>> usbsound.rules
+				DRIVERS==""
+				ATTRS{id}=="x20" ***>>> usbsound.sh
+				ATTRS{number}=="1"
+			...
+		copy parameters for rules
+	
+Hotplug rules
+	# nano /etc/udev/rules.d/usbsound.rules
+		ACTION=="add", KERNEL=="controlC1", SUBSYSTEM=="sound", RUN+="/home/osmc/usbsound.sh"
+		ACTION=="remove", KERNEL=="controlC1", SUBSYSTEM=="sound", RUN+="/home/osmc/hdmisound.sh"
+
+Kodi json-rpc command
+	add
+		/home/osmc/hdmisound.sh
+		/home/osmc/usbsound.sh
+			check audiodevice value
+				guisettings.xml
+					...
+					<audiodevice>ALSA:@:CARD=x20,DEV=0</audiodevice>
+					...
+				check device node
+					/dev/snd/controlC1  ***=== 'card1' for udevadm info path query (not '/sys/device/...path.../id' as it varies from 1-1.1 to 1-1.4)
+						USB port 
+						---------------------------------------
+						|				|	1-1.2	|	1-1.4	|
+						|	RJ45	|-----------------------	|
+						|				|	1-1.3	|	1-1.1	|
+						---------------------------------------
+
+	# chmod +x /home/osmc/hdmisound.sh usbsound.sh
+	
+Set startup
+	add
+		/etc/udev/rules.d/usbsound.rules
+		

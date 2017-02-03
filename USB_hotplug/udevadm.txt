@@ -1,0 +1,118 @@
+USB port 
+---------------------------------------
+|				|	1-1.2	|	1-1.4	|
+|	RJ45	|-----------------------	|
+|				|	1-1.3	|	1-1.1	|
+---------------------------------------
+
+
+USB sound #xCORE
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+# udevadm monitor
+	KERNEL[64901.631458] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3 (usb)
+	KERNEL[64901.633094] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0 (usb)
+	KERNEL[64901.686805] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1 (sound)
+	KERNEL[64901.687448] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1/controlC1 (sound)  *********************************
+	KERNEL[64901.688074] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1/pcmC1D0p (sound)
+	KERNEL[64901.688718] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1/pcmC1D0c (sound)
+	KERNEL[64901.689462] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.1 (usb)
+	KERNEL[64901.690050] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.3 (usb)
+	KERNEL[64901.690879] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.3 (usb)
+	UDEV  [64901.748462] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3 (usb)
+	UDEV  [64901.840629] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.1 (usb)
+	UDEV  [64901.855592] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.3 (usb)
+	UDEV  [64901.866406] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.3 (usb)
+	UDEV  [64901.879119] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0 (usb)
+	UDEV  [64901.937024] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1 (sound)
+	KERNEL[64901.939437] change   /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1 (sound)
+	UDEV  [64902.024622] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1/pcmC1D0c (sound)
+	UDEV  [64902.037047] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1/controlC1 (sound)
+	UDEV  [64902.048783] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1/pcmC1D0p (sound)
+	UDEV  [64902.051611] change   /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1 (sound)
+
+
+# udevadm info --path=/devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1/controlC1 --attribute-walk
+	looking at parent device '/devices/platform/soc/3f980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/sound/card1':
+	KERNELS=="card1"
+	SUBSYSTEMS=="sound"
+	DRIVERS==""
+	ATTRS{id}=="x20"  *********************************
+	ATTRS{number}=="1"
+
+
+USB sound #1
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+# udevadm monitor
+	KERNEL[64630.742938] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2 (usb)
+	KERNEL[64630.744401] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0 (usb)
+	KERNEL[64630.771105] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1 (sound)
+	KERNEL[64630.771489] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/controlC1 (sound)  *********************************
+	KERNEL[64630.771686] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/pcmC1D0p (sound)
+	KERNEL[64630.771984] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/pcmC1D0c (sound)
+	KERNEL[64630.772248] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.1 (usb)
+	KERNEL[64630.772409] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.2 (usb)
+	KERNEL[64630.772552] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.2 (usb)
+	UDEV  [64630.777490] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2 (usb)
+	UDEV  [64630.780529] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0 (usb)
+	UDEV  [64630.785885] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.1 (usb)
+	UDEV  [64630.785979] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1 (sound)
+	KERNEL[64630.786016] change   /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1 (sound)
+	UDEV  [64630.787499] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.2 (usb)
+	UDEV  [64630.787638] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/controlC1 (sound)
+	UDEV  [64630.789132] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/pcmC1D0p (sound)
+	UDEV  [64630.789217] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/pcmC1D0c (sound)
+	UDEV  [64630.791681] change   /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1 (sound)
+	KERNEL[64630.802421] add      /module/cm109 (module)
+	UDEV  [64630.802946] add      /module/cm109 (module)
+	KERNEL[64630.803211] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.2/input/input4 (input)
+	KERNEL[64630.803618] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.2/input/input4/event3 (input)
+	KERNEL[64630.803784] add      /bus/usb/drivers/cm109 (drivers)
+	UDEV  [64630.804223] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.2 (usb)
+	UDEV  [64630.804279] add      /bus/usb/drivers/cm109 (drivers)
+	UDEV  [64630.807199] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.2/input/input4 (input)
+	UDEV  [64630.824703] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.2/input/input4/event3 (input)
+	
+# udevadm info --path=/devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/controlC1 --attribute-walk
+	looking at parent device '/devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1':
+	KERNELS=="card1"
+	SUBSYSTEMS=="sound"
+	DRIVERS==""
+	ATTRS{id}=="Device"  *********************************
+	ATTRS{number}=="1"
+
+	
+USB sound #2
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+# udevadm monitor
+	KERNEL[64807.912804] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2 (usb)
+	KERNEL[64807.914161] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0 (usb)
+	KERNEL[64807.940218] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1 (sound)
+	KERNEL[64807.940730] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/controlC1 (sound)  *********************************
+	KERNEL[64807.941123] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/pcmC1D0p (sound)
+	KERNEL[64807.941579] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/pcmC1D0c (sound)
+	KERNEL[64807.941729] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.1 (usb)
+	KERNEL[64807.941823] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.2 (usb)
+	KERNEL[64807.941900] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.2 (usb)
+	KERNEL[64807.942235] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.2/input/input5 (input)
+	KERNEL[64807.943209] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.2/input/input5/event3 (input)
+	UDEV  [64807.945303] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2 (usb)
+	UDEV  [64807.947809] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0 (usb)
+	UDEV  [64807.948975] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.1 (usb)
+	UDEV  [64807.950061] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1 (sound)
+	UDEV  [64807.952908] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.2 (usb)
+	KERNEL[64807.953520] change   /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1 (sound)
+	UDEV  [64807.954496] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/controlC1 (sound)
+	UDEV  [64807.954597] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/pcmC1D0p (sound)
+	UDEV  [64807.957044] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/pcmC1D0c (sound)
+	UDEV  [64807.957377] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.2 (usb)
+	UDEV  [64807.959349] change   /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1 (sound)
+	UDEV  [64807.961174] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.2/input/input5 (input)
+	UDEV  [64807.975845] add      /devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.2/input/input5/event3 (input)
+	
+# udevadm info --path=/devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/controlC1 --attribute-walk
+	looking at parent device '/devices/platform/soc/3f980000.usb/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1':
+	KERNELS=="card1"
+	SUBSYSTEMS=="sound"
+	DRIVERS==""
+	ATTRS{id}=="Device"  *********************************
+	ATTRS{number}=="1"

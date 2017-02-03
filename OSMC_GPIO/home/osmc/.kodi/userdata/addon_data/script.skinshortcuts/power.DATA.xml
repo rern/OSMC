@@ -32,4 +32,12 @@
 		<thumb>special://skin/extras/icons/</thumb>
 		<action>RunScript(/home/osmc/rebootsudo.py)</action>
 	</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Power Menu</label>
+		<label2>Custom item</label2>
+		<icon>home/DefaultPower.png</icon>
+		<thumb>special://skin/extras/icons/</thumb>
+		<action>ActivateWindow(shutdownmenu)</action>
+	</shortcut>
 </shortcuts>

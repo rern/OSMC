@@ -14,6 +14,15 @@ apt-get install transmission-daemon transmission-cli
 systemctl stop transmission
 ```
 
+**Run service as root**  
+Fix write permission  
+/lib/systemd/system/transmission.service
+```sh
+...
+User=root
+...
+```
+
 **/etc/transmission-daemon/settings.json** - edit:  
 - plain text `password` will be hash once login
 - logout > close browser (no explicit logout, close tab not logout)

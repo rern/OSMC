@@ -52,7 +52,7 @@ hostnamectl set-hostname [name]
 	read only = no
 	guest ok = no
 	valid users = root
-	host allow = [IP1] [IP2]
+#	host allow = [IP1] [IP2]
 ```
 
 **Restart samba**

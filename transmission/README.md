@@ -9,30 +9,57 @@ sudo su
 apt-get install transmission-daemon transmission-cli
 ```
 
-**Config**  
+**Stop transmission**  
 ```sh
 systemctl stop transmission
 ```
 
-**/etc/transmission-daemon/settings.json** - edit:  
-- plain text `password` will be hash once login
-- logout > close browser (no explicit logout, close tab not logout)
-- no password > "rpc-authentication-required": false  
+**Create directories, set owner**
 ```sh
-    "download-dir": "/[path]/transmission",
-    "incomplete-dir": "/[path]/transmission/.incomplete",
-    "incomplete-dir-enabled": true,
-    
-    "rpc-authentication-required": true,
-    "rpc-password": "[password]",
-    "rpc-url": "/[path]/transmission",
-    "rpc-username": "[username]",
-    "rpc-whitelist-enabled": false,
+mkdir /media/hdd/transmission
+mkdir /media/hdd/transmission/incomplete
+mkdir /media/hdd/transmission/torrents
+chown -R transmission:transmission /media/hdd/transmission
 ```
 
-**Set download-dir write permission**
+**/etc/transmission-daemon/settings.json** - edit:  
+set directories  
 ```sh
-setfacl -m u:transmission:rw /[path]/transmission
+    ...
+    "download-dir": "/media/hdd/transmission",
+    "incomplete-dir": "/media/hdd/transmission/incomplete",
+    "incomplete-dir-enabled": true,
+    ...
+```
+[optional] set login  
+- plain text `"rpc-password"` will be hash once login
+- logout > close browser (no explicit logout, close tab not logout)
+- no login > `"rpc-authentication-required": false`  
+```sh
+    ...
+    "rpc-authentication-required": true,
+    ...
+    "rpc-password": "osmc",
+    ...
+    "rpc-username": "osmc",
+    ....
+```
+[optional] set specific client IP  
+- allow only IP
+- nolimit > `"rpc-whitelist-enabled": false`
+```sh
+    ....
+    "rpc-whitelist": "127.0.0.1,[IP1],[IP2]",
+    "rpc-whitelist-enabled": true,
+    ...
+```
+set auto start download  
+- add torrent files to `watch-dir` will auto start download  
+- appending to last line needs a comma in the line before
+```sh
+    ...
+    "watch-dir": "/media/hdd/transmission/torrents",
+    "watch-dir-enabled": true
 ```
 
 **Start transmission**  

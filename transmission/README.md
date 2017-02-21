@@ -21,10 +21,11 @@ systemctl stop transmission
 mkdir /media/hdd/transmission
 mkdir /media/hdd/transmission/incomplete
 mkdir /media/hdd/transmission/torrents
-chown -R transmission:transmission /media/hdd/transmission
+chown -R osmc:osmc /media/hdd/transmission
 ```
 
 **/etc/transmission-daemon/settings.json** - edit:  
+_if install from OSMC App Store: /home/osmc/.config/transmission-daemon/settings.json_
 set directories  
 ```sh
     ...

@@ -1,5 +1,7 @@
-RuneAudio_transmission
+OSMC transmission
 ---
+Command line install  
+
 
 [**Transmission**](https://transmissionbt.com/) - Fast, easy, and free BitTorrent client (CLI tools, daemon and web client)  
 

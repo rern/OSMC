@@ -2,7 +2,14 @@
 
 # install.sh - run as root
 
+line2='\e[0;36m=========================================================\e[m'
 line='\e[0;36m---------------------------------------------------------\e[m'
+bar=$( echo -e "$(tput setab 6)   $(tput setab 0)" )
+title2() {
+		echo -e "\n$line2\n"
+		echo -e "$bar $1"
+		echo -e "\n$line2\n"
+}
 title() {
 		echo -e "\n$line"
 		echo $1
@@ -15,7 +22,7 @@ titleend() {
 
 rm install.sh
 
-title "Install Aria2 ..."
+title2 "$bar Install Aria2 ..."
 apt-get install -y aria2
 if ! dpkg -s unzip > /dev/null 2>&1; then
 	title "Install unzip ..."
@@ -50,6 +57,6 @@ ln -s /etc/nginx/sites-available/aria2 /etc/nginx/sites-enable/aria2
 title "Restart nginx ..."
 systemctl restart nginx
 
-title "Aria2 successfully installed."
+title2 "$bar Aria2 successfully installed."
 echo "Start Aria2: aria2c --conf-path=/etc/aria2.conf"
 titleend "WebUI: [RuneAudio_IP]:88"

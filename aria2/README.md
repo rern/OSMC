@@ -10,11 +10,6 @@ OSMC aria2 with webui
 wget -q --show-progress -O install.sh "https://github.com/rern/OSMC/blob/master/aria2/install.sh?raw=1"; chmod +x install.sh; ./install.sh
 ```
 
-**Uninstall**  
-```sh
-wget -q --show-progress -O uninstall.sh "https://github.com/rern/OSMC/blob/master/aria2/uninstall.sh?raw=1"; chmod +x uninstall.sh; ./uninstall.sh
-```
-
 **Start aria2**  
 ```sh
 aria2c
@@ -31,4 +26,9 @@ Specify saved filename: (set directory in `dir` option)
 **Stop aria2**  
 ```sh
 pkill aria2c
+```
+
+**Uninstall**  
+```sh
+wget -q --show-progress -O uninstall.sh "https://github.com/rern/OSMC/blob/master/aria2/uninstall.sh?raw=1"; chmod +x uninstall.sh; ./uninstall.sh
 ```

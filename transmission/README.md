@@ -8,7 +8,7 @@ Command line install
 **Install**  
 ```sh
 sudo su
-apt-get install transmission-daemon transmission-cli
+apt install -y transmission-daemon transmission-cli
 ```
 
 **Stop transmission**  

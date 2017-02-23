@@ -25,7 +25,7 @@ chown -R osmc:osmc /media/hdd/transmission
 ```
 
 **/etc/transmission-daemon/settings.json** - edit:  
-_if install from OSMC App Store: /home/osmc/.config/transmission-daemon/settings.json_
+_if install from OSMC App Store: /home/osmc/.config/transmission-daemon/settings.json_  
 set directories  
 ```sh
     ...

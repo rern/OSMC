@@ -24,7 +24,5 @@ irrecord -d /dev/lirc0 /home/osmc/lircd.conf
 systemctl start lircd_helper@lirc0
 ```
 	
-**Customize command**
-```sh
-nano /home/osmc/.kodi/userdata/keymaps/remote.xml
-```
+**Customize command**  
+/home/osmc/.kodi/userdata/keymaps/remote.xml

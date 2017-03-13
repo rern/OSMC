@@ -7,6 +7,18 @@ Command line install
 
 **Install**  
 ```sh
+wget -q --show-progress -O install.sh "https://github.com/rern/OSMC/blob/master/transmission/install.sh?raw=1"; chmod +x install.sh; ./install.sh
+```
+
+**Uninstall**  
+```sh
+./transuninstall.sh
+```
+
+Manually install
+---
+**Install**  
+```sh
 sudo su
 apt install -y transmission-daemon transmission-cli
 ```

@@ -22,8 +22,12 @@ titleend() {
 
 rm install.sh
 
-title2 "$bar Install Aria2 ..."
-apt-get install -y aria2
+if ! dpkg -s aria2 > /dev/null 2>&1; then
+	title2 "$bar Install Aria2 ..."
+	apt-get install -y aria2
+else
+	title "$info Aria2 already installed."
+fi
 if ! dpkg -s unzip > /dev/null 2>&1; then
 	title "Install unzip ..."
 	apt-get install -y unzip

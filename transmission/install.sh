@@ -29,6 +29,9 @@ file='/etc/transmission-daemon/settings.json'
 if ! dpkg -s transmission-daemon > /dev/null 2>&1; then
 	title "$bar Install Transmission ..."
 	apt install -y transmission-daemon transmission-cli
+else
+	titleend "$info Transmission already installed."
+	exit
 fi
 systemctl stop transmission
 

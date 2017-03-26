@@ -6,14 +6,14 @@ bar=$( echo -e "$(tput setab 6)   $(tput setab 0)" )
 
 # functions #######################################
 title2() {
-		echo -e "\n$line2\n"
-		echo -e "$bar $1"
-		echo -e "\n$line2\n"
+	echo -e "\n$line2\n"
+	echo -e "$bar $1"
+	echo -e "\n$line2\n"
 }
 title() {
-		echo -e "\n$line"
-		echo $1
-		echo -e "$line\n"
+	echo -e "\n$line"
+	echo $1
+	echo -e "$line\n"
 }
 
 # check installed #######################################

@@ -27,7 +27,6 @@ apt install samba
 	syslog = 0
 
 	guest ok = yes
-	null passwords = yes
 	map to guest = bad user
 
 	load printers = no

@@ -24,17 +24,17 @@ rm install.sh
 
 if ! dpkg -s aria2 > /dev/null 2>&1; then
 	title2 "$bar Install Aria2 ..."
-	apt-get install -y aria2
+	apt install -y aria2
 else
 	title "$info Aria2 already installed."
 fi
 if ! dpkg -s unzip > /dev/null 2>&1; then
 	title "Install unzip ..."
-	apt-get install -y unzip
+	apt install -y unzip
 fi
 if ! dpkg -s nginx > /dev/null 2>&1; then
 	title "Install NGINX ..."
-	apt-get install -y nginx
+	apt install -y nginx
 fi
 title "Get WebUI files ..."
 wget -O aria2.zip https://github.com/ziahamza/webui-aria2/archive/master.zip

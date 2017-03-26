@@ -56,7 +56,7 @@ echo 'server {
 	}
 }
 ' > /etc/nginx/sites-available/aria2
-ln -s /etc/nginx/sites-available/aria2 /etc/nginx/sites-enable/aria2
+ln -s /etc/nginx/sites-available/aria2 /etc/nginx/sites-enabled/aria2
 
 title "Restart nginx ..."
 systemctl restart nginx

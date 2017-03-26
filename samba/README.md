@@ -8,15 +8,10 @@ OSMC Samba
 apt install samba
 ```
 
-**Set hostname**  
-Shows in file browser  
-```sh
-hostnamectl set-hostname [name]
-```
-
 **/etc/samba/smb.conf**
 ```sh
 [global]
+	netbios name = [name]
 	workgroup = WORKGROUP
 	server string = Samba %v on %L
 	encrypt passwords = yes
@@ -66,4 +61,10 @@ systemctl restart nmbd
 **Add samba user + password**
 ```sh
 smbpasswd -a [user]
+```
+
+**Set hostname** (If `netbios name` in `smb.conf` not work.)  
+Shows in file browser
+```sh
+hostnamectl set-hostname [name]
 ```

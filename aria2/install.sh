@@ -55,7 +55,7 @@ echo 'server {
 		index  index.php index.html index.htm;
 	}
 }
-' /etc/nginx/sites-available/aria2
+' > /etc/nginx/sites-available/aria2
 ln -s /etc/nginx/sites-available/aria2 /etc/nginx/sites-enable/aria2
 
 title "Restart nginx ..."

@@ -23,7 +23,7 @@ titleend() {
 rm install.sh
 
 if ! dpkg -s aria2 > /dev/null 2>&1; then
-	title2 "$bar Install Aria2 ..."
+	title2 "Install Aria2 ..."
 	apt install -y aria2
 else
 	title "$info Aria2 already installed."
@@ -61,6 +61,6 @@ ln -s /etc/nginx/sites-available/aria2 /etc/nginx/sites-enabled/aria2
 title "Restart nginx ..."
 systemctl restart nginx
 
-title2 "$bar Aria2 successfully installed."
+title2 "Aria2 successfully installed."
 echo "Start Aria2: aria2c --conf-path=/etc/aria2.conf"
 titleend "WebUI: [RuneAudio_IP]:88"

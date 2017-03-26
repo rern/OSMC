@@ -27,7 +27,7 @@ wget -q --show-progress -O tranuninstall.sh "https://github.com/rern/RuneAudio/b
 file='/etc/transmission-daemon/settings.json'
 
 if ! dpkg -s transmission-daemon > /dev/null 2>&1; then
-	title "$bar Install Transmission ..."
+	title2 "Install Transmission ..."
 	apt install -y transmission-daemon transmission-cli
 else
 	title "$info Transmission already installed."
@@ -83,7 +83,7 @@ case $answer in
 	* ) systemctl disable transmission;;
 esac
 
-title "$bar Transmission installed successfully."
+title2 "Transmission installed successfully."
 echo 'Download directory: /media/hdd/transmission'
 echo 'Start: systemctl start transmission-daemon'
 echo 'Stop: systemctl stop transmission-daemon'

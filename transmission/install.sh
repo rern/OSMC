@@ -64,7 +64,7 @@ case $answer in
 			read usr 
 			echo 'Password: '
 			read -s pwd
-			sed -e 's|\"rpc-authentication-required\": false|\"rpc-authentication-required\": true|
+			sed -i -e 's|\"rpc-authentication-required\": false|\"rpc-authentication-required\": true|
 			' -e "s|\"rpc-password\": \".*\"|\"rpc-password\": \"$pwd\"|
 			" -e "s|\"rpc-username\": \".*\"|\"rpc-username\": \"$usr\"|
 			" $file

@@ -46,7 +46,7 @@ sed -i -e 's|\"download-dir\": \".*\"|\"download-dir\": \"/media/hdd/transmissio
 ' -e 's|\"incomplete-dir\": \".*\"|\"incomplete-dir\": \"/media/hdd/transmission/incomplete\"|
 ' -e 's|\"incomplete-dir-enabled\": false|\"incomplete-dir-enabled\": true|
 ' -e 's|\"rpc-whitelist\": \"127.0.0.1\"|\"rpc-whitelist\": \"*.*.*.*\"|
-' -e '\|[^{}\{, \}]$| s|$|, |
+' -e '\|[^{},\{, \}]$| s|$|, |
 ' -e '\|}| i\
     \"watch-dir\": \"/media/hdd/transmission/torrents\", \
     \"watch-dir-enabled\": true

@@ -23,7 +23,7 @@ if ! dpkg -s transmission-cli > /dev/null 2>&1; then
 	exit
 fi
 
-title2 "$bar Uninstall Transmission ..."
+title2 "Uninstall Transmission ..."
 # uninstall package #######################################
 apt remove -y transmission-daemon transmission-cli
 
@@ -31,6 +31,6 @@ apt remove -y transmission-daemon transmission-cli
 title "Remove files ..."
 rm -rfv /etc/transmission-daemon
 
-title2 "$bar Transmission successfully uninstalled."
+title2 "Transmission successfully uninstalled."
 
 rm tranuninstall.sh

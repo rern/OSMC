@@ -7,6 +7,7 @@ OSMC aria2 with webui
 
 **Install**  
 ```sh
+sudo su
 wget -q --show-progress -O install.sh "https://github.com/rern/OSMC/blob/master/aria2/install.sh?raw=1"; chmod +x install.sh; ./install.sh
 ```
 

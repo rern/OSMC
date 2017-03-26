@@ -67,7 +67,7 @@ case $answer in
 			sed -e 's|\"rpc-authentication-required\": false|\"rpc-authentication-required\": true|
 			' -e "s|\"rpc-password\": \".*\"|\"rpc-password\": \"$pwd\"|
 			" -e "s|\"rpc-username\": \".*\"|\"rpc-username\": \"$usr\"|
-			" /etc/transmission-daemon/settings.json
+			" $file
 		;;
 	* ) echo;;
 esac

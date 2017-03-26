@@ -22,7 +22,7 @@ if ! dpkg -s aria2 > /dev/null 2>&1; then
 	exit
 fi
 
-title2 "$bar Uninstall Aria2 ..."
+title2 "Uninstall Aria2 ..."
 # uninstall package #######################################
 apt remove -y aria2 nginx
 
@@ -35,6 +35,6 @@ rm -rfv /usr/share/nginx
 # skip if reinstall - pwduninstall.sh re (any argument)
 [ $# -ne 0 ] && exit
 
-title2 "$bar Aria2 successfully uninstalled."
+title2 "Aria2 successfully uninstalled."
 
 rm uninstall.sh

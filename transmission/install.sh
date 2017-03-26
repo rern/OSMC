@@ -85,6 +85,6 @@ esac
 
 title "$bar Transmission installed successfully."
 echo 'Download directory: /media/hdd/transmission'
-echo 'Start: systemctl start transmission'
-echo 'Stop: systemctl stop transmission'
+echo 'Start: systemctl start transmission-daemon'
+echo 'Stop: systemctl stop transmission-daemon'
 titleend "Web Interface: [IP address]:9091"

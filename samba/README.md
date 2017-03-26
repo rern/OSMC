@@ -5,6 +5,8 @@ OSMC Samba
 
 **Install**  
 ```sh
+sudo su
+apt update
 apt install samba
 ```
 

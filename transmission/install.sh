@@ -42,13 +42,13 @@ if [[ ! -e /media/hdd/transmission ]]; then
 	chown -R osmc:osmc /media/hdd/transmission
 fi
 
-sed -i -e 's|\"download-dir\": \".*\",|\"download-dir\": \"/media/hdd/transmission\",|
-' -e 's|\"incomplete-dir\": \".*\",|\"incomplete-dir\": \"/media/hdd/transmission/incomplete\",|
-' -e 's|\"incomplete-dir-enabled\": false,|\"incomplete-dir-enabled\": true,|
-' -e 's|\"rpc-whitelist\": \"127.0.0.1\",|\"rpc-whitelist\": \"*.*.*.*\",|
-' -e '/[^{}\{, \}]$/ s/$/\, /
-' -e '/}/ i\
-    \"watch-dir\": \"/media/hdd/transmission/torrents\",\
+sed -i -e 's|\"download-dir\": \".*\"|\"download-dir\": \"/media/hdd/transmission\"|
+' -e 's|\"incomplete-dir\": \".*\"|\"incomplete-dir\": \"/media/hdd/transmission/incomplete\"|
+' -e 's|\"incomplete-dir-enabled\": false|\"incomplete-dir-enabled\": true|
+' -e 's|\"rpc-whitelist\": \"127.0.0.1\"|\"rpc-whitelist\": \"*.*.*.*\"|
+' -e '\|[^{}\{, \}]$| s|$|, |
+' -e '\|}| i\
+    \"watch-dir\": \"/media/hdd/transmission/torrents\", \
     \"watch-dir-enabled\": true
 ' $file
 
@@ -64,10 +64,10 @@ case $answer in
 			read usr 
 			echo 'Password: '
 			read -s pwd
-			sed -i -e 's|\"rpc-authentication-required\": false,|\"rpc-authentication-required\": true,|
-			' -e "s|\"rpc-password\": \".*\",|\"rpc-password\": \"$pwd\",|
-			" -e "s|\"rpc-username\": \".*\",|\"rpc-username\": \"$usr\",|
-			" $file
+			sed -e 's|\"rpc-authentication-required\": false|\"rpc-authentication-required\": true|
+			' -e "s|\"rpc-password\": \".*\"|\"rpc-password\": \"$pwd\"|
+			" -e "s|\"rpc-username\": \".*\"|\"rpc-username\": \"$usr\"|
+			" /etc/transmission-daemon/settings.json
 		;;
 	* ) echo;;
 esac

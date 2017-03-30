@@ -37,4 +37,4 @@ rm -rfv /usr/share/nginx
 
 title2 "Aria2 successfully uninstalled."
 
-rm uninstall.sh
+rm uninstall_aria.sh

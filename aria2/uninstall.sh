@@ -24,7 +24,7 @@ fi
 
 title2 "Uninstall Aria2 ..."
 # uninstall package #######################################
-apt remove -y aria2 nginx
+apt remove -y aria2 nginx unzip
 
 # remove files #######################################
 title "Remove files ..."

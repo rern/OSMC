@@ -22,6 +22,9 @@ titleend() {
 
 rm install.sh
 
+wget -q --show-progress -O uninstall_aria.sh "https://github.com/rern/RuneAudio/blob/master/transmission/uninstall_aria.sh?raw=1"
+chmod +x uninstall_aria.sh
+
 if ! dpkg -s aria2 > /dev/null 2>&1; then
 	title2 "Install Aria2 ..."
 	apt install -y aria2
@@ -62,5 +65,6 @@ title "Restart nginx ..."
 systemctl restart nginx
 
 title2 "Aria2 successfully installed."
+echo "Uninstall: ./uninstall_aria.sh"
 echo "Start Aria2: aria2c --conf-path=/etc/aria2.conf"
 titleend "WebUI: [RuneAudio_IP]:88"

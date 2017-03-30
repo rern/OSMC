@@ -22,7 +22,8 @@ titleend() {
 	echo -e "\n$line\n"
 }
 
-wget -q --show-progress -O uninstall_tran.sh "https://github.com/rern/RuneAudio/blob/master/transmission/uninstall_tran.sh?raw=1"; chmod +x uninstall_tran.sh
+wget -q --show-progress -O uninstall_tran.sh "https://github.com/rern/RuneAudio/blob/master/transmission/uninstall_tran.sh?raw=1"
+chmod +x uninstall_tran.sh
 
 file='/etc/transmission-daemon/settings.json'
 
@@ -60,14 +61,14 @@ echo -e '\e[0;36m0\e[m / 1 ? '
 read -n 1 answer
 case $answer in
 	1 ) echo
-			echo 'Username: '
-			read usr 
-			echo 'Password: '
-			read -s pwd
-			sed -i -e 's|"rpc-authentication-required": false|"rpc-authentication-required": true|
-			' -e "s|\"rpc-password\": \".*\"|\"rpc-password\": \"$pwd\"|
-			" -e "s|\"rpc-username\": \".*\"|\"rpc-username\": \"$usr\"|
-			" $file
+		echo 'Username: '
+		read usr 
+		echo 'Password: '
+		read -s pwd
+		sed -i -e 's|"rpc-authentication-required": false|"rpc-authentication-required": true|
+		' -e "s|\"rpc-password\": \".*\"|\"rpc-password\": \"$pwd\"|
+		" -e "s|\"rpc-username\": \".*\"|\"rpc-username\": \"$usr\"|
+		" $file
 		;;
 	* ) echo;;
 esac

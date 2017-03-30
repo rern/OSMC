@@ -11,11 +11,11 @@ apt install samba
 ```
 
 **Server name**  
-- in any os file browsers:
+- any os file browsers:
 ```sh
 hostnamectl set-hostname [name]
 ```
-- in Windows(NetBIOS) file browsers:  
+- only Windows(NetBIOS) file browsers:  
 `netbios name` in `/etc/samba/smb.conf`  
 
 **/etc/samba/smb.conf**

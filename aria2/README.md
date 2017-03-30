@@ -11,15 +11,19 @@ sudo su
 wget -q --show-progress -O install.sh "https://github.com/rern/OSMC/blob/master/aria2/install.sh?raw=1"; chmod +x install.sh; ./install.sh
 ```
 
+**Uninstall**  
+```sh
+sudo ./uninstall.sh
+```
+
 **Start aria2**  
 ```sh
 aria2c
 ```
 
 **WebUI**  
-  
 Browser URL:  
-\[OSMC IP]:88  
+_[OSMC IP]_:88 ( eg: 192.168.1.11:88 )  
 
 Specify saved filename: (set directory in `dir` option)  
 [download link] --out=[filename]  
@@ -27,9 +31,4 @@ Specify saved filename: (set directory in `dir` option)
 **Stop aria2**  
 ```sh
 pkill aria2c
-```
-
-**Uninstall**  
-```sh
-wget -q --show-progress -O uninstall.sh "https://github.com/rern/OSMC/blob/master/aria2/uninstall.sh?raw=1"; chmod +x uninstall.sh; ./uninstall.sh
 ```

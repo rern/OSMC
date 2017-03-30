@@ -85,6 +85,7 @@ case $answer in
 esac
 
 title2 "Transmission installed successfully."
+echo 'Uninstall: ./uninstall_tran.sh'
 echo 'Download directory: /media/hdd/transmission'
 echo 'Start: systemctl start transmission-daemon'
 echo 'Stop: systemctl stop transmission-daemon'

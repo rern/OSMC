@@ -13,7 +13,21 @@ wget -q --show-progress -O install.sh "https://github.com/rern/OSMC/blob/master/
 
 **Uninstall**  
 ```sh
-sudo ./transuninstall.sh
+sudo ./uninstall_tran.sh
+```
+
+**Start transmission**  
+```sh
+systemctl start transmission
+```
+
+**WebUI**    
+Browser URL:  
+_[RuneAudio IP]_:9091 (eg: 192.168.1.11:9091)  
+
+**Stop transmission**  
+```sh
+systemctl stop transmission
 ```
 
 Manually install
@@ -22,11 +36,6 @@ Manually install
 ```sh
 sudo su
 apt install -y transmission-daemon transmission-cli
-```
-
-**Stop transmission**  
-```sh
-systemctl stop transmission
 ```
 
 **Create directories, set owner**
@@ -78,18 +87,7 @@ set auto start download
     "watch-dir-enabled": true
 ```
 
-**Start transmission**  
-```sh
-systemctl start transmission
-```
-
 **Disable auto start transmission on system start**  
 ```sh
 systemctl disable transmission
 ```
-
-**WebUI**  
-  
-Browser URL:  
-  
-_RuneAudio IP_:9091 (eg: 192.168.1.11:9091)  

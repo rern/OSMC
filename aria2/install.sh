@@ -67,4 +67,4 @@ systemctl restart nginx
 title2 "Aria2 successfully installed."
 echo "Uninstall: ./uninstall_aria.sh"
 echo "Start Aria2: aria2c --conf-path=/etc/aria2.conf"
-titleend "WebUI: [RuneAudio_IP]:88"
+titleend "WebUI: [OSMC_IP]:88"

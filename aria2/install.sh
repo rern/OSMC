@@ -49,7 +49,7 @@ echo 'enable-rpc=true
 rpc-listen-all=true
 daemon=true
 disable-ipv6=true
-' > /osmc/.aria2/aria2.conf
+' > /root/.aria2/aria2.conf
 
 echo '[Unit]
 Description=Aria2

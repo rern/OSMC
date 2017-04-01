@@ -44,12 +44,22 @@ wget -O aria2.zip https://github.com/ziahamza/webui-aria2/archive/master.zip
 unzip aria2.zip -d /var/www/html/
 rm aria2.zip
 
-mkdir /root/.aria2
+mkdir /osmc/.aria2
 echo 'enable-rpc=true
 rpc-listen-all=true
 daemon=true
 disable-ipv6=true
-' > /root/.aria2/aria2.conf
+' > /osmc/.aria2/aria2.conf
+
+echo '[Unit]
+Description=Aria2
+After=network-online.target
+[Service]
+Type=forking
+ExecStart=/usr/bin/aria2c
+[Install]
+WantedBy=multi-user.target
+' > /lib/systemd/system/aria2.service
 
 echo 'server {
 	listen 88;
@@ -60,11 +70,26 @@ echo 'server {
 }
 ' > /etc/nginx/sites-available/aria2
 ln -s /etc/nginx/sites-available/aria2 /etc/nginx/sites-enabled/aria2
-
+	
 title "Restart nginx ..."
 systemctl restart nginx
 
+	title "$info Aria2 startup"
+	echo 'Enable:'
+	echo -e '  \e[0;36m0\e[m No'
+	echo -e '  \e[0;36m1\e[m Yes'
+	echo
+	echo -e '\e[0;36m0\e[m / 1 ? '
+	read -n 1 answer
+	case $answer in
+		1 ) systemctl enable aria2
+			systemctl start aria2
+		;;
+		* ) echo;;	
+	esac
+	
 title2 "Aria2 successfully installed."
 echo "Uninstall: ./uninstall_aria.sh"
-echo "Start Aria2: aria2c --conf-path=/etc/aria2.conf"
+echo "Start Aria2: aria2c"
+echo "Stop Aria2: pkill aria2c"
 titleend "WebUI: [OSMC_IP]:88"

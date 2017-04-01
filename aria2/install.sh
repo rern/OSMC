@@ -90,6 +90,6 @@ systemctl restart nginx
 	
 title2 "Aria2 successfully installed."
 echo "Uninstall: ./uninstall_aria.sh"
-echo "Start Aria2: aria2c"
-echo "Stop Aria2: pkill aria2c"
-titleend "WebUI: [OSMC_IP]:88"
+echo "Start: sudo systemctl start aria2"
+echo "Stop: sudo systemctl stop aria2"
+titleend "Web interface: [OSMC_IP]:88"

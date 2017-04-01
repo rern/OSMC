@@ -19,12 +19,12 @@ sudo ./uninstall_tran.sh
 
 **Start transmission**  
 ```sh
-sudo systemctl start transmission
+sudo systemctl start transmission-daemon
 ```
 
 **Stop transmission**  
 ```sh
-sudo systemctl stop transmission
+sudo systemctl stop transmission-daemon
 ```
 
 **WebUI**    

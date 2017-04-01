@@ -1,4 +1,4 @@
-OSMC transmission
+OSMC Transmission
 ---
 Command line install  
 

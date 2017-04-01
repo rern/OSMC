@@ -18,7 +18,12 @@ sudo ./uninstall.sh
 
 **Start aria2**  
 ```sh
-aria2c
+sudo systemctl start aria2
+```
+
+**Stop aria2**  
+```sh
+sudo systemctl stop aria2
 ```
 
 **WebUI**  
@@ -27,8 +32,3 @@ _[OSMC IP]_:88 ( eg: 192.168.1.11:88 )
 
 Specify saved filename: (set directory in `dir` option)  
 [download link] --out=[filename]  
-
-**Stop aria2**  
-```sh
-pkill aria2c
-```

@@ -44,11 +44,13 @@ wget -O aria2.zip https://github.com/ziahamza/webui-aria2/archive/master.zip
 unzip aria2.zip -d /var/www/html/
 rm aria2.zip
 
-mkdir /osmc/.aria2
+mkdir /root/.aria2
+[[ ! -e /media/hdd/aria2 ]] && mkdir /media/hdd/aria2
 echo 'enable-rpc=true
 rpc-listen-all=true
 daemon=true
 disable-ipv6=true
+dir=/media/hdd/aria2
 ' > /root/.aria2/aria2.conf
 
 echo '[Unit]

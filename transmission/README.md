@@ -6,7 +6,7 @@ Command line install
 [**Transmission**](https://transmissionbt.com/) - Fast, easy, and free BitTorrent client (CLI tools, daemon and web client)  
 
 **Install**  
-Connect a hard drive with label `hdd`  
+Connect a hard drive with label `hdd` or mount as `/media/hdd/`  
 ```sh
 sudo su
 wget -q --show-progress -O install.sh "https://github.com/rern/OSMC/blob/master/transmission/install.sh?raw=1"; chmod +x install.sh; ./install.sh

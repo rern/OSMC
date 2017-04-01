@@ -93,5 +93,5 @@ title2 "Transmission installed successfully."
 echo 'Uninstall: ./uninstall_tran.sh'
 echo 'Start: sudo systemctl start transmission-daemon'
 echo 'Stop: sudo systemctl stop transmission-daemon'
-echo 'Download directory: (set in WebUI)'
+echo 'Download directory: /media/hdd/transmission'
 titleend "WebUI: [OSMC_IP]:9091"

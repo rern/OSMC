@@ -70,7 +70,8 @@ echo 'server {
 }
 ' > /etc/nginx/sites-available/aria2
 ln -s /etc/nginx/sites-available/aria2 /etc/nginx/sites-enabled/aria2
-	
+
+mkdir /media
 title "Restart nginx ..."
 systemctl restart nginx
 
@@ -89,7 +90,8 @@ systemctl restart nginx
 	esac
 	
 title2 "Aria2 successfully installed."
-echo "Uninstall: ./uninstall_aria.sh"
-echo "Start: sudo systemctl start aria2"
-echo "Stop: sudo systemctl stop aria2"
-titleend "Web interface: [OSMC_IP]:88"
+echo 'Uninstall: ./uninstall_aria.sh'
+echo 'Start: sudo systemctl start aria2'
+echo 'Stop: sudo systemctl stop aria2'
+echo 'Download directory: (set in WebUI)'
+titleend "WebUI: [OSMC_IP]:88"

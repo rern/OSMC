@@ -101,5 +101,5 @@ title2 "Aria2 successfully installed."
 echo 'Uninstall: ./uninstall_aria.sh'
 echo 'Start: sudo systemctl start aria2'
 echo 'Stop: sudo systemctl stop aria2'
-echo 'Download directory: (set in WebUI)'
+echo 'Download directory: /media/hdd/aria2'
 titleend "WebUI: [OSMC_IP]:88"

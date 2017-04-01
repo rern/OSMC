@@ -1,4 +1,4 @@
-OSMC aria2 with webui
+OSMC Aria2 with WebUI
 ---
 
 [**aria2**](https://aria2.github.io/) - Download utility that supports HTTP(S), FTP, BitTorrent, and Metalink  

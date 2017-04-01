@@ -47,6 +47,18 @@ chmod 755 /var/www/html/gpio/*.php
 chmod 644 /etc/udev/rules.d/usbsound.rules
 udevadm control --reload
 
+# add gpio home menu #######################################
+sed -i '/ActivateWindow(Settings)/ a\
+\t</shortcut>\
+\t<shortcut>\
+\t\t<defaultID />\
+\t\t<label>GPIO</label>\
+\t\t<label2>Custom item</label2>\
+\t\t<icon>DefaultShortcut.png</icon>\
+\t\t<thumb />\
+\t\t<action>ActivateWindow(1111)</action>
+' /home/osmc/.kodi/userdata/addon_data/script.skinshortcuts/mainmenu.DATA.xml
+
 # install packages #######################################
 title "$info Update package databases"
 echo -e '  \e[0;36m0\e[m Skip'

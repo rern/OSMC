@@ -86,7 +86,7 @@ esac
 
 title2 "Transmission installed successfully."
 echo 'Uninstall: ./uninstall_tran.sh'
-echo 'Download directory: /media/hdd/transmission'
-echo 'Start: systemctl start transmission-daemon'
-echo 'Stop: systemctl stop transmission-daemon'
-titleend "Web Interface: [IP address]:9091"
+echo 'Start: sudo systemctl start transmission-daemon'
+echo 'Stop: sudo systemctl stop transmission-daemon'
+echo 'Download directory: (set in WebUI)'
+titleend "WebUI: [OSMC_IP]:9091"

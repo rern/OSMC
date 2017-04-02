@@ -95,7 +95,7 @@ systemctl enable gpioset
 file='/tmp/mount/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
 #line=$(sed -n '/Quit()/{=}' $file)
 line=$(( $line - 3 ))
-sed -i -e "$line i\
+sed -i -e ''"$line"' i\
 \t\t\t\t\t<item>\
 \t\t\t\t\t\t<label>GPIO On</label>\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpioon.py)</onclick>\
@@ -106,7 +106,7 @@ sed -i -e "$line i\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpiooff.py)</onclick>\
 \t\t\t\t\t\t<visible>System.CanReboot</visible>\
 \t\t\t\t\t</item>
-" $file
+' $file
 title2 "$osmcgpio successfully installed."
 echo $info 'Browser: [OSMC_IP]/gpio/ for settings.'
 titleend "To uninstall:   ./uninstall.sh"

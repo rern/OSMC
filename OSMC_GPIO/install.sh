@@ -91,6 +91,8 @@ udevadm control --reload
 /home/osmc/gpioset.py
 systemctl enable gpioset
 
+systemctl restart nginx
+
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
 line=$( sed -n '/Quit()/{=}' $file )

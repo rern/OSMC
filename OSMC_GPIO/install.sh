@@ -59,6 +59,10 @@ if ! dpkg -s nginx > /dev/null 2>&1; then
 	title "Install NGINX ..."
 	apt install -y nginx
 fi
+if ! dpkg -s bsdtar > /dev/null 2>&1; then
+	title "Install bsdtar ..."
+	apt install -y bsdtar
+fi
 
 if ! python -c "import RPi.GPIO" > /dev/null 2>&1; then
 	title "Install Python-RPi.GPIO ..."
@@ -74,9 +78,9 @@ chmod 755 uninstall.sh
 
 title "Install files ..."
 if [ ! -f /home/osmc/gpio.json ]; then
-	tar -xzvf OSMC_GPIO.tar.gz -C /
+	bsdtar -xvf OSMC_GPIO.tar.gz -C /
 else
-	tar -xzvf OSMC_GPIO.tar.gz -C / --exclude='home/osmc/gpio.json' 
+	bsdtar -xvf OSMC_GPIO.tar.gz -C / --exclude='gpio.json' 
 fi
 rm OSMC_GPIO.tar.gz
 

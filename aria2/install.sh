@@ -47,7 +47,8 @@ if ! dpkg -s nginx > /dev/null 2>&1; then
 fi
 title "Get WebUI files ..."
 wget -q --show-progress -O aria2.zip https://github.com/ziahamza/webui-aria2/archive/master.zip
-bsdtar -xf aria2.zip -C /var/www/html/
+mkdir /var/www/html/aria2
+bsdtar -xf aria2.zip -s'|[^/]*/||' -C /var/www/html/aria2/
 rm aria2.zip
 
 mkdir /root/.aria2
@@ -72,7 +73,7 @@ WantedBy=multi-user.target
 echo 'server {
 	listen 88;
 	location / {
-		root  /var/www/html/webui-aria2-master;
+		root  /var/www/html/aria2;
 		index  index.php index.html index.htm;
 	}
 }

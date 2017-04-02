@@ -91,18 +91,21 @@ udevadm control --reload
 /home/osmc/gpioset.py
 systemctl enable gpioset
 
-# add gpio home menu #######################################
-sed -i '/ActivateWindow(Settings)/ a\
-\t</shortcut>\
-\t<shortcut>\
-\t\t<defaultID />\
-\t\t<label>GPIO</label>\
-\t\t<label2>Custom item</label2>\
-\t\t<icon>DefaultShortcut.png</icon>\
-\t\t<thumb />\
-\t\t<action>ActivateWindow(1111)</action>
-' /home/osmc/.kodi/userdata/addon_data/script.skinshortcuts/mainmenu.DATA.xml
-
+# modify shutdown menu #######################################
+file='/tmp/mount/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
+line=$(sed -n '/Quit()/{=}' $file)
+sed -i -e '"$(( $line - 3 ))"'' i\
+\t\t\t\t\t<item>\
+\t\t\t\t\t\t<label>GPIO On</label>\
+\t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpioon.py)</onclick>\
+\t\t\t\t\t\t<visible>System.CanReboot</visible>\
+\t\t\t\t\t</item>\
+\t\t\t\t\t<item>\
+\t\t\t\t\t\t<label>GPIO Off</label>\
+\t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpiooff.py)</onclick>\
+\t\t\t\t\t\t<visible>System.CanReboot</visible>\
+\t\t\t\t\t</item>
+' $file
 title2 "$osmcgpio successfully installed."
 echo $info 'Browser: [OSMC_IP]/gpio/ for settings.'
 titleend "To uninstall:   ./uninstall.sh"

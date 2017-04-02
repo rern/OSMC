@@ -107,6 +107,8 @@ sed -i -e ''"$line"' i\
 \t\t\t\t\t\t<visible>System.CanReboot</visible>\
 \t\t\t\t\t</item>
 ' $file
+
+#
 title2 "$osmcgpio successfully installed."
 echo $info 'Browser: [OSMC_IP]/gpio/ for settings.'
 titleend "To uninstall:   ./uninstall.sh"

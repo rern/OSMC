@@ -37,17 +37,17 @@ if ! dpkg -s aria2 > /dev/null 2>&1; then
 else
 	title "$info Aria2 already installed."
 fi
-if ! dpkg -s unzip > /dev/null 2>&1; then
-	title "Install unzip ..."
-	apt install -y unzip
+if ! dpkg -s bsdtar > /dev/null 2>&1; then
+	title "Install bsdtar ..."
+	apt install -y bsdtar
 fi
 if ! dpkg -s nginx > /dev/null 2>&1; then
 	title "Install NGINX ..."
 	apt install -y nginx
 fi
 title "Get WebUI files ..."
-wget -O aria2.zip https://github.com/ziahamza/webui-aria2/archive/master.zip
-unzip aria2.zip -d /var/www/html/
+wget -q --show-progress -O aria2.zip https://github.com/ziahamza/webui-aria2/archive/master.zip
+bsdtar -xf aria2.zip -C /var/www/html/
 rm aria2.zip
 
 mkdir /root/.aria2

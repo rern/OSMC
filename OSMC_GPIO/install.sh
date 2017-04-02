@@ -94,7 +94,7 @@ systemctl enable gpioset
 # modify shutdown menu #######################################
 file='/tmp/mount/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
 line=$(sed -n '/Quit()/{=}' $file)
-sed -i -e '"$(( $line - 3 ))"'' i\
+sed -i -e ''"$(( $line - 3 ))"' i\
 \t\t\t\t\t<item>\
 \t\t\t\t\t\t<label>GPIO On</label>\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpioon.py)</onclick>\

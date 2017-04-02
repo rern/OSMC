@@ -77,12 +77,8 @@ wget -q --show-progress -O uninstall.sh "https://github.com/rern/OSMC/blob/maste
 chmod 755 uninstall.sh
 
 title "Install files ..."
-if [ ! -f /home/osmc/gpio.json ]; then
-	bsdtar -xvf OSMC_GPIO.tar.gz -C /
-else
-	bsdtar -xvf OSMC_GPIO.tar.gz -C / --exclude='gpio.json' 
-fi
-rm OSMC_GPIO.tar.gz
+bsdtar -xvf OSMC_GPIO.tar.xz -C / $([ ! -f /home/osmc/gpio.json ] && echo '--exclude=gpio.json')
+rm OSMC_GPIO.tar.xz
 
 chmod 755 /home/osmc/*.py
 chmod 666 /home/osmc/gpio.json

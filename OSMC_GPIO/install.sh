@@ -93,7 +93,7 @@ systemctl enable gpioset
 
 # modify shutdown menu #######################################
 file='/tmp/mount/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
-line=$(sed -n '/Quit()/{=}' $file)
+#line=$(sed -n '/Quit()/{=}' $file)
 line=$(( $line - 3 ))
 sed -i -e "$line i\
 \t\t\t\t\t<item>\

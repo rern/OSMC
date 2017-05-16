@@ -27,7 +27,7 @@ if ! grep -qs '/media/hdd' /proc/mounts; then
 	exit
 fi
 
-wget -q --show-progress -O uninstall_tran.sh "https://github.com/rern/RuneAudio/blob/master/transmission/uninstall_tran.sh?raw=1"
+wget -q --show-progress -O uninstall_tran.sh "https://github.com/rern/OSMC/blob/master/transmission/uninstall_tran.sh?raw=1"
 chmod +x uninstall_tran.sh
 
 file='/etc/transmission-daemon/settings.json'

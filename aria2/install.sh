@@ -31,17 +31,17 @@ fi
 wget -q --show-progress -O uninstall_aria.sh "https://github.com/rern/RuneAudio/blob/master/transmission/uninstall_aria.sh?raw=1"
 chmod +x uninstall_aria.sh
 
-if ! dpkg -s aria2 > /dev/null 2>&1; then
+if ! type aria2 > /dev/null 2>&1; then
 	title2 "Install Aria2 ..."
 	apt install -y aria2
 else
 	title "$info Aria2 already installed."
 fi
-if ! dpkg -s bsdtar > /dev/null 2>&1; then
+if ! type bsdtar > /dev/null 2>&1; then
 	title "Install bsdtar ..."
 	apt install -y bsdtar
 fi
-if ! dpkg -s nginx > /dev/null 2>&1; then
+if ! type nginx > /dev/null 2>&1; then
 	title "Install NGINX ..."
 	apt install -y nginx
 fi

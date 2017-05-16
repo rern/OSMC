@@ -40,6 +40,7 @@ fi
 
 # settings at /root/.config
 systemctl stop transmission-daemon
+pkill transmission-daemon
 sed -i 's|User=debian-transmission|User=root|' /lib/systemd/system/transmission-daemon.service
 systemctl daemon-reload
 mkdir -p /root/.config/transmission-daemon

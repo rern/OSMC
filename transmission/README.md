@@ -18,6 +18,7 @@ sudo ./uninstall_tran.sh
 ```
 
 **Start transmission**  
+warning! - run as `root`
 ```sh
 sudo systemctl start transmission-daemon
 ```

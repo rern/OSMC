@@ -17,14 +17,14 @@ title() {
 }
 
 # check installed #######################################
-if ! dpkg -s aria2 > /dev/null 2>&1; then
+if ! type aria2 > /dev/null 2>&1; then
 	title "$info Aria2 not found."
 	exit
 fi
 
 title2 "Uninstall Aria2 ..."
 # uninstall package #######################################
-apt remove -y aria2 nginx unzip
+apt remove -y aria2 nginx bsdtar
 
 # remove files #######################################
 title "Remove files ..."

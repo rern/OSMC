@@ -18,7 +18,7 @@ title() {
 }
 
 # check installed #######################################
-if ! dpkg -s transmission-cli > /dev/null 2>&1; then
+if ! type transmission-daemon > /dev/null 2>&1; then
 	title "$info Transmission not found."
 	exit
 fi

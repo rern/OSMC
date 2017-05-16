@@ -30,7 +30,7 @@ fi
 wget -q --show-progress -O uninstall_tran.sh "https://github.com/rern/RuneAudio/blob/master/transmission/uninstall_tran.sh?raw=1"
 chmod +x uninstall_tran.sh
 
-if ! dpkg -s transmission-daemon > /dev/null 2>&1; then
+if ! type transmission-daemon > /dev/null 2>&1; then
 	title2 "Install Transmission ..."
 	apt install -y transmission-daemon transmission-cli
 else

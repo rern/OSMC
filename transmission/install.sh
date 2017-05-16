@@ -27,10 +27,8 @@ if ! grep -qs '/media/hdd' /proc/mounts; then
 	exit
 fi
 
-wget -q --show-progress -O uninstall_tran.sh "https://github.com/rern/OSMC/blob/master/transmission/uninstall_tran.sh?raw=1"
+wget -q --show-progress -O uninstall_tran.sh "https://github.com/rern/RuneAudio/blob/master/transmission/uninstall_tran.sh?raw=1"
 chmod +x uninstall_tran.sh
-
-file='/etc/transmission-daemon/settings.json'
 
 if ! dpkg -s transmission-daemon > /dev/null 2>&1; then
 	title2 "Install Transmission ..."
@@ -39,7 +37,13 @@ else
 	title "$info Transmission already installed."
 	exit
 fi
-systemctl stop transmission
+
+# settings at /root/.config
+systemctl stop transmission-daemon
+sed -i 's|User=debian-transmission|User=root|' /lib/systemd/system/transmission-daemon.service
+systemctl daemon-reload
+mkdir -p /root/.config/transmission-daemon
+cp /var/lib/transmission-daemon/.config/transmission-daemon/settings.json /root/.config/transmission-daemon/
 
 if [[ ! -e /media/hdd/transmission ]]; then
 	mkdir /media/hdd/transmission
@@ -48,6 +52,7 @@ if [[ ! -e /media/hdd/transmission ]]; then
 	chown -R osmc:osmc /media/hdd/transmission
 fi
 
+file='/root/.config/transmission-daemon/settings.json'
 sed -i -e 's|"download-dir": ".*"|"download-dir": "/media/hdd/transmission"|
 ' -e 's|"incomplete-dir": ".*"|"incomplete-dir": "/media/hdd/transmission/incomplete"|
 ' -e 's|"incomplete-dir-enabled": false|"incomplete-dir-enabled": true|
@@ -87,12 +92,13 @@ echo -e '\e[0;36m0\e[m / 1 ? '
 read -n 1 answer
 case $answer in
 	1 ) echo;;
-	* ) systemctl disable transmission;;
+	* ) systemctl disable transmission-daemon;;
 esac
+systemctl start transmission-daemon
 
-title2 "Transmission installed successfully."
+title2 "Transmission installed successfully and started."
 echo 'Uninstall: ./uninstall_tran.sh'
-echo 'Start: sudo systemctl start transmission-daemon'
 echo 'Stop: sudo systemctl stop transmission-daemon'
+echo 'Start: sudo systemctl start transmission-daemon'
 echo 'Download directory: /media/hdd/transmission'
 titleend "WebUI: [OSMC_IP]:9091"

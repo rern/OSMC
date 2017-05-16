@@ -85,7 +85,7 @@ case $answer in
 	* ) echo;;
 esac
 
-title "$info Enable transmission on system startup:"
+title "$info Enable Transmission on system startup:"
 echo -e '  \e[0;36m0\e[m No'
 echo -e '  \e[0;36m1\e[m Yes'
 echo
@@ -95,11 +95,21 @@ case $answer in
 	1 ) echo;;
 	* ) systemctl disable transmission-daemon;;
 esac
-systemctl start transmission-daemon
 
-title2 "Transmission installed successfully and started."
+title "$info Start Transmission now:"
+echo -e '  \e[0;36m0\e[m No'
+echo -e '  \e[0;36m1\e[m Yes'
+echo
+echo -e '\e[0;36m0\e[m / 1 ? '
+read -n 1 answer
+case $answer in
+	1 ) echo;;
+	* ) systemctl start transmission-daemon;;
+esac
+
+title2 "Transmission installed successfully."
 echo 'Uninstall: ./uninstall_tran.sh'
-echo 'Stop: sudo systemctl stop transmission-daemon'
 echo 'Start: sudo systemctl start transmission-daemon'
+echo 'Stop: sudo systemctl stop transmission-daemon'
 echo 'Download directory: /media/hdd/transmission'
 titleend "WebUI: [OSMC_IP]:9091"

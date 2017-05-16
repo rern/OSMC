@@ -85,20 +85,28 @@ mkdir /media
 title "Restart nginx ..."
 systemctl restart nginx
 
-title "$info Aria2 startup"
-echo 'Enable:'
+title "$info Start Aria2 on system startup:"
 echo -e '  \e[0;36m0\e[m No'
 echo -e '  \e[0;36m1\e[m Yes'
 echo
 echo -e '\e[0;36m0\e[m / 1 ? '
 read -n 1 answer
 case $answer in
-	1 ) systemctl enable aria2
-		systemctl start aria2
-	;;
+	1 ) systemctl enable aria2;;
 	* ) echo;;	
 esac
-	
+
+title "$info Start Aria2 now:"
+echo -e '  \e[0;36m0\e[m No'
+echo -e '  \e[0;36m1\e[m Yes'
+echo
+echo -e '\e[0;36m0\e[m / 1 ? '
+read -n 1 answer
+case $answer in
+	1 ) systemctl start aria2;;
+	* ) echo;;	
+esac
+
 title2 "Aria2 successfully installed."
 echo 'Uninstall: ./uninstall_aria.sh'
 echo 'Start: sudo systemctl start aria2'

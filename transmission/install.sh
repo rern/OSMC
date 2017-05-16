@@ -85,7 +85,7 @@ case $answer in
 	* ) echo;;
 esac
 
-title "$info Enable Transmission on system startup:"
+title "$info Start Transmission on system startup:"
 echo -e '  \e[0;36m0\e[m No'
 echo -e '  \e[0;36m1\e[m Yes'
 echo

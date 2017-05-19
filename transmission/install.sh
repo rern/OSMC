@@ -38,20 +38,19 @@ else
 	exit
 fi
 
-# settings at /root/.config
-systemctl stop transmission-daemon
-pkill transmission-daemon
-sed -i 's|User=debian-transmission|User=root|' /lib/systemd/system/transmission-daemon.service
-systemctl daemon-reload
-mkdir -p /root/.config/transmission-daemon
-cp /var/lib/transmission-daemon/.config/transmission-daemon/settings.json /root/.config/transmission-daemon/
-
 if [[ ! -e /media/hdd/transmission ]]; then
 	mkdir /media/hdd/transmission
 	mkdir /media/hdd/transmission/incomplete
 	mkdir /media/hdd/transmission/torrents
 	chown -R osmc:osmc /media/hdd/transmission
 fi
+
+# settings at /root/.config
+systemctl stop transmission-daemon
+mv /lib/systemd/system/transmission-daemon.service /lib/systemd/system/transmission.service
+sed -i 's|User=debian-transmission|User=root|' /lib/systemd/system/transmission.service
+systemctl daemon-reload
+systemctl start transmission
 
 file='/root/.config/transmission-daemon/settings.json'
 sed -i -e 's|"download-dir": ".*"|"download-dir": "/media/hdd/transmission"|
@@ -94,7 +93,7 @@ echo -e '\e[0;36m0\e[m / 1 ? '
 read -n 1 answer
 case $answer in
 	1 ) echo;;
-	* ) systemctl disable transmission-daemon;;
+	* ) systemctl disable transmission;;
 esac
 
 title "$info Start Transmission now:"
@@ -104,13 +103,13 @@ echo
 echo -e '\e[0;36m0\e[m / 1 ? '
 read -n 1 answer
 case $answer in
-	1 ) systemctl start transmission-daemon;;
+	1 ) systemctl start transmission;;
 	* ) echo;;
 esac
 
 title2 "Transmission installed successfully."
 echo 'Uninstall: ./uninstall_tran.sh'
-echo 'Start: sudo systemctl start transmission-daemon'
-echo 'Stop: sudo systemctl stop transmission-daemon'
+echo 'Start: sudo systemctl start transmission'
+echo 'Stop: sudo systemctl stop transmission'
 echo 'Download directory: /media/hdd/transmission'
 titleend "WebUI: [OSMC_IP]:9091"

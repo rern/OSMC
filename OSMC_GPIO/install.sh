@@ -100,12 +100,12 @@ line=$(( $line - 2 ))
 sed -i -e ''"$line"' i\
 \t\t\t\t\t<item>\
 \t\t\t\t\t\t<label>GPIO On</label>\
-\t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpioon.py)</onclick>\
+\t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpioonsudo.py)</onclick>\
 \t\t\t\t\t\t<visible>System.CanReboot</visible>\
 \t\t\t\t\t</item>\
 \t\t\t\t\t<item>\
 \t\t\t\t\t\t<label>GPIO Off</label>\
-\t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpiooff.py)</onclick>\
+\t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpiooffsudo.py)</onclick>\
 \t\t\t\t\t\t<visible>System.CanReboot</visible>\
 \t\t\t\t\t</item>
 ' $file

@@ -103,8 +103,8 @@ echo
 echo -e '\e[0;36m0\e[m / 1 ? '
 read -n 1 answer
 case $answer in
-	1 ) echo;;
-	* ) systemctl start transmission-daemon;;
+	1 ) systemctl start transmission-daemon;;
+	* ) echo;;
 esac
 
 title2 "Transmission installed successfully."

@@ -45,12 +45,16 @@ if [[ ! -e /media/hdd/transmission ]]; then
 	chown -R osmc:osmc /media/hdd/transmission
 fi
 
-# settings at /root/.config
+# rename service
 systemctl stop transmission-daemon
 mv /lib/systemd/system/transmission-daemon.service /lib/systemd/system/transmission.service
+# change user to 'root'
 sed -i 's|User=debian-transmission|User=root|' /lib/systemd/system/transmission.service
+# refresh systemd services
 systemctl daemon-reload
+# create settings.json
 systemctl start transmission
+systemctl stop transmission
 
 file='/root/.config/transmission-daemon/settings.json'
 sed -i -e 's|"download-dir": ".*"|"download-dir": "/media/hdd/transmission"|

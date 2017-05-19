@@ -54,6 +54,7 @@ sed -i 's|User=debian-transmission|User=root|' /lib/systemd/system/transmission.
 systemctl daemon-reload
 # create settings.json
 systemctl start transmission
+# stop to edit
 systemctl stop transmission
 
 file='/root/.config/transmission-daemon/settings.json'

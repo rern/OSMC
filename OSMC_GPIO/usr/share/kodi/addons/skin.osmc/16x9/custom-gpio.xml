@@ -53,11 +53,11 @@
 				<content>
 					<item>
 						<label>On</label>
-						<onclick>RunScript(/home/osmc/oncmd.py)</onclick>
+						<onclick>RunScript(/home/osmc/gpioonsudo.py)</onclick>
 					</item>
 					<item>
 						<label>Off</label>
-						<onclick>RunScript(/home/osmc/offcmd.py)</onclick>
+						<onclick>RunScript(/home/osmc/gpiooffsudo.py)</onclick>
 					</item>
 				</content>
 			</control>

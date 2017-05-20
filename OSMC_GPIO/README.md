@@ -15,7 +15,7 @@ Browser: [OSMC IP]/gpiosettings.php (eg: 192.168.1.11/gpiosettings.php)
 
 **Menu**  
 - `Power` > `GPIO on` / `GPIO off` (OSMC default skin only)  
-- Other skins: add the following to `DialogButtonMenu.xml` in that skin directory  
+- Other skins: add the following to `DialogButtonMenu.xml` > before `<item><label>Restart`  in that skin directory  
 ```xml
 <item>
 	<label>GPIO On</label>

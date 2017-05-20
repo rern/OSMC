@@ -31,7 +31,7 @@ fi
 wget -q --show-progress -O uninstall_aria.sh "https://github.com/rern/RuneAudio/blob/master/transmission/uninstall_aria.sh?raw=1"
 chmod +x uninstall_aria.sh
 
-if ! type aria2 > /dev/null 2>&1; then
+if ! type aria2c > /dev/null 2>&1; then
 	title2 "Install Aria2 ..."
 	apt install -y aria2
 else

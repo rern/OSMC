@@ -95,18 +95,21 @@ systemctl restart nginx
 
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
-line=$( sed -n '/Quit()/{=}' $file )
-line=$(( $line - 2 ))
+
+if [[ -e /home/osmc/rebootrune.py ]]; then # find top line to insert
+	line=$( sed -n '/rebootrune.py/{=}' $file ) # dual boot
+else
+	line=$( sed -n '/Quit()/{=}' $file ) # normal
+fi
+line=$(( $line - 2 )) # 2 lines up
 sed -i -e ''"$line"' i\
 \t\t\t\t\t<item>\
 \t\t\t\t\t\t<label>GPIO On</label>\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpioonsudo.py)</onclick>\
-\t\t\t\t\t\t<visible>System.CanReboot</visible>\
 \t\t\t\t\t</item>\
 \t\t\t\t\t<item>\
 \t\t\t\t\t\t<label>GPIO Off</label>\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpiooffsudo.py)</onclick>\
-\t\t\t\t\t\t<visible>System.CanReboot</visible>\
 \t\t\t\t\t</item>
 ' $file
 

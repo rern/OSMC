@@ -28,7 +28,7 @@ if ! grep -qs '/media/hdd' /proc/mounts; then
 	exit
 fi
 
-wget -q --show-progress -O uninstall_aria.sh "https://github.com/rern/OSMC/blob/master/transmission/uninstall_aria.sh?raw=1"
+wget -q --show-progress -O uninstall_aria.sh "https://github.com/rern/OSMC/blob/master/aria2/uninstall_aria.sh?raw=1"
 chmod +x uninstall_aria.sh
 
 if ! type aria2c > /dev/null 2>&1; then

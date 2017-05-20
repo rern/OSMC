@@ -46,7 +46,7 @@ if [[ ! -e /media/hdd/transmission ]]; then
 fi
 
 # rename service
-systemctl stop transmission-daemon
+pgrep transmission > /dev/null 2>&1 && systemctl stop transmission-daemon
 mv /lib/systemd/system/transmission-daemon.service /lib/systemd/system/transmission.service
 # change user to 'root'
 sed -i 's|User=debian-transmission|User=root|' /lib/systemd/system/transmission.service

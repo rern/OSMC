@@ -13,9 +13,14 @@ Browser: [OSMC IP]/gpiosettings.php (eg: 192.168.1.11/gpiosettings.php)
 
 ![gpio](https://github.com/rern/Assets/blob/master/OSMC_GPIO/gpio.jpg)  
 
-**Menu**  
-- `Power` > `GPIO on` / `GPIO off` (OSMC default skin only)  
-- Other skins: add the following to `DialogButtonMenu.xml` > before `<item><label>Restart`  in that skin directory  
+**Control**  
+- Keyboard / Remote control: add the following to on / off buttons  
+```xml
+<key1>RunScript(/home/osmc/gpioonsudo.py)</key1>
+<key2>RunScript(/home/osmc/gpiooffsudo.py)</key2>
+```
+
+- Menu: add the following to `DialogButtonMenu.xml` > before `<item><label>Restart`  in skin directory  
 ```xml
 <item>
 	<label>GPIO On</label>

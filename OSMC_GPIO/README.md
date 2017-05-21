@@ -14,7 +14,7 @@ Browser: [OSMC IP]/gpiosettings.php (eg: 192.168.1.11/gpiosettings.php)
 ![gpio](https://github.com/rern/Assets/blob/master/OSMC_GPIO/gpio.jpg)  
 
 **Control**  
-- Keyboard / Remote control: add the following to on / off buttons  
+- Keyboard / Remote control: add the following to on / off buttons in `keyboard.xml` / `remote.xml`  
 ```xml
 <key1>RunScript(/home/osmc/gpioonsudo.py)</key1>
 <key2>RunScript(/home/osmc/gpiooffsudo.py)</key2>

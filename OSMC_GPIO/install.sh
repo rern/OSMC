@@ -77,7 +77,7 @@ wget -q --show-progress -O OSMC_GPIO.tar.xz "https://github.com/rern/OSMC/blob/m
 chmod 755 uninstall.sh
 
 title "Install files ..."
-bsdtar -xvf OSMC_GPIO.tar.xz -C / $([ -f /home/osmc/gpio.json ] && echo '--exclude=gpio.json')
+bsdtar -xvf OSMC_GPIO.tar.xz -C / $([ -f /home/osmc/gpio.json ] && echo ' --exclude=gpio.json'; [ -f /home/osmc/.kodi/userdata/keymaps/keyboard.xml ] && echo ' --exclude=keyboard.xml')
 rm OSMC_GPIO.tar.xz
 
 chmod 755 /home/osmc/*.py

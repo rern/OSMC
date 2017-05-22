@@ -111,4 +111,4 @@ sed -i -e ''"$line"' i\
 
 title2 "$osmcgpio successfully installed."
 echo $info 'Browser: [OSMC_IP]/gpio/ for settings.'
-titleend "To uninstall:   ./uninstall.sh"
+titleend 'To uninstall:   ./uninstall.sh'

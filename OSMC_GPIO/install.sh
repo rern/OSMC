@@ -96,8 +96,8 @@ systemctl restart nginx
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
 
-line=$( sed -n '/Quit()/{=}' $file ) # normal
-sed -i -e ''"$(( $line - 2 ))"' i\
+linenum=$( sed -n '/Quit()/{=}' $file ) # normal
+sed -i -e ''"$(( $linenum - 2 ))"' i\
 \t\t\t\t\t<item>\
 \t\t\t\t\t\t<label>GPIO On</label>\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpioonsudo.py)</onclick>\

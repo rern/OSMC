@@ -20,16 +20,18 @@ Browser: [OSMC IP]/gpiosettings.php (eg: 192.168.1.11/gpiosettings.php)
 <key2>RunScript(/home/osmc/gpiooffsudo.py)</key2>
 ```
 
-- Menu: add the following to `DialogButtonMenu.xml` > before `<item><label>Restart`  in skin directory  
+- Menu: add the following to `DialogButtonMenu.xml` in skin directory  
 ```xml
-<item>
-	<label>GPIO On</label>
-	<onclick>RunScript(/home/osmc/gpioonsudo.py)</onclick>
-	<visible>System.CanReboot</visible>
-</item>
-<item>
-	<label>GPIO Off</label>
-	<onclick>RunScript(/home/osmc/gpiooffsudo.py)</onclick>
-	<visible>System.CanReboot</visible>
-</item>
+	<content>
+	<item>
+		<label>GPIO On</label>
+		<onclick>RunScript(/home/osmc/gpioonsudo.py)</onclick>
+		<visible>System.CanReboot</visible>
+	</item>
+	<item>
+		<label>GPIO Off</label>
+		<onclick>RunScript(/home/osmc/gpiooffsudo.py)</onclick>
+		<visible>System.CanReboot</visible>
+	</item>
+	...
 ```

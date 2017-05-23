@@ -36,4 +36,4 @@ Specify saved filename.ext - without spaces: (set directory in `dir` option)
 [download link] --out=[filename.ext]   
 
 Fix download speed drop:  
-`pause` > `Start` button  
+`[pause]` > `[resume]` button  

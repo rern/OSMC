@@ -47,6 +47,7 @@ fi
 
 # rename service
 pgrep transmission > /dev/null 2>&1 && systemctl stop transmission-daemon
+systemctl disable transmission-daemon
 # clear rc.d
 update-rc.d transmission-daemon remove
 mv /lib/systemd/system/transmission-daemon.service /lib/systemd/system/transmission.service

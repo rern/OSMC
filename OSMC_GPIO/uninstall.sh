@@ -81,11 +81,11 @@ file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
 
 if grep 'gpioonsudo' $file; then
 	line=$( sed -n '/gpioonsudo/{=}' $file ) # normal
-	sed -i "$(( $line - 2 )), $(( $line + 2 ))d" $file
+	sed -i "$(( $line - 2 )), $(( $line + 1 ))d" $file
 fi
 if grep 'gpiooffsudo' $file; then
 	line=$( sed -n '/gpiooffsudo/{=}' $file ) # normal
-	sed -i "$(( $line - 2 )), $(( $line + 2 ))d" $file
+	sed -i "$(( $line - 2 )), $(( $line + 1 ))d" $file
 fi
 
 titleend "$osmcgpio successfully uninstalled."

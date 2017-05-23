@@ -22,7 +22,7 @@ Browser: [OSMC IP]/gpiosettings.php (eg: 192.168.1.11/gpiosettings.php)
 
 - Menu: add the following to `DialogButtonMenu.xml` in skin directory  
 ```xml
-	<content>
+	<!--within <content>-->
 	<item>
 		<label>GPIO On</label>
 		<onclick>RunScript(/home/osmc/gpioonsudo.py)</onclick>

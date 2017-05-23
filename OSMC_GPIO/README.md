@@ -33,5 +33,4 @@ Browser: [OSMC IP]/gpiosettings.php (eg: 192.168.1.11/gpiosettings.php)
 		<onclick>RunScript(/home/osmc/gpiooffsudo.py)</onclick>
 		<visible>System.CanReboot</visible>
 	</item>
-	...
 ```

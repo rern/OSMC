@@ -20,10 +20,6 @@ title() {
 		echo $1
 		echo -e "$line\n"
 }
-titleend() {
-		echo -e "\n$1"
-		echo -e "\n$line\n"
-}
 
 # check installed #######################################
 
@@ -88,6 +84,6 @@ if grep 'gpiooffsudo' $file > /dev/null 2>&1; then
 	sed -i "$(( $line - 2 )), $(( $line + 1 )) d" $file
 fi
 
-titleend "$osmcgpio successfully uninstalled."
+title2 "$osmcgpio successfully uninstalled."
 
 rm uninstall.sh

@@ -38,7 +38,7 @@ fi
 title2 "Uninstall $osmcgpio ..."
 
 title "$osmcgpio installed packages"
-echo 'Uninstall Python-Pip, Python-Dev, GCC, PHP-FPM, NGINX, XZ Utils and RPi.GPIO:'
+echo 'Uninstall Python-Pip, Python-Dev, GCC, PHP-FPM, NGINX, bsdtar and RPi.GPIO:'
 echo -e '  \e[0;36m0\e[m Uninstall'
 echo -e '  \e[0;36m1\e[m Keep'
 echo
@@ -75,6 +75,18 @@ rm -vr /var/www/html/gpio
 title "Remove service ..."
 systemctl disable gpioset
 rm -v /lib/systemd/system/gpioset.service
+
+# modify shutdown menu #######################################
+file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
+
+if grep 'gpioonsudo' $file; then
+	line=$( sed -n '/gpioonsudo/{=}' $file ) # normal
+	sed -i "$(( $line - 2 )), $(( $line + 2 ))d" $file
+fi
+if grep 'gpiooffsudo' $file; then
+	line=$( sed -n '/gpiooffsudo/{=}' $file ) # normal
+	sed -i "$(( $line - 2 )), $(( $line + 2 ))d" $file
+fi
 
 titleend "$osmcgpio successfully uninstalled."
 

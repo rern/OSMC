@@ -98,8 +98,8 @@ echo
 echo -e '\e[0;36m0\e[m / 1 ? '
 read -n 1 answer
 case $answer in
-	1 ) echo;;
-	* ) systemctl disable transmission;;
+	1 ) systemctl enable transmission;;
+	* ) echo;;
 esac
 
 title "$info Start Transmission now:"

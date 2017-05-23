@@ -49,12 +49,12 @@ case $answer in
 	* ) echo
 		title "Uninstall packages ..."
 		python -c "import RPi.GPIO" > /dev/null 2>&1 && pip uninstall -y RPi.GPIO
-		dpkg -s xz-utils > /dev/null 2>&1 && apt remove --purge --auto-remove -y xz-utils
-		dpkg -s nginx > /dev/null 2>&1 && apt remove --purge --auto-remove -y nginx
-		dpkg -s php5-fpm > /dev/null 2>&1 && apt remove --purge --auto-remove -y php5-fpm
-		dpkg -s gcc > /dev/null 2>&1 && apt remove --purge --auto-remove -y gcc
-		dpkg -s python-dev > /dev/null 2>&1 && apt remove --purge --auto-remove -y python-dev
-		dpkg -s python-pip > /dev/null 2>&1 && apt remove --purge --auto-remove -y python-pip
+		dpkg -s bsdtar | grep 'Status: install ok installed' > /dev/null 2>&1 && apt remove --purge --auto-remove -y xz-utils
+		dpkg -s nginx | grep 'Status: install ok installed' > /dev/null 2>&1 && apt remove --purge --auto-remove -y nginx
+		dpkg -s php5-fpm | grep 'Status: install ok installed' > /dev/null 2>&1 && apt remove --purge --auto-remove -y php5-fpm
+		dpkg -s gcc | grep 'Status: install ok installed' > /dev/null 2>&1 && apt remove --purge --auto-remove -y gcc
+		dpkg -s python-dev | grep 'Status: install ok installed' > /dev/null 2>&1 && apt remove --purge --auto-remove -y python-dev
+		dpkg -s python-pip | grep 'Status: install ok installed' > /dev/null 2>&1 && apt remove --purge --auto-remove -y python-pip
 esac
 
 title "Remove files ..."

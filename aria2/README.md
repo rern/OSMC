@@ -31,5 +31,5 @@ sudo systemctl stop aria2
 Browser URL:  
 _[OSMC IP]_:88 ( eg: 192.168.1.11:88 )  
 
-Specify saved filename: (set directory in `dir` option)  
-[download link] --out=[filename]  
+Specify saved filename.ext - without spaces: (set directory in `dir` option)  
+[download link] --out=[filename.ext]  

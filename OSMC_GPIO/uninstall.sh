@@ -76,12 +76,12 @@ rm -v /lib/systemd/system/gpioset.service
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
 
 if grep 'gpioonsudo' $file > /dev/null 2>&1; then
-	line=$( sed -n '/gpioonsudo/{=}' $file ) # normal
-	sed -i "$(( $line - 2 )), $(( $line + 1 )) d" $file
+	linenum=$( sed -n '/gpioonsudo/{=}' $file ) # normal
+	sed -i "$(( $linenum - 2 )), $(( $linenum + 1 )) d" $file
 fi
 if grep 'gpiooffsudo' $file > /dev/null 2>&1; then
-	line=$( sed -n '/gpiooffsudo/{=}' $file ) # normal
-	sed -i "$(( $line - 2 )), $(( $line + 1 )) d" $file
+	linenum=$( sed -n '/gpiooffsudo/{=}' $file ) # normal
+	sed -i "$(( $linenum - 2 )), $(( $linenum + 1 )) d" $file
 fi
 
 title2 "$osmcgpio successfully uninstalled."

@@ -35,5 +35,5 @@ _[OSMC IP]_:88 ( eg: 192.168.1.11:88 )
 Specify saved filename.ext - without spaces: (set directory in `dir` option)  
 [download link] --out=[filename.ext]   
 
-Fix stagnant download  
-`Stop` > `Start` button  
+Fix download speed drop:  
+`pause` > `Start` button  

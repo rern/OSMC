@@ -88,8 +88,9 @@ chmod 644 /etc/udev/rules.d/usbsound.rules
 udevadm control --reload
 
 # set initial gpio #######################################
-/home/osmc/gpioset.py
+systemctl daemon-reload
 systemctl enable gpioset
+systemctl start gpioset
 
 systemctl restart nginx
 

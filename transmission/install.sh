@@ -30,7 +30,7 @@ fi
 wget -q --show-progress -O uninstall_tran.sh "https://github.com/rern/OSMC/blob/master/transmission/uninstall_tran.sh?raw=1"
 chmod +x uninstall_tran.sh
 
-if ! type transmission-daemon > /dev/null 2>&1; then
+if ! type transmission-daemon &>/dev/null; then
 	title2 "Install Transmission ..."
 	apt install -y transmission-daemon transmission-cli
 else
@@ -46,7 +46,7 @@ if [[ ! -e /media/hdd/transmission ]]; then
 fi
 
 # rename service
-pgrep transmission > /dev/null 2>&1 && systemctl stop transmission-daemon
+pgrep transmission &>/dev/null && systemctl stop transmission-daemon
 systemctl disable transmission-daemon
 # clear rc.d
 update-rc.d transmission-daemon remove

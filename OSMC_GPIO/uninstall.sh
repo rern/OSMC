@@ -29,7 +29,7 @@ if [ ! -e /home/osmc/gpioon.py ]; then
 fi
 
 # gpio off #######################################
-/home/osmc/gpiooff.py  > /dev/null 2>&1 &
+/home/osmc/gpiooff.py &>/dev/null &
 
 title2 "Uninstall $osmcgpio ..."
 
@@ -44,13 +44,13 @@ case $answer in
 	1 ) echo;;
 	* ) echo
 		title "Uninstall packages ..."
-		python -c "import RPi.GPIO" > /dev/null 2>&1 && pip uninstall -y RPi.GPIO
-		dpkg -s bsdtar | grep 'Status: install ok installed' > /dev/null 2>&1 && apt remove --purge --auto-remove -y bsdtar
-		dpkg -s nginx | grep 'Status: install ok installed' > /dev/null 2>&1 && apt remove --purge --auto-remove -y nginx
-		dpkg -s php5-fpm | grep 'Status: install ok installed' > /dev/null 2>&1 && apt remove --purge --auto-remove -y php5-fpm
-		dpkg -s gcc | grep 'Status: install ok installed' > /dev/null 2>&1 && apt remove --purge --auto-remove -y gcc
-		dpkg -s python-dev | grep 'Status: install ok installed' > /dev/null 2>&1 && apt remove --purge --auto-remove -y python-dev
-		dpkg -s python-pip | grep 'Status: install ok installed' > /dev/null 2>&1 && apt remove --purge --auto-remove -y python-pip
+		python -c "import RPi.GPIO" &>/dev/null && pip uninstall -y RPi.GPIO
+		dpkg -s bsdtar | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y bsdtar
+		dpkg -s nginx | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y nginx
+		dpkg -s php5-fpm | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y php5-fpm
+		dpkg -s gcc | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y gcc
+		dpkg -s python-dev | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y python-dev
+		dpkg -s python-pip | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y python-pip
 esac
 
 title "Remove files ..."
@@ -75,11 +75,11 @@ rm -v /lib/systemd/system/gpioset.service
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
 
-if grep 'gpioonsudo' $file > /dev/null 2>&1; then
+if grep 'gpioonsudo' $file &>/dev/null; then
 	linenum=$( sed -n '/gpioonsudo/{=}' $file ) # normal
 	sed -i "$(( $linenum - 2 )), $(( $linenum + 1 )) d" $file
 fi
-if grep 'gpiooffsudo' $file > /dev/null 2>&1; then
+if grep 'gpiooffsudo' $file &>/dev/null; then
 	linenum=$( sed -n '/gpiooffsudo/{=}' $file ) # normal
 	sed -i "$(( $linenum - 2 )), $(( $linenum + 1 )) d" $file
 fi

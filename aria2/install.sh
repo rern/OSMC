@@ -31,17 +31,17 @@ fi
 wget -q --show-progress -O uninstall_aria.sh "https://github.com/rern/OSMC/blob/master/aria2/uninstall_aria.sh?raw=1"
 chmod +x uninstall_aria.sh
 
-if ! type aria2c > /dev/null 2>&1; then
+if ! type aria2c &>/dev/null; then
 	title2 "Install Aria2 ..."
 	apt install -y aria2
 else
 	title "$info Aria2 already installed."
 fi
-if ! type bsdtar > /dev/null 2>&1; then
+if ! type bsdtar &>/dev/null; then
 	title "Install bsdtar ..."
 	apt install -y bsdtar
 fi
-if ! type nginx > /dev/null 2>&1; then
+if ! type nginx &>/dev/null; then
 	title "Install NGINX ..."
 	apt install -y nginx
 fi
@@ -51,7 +51,7 @@ mkdir /var/www/html/aria2
 bsdtar -xf aria2.zip -s'|[^/]*/||' -C /var/www/html/aria2/
 rm aria2.zip
 
-mkdir /root/.aria2
+[[ ! -e /root/.aria2 ]] && mkdir /root/.aria2
 [[ ! -e /media/hdd/aria2 ]] && mkdir /media/hdd/aria2
 echo 'enable-rpc=true
 rpc-listen-all=true

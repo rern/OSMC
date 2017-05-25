@@ -18,7 +18,7 @@ title() {
 }
 
 # check installed #######################################
-if ! type transmission-daemon > /dev/null 2>&1; then
+if ! type transmission-daemon &>/dev/null; then
 	title "$info Transmission not found."
 	exit
 fi

@@ -17,7 +17,7 @@ title() {
 }
 
 # check installed #######################################
-if ! type aria2c > /dev/null 2>&1; then
+if ! type aria2c &>/dev/null; then
 	title "$info Aria2 not found."
 	exit
 fi

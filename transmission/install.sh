@@ -90,6 +90,11 @@ case $answer in
 		;;
 	* ) echo;;
 esac
+# set buffer
+echo 'net.core.rmem_max=4194304
+net.core.wmem_max=1048576
+' >> /etc/sysctl.conf
+sysctl -p
 
 title "$info Start Transmission on system startup:"
 echo -e '  \e[0;36m0\e[m No'

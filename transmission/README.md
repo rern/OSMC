@@ -44,13 +44,3 @@ nolimit > `"rpc-whitelist-enabled": false`
     "rpc-whitelist-enabled": true,
     ...
 ```
-
-**fix failed set buffer**  
-... UDP Failed to set receive buffer:...
-```sh
-echo 'net.core.rmem_max=4194304
-net.core.wmem_max=1048576
-' >> /etc/sysctl.conf
-systemctl stop transmission
-sysctl -p
-systemctl start transmission

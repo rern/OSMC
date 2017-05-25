@@ -39,32 +39,32 @@ case $answer in
 		apt update
 esac
 
-if ! dpkg -s python-pip | grep 'Status: install ok installed' > /dev/null 2>&1; then
+if ! dpkg -s python-pip | grep 'Status: install ok installed' &>/dev/null; then
 	title "Install Python-Pip ..."
 	apt install -y python-pip
 fi
-if ! dpkg -s python-dev | grep 'Status: install ok installed' > /dev/null 2>&1; then
+if ! dpkg -s python-dev | grep 'Status: install ok installed' &>/dev/null; then
 	title "Install Python-Dev ..."
 	apt install -y python-dev
 fi
-if ! dpkg -s gcc | grep 'Status: install ok installed' > /dev/null 2>&1; then
+if ! dpkg -s gcc | grep 'Status: install ok installed' &>/dev/null; then
 	title "Install GCC ..."
 	apt install -y gcc
 fi
-if ! dpkg -s php5-fpm | grep 'Status: install ok installed' > /dev/null 2>&1; then
+if ! dpkg -s php5-fpm | grep 'Status: install ok installed' &>/dev/null; then
 	title "Install PHP-FPM ..."
 	apt install -y php5-fpm
 fi
-if ! dpkg -s nginx | grep 'Status: install ok installed' > /dev/null 2>&1; then
+if ! dpkg -s nginx | grep 'Status: install ok installed' &>/dev/null; then
 	title "Install NGINX ..."
 	apt install -y nginx
 fi
-if ! dpkg -s bsdtar | grep 'Status: install ok installed' > /dev/null 2>&1; then
+if ! dpkg -s bsdtar | grep 'Status: install ok installed' &>/dev/null; then
 	title "Install bsdtar ..."
 	apt install -y bsdtar
 fi
 
-if ! python -c "import RPi.GPIO" > /dev/null 2>&1; then
+if ! python -c "import RPi.GPIO" &>/dev/null; then
 	title "Install Python-RPi.GPIO ..."
 	yes | pip install RPi.GPIO
 fi

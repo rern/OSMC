@@ -9,7 +9,7 @@ OSMC Aria2 with WebUI
 Connect a hard drive with label `hdd` or mount as `/media/hdd/`  
 ```sh
 sudo su
-wget -q --show-progress -O install.sh "https://github.com/rern/OSMC/blob/master/aria2/install.sh?raw=1"; chmod +x install.sh; ./install.sh
+wget -q --show-progress https://github.com/rern/OSMC/blob/master/aria2/install.sh; chmod +x install.sh; ./install.sh
 ```
 
 **Uninstall**  

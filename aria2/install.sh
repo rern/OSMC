@@ -28,7 +28,7 @@ if ! grep -qs '/media/hdd' /proc/mounts; then
 	exit
 fi
 
-wget -q --show-progress https://github.com/rern/OSMC/raw/master/aria2/uninstall_aria.sh
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/uninstall_aria.sh
 chmod +x uninstall_aria.sh
 
 if ! type aria2c &>/dev/null; then
@@ -46,7 +46,7 @@ if ! type nginx &>/dev/null; then
 	apt install -y nginx
 fi
 title "Get WebUI files ..."
-wget -q --show-progress https://github.com/ziahamza/webui-aria2/archive/master.zip
+wget -qN --show-progress https://github.com/ziahamza/webui-aria2/archive/master.zip
 mkdir /var/www/html/aria2
 bsdtar -xf master.zip -s'|[^/]*/||' -C /var/www/html/aria2/
 rm master.zip

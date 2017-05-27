@@ -27,7 +27,7 @@ if ! grep -qs '/media/hdd' /proc/mounts; then
 	exit
 fi
 
-wget -q --show-progress https://github.com/rern/OSMC/raw/master/transmission/uninstall_tran.sh
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/uninstall_tran.sh
 chmod +x uninstall_tran.sh
 
 if ! type transmission-daemon &>/dev/null; then

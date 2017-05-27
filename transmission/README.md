@@ -9,7 +9,7 @@ Command line install
 Connect a hard drive with label `hdd` or mount as `/media/hdd/`  
 ```sh
 sudo su
-wget -q --show-progress https://github.com/rern/OSMC/blob/master/transmission/install.sh; chmod +x install.sh; ./install.sh
+wget -q --show-progress https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh
 ```
 
 **Uninstall**  

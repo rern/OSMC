@@ -5,7 +5,7 @@ OSMC_GPIO
 
 **Install**
 ```sh
-wget -q --show-progress -O install.sh "https://github.com/rern/OSMC/blob/master/OSMC_GPIO/install.sh?raw=1"; chmod +x install.sh; ./install.sh
+wget -q --show-progress https://github.com/rern/OSMC/blob/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh
 ```
 
 **Settings**  

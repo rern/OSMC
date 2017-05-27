@@ -72,8 +72,8 @@ fi
 # install OSMC GPIO #######################################
 title "Get files ..."
 
-wget -q --show-progress -O uninstall.sh "https://github.com/rern/OSMC/blob/master/OSMC_GPIO/uninstall.sh?raw=1"
-wget -q --show-progress -O OSMC_GPIO.tar.xz "https://github.com/rern/OSMC/blob/master/OSMC_GPIO/_repo/OSMC_GPIO.tar.xz?raw=1"
+wget -q --show-progress https://github.com/rern/OSMC/blob/master/OSMC_GPIO/uninstall.sh
+wget -q --show-progress https://github.com/rern/OSMC/blob/master/OSMC_GPIO/_repo/OSMC_GPIO.tar.xz
 chmod 755 uninstall.sh
 
 title "Install files ..."

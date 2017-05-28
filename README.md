@@ -28,13 +28,14 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/in
 **GPIO**
 ```sh
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh
-# customize file
+# customized file
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/gpio.json -P /home/osmc
 ```
 
 **samba**
 ```sh
 apt install samba
+# customized file
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/samba/smb.conf -P /etc/samba
 systemctl restart nmbd
 systemctl restart smbd

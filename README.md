@@ -33,7 +33,7 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/insta
 **samba**
 ```sh
 apt install samba
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/samba/smb.conf
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/samba/smb.conf -P /etc/samba
 systemctl restart nmbd
 systemctl restart smbd
 ```

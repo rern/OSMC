@@ -4,6 +4,7 @@ OSMC
 **apt cache**
 ```sh
 rm -r /var/cache/apt
+mkdir -p /media/hdd/varcache/apt
 ln -s /var/cache/apt /media/hdd/varcache/apt
 apt update
 ```

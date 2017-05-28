@@ -1,5 +1,10 @@
 OSMC
 ---
+**Settings**  
+```sh
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/guisettings.xml -P /home/osmc/.kodi/userdata
+systemctl restart mediacenter
+```
 
 **apt cache**
 ```sh

@@ -30,7 +30,13 @@ sudo systemctl stop transmission-daemon
 
 **WebUI**   
 (recommended WebUI alternative: [Transmission Web Control](https://github.com/ronggang/transmission-web-control#introduction)  
-  
+```sh
+wget -qN --show-progress https://github.com/ronggang/transmission-web-control/raw/master/release/transmission-control-full.tar.gz
+mv /usr/share/transmission/web /usr/share/transmission/web.orig
+bsdtar -xvf transmission-control-full.tar.gz -C /usr/share/transmission
+chown -R root:root /usr/share/transmission/web
+```
+
 Browser URL:  
 _[RuneAudio IP]_:9091 (eg: 192.168.1.11:9091)  
 

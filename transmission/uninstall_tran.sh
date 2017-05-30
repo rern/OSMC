@@ -30,6 +30,8 @@ apt remove -y transmission-daemon transmission-cli
 # remove files #######################################
 title "Remove files ..."
 rm -rfv /etc/transmission-daemon
+rm /etc/systemd/system/transmission.service
+[[ ! -e /usr/share/transmission ]] && rm -r /usr/share/transmission
 
 title2 "Transmission successfully uninstalled."
 

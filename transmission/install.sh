@@ -103,6 +103,7 @@ case $answer in
 		mv /usr/share/transmission/web /usr/share/transmission/web.orig
 		bsdtar -xvf transmission-control-full.tar.gz -C /usr/share/transmission
 		chown -R root:root /usr/share/transmission/web
+		rm transmission-control-full.tar.gz
 		;;
 	* ) echo;;
 esac

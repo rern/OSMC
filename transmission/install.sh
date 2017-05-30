@@ -100,7 +100,7 @@ read -n 1 answer
 case $answer in
 	1 ) echo
 		wget -qN --show-progress https://github.com/ronggang/transmission-web-control/raw/master/release/transmission-control-full.tar.gz
-		mv /usr/share/transmission/web /usr/share/transmission/web.orig
+		mv /usr/share/transmission/web/index.html /usr/share/transmission/web/index.original.html
 		bsdtar -xvf transmission-control-full.tar.gz -C /usr/share/transmission
 		chown -R root:root /usr/share/transmission/web
 		rm transmission-control-full.tar.gz

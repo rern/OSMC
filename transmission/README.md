@@ -1,9 +1,8 @@
 OSMC Transmission
 ---
-Command line install  
-
 
 [**Transmission**](https://transmissionbt.com/) - Fast, easy, and free BitTorrent client (CLI tools, daemon and web client)  
+- With optional WebUI alternative: [Transmission Web Control](https://github.com/ronggang/transmission-web-control#introduction  
 
 **Install**  
 Connect a hard drive with label `hdd` or mount as `/media/hdd/`  
@@ -26,15 +25,6 @@ sudo systemctl start transmission-daemon
 **Stop transmission**  
 ```sh
 sudo systemctl stop transmission-daemon
-```
-
-**WebUI**   
-(recommended WebUI alternative: [Transmission Web Control](https://github.com/ronggang/transmission-web-control#introduction)  
-```sh
-wget -qN --show-progress https://github.com/ronggang/transmission-web-control/raw/master/release/transmission-control-full.tar.gz
-mv /usr/share/transmission/web /usr/share/transmission/web.orig
-bsdtar -xvf transmission-control-full.tar.gz -C /usr/share/transmission
-chown -R root:root /usr/share/transmission/web
 ```
 
 Browser URL:  

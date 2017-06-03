@@ -47,8 +47,8 @@ nolimit > `"rpc-whitelist-enabled": false`
 ```sh
 transmission-create -p -o <file> -c "<comment>" -t "<url>"
 
--p --private                 Allow this torrent to only be used with the specified tracker(s)
--o --outfile   <file>        Save the generated .torrent to this filename
--c --comment   <comment>     Add a comment
--t --tracker   <url>         Add a tracker's announce URL
+# -p --private                 Allow this torrent to only be used with the specified tracker(s)
+# -o --outfile   <file>        Save the generated .torrent to this filename
+# -c --comment   <comment>     Add a comment
+# -t --tracker   <url>         Add a tracker's announce URL
 ```

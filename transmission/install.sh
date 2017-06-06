@@ -79,13 +79,11 @@ echo -e '\e[0;36m0\e[m / 1 ? '
 read -n 1 answer
 case $answer in
 	1 ) echo
-		echo 'Username: '
-		read usr 
 		echo 'Password: '
 		read -s pwd
 		sed -i -e 's|"rpc-authentication-required": false|"rpc-authentication-required": true|
 		' -e "s|\"rpc-password\": \".*\"|\"rpc-password\": \"$pwd\"|
-		" -e "s|\"rpc-username\": \".*\"|\"rpc-username\": \"$usr\"|
+		" -e "s|\"rpc-username\": \".*\"|\"rpc-username\": \"root\"|
 		" $file
 		;;
 	* ) echo;;
@@ -140,4 +138,5 @@ echo 'Uninstall: ./uninstall_tran.sh'
 echo 'Start: sudo systemctl start transmission'
 echo 'Stop: sudo systemctl stop transmission'
 echo 'Download directory: /media/hdd/transmission'
-titleend "WebUI: [OSMC_IP]:9091"
+echo 'WebUI: [OSMC_IP]:9091'
+titleend "user: root"

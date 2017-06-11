@@ -25,7 +25,6 @@ hostnamectl set-hostname [name]
 	workgroup = WORKGROUP
 	server string = Samba %v on %L
 	
-	encrypt passwords = yes
 	wins support = yes
 	domain master = yes
 	preferred master = yes

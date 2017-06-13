@@ -52,7 +52,6 @@ mkdir /var/www/html/aria2
 bsdtar -xf master.zip -s'|[^/]*/||' -C /var/www/html/aria2/
 rm master.zip
 
-[[ ! -e /media/$label ]] && mkdir /media; ln -s /mnt/MPD/USB/$label/ /media/$label
 mkdir -p /media/$label/aria2
 [[ ! -e /root/.aria2 ]] && mkdir /root/.aria2
 echo 'enable-rpc=true

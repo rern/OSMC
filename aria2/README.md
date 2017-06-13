@@ -5,8 +5,7 @@ OSMC Aria2 with WebUI
 [**webui-aria2**](https://github.com/ziahamza/webui-aria2) - Web inferface for aria2  
 
 
-**Install**  
-Connect a hard drive with label `hdd` or mount as `/media/hdd/`  
+**Install**    
 ```sh
 sudo su
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.sh; chmod +x install.sh; ./install.sh

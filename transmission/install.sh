@@ -23,7 +23,7 @@ titleend() {
 }
 
 label=$(e2label /dev/sda1)
-title "$info Rename cuurent USB label, $label:"
+title "$info Rename current USB label, $label:"
 echo -e '  \e[0;36m0\e[m No'
 echo -e '  \e[0;36m1\e[m Yes'
 echo

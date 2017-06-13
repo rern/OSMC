@@ -60,7 +60,7 @@ systemctl start transmission
 # stop to edit
 systemctl stop transmission
 
-file='/root/.config/transmission-daemon/settings.json'
+file=$path/settings.json
 sed -i -e 's|"download-dir": ".*"|"download-dir": "'"$path"'"|
 ' -e 's|"incomplete-dir": ".*"|"incomplete-dir": "'"$path"'/incomplete"|
 ' -e 's|"incomplete-dir-enabled": false|"incomplete-dir-enabled": true|
@@ -81,8 +81,9 @@ case $answer in
 	1 ) echo
 		echo 'Password: '
 		read -s pwd
+		pwdhash=$(echo -n "$pwd" | sha1sum | awk '{print $1}')
 		sed -i -e 's|"rpc-authentication-required": false|"rpc-authentication-required": true|
-		' -e 's|"rpc-password": ".*"|"rpc-password": "'"$pwd"'"|
+		' -e 's|"rpc-password": ".*"|"rpc-password": "'"$pwdhash"'"|
 		' -e 's|"rpc-username": ".*"|"rpc-username": "root"|
 		' $file
 		;;

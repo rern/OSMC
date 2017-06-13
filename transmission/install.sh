@@ -38,12 +38,8 @@ else
 	exit
 fi
 
-if [[ ! -e /media/hdd/transmission ]]; then
-	mkdir /media/hdd/transmission
-	mkdir /media/hdd/transmission/incomplete
-	mkdir /media/hdd/transmission/watch
+mkdir -p /media/hdd/transmission/{incomplete,watch}
 #	chown -R osmc:osmc /media/hdd/transmission
-fi
 
 # rename service
 pgrep transmission &>/dev/null && systemctl stop transmission-daemon
@@ -52,7 +48,9 @@ systemctl disable transmission-daemon
 update-rc.d transmission-daemon remove
 cp /lib/systemd/system/transmission-daemon.service /etc/systemd/system/transmission.service
 # change user to 'root'
-sed -i 's|User=debian-transmission|User=root|' /etc/systemd/system/transmission.service
+sed -i -e 's|User=debian-transmission|User=root|
+' -e '/transmission-daemon -f --log-error$/ s|$| --config-dir /media/hdd/transmission|
+' /etc/systemd/system/transmission.service
 # refresh systemd services
 systemctl daemon-reload
 # create settings.json
@@ -83,8 +81,8 @@ case $answer in
 		read -s pwd
 		sed -i -e 's|"rpc-authentication-required": false|"rpc-authentication-required": true|
 		' -e "s|\"rpc-password\": \".*\"|\"rpc-password\": \"$pwd\"|
-		" -e "s|\"rpc-username\": \".*\"|\"rpc-username\": \"root\"|
-		" $file
+		" -e 's|"rpc-username": ".*"|"rpc-username": "root"|
+		' $file
 		;;
 	* ) echo;;
 esac

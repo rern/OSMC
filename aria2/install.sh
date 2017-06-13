@@ -24,6 +24,21 @@ titleend() {
 }
 
 label=$(e2label /dev/sda1)
+title "$info Rename cuurent USB label, $label:"
+echo -e '  \e[0;36m0\e[m No'
+echo -e '  \e[0;36m1\e[m Yes'
+echo
+echo -e '\e[0;36m0\e[m / 1 ? '
+read -n 1 answer
+case $answer in
+	1 ) echo
+		echo 'New label: '
+		read -n 1 label
+		e2label /dev/sda1 $label
+		;;
+	* ) echo;;
+esac
+
 if ! grep -qs "/media/$label" /proc/mounts; then
 	titleend "$info Hard drive not mount at /media/$label"
 	exit

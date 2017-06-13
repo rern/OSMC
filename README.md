@@ -4,6 +4,8 @@ OSMC setup
 ```sh
 # customized file
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/guisettings.xml -P /home/osmc/.kodi/userdata
+mkdir -p /home/osmc/.kodi/userdata/addon_data/script.skinshortcuts
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/mainmenu.DATA.xml -P /home/osmc/.kodi/userdata/addon_data/script.skinshortcuts
 touch /walkthrough_completed
 systemctl restart mediacenter
 ```

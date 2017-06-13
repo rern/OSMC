@@ -23,8 +23,9 @@ titleend() {
 	echo -e "\n$line\n"
 }
 
-if ! grep -qs '/media/hdd' /proc/mounts; then
-	titleend "$info Hard drive not mount at /media/hdd"
+label=$(e2label /dev/sda1)
+if ! grep -qs "/media/$label" /proc/mounts; then
+	titleend "$info Hard drive not mount at /media/$label"
 	exit
 fi
 
@@ -51,13 +52,14 @@ mkdir /var/www/html/aria2
 bsdtar -xf master.zip -s'|[^/]*/||' -C /var/www/html/aria2/
 rm master.zip
 
+[[ ! -e /media/$label ]] && mkdir /media; ln -s /mnt/MPD/USB/$label/ /media/$label
+mkdir -p /media/$label/aria2
 [[ ! -e /root/.aria2 ]] && mkdir /root/.aria2
-[[ ! -e /media/hdd/aria2 ]] && mkdir /media/hdd/aria2
 echo 'enable-rpc=true
 rpc-listen-all=true
 daemon=true
 disable-ipv6=true
-dir=/media/hdd/aria2
+dir=/media/$label/aria2
 max-connection-per-server=4
 ' > /root/.aria2/aria2.conf
 
@@ -81,7 +83,6 @@ echo 'server {
 ' > /etc/nginx/sites-available/aria2
 ln -s /etc/nginx/sites-available/aria2 /etc/nginx/sites-enabled/aria2
 
-mkdir /media
 title "Restart nginx ..."
 systemctl restart nginx
 
@@ -111,5 +112,5 @@ title2 "Aria2 successfully installed."
 echo 'Uninstall: ./uninstall_aria.sh'
 echo 'Start: sudo systemctl start aria2'
 echo 'Stop: sudo systemctl stop aria2'
-echo 'Download directory: /media/hdd/aria2'
+echo 'Download directory: /media/$label/aria2'
 titleend "WebUI: [OSMC_IP]:88"

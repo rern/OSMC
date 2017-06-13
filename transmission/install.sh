@@ -42,7 +42,7 @@ if [[ ! -e /media/hdd/transmission ]]; then
 	mkdir /media/hdd/transmission
 	mkdir /media/hdd/transmission/incomplete
 	mkdir /media/hdd/transmission/torrents
-	chown -R osmc:osmc /media/hdd/transmission
+#	chown -R osmc:osmc /media/hdd/transmission
 fi
 
 # rename service

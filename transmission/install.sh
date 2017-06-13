@@ -41,7 +41,7 @@ fi
 if [[ ! -e /media/hdd/transmission ]]; then
 	mkdir /media/hdd/transmission
 	mkdir /media/hdd/transmission/incomplete
-	mkdir /media/hdd/transmission/torrents
+	mkdir /media/hdd/transmission/watch
 #	chown -R osmc:osmc /media/hdd/transmission
 fi
 
@@ -67,7 +67,7 @@ sed -i -e 's|"download-dir": ".*"|"download-dir": "/media/hdd/transmission"|
 ' -e 's|"rpc-whitelist-enabled": true|"rpc-whitelist-enabled": false|
 ' -e '/[^{},\{, \}]$/ s/$/, /
 ' -e '/}/ i\
-    "watch-dir": "/media/hdd/transmission/torrents", \
+    "watch-dir": "/media/hdd/transmission/watch", \
     "watch-dir-enabled": true
 ' $file
 

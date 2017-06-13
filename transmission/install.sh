@@ -81,14 +81,16 @@ case $answer in
 	1 ) echo
 		echo 'Password: '
 		read -s pwd
-		pwdhash=$(echo -n "$pwd" | sha1sum | awk '{print $1}')
 		sed -i -e 's|"rpc-authentication-required": false|"rpc-authentication-required": true|
-		' -e 's|"rpc-password": ".*"|"rpc-password": "'"$pwdhash"'"|
+		' -e 's|"rpc-password": ".*"|"rpc-password": "'"$pwd"'"|
 		' -e 's|"rpc-username": ".*"|"rpc-username": "root"|
 		' $file
 		;;
 	* ) echo;;
 esac
+# hash password by start
+systemctl start transmission
+
 # web ui alternative
 title "$info Install WebUI alternative (Transmission Web Control):"
 echo -e '  \e[0;36m0\e[m No'
@@ -130,8 +132,8 @@ echo
 echo -e '\e[0;36m0\e[m / 1 ? '
 read -n 1 answer
 case $answer in
-	1 ) systemctl start transmission;;
-	* ) echo;;
+	1 ) echo;;
+	* ) systemctl stop transmission;;
 esac
 
 title2 "Transmission installed successfully."

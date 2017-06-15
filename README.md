@@ -22,26 +22,26 @@ apt update
 
 **Aria2**
 ```sh
-wget -qN --show-progress $gitpath/aria2/install.sh; chmod +x install.sh; ./install.sh
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.sh; chmod +x install.sh; ./install.sh
 ```
 
 **Transmission**
 ```sh
-wget -qN --show-progress $gitpath/transmission/install.sh; chmod +x install.sh; ./install.sh
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh
 ```
 
 **GPIO**
 ```sh
-wget -qN --show-progress $gitpath/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh
 # customized file
-wget -qN --show-progress $gitpath/gpio.json -P /home/osmc
+wget -qN --show-progress $https://github.com/rern/OSMC/raw/master/gpio.json -P /home/osmc
 ```
 
 **samba**
 ```sh
 apt install samba
 # customized file
-wget -qN --show-progress $gitpath/samba/smb.conf -P /etc/samba
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/samba/smb.conf -P /etc/samba
 systemctl restart nmbd
 systemctl restart smbd
 smbpasswd - a root

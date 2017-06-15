@@ -68,7 +68,7 @@ bsdtar -xf master.zip -s'|[^/]*/||' -C /var/www/html/aria2/
 rm master.zip
 
 mkdir -p /media/$label/aria2
-[[ ! -e /root/.aria2 ]] && mkdir /root/.aria2
+mkdir -p /root/.aria2
 echo 'enable-rpc=true
 rpc-listen-all=true
 daemon=true

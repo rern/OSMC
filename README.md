@@ -3,18 +3,17 @@ OSMC setup
 **Settings**  
 ```sh
 # customized file
+gitpath=https://github.com/rern/OSMC/raw/master
 path=/home/osmc/.kodi/userdata/addon_data/script.skinshortcuts
 mkdir -p $path
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/mainmenu.DATA.xml -P $path
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/guisettings.xml -P /home/osmc/.kodi/userdata
+wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $path
+wget -qN --show-progress $gitpath/guisettings.xml -P /home/osmc/.kodi/userdata
 touch /walkthrough_completed
 systemctl restart mediacenter
 ```
 
 **apt cache**
 ```sh
-gitpath=https://github.com/rern/OSMC/raw/master
-
 rm -r /var/cache/apt
 mkdir -p /media/hdd/varcache/apt
 ln -s /media/hdd/varcache/apt /var/cache/apt

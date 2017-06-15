@@ -28,6 +28,9 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.s
 **Transmission**
 ```sh
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh
+
+rm -r /usr/share/transmission/web
+ln -s /media/hdd/transmission/web /usr/share/transmission/web
 ```
 
 **GPIO**

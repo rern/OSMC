@@ -3,7 +3,7 @@ OSMC setup
 **Settings**  
 ```bash
 # customized file
-gitpath=https://github.com/rern/OSMC/raw/master
+gitpath=https://github.com/rern/OSMC/raw/master_settings
 path=/home/osmc/.kodi/userdata/addon_data/script.skinshortcuts
 mkdir -p $path
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $path
@@ -36,14 +36,14 @@ ln -s /media/hdd/transmission/web /usr/share/transmission/web
 ```bash
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh
 # customized file
-wget -qN --show-progress $https://github.com/rern/OSMC/raw/master/gpio.json -P /home/osmc
+wget -qN --show-progress $https://github.com/rern/OSMC/raw/master/_settings/gpio.json -P /home/osmc
 ```
 
 **samba**
 ```bash
 apt install samba
 # customized file
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/samba/smb.conf -P /etc/samba
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/_settings/smb.conf -P /etc/samba
 systemctl restart nmbd
 systemctl restart smbd
 smbpasswd - a root

@@ -48,6 +48,7 @@ chmod +x uninstall_tran.sh
 
 if ! type transmission-daemon &>/dev/null; then
 	title2 "Install Transmission ..."
+	apt update
 	apt install -y transmission-daemon transmission-cli
 else
 	title "$info Transmission already installed."

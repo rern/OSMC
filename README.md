@@ -46,5 +46,6 @@ apt install samba
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/_settings/smb.conf -P /etc/samba
 systemctl restart nmbd
 systemctl restart smbd
+
 smbpasswd - a root
 ```

@@ -49,6 +49,7 @@ chmod +x uninstall_aria.sh
 
 if ! type aria2c &>/dev/null; then
 	title2 "Install Aria2 ..."
+	apt update
 	apt install -y aria2
 else
 	title "$info Aria2 already installed."

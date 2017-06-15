@@ -17,7 +17,6 @@ systemctl restart mediacenter
 rm -r /var/cache/apt
 mkdir -p /media/hdd/varcache/apt
 ln -s /media/hdd/varcache/apt /var/cache/apt
-apt update
 ```
 
 **Aria2**

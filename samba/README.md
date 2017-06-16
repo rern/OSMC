@@ -36,7 +36,7 @@ hostnamectl set-hostname [name]
 
 	socket options = IPTOS_LOWDELAY SO_RCVBUF=131072 SO_SNDBUF=131072
 	min receivefile size = 2048
-	use sendfile = true
+	use sendfile = yes
 	aio read size = 2048
 	aio write size = 2048
 	write cache size = 1024000

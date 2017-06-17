@@ -32,7 +32,6 @@ hostnamectl set-hostname [name]
 	os level = 255   
 	dns proxy = no
 	log level = 0
-	syslog = 0
 
 	socket options = IPTOS_LOWDELAY SO_RCVBUF=131072 SO_SNDBUF=131072
 	min receivefile size = 2048
@@ -80,6 +79,11 @@ systemctl restart smbd
 
 # if set new hostname
 systemctl restart nmbd
+```
+
+**Test samba parameters**
+```
+testparm
 ```
 
 **Add samba user + password**

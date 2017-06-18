@@ -22,27 +22,6 @@ titleend() {
 	echo -e "\n$line\n"
 }
 
-label=$(e2label /dev/sda1)
-title "$info Rename current USB label, $label:"
-echo -e '  \e[0;36m0\e[m No'
-echo -e '  \e[0;36m1\e[m Yes'
-echo
-echo -e '\e[0;36m0\e[m / 1 ? '
-read -n 1 answer
-case $answer in
-	1 ) echo
-		echo 'New label: '
-		read -n 1 label
-		e2label /dev/sda1 $label
-		;;
-	* ) echo;;
-esac
-
-if ! grep -qs "/media/$label" /proc/mounts; then
-	titleend "$info Hard drive not mount at /media/$label"
-	exit
-fi
-
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/uninstall_tran.sh
 chmod +x uninstall_tran.sh
 
@@ -55,9 +34,15 @@ else
 	exit
 fi
 
-path=/media/$label/transmission
+if mount | grep '/dev/sda1' &>/dev/null; then
+	mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
+	mkdir -p $mnt/transmission
+	path=$mnt/transmission
+else
+	mkdir -p /root/transmission
+	path=/root/transmission
+fi
 mkdir -p $path/{incomplete,watch}
-#	chown -R osmc:osmc $path
 
 # rename service
 pgrep transmission &>/dev/null && systemctl stop transmission-daemon

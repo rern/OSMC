@@ -104,8 +104,8 @@ case $answer in
 		wget -qN --show-progress https://github.com/ronggang/transmission-web-control/raw/master/release/transmission-control-full.tar.gz
 		mv /usr/share/transmission/web/index.html /usr/share/transmission/web/index.original.html
 		bsdtar -xf transmission-control-full.tar.gz -C /usr/share/transmission
-		chown -R root:root /usr/share/transmission/web
 		rm transmission-control-full.tar.gz
+		chown -R root:root /usr/share/transmission/web
 		;;
 	* ) echo;;
 esac

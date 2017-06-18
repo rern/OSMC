@@ -23,27 +23,6 @@ titleend() {
 	echo -e "\n$line\n"
 }
 
-label=$(e2label /dev/sda1)
-title "$info Rename current USB label, $label:"
-echo -e '  \e[0;36m0\e[m No'
-echo -e '  \e[0;36m1\e[m Yes'
-echo
-echo -e '\e[0;36m0\e[m / 1 ? '
-read -n 1 answer
-case $answer in
-	1 ) echo
-		echo 'New label: '
-		read -n 1 label
-		e2label /dev/sda1 $label
-		;;
-	* ) echo;;
-esac
-
-if ! grep -qs "/media/$label" /proc/mounts; then
-	titleend "$info Hard drive not mount at /media/$label"
-	exit
-fi
-
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/uninstall_aria.sh
 chmod +x uninstall_aria.sh
 
@@ -68,15 +47,22 @@ mkdir /var/www/html/aria2
 bsdtar -xf master.zip -s'|[^/]*/||' -C /var/www/html/aria2/
 rm master.zip
 
-mkdir -p /media/$label/aria2
+if mount | grep '/dev/sda1' &>/dev/null; then
+	mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
+	mkdir -p $mnt/aria2
+	path=$mnt/aria2
+else
+	mkdir -p /root/aria2
+	path=/root/aria2
+fi
 mkdir -p /root/.aria2
-echo 'enable-rpc=true
+echo "enable-rpc=true
 rpc-listen-all=true
 daemon=true
 disable-ipv6=true
-dir=/media/$label/aria2
+dir=$path
 max-connection-per-server=4
-' > /root/.aria2/aria2.conf
+" > /root/.aria2/aria2.conf
 
 echo '[Unit]
 Description=Aria2
@@ -127,5 +113,5 @@ title2 "Aria2 successfully installed."
 echo 'Uninstall: ./uninstall_aria.sh'
 echo 'Start: sudo systemctl start aria2'
 echo 'Stop: sudo systemctl stop aria2'
-echo 'Download directory: /media/$label/aria2'
+echo 'Download directory: '$path
 titleend "WebUI: [OSMC_IP]:88"

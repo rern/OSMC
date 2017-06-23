@@ -7,6 +7,7 @@ This is just an example for settings on a [Dual Boot](https://github.com/rern/RP
 ```
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/_settings/setup.sh; chmod +x setup.sh; ./setup.sh
 ```
+---
 
 **apt cache**
 ```

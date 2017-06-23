@@ -3,7 +3,7 @@ OSMC setup
 **Settings**  
 ```bash
 # customized file
-gitpath=https://github.com/rern/OSMC/raw/master_settings
+gitpath=https://github.com/rern/OSMC/raw/master/_settings
 path=/home/osmc/.kodi/userdata/addon_data/script.skinshortcuts
 mkdir -p $path
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $path

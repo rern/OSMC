@@ -3,17 +3,17 @@ OSMC setup
 **Settings**  
 ```bash
 # customized file
-gitpath=https://github.com/rern/OSMC/raw/master/_settings
-path=/home/osmc/.kodi/userdata/addon_data/script.skinshortcuts
-mkdir -p $path
-wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $path
-wget -qN --show-progress $gitpath/guisettings.xml -P /home/osmc/.kodi/userdata
-wget -qN --show-progress https://github.com/BigNoid/script.skinshortcuts/archive/master.zip
 apt update
 apt install -y bsdtar
+wget -qN --show-progress https://github.com/BigNoid/script.skinshortcuts/archive/master.zip
 bsdtar -xf master.zip -C /home/osmc/.kodi/addons
 mv /home/osmc/.kodi/addons/script.skinshortcuts-master /home/osmc/.kodi/addons/script.skinshortcuts
 rm master.zip
+
+gitpath=https://github.com/rern/OSMC/raw/master/_settings
+wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P /home/osmc/.kodi/userdata/addon_data/script.skinshortcuts
+wget -qN --show-progress $gitpath/guisettings.xml -P /home/osmc/.kodi/userdata
+
 touch /walkthrough_completed
 systemctl restart mediacenter
 ```

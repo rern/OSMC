@@ -11,6 +11,7 @@ wget -qN --show-progress $gitpath/guisettings.xml -P /home/osmc/.kodi/userdata
 touch /walkthrough_completed
 systemctl restart mediacenter
 ```
+Skin settings > Install Addon - Skin shortcuts  
 
 **apt cache**
 ```

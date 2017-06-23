@@ -23,7 +23,6 @@ touch /walkthrough_completed
 systemctl restart mediacenter
 
 ### samba
-
 apt install samba
 # customized file
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/_settings/smb.conf -P /etc/samba

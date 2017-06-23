@@ -47,5 +47,5 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/_settings/smb.c
 systemctl restart nmbd
 systemctl restart smbd
 
-smbpasswd - a root
+smbpasswd -a root
 ```

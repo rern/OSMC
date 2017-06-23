@@ -8,10 +8,15 @@ path=/home/osmc/.kodi/userdata/addon_data/script.skinshortcuts
 mkdir -p $path
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $path
 wget -qN --show-progress $gitpath/guisettings.xml -P /home/osmc/.kodi/userdata
+wget -qN --show-progress https://github.com/BigNoid/script.skinshortcuts/archive/master.zip
+apt update
+apt install -y bsdtar
+bsdtar -xf master.zip -C /home/osmc/.kodi/addons
+mv /home/osmc/.kodi/addons/script.skinshortcuts-master /home/osmc/.kodi/addons/script.skinshortcuts
+rm master.zip
 touch /walkthrough_completed
 systemctl restart mediacenter
 ```
-Skin settings > Install Addon - Skin shortcuts  
 
 **apt cache**
 ```

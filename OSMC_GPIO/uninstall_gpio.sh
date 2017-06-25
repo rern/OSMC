@@ -61,19 +61,15 @@ rm -v /home/osmc/gpioon.py
 rm -v /home/osmc/gpioonsudo.py
 rm -v /home/osmc/gpioset.py
 rm -v /home/osmc/gpiotimer.py
+rm -v /home/osmc/poweroff.py
+rm -v /home/osmc/poweroffsudo.py
+rm -v /home/osmc/rebootsudo.py
 rm -vr /var/www/html/gpio
 
 # restore backup files
 if [[ -e /home/osmc/rebootosmc.py ]]; then
 	sed -i '/gpiooffsudo.py/d' /home/osmc/rebootosmc.py
 	sed -i '/gpiooffsudo.py/d' /home/osmc/rebootrune.py
-else
-	rm -v /home/osmc/poweroff.py
-	rm -v /home/osmc/poweroffsudo.py
-	rm -v /home/osmc/rebootsudo.py
-	
-	rm -v /home/osmc/rebootosmc.sh
-	rm -v /home/osmc/rebootrune.sh
 fi
 
 title "Remove service ..."

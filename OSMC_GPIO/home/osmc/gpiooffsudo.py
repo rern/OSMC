@@ -7,5 +7,5 @@ import os
 import sys
 #import xbmc
 
-ar = 'a' if len(sys.argv) > 1 else ''
+ar = 'r' if len(sys.argv) > 1 else ''
 os.system('/usr/bin/sudo /home/osmc/gpiooff.py '+ ar +' > /dev/null 2>&1 &')

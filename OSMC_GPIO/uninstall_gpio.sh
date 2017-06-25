@@ -53,6 +53,7 @@ case $answer in
 		dpkg -s python-pip | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y python-pip
 esac
 
+# remove files
 title "Remove files ..."
 rm -v /home/osmc/gpiooff.py
 rm -v /home/osmc/gpiooffsudo.py
@@ -60,6 +61,10 @@ rm -v /home/osmc/gpioon.py
 rm -v /home/osmc/gpioonsudo.py
 rm -v /home/osmc/gpioset.py
 rm -v /home/osmc/gpiotimer.py
+rm -v /home/osmc/rebootosmc.py
+rm -v /home/osmc/rebootosmc.sh
+rm -v /home/osmc/rebootrune.py
+rm -v /home/osmc/rebootrune.sh
 rm -v /home/osmc/rebootsudo.py
 rm -v /home/osmc/poweroff.py
 rm -v /home/osmc/poweroffsudo.py
@@ -67,6 +72,14 @@ rm -v /home/osmc/soundhdmi.py
 rm -v /home/osmc/soundusb.py
 
 rm -vr /var/www/html/gpio
+
+# restore backup files
+if [[ -e /home/osmc/rebootosmc.py.bak ]]; then
+	mv /home/osmc/rebootosmc.py.bak /home/osmc/rebootosmc.py
+	mv /home/osmc/rebootosmc.sh.bak /home/osmc/rebootosmc.sh
+	mv /home/osmc/rebootrune.py.bak /home/osmc/rebootrune.py
+	mv /home/osmc/rebootrune.sh.bak /home/osmc/rebootrune.sh
+fi
 
 title "Remove service ..."
 systemctl disable gpioset

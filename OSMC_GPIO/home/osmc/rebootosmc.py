@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import os
 
-os.system('sudo /home/osmc/gpiooffsudo.py p')
+os.system('sudo /home/osmc/gpiooffsudo.py r')
 os.system('sudo /home/osmc/rebootosmc.sh')
 
 # current raspbian has no /sys/module/bcm2709/parameters/reboot_part > use noobd.conf instead

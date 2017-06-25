@@ -76,6 +76,12 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/unins
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/_repo/OSMC_GPIO.tar.xz
 chmod 755 uninstall.sh
 
+# backup files
+if [[ -e /home/osmc/rebootosmc.py ]]; then
+	sed -i "/rebootosmc.sh/ i\os.system('sudo /home/osmc/gpiooffsudo.py r')" /home/osmc/rebootosmc.py
+	sed -i "/rebootrune.sh/ i\os.system('sudo /home/osmc/gpiooffsudo.py r')" /home/osmc/rebootrune.py
+fi
+
 title "Install files ..."
 bsdtar -xvf OSMC_GPIO.tar.xz -C / $([ -f /home/osmc/gpio.json ] && echo ' --exclude=gpio.json')
 rm OSMC_GPIO.tar.xz

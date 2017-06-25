@@ -4,6 +4,8 @@
 # gpiooff.py cannot run sudo by itself
 
 import os
+import sys
 #import xbmc
 
-os.system('/usr/bin/sudo /home/osmc/gpiooff.py > /dev/null 2>&1 &')
+ar = 'a' if len(sys.argv) > 1 else ''
+os.system('/usr/bin/sudo /home/osmc/gpiooff.py '+ ar +' > /dev/null 2>&1 &')

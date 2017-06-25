@@ -71,6 +71,9 @@ else
 	rm -v /home/osmc/poweroff.py
 	rm -v /home/osmc/poweroffsudo.py
 	rm -v /home/osmc/rebootsudo.py
+	
+	rm -v /home/osmc/rebootosmc.sh
+	rm -v /home/osmc/rebootrune.sh
 fi
 
 title "Remove service ..."

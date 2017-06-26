@@ -25,7 +25,7 @@ fi
 
 title2 "Uninstall Transmission ..."
 # remove symlink
-[[ -e /usr/share/transmission/web ]] && rm /usr/share/transmission/web
+[[ -h /usr/share/transmission/web ]] && rm /usr/share/transmission/web
 # uninstall package #######################################
 apt remove -y transmission-daemon transmission-cli
 
@@ -33,7 +33,7 @@ apt remove -y transmission-daemon transmission-cli
 title "Remove files ..."
 rm -rfv /etc/transmission-daemon
 rm /etc/systemd/system/transmission.service
-[[ -e /usr/share/transmission ]] && rm -r /usr/share/transmission
+rm -r /usr/share/transmission
 systemctl daemon-reload
 
 title2 "Transmission successfully uninstalled."

@@ -50,10 +50,9 @@ systemctl disable transmission-daemon
 # clear rc.d
 update-rc.d transmission-daemon remove
 cp /lib/systemd/system/transmission-daemon.service /etc/systemd/system/transmission.service
-# change user to 'root'
-sed -i -e '/^After=/ s/$/ nmbd.service smbd.service/
+# change sequence to fix mount $path before samba, user, config path
+sed -i -e 's/After=network.target/After=multi-user.target/
 ' -e 's/User=debian-transmission/User=root/
-' -e 's/Type=notify/Type=idle/
 ' -e '/transmission-daemon -f --log-error$/ s|$| --config-dir '"$path"'|
 ' /etc/systemd/system/transmission.service
 # refresh systemd services

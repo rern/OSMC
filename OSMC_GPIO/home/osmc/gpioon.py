@@ -40,4 +40,4 @@ else:
 		time.sleep(ond3)
 		GPIO.output(on4, 0)
 	
-	os.system('/usr/bin/sudo /home/osmc/gpiotimer.py > /dev/null 2>&1 &')
+	os.system('/usr/bin/sudo /home/osmc/gpiotimer.py &> /dev/null &')

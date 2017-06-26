@@ -58,9 +58,7 @@ sed -i -e 's/User=debian-transmission/User=root/
 # refresh systemd services
 systemctl daemon-reload
 # create settings.json
-systemctl start transmission
-# stop to edit
-systemctl stop transmission
+systemctl start transmission; systemctl stop transmission
 
 file=$path/settings.json
 sed -i -e 's|"download-dir": ".*"|"download-dir": "'"$path"'"|

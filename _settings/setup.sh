@@ -5,6 +5,9 @@ rm -r /var/cache/apt
 mkdir -p /media/hdd/varcache/apt
 ln -s /media/hdd/varcache/apt /var/cache/apt
 
+### disable cec
+echo 'hdmi_ignore_cec=1' >> /boot/config.txt
+
 ### Settings
 # 'skin shortcuts' addon
 apt update

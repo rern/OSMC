@@ -25,7 +25,7 @@ fi
 
 title2 "Uninstall Transmission ..."
 # remove symlink
-[[ -h /usr/share/transmission/web ]] && rm /usr/share/transmission/web
+[[ -L /usr/share/transmission/web ]] && rm /usr/share/transmission/web
 # uninstall package #######################################
 apt remove -y transmission-daemon transmission-cli
 

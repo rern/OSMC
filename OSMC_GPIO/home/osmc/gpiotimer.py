@@ -32,4 +32,4 @@ while i > 0:
 			time.sleep(interval - 10)
 			os.system('/usr/bin/xbmc-send -a "Notification(GPIO, Idle Timer OFF in 10 seconds, 10000)"')
 			time.sleep(10)
-			os.system("/usr/bin/sudo /home/osmc/gpiooff.py > /dev/null 2>&1 &")
+			os.system("/usr/bin/sudo /home/osmc/gpiooff.py &> /dev/null &")

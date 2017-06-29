@@ -52,7 +52,7 @@ else
 fi
 ln -s $pathhdd/web /usr/share/transmission/web
 
-path=/var/lib/transmission-daemon/.config/transmission-daemon
+path=/root/.config/transmission-daemon
 if [[ ! -e $pathhdd/settings.json ]]; then
   mkdir -p $pathhdd/blocklists
   mkdir -p $pathhdd/resume

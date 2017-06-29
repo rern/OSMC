@@ -50,8 +50,8 @@ systemctl disable transmission-daemon
 # clear rc.d
 update-rc.d transmission-daemon remove
 cp /lib/systemd/system/transmission-daemon.service /etc/systemd/system/transmission.service
-# change user
-sed -i -e 's/User=.*/User=root/' /etc/systemd/system/transmission.service
+# change user to 'root'
+sed -i -e 's|User=.*|User=root|' /etc/systemd/system/transmission.service
 # refresh systemd services
 systemctl daemon-reload
 # create settings.json

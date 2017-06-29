@@ -45,10 +45,6 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/in
 systemctl stop transmission
 
 pathhdd=/media/hdd/transmission
-mkdir -p $pathhdd/blocklists
-mkdir -p $pathhdd/resume
-mkdir -p $pathhdd/torrents
-
 if [[ -e $pathhdd/web ]]; then
   rm -r /usr/share/transmission/web
 else
@@ -57,7 +53,12 @@ fi
 ln -s $pathhdd/web /usr/share/transmission/web
 
 path=/var/lib/transmission-daemon/.config/transmission-daemon
-[[ ! -e $pathhdd/settings.json ]] && mv $path/settings.json $pathhdd
+if [[ ! -e $pathhdd/settings.json ]]; then
+  mkdir -p $pathhdd/blocklists
+  mkdir -p $pathhdd/resume
+  mkdir -p $pathhdd/torrents
+  mv $path/settings.json $pathhdd
+fi
 rm -r $path/*
 ln -s $pathhdd/blocklists $path/blocklists
 ln -s $pathhdd/resume $path/resume

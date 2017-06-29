@@ -42,8 +42,26 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.s
 ### Transmission
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh
 
-rm -r /usr/share/transmission/web
+systemctl stop transmission
+
+if [[ -e /media/hdd/transmission/web ]]; then
+  rm -r /usr/share/transmission/web
+else
+  mv /usr/share/transmission/web /media/hdd/transmission/web
+fi
 ln -s /media/hdd/transmission/web /usr/share/transmission/web
+
+mkdir -p /media/hdd/transmission/blocklists
+mkdir -p /media/hdd/transmission/resume
+mkdir -p /media/hdd/transmission/torrents
+
+path=/var/lib/transmission-daemon/.config/transmission-daemon
+mv $path/settings.json /media/hdd/transmission/
+rm -r $path/*
+ln -s /media/hdd/transmission/blocklists $path/blocklists
+ln -s /media/hdd/transmission/resume $path/resume
+ln -s /media/hdd/transmission/torrents $path/torrents
+ln -s /media/hdd/transmission/settings.json $path/settings.json
 
 ### GPIO
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh

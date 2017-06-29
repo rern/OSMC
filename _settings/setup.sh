@@ -1,9 +1,12 @@
 #!/bin/bash
 
+mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
+label=${mnt##/*/}
+
 ### apt cache
 rm -r /var/cache/apt
-mkdir -p /media/hdd/varcache/apt
-ln -s /media/hdd/varcache/apt /var/cache/apt
+mkdir -p $mnt/varcache/apt
+ln -s $mnt/varcache/apt /var/cache/apt
 
 ### disable cec
 echo 'hdmi_ignore_cec=1' >> /boot/config.txt
@@ -44,7 +47,7 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/in
 
 systemctl stop transmission
 
-pathhdd=/media/hdd/transmission
+pathhdd=$mnt/transmission
 if [[ -e $pathhdd/web ]]; then
   rm -r /usr/share/transmission/web
 else

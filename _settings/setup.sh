@@ -44,24 +44,26 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/in
 
 systemctl stop transmission
 
-if [[ -e /media/hdd/transmission/web ]]; then
+pathhdd=/media/hdd/transmission
+mkdir -p $pathhdd
+if [[ -e $pathhdd/web ]]; then
   rm -r /usr/share/transmission/web
 else
-  mv /usr/share/transmission/web /media/hdd/transmission/web
+  mv /usr/share/transmission/web $pathhdd/web
 fi
-ln -s /media/hdd/transmission/web /usr/share/transmission/web
+ln -s $pathhdd/web /usr/share/transmission/web
 
-mkdir -p /media/hdd/transmission/blocklists
-mkdir -p /media/hdd/transmission/resume
-mkdir -p /media/hdd/transmission/torrents
+mkdir -p $pathhdd/blocklists
+mkdir -p $pathhdd/resume
+mkdir -p $pathhdd/torrents
 
 path=/var/lib/transmission-daemon/.config/transmission-daemon
-mv $path/settings.json /media/hdd/transmission/
+mv $path/settings.json $pathhdd
 rm -r $path/*
-ln -s /media/hdd/transmission/blocklists $path/blocklists
-ln -s /media/hdd/transmission/resume $path/resume
-ln -s /media/hdd/transmission/torrents $path/torrents
-ln -s /media/hdd/transmission/settings.json $path/settings.json
+ln -s $pathhdd/blocklists $path/blocklists
+ln -s $pathhdd/resume $path/resume
+ln -s $pathhdd/torrents $path/torrents
+ln -s $pathhdd/settings.json $path/settings.json
 
 ### GPIO
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh

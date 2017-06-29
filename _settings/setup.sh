@@ -57,7 +57,7 @@ fi
 ln -s $pathhdd/web /usr/share/transmission/web
 
 path=/var/lib/transmission-daemon/.config/transmission-daemon
-mv $path/settings.json $pathhdd
+[[ ! -e $pathhdd/settings.json ]] && mv $path/settings.json $pathhdd
 rm -r $path/*
 ln -s $pathhdd/blocklists $path/blocklists
 ln -s $pathhdd/resume $path/resume

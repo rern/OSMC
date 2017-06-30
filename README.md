@@ -5,7 +5,6 @@ This is just an example of setup script.
 
 [**setup.sh**](https://github.com/rern/OSMC/blob/master/_settings/setup.sh)
 - set package cache to usb to avoid slow download on os reinstall
-- disable unused cec
 - restore settings
 - upgrage and customize **samba** to improve speed
 - make usb drive a common between os for `smb.conf`

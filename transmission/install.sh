@@ -52,7 +52,7 @@ update-rc.d transmission-daemon remove
 ln -s /lib/systemd/system/transmission-daemon.service /lib/systemd/system/transmission.service
 # systemd drop-in user 'root'
 mkdir -p /etc/systemd/system/transmission.service.d
-echo '[Service]
+echo -n '[Service]
 User=root
 ' > /etc/systemd/system/transmission.service.d/username.conf
 # refresh systemd services

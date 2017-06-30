@@ -49,12 +49,9 @@ pgrep transmission &>/dev/null && systemctl stop transmission-daemon
 systemctl disable transmission-daemon
 # clear rc.d
 update-rc.d transmission-daemon remove
-ln -s /lib/systemd/system/transmission-daemon.service /lib/systemd/system/transmission.service
-# systemd drop-in user 'root'
-mkdir -p /etc/systemd/system/transmission.service.d
-echo -n '[Service]
-User=root
-' > /etc/systemd/system/transmission.service.d/username.conf
+cp /lib/systemd/system/transmission-daemon.service /etc/systemd/system/transmission.service
+# user 'root'
+sed -i 's|User=.*|User=root|' /etc/systemd/system/transmission.service
 # refresh systemd services
 systemctl daemon-reload
 # create settings.json

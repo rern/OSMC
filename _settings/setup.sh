@@ -47,6 +47,7 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/in
 
 systemctl stop transmission
 
+# make usb drive a common between os for web, settings.json, directory
 pathhdd=$mnt/transmission
 if [[ -e $pathhdd/web ]]; then
   rm -r /usr/share/transmission/web

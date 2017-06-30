@@ -62,11 +62,8 @@ if [[ ! -e $pathhdd/settings.json ]]; then
   mkdir -p $pathhdd/torrents
   mv $path/settings.json $pathhdd
 fi
-rm -r $path/*
-ln -s $pathhdd/blocklists $path/blocklists
-ln -s $pathhdd/resume $path/resume
-ln -s $pathhdd/torrents $path/torrents
-ln -s $pathhdd/settings.json $path/settings.json
+rm -r $path
+ln -s $pathhdd $path
 
 ### GPIO
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh

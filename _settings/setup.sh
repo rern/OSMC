@@ -72,5 +72,6 @@ ln -s $pathhdd $path
 
 ### GPIO
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh
-# customized file
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/_settings/gpio.json -P /home/osmc
+# make usb drive a common between os for gpio.json
+[[ ! -e /media/hdd/gpio/gpio.json ]] && wget -qN --show-progress https://github.com/rern/OSMC/raw/master/_settings/gpio.json -P /media/hdd/gpio
+ln -s /media/hdd/gpio/gpio.json /home/osmc

@@ -54,26 +54,5 @@ ln -s /media/hdd/gpio/gpio.json /home/osmc/gpio.json
 ### Transmission
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh
 
-systemctl stop transmission
-
-# make usb drive a common between os for web, settings.json, directory
-pathhdd=$mnt/transmission
-if [[ -e $pathhdd/web ]]; then
-  rm -r /usr/share/transmission/web
-else
-  mv /usr/share/transmission/web $pathhdd/web
-fi
-ln -s $pathhdd/web /usr/share/transmission/web
-
-path=/root/.config/transmission-daemon
-if [[ ! -e $pathhdd/settings.json ]]; then
-  mkdir -p $pathhdd/blocklists
-  mkdir -p $pathhdd/resume
-  mkdir -p $pathhdd/torrents
-  mv $path/settings.json $pathhdd
-fi
-rm -r $path
-ln -s $pathhdd $path
-
 ### Aria2
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.sh; chmod +x install.sh; ./install.sh

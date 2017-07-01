@@ -7,10 +7,10 @@ with open('/home/osmc/gpio.json') as jsonfile:
 
 pin = gpio['pin'] # get data as key['value']
 
-pin1 = pin['pin1']
-pin2 = pin['pin2']
-pin3 = pin['pin3']
-pin4 = pin['pin4']
+pin1 = int(pin['pin1']) # convert to integer
+pin2 = int(pin['pin2'])
+pin3 = int(pin['pin3'])
+pin4 = int(pin['pin4'])
 
 pinx = [pin1, pin2, pin3, pin4]
 

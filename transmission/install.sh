@@ -44,10 +44,10 @@ else
 fi
 mkdir -p $path/{incomplete,watch}
 
-# rename service
-pgrep transmission &>/dev/null && systemctl stop transmission-daemon
+# custom systemd unit
+systemctl stop transmission-daemon
 systemctl disable transmission-daemon
-# clear rc.d
+# clear rc.d for systemd only
 update-rc.d transmission-daemon remove
 cp /lib/systemd/system/transmission-daemon.service /etc/systemd/system/transmission.service
 # user 'root'

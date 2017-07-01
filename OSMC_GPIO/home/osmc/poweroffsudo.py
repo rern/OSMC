@@ -4,4 +4,4 @@
 # poweroff.py cannot run sudo by itself
 
 import os
-os.system('/usr/bin/sudo /home/osmc/poweroff.py')
+os.system('/usr/bin/sudo /home/osmc/poweroff.py &')

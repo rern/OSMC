@@ -78,8 +78,8 @@ chmod 755 uninstall.sh
 
 # backup files
 if [[ -e /home/osmc/rebootosmc.py ]]; then
-	sed -i "/rebootosmc.sh/ i\os.system('sudo /home/osmc/gpiooffsudo.py r')" /home/osmc/rebootosmc.py
-	sed -i "/rebootrune.sh/ i\os.system('sudo /home/osmc/gpiooffsudo.py r')" /home/osmc/rebootrune.py
+	sed -i "/rebootosmc.sh/ i\os.system('/usr/bin/sudo /home/osmc/gpiooffsudo.py r')" /home/osmc/rebootosmc.py
+	sed -i "/rebootrune.sh/ i\os.system('/usr/bin/sudo /home/osmc/gpiooffsudo.py r')" /home/osmc/rebootrune.py
 fi
 
 title "Install files ..."

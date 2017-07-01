@@ -51,13 +51,17 @@ systemctl disable transmission-daemon
 update-rc.d transmission-daemon remove
 cp /lib/systemd/system/transmission-daemon.service /etc/systemd/system/transmission.service
 # user 'root'
-sed -i 's|User=.*|User=root|' /etc/systemd/system/transmission.service
+sed -i 's|User=.*|User=root|
+' -e "|ExecStart| i\
+Environment=TRANSMISSION_HOME=$path\
+Environment=TRANSMISSION_WEB_HOME=$path/web
+" /etc/systemd/system/transmission.service
 # refresh systemd services
 systemctl daemon-reload
 # create settings.json
 systemctl start transmission; systemctl stop transmission
 
-file=/root/.config/transmission-daemon/settings.json
+file=$path/settings.json
 sed -i -e 's|"download-dir": ".*"|"download-dir": "'"$path"'"|
 ' -e 's|"incomplete-dir": ".*"|"incomplete-dir": "'"$path"'/incomplete"|
 ' -e 's|"incomplete-dir-enabled": false|"incomplete-dir-enabled": true|
@@ -98,10 +102,11 @@ read -n 1 answer
 case $answer in
 	1 ) echo
 		wget -qN --show-progress https://github.com/ronggang/transmission-web-control/raw/master/release/transmission-control-full.tar.gz
-		mv /usr/share/transmission/web/index.html /usr/share/transmission/web/index.original.html
-		bsdtar -xf transmission-control-full.tar.gz -C /usr/share/transmission
+		mv -r /usr/share/transmission/web $path
+		mv /usr/share/transmission/web/index.html $path/web/index.original.html
+		bsdtar -xf transmission-control-full.tar.gz -C $path
 		rm transmission-control-full.tar.gz
-		chown -R root:root /usr/share/transmission/web
+		chown -R root:root $path/web
 		;;
 	* ) echo;;
 esac

@@ -24,7 +24,7 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(onx, GPIO.OUT)
 
 if GPIO.input(onx[1]) == 0:
-	os.system('/usr/bin/xbmc-send -a "Notification(GPIO,Already ON)"')
+	os.system('/usr/bin/xbmc-send -a "Notification(GPIO,Already ON)" &')
 else:
 	import time
 
@@ -40,4 +40,4 @@ else:
 		time.sleep(ond3)
 		GPIO.output(on4, 0)
 	
-	os.system('/usr/bin/sudo /home/osmc/gpiotimer.py &> /dev/null &')
+	os.system('/usr/bin/sudo /home/osmc/gpiotimer.py &')

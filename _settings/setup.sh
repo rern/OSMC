@@ -45,9 +45,11 @@ systemctl restart smbd
 
 smbpasswd -a root
 
-### Aria2
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.sh; chmod +x install.sh; ./install.sh
-
+### GPIO
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh
+# make usb drive a common between os for gpio.json
+[[ ! -e /media/hdd/gpio/gpio.json ]] && wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/gpio.json -P /media/hdd/gpio
+ln -s /media/hdd/gpio/gpio.json /home/osmc/gpio.json
 
 ### Transmission
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh
@@ -73,8 +75,5 @@ fi
 rm -r $path
 ln -s $pathhdd $path
 
-### GPIO
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh
-# make usb drive a common between os for gpio.json
-[[ ! -e /media/hdd/gpio/gpio.json ]] && wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/gpio.json -P /media/hdd/gpio
-ln -s /media/hdd/gpio/gpio.json /home/osmc/gpio.json
+### Aria2
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.sh; chmod +x install.sh; ./install.sh

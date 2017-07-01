@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# force hdmi mode
+echo '
+hdmi_group=1
+hdmi_mode=31
+' >> /boot/config.txt
+
 mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
 label=${mnt##/*/}
 

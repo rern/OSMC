@@ -43,4 +43,4 @@ else:
 		time.sleep(offd3)
 		GPIO.output(off4, 1)
 	
-	os.system('/usr/bin/sudo /usr/bin/pkill -9 gpiotimer.py &> /dev/null &')
+	os.system('/usr/bin/sudo /usr/bin/pkill -9 gpiotimer.py &')

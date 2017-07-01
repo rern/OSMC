@@ -8,6 +8,8 @@ hdmi_mode=31
 
 mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
 label=${mnt##/*/}
+echo "/dev/sda1       /mnt/$label           ext4     defaults,noatime  0   0" >> /etc/fstab
+mnt=/mnt/$label
 
 ### apt cache
 rm -r /var/cache/apt
@@ -36,9 +38,9 @@ systemctl restart mediacenter
 apt install samba
 
 # make usb drive a common between os for smb.conf
-[[ ! -e /media/hdd/samba/smb.conf ]] && wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/smb.conf -P /media/hdd/samba
+[[ ! -e $mnt/samba/smb.conf ]] && wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/smb.conf -P /media/hdd/samba
 rm /etc/samba/smb.conf
-ln -s /media/hdd/samba/smb.conf /etc/samba/smb.conf
+ln -s $mnt/samba/smb.conf /etc/samba/smb.conf
 
 systemctl restart nmbd
 systemctl restart smbd
@@ -48,8 +50,8 @@ smbpasswd -a root
 ### GPIO
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh
 # make usb drive a common between os for gpio.json
-[[ ! -e /media/hdd/gpio/gpio.json ]] && wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/gpio.json -P /media/hdd/gpio
-ln -s /media/hdd/gpio/gpio.json /home/osmc/gpio.json
+[[ ! -e $mnt/gpio/gpio.json ]] && wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/gpio.json -P /media/hdd/gpio
+ln -s $mnt/gpio/gpio.json /home/osmc/gpio.json
 
 ### Transmission
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh

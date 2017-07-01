@@ -27,7 +27,7 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(onx, GPIO.OUT)
 
 if GPIO.input(onx[1]) == 0:
-	os.system('/home/osmc/gpiooff.py o &')
+	os.system('/usr/bin/sudo /home/osmc/gpiooff.py o &')
 	
 if len(sys.argv) == 1: # no argument
 	os.system('/usr/bin/xbmc-send -a "Powerdown"')

@@ -6,4 +6,4 @@
 import os
 #import xbmc
 
-os.system('/usr/bin/sudo /home/osmc/gpioon.py &> /dev/null &')
+os.system('/usr/bin/sudo /home/osmc/gpioon.py &')

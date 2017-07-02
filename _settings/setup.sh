@@ -49,10 +49,11 @@ title2 "Restore settings ..."
 #chown -R osmc:osmc /home/osmc/.kodi/addons/script.skinshortcuts
 #rm master.zip
 
-# customized file
+# setting files
 gitpath=https://github.com/rern/OSMC/raw/master/_settings
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P /home/osmc/.kodi/userdata/addon_data/script.skinshortcuts
 wget -qN --show-progress $gitpath/guisettings.xml -P /home/osmc/.kodi/userdata
+chown -R osmc:osmc /home/osmc/.kodi/userdata
 # setup marker file
 touch /walkthrough_completed
 systemctl restart mediacenter

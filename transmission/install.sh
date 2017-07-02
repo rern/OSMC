@@ -102,15 +102,15 @@ read -n 1 answer
 case $answer in
 	1 ) echo
 		wget -qN --show-progress https://github.com/ronggang/transmission-web-control/raw/master/release/transmission-control-full.tar.gz
-		mv -r /usr/share/transmission/web $path
-		mv /usr/share/transmission/web/index.html $path/web/index.original.html
+		mv /usr/share/transmission/web $path
+		mv $path/web/index.html $path/web/index.original.html
 		bsdtar -xf transmission-control-full.tar.gz -C $path
 		rm transmission-control-full.tar.gz
 		chown -R root:root $path/web
 		;;
 	* ) echo;;
 esac
-# set buffer
+# fix buffer warning
 echo 'net.core.rmem_max=4194304
 net.core.wmem_max=1048576
 ' >> /etc/sysctl.conf

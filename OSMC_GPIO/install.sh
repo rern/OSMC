@@ -27,17 +27,8 @@ title2 "Install $osmcgpio ..."
 
 # install packages #######################################
 title "$info Update package databases"
-echo -e '  \e[0;36m0\e[m Skip'
-echo -e '  \e[0;36m1\e[m Update'
-echo
-echo -e '\e[0;36m0\e[m / 1 ? '
-read -n 1 answer
-case $answer in
-	* ) echo;;
-	1 ) echo
-		title "Update package databases ..."
-		apt update
-esac
+# skip with any argument
+(( $# == 0 )) && apt update
 
 if ! dpkg -s python-pip | grep 'Status: install ok installed' &>/dev/null; then
 	title "Install Python-Pip ..."

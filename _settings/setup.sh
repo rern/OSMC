@@ -38,7 +38,7 @@ systemctl restart mediacenter
 ### samba
 apt install samba
 # make usb drive a common between os for smb.conf
-[[ ! -e $mnt/samba/smb.conf ]] && wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/smb.conf -P /media/hdd/samba
+[[ ! -e $mnt/samba/smb.conf ]] && wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/smb.conf -P $mnt/samba
 rm /etc/samba/smb.conf
 ln -s $mnt/samba/smb.conf /etc/samba/smb.conf
 systemctl restart nmbd

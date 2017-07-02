@@ -44,20 +44,20 @@ else
 fi
 mkdir -p $path/{incomplete,watch}
 
+# clear rc.d for systemd only
+update-rc.d transmission-daemon remove
+
 # custom systemd unit
 systemctl stop transmission-daemon
 systemctl disable transmission-daemon
-# clear rc.d for systemd only
-update-rc.d transmission-daemon remove
-cp /lib/systemd/system/transmission-daemon.service /etc/systemd/system/transmission.service
-# user 'root'
+cp /lib/systemd/system/transmission*.service /etc/systemd/system/transmission.service
 sed -i 's|User=.*|User=root|
 ' -e "|ExecStart| i\
 Environment=TRANSMISSION_HOME=$path\
 Environment=TRANSMISSION_WEB_HOME=$path/web
 " /etc/systemd/system/transmission.service
-# refresh systemd services
 systemctl daemon-reload
+
 # create settings.json
 systemctl start transmission; systemctl stop transmission
 

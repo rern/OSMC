@@ -12,8 +12,8 @@ label=${mnt0##/*/}
 mnt=/mnt/$label
 mkdir -p $mnt
 echo "/dev/sda1       $mnt           ext4     defaults,noatime  0   0" >> /etc/fstab
+umount -l $mnt0
 mount -a
-umount /dev/sda1
 
 ### set apt cache to usb drive ####################################################
 rm -r /var/cache/apt

@@ -24,14 +24,13 @@ if ! type transmission-daemon &>/dev/null; then
 fi
 
 title2 "Uninstall Transmission ..."
-# remove symlink
-[[ -L /usr/share/transmission/web ]] && rm /usr/share/transmission/web
 # uninstall package #######################################
 apt remove -y transmission-daemon transmission-cli
 
 # remove files #######################################
 title "Remove files ..."
 rm -rfv /etc/transmission-daemon
+system disable transmission
 rm /etc/systemd/system/transmission.service
 rm -r /usr/share/transmission
 systemctl daemon-reload

@@ -15,30 +15,12 @@ title() {
 	echo -e "$line\n"
 }
 
-title2 "Set HDMI mode ..."
-#################################################################################
-echo '
-hdmi_group=1
-hdmi_mode=31
-' >> /boot/config.txt
-
-title2 "Set fstab for /mnt/hdd ..."
-#################################################################################
-mnt0=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
-label=${mnt0##/*/}
-mnt=/mnt/$label
-mkdir -p $mnt
-echo "/dev/sda1       $mnt           ext4     defaults,noatime  0   0" >> /etc/fstab
-umount -l $mnt0
-mount -a
-
 title2 "Set apt cache to usb drive ..."
 #################################################################################
 rm -r /var/cache/apt
 mkdir -p $mnt/varcache/apt
 ln -s $mnt/varcache/apt /var/cache/apt
 
-title2 "Restore settings ..."
 #################################################################################
 # 'skin shortcuts' addon
 #apt update
@@ -48,15 +30,6 @@ title2 "Restore settings ..."
 #mv /home/osmc/.kodi/addons/script.skinshortcuts-master /home/osmc/.kodi/addons/script.skinshortcuts
 #chown -R osmc:osmc /home/osmc/.kodi/addons/script.skinshortcuts
 #rm master.zip
-
-# setting files
-gitpath=https://github.com/rern/OSMC/raw/master/_settings
-wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P /home/osmc/.kodi/userdata/addon_data/script.skinshortcuts
-wget -qN --show-progress $gitpath/guisettings.xml -P /home/osmc/.kodi/userdata
-chown -R osmc:osmc /home/osmc/.kodi/userdata
-# setup marker file
-touch /walkthrough_completed
-systemctl restart mediacenter
 
 title2 "Install samba"
 #################################################################################

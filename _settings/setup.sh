@@ -46,15 +46,15 @@ systemctl restart smbd
 # set samba password
 smbpasswd -a root
 
+### Transmission
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh
+
+### Aria2
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.sh; chmod +x install.sh; ./install.sh
+
 ### GPIO
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh
 # make usb drive a common between os for gpio.json
 [[ ! -e $mnt/gpio/gpio.json ]] && wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/gpio.json -P /media/hdd/gpio
 ln -s $mnt/gpio/gpio.json /home/osmc/gpio.json
 systemctl restart gpioset
-
-### Transmission
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh
-
-### Aria2
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.sh; chmod +x install.sh; ./install.sh

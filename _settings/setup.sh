@@ -86,4 +86,8 @@ rm /home/osmc/gpio.json
 ln -s $mnt/gpio/gpio.json /home/osmc/gpio.json
 systemctl restart gpioset
 
+title2 "System upgrade ..."
+#################################################################################
+apt upgrade
+
 title "Finished."

@@ -50,7 +50,7 @@ update-rc.d transmission-daemon remove
 # custom systemd unit
 systemctl stop transmission-daemon
 systemctl disable transmission-daemon
-rm /etc/systemd/system/transmission*.service
+#rm /etc/systemd/system/transmission*.service
 cp /lib/systemd/system/transmission*.service /etc/systemd/system/transmission.service
 sed -i -e 's|User=.*|User=root|
 ' -e '/ExecStart/ i\

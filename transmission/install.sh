@@ -51,11 +51,11 @@ update-rc.d transmission-daemon remove
 systemctl stop transmission-daemon
 systemctl disable transmission-daemon
 cp /lib/systemd/system/transmission*.service /etc/systemd/system/transmission.service
-sed -i 's|User=.*|User=root|
-' -e "|ExecStart| i\
-Environment=TRANSMISSION_HOME=$path\
-Environment=TRANSMISSION_WEB_HOME=$path/web
-" /etc/systemd/system/transmission.service
+sed -i -e 's|User=.*|User=root|
+' -e '/ExecStart/ i\
+Environment=TRANSMISSION_HOME='$path'\
+Environment=TRANSMISSION_WEB_HOME='$path'/web
+' /etc/systemd/system/transmission.service
 systemctl daemon-reload
 
 # create settings.json

@@ -59,9 +59,10 @@ Environment=TRANSMISSION_WEB_HOME='$path'/web
 systemctl daemon-reload
 
 # create settings.json
+file=$path/settings.json
+[[ -e $file ]] && rm $file
 systemctl start transmission; systemctl stop transmission
 
-file=$path/settings.json
 sed -i -e 's|"download-dir": ".*"|"download-dir": "'"$path"'"|
 ' -e 's|"incomplete-dir": ".*"|"incomplete-dir": "'"$path"'/incomplete"|
 ' -e 's|"incomplete-dir-enabled": false|"incomplete-dir-enabled": true|

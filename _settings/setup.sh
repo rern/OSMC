@@ -1,24 +1,24 @@
 #!/bin/bash
 
-### force hdmi mode
+### force hdmi mode ################################################################
 echo '
 hdmi_group=1
 hdmi_mode=31
 ' >> /boot/config.txt
 
-### set fstab for usb drive
+### set fstab for usb drive ########################################################
 mnt0=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
 label=${mnt0##/*/}
 mkdir -p /mnt/$label
 echo "/dev/sda1       /mnt/$label           ext4     defaults,noatime  0   0" >> /etc/fstab
 mnt=/mnt/$label
 
-### set apt cache to usb drive
+### set apt cache to usb drive ####################################################
 rm -r /var/cache/apt
 mkdir -p $mnt/varcache/apt
 ln -s $mnt/varcache/apt /var/cache/apt
 
-### Settings
+### Settings ######################################################################
 # 'skin shortcuts' addon
 apt update
 apt install -y bsdtar
@@ -35,7 +35,7 @@ wget -qN --show-progress $gitpath/guisettings.xml -P /home/osmc/.kodi/userdata
 touch /walkthrough_completed
 systemctl restart mediacenter
 
-### samba
+### samba ##########################################################################
 apt install samba
 # make usb drive a common between os for smb.conf
 [[ ! -e $mnt/samba/smb.conf ]] && wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/smb.conf -P $mnt/samba
@@ -46,13 +46,13 @@ systemctl restart smbd
 # set samba password
 smbpasswd -a root
 
-### Transmission
+### Transmission ####################################################################
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh
 
-### Aria2
+### Aria2 ###########################################################################
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.sh; chmod +x install.sh; ./install.sh
 
-### GPIO
+### GPIO ############################################################################
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh
 # make usb drive a common between os for gpio.json
 [[ ! -e $mnt/gpio/gpio.json ]] && wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/gpio.json -P $mnt/gpio

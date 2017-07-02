@@ -20,7 +20,7 @@ ln -s $mnt/varcache/apt /var/cache/apt
 
 ### Settings ######################################################################
 # 'skin shortcuts' addon
-apt update
+#apt update
 apt install -y bsdtar
 wget -qN --show-progress https://github.com/BigNoid/script.skinshortcuts/archive/master.zip
 bsdtar -xf master.zip -C /home/osmc/.kodi/addons
@@ -36,7 +36,7 @@ touch /walkthrough_completed
 systemctl restart mediacenter
 
 ### samba ##########################################################################
-apt install samba
+apt install -y samba
 # make usb drive a common between os for smb.conf
 [[ ! -e $mnt/samba/smb.conf ]] && wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/smb.conf -P $mnt/samba
 rm /etc/samba/smb.conf

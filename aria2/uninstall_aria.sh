@@ -39,7 +39,7 @@ rm -rv /var/www/html/aria2
 [ $# -ne 0 ] && exit
 
 echo 'Nginx still installed.'
-echo 'Remove: apt remove nginx'
+echo 'Remove: apt remove nginx nginx-common nginx-full'
 title2 "Aria2 successfully uninstalled."
 
 rm uninstall_aria.sh

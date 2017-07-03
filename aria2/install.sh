@@ -61,8 +61,9 @@ fi
 if (( $# == 0 )); then
 	title "Get WebUI files ..."
 	wget -qN --show-progress https://github.com/ziahamza/webui-aria2/archive/master.zip
-	mkdir -p /var/www/html/aria2
-	bsdtar -xf master.zip -s'|[^/]*/||' -C /var/www/html/aria2/
+	mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
+	mkdir -p $mnt/aria2/web
+	bsdtar -xf master.zip -s'|[^/]*/||' -C $mnt/aria2/web
 	rm master.zip
 fi
 
@@ -93,14 +94,14 @@ ExecStart=/usr/bin/aria2c
 WantedBy=multi-user.target
 ' > /etc/systemd/system/aria2.service
 
-echo 'server {
+echo "server {
 	listen 88;
 	location / {
-		root  /var/www/html/aria2;
+		root  $mnt/aria2;
 		index  index.php index.html index.htm;
 	}
 }
-' > /etc/nginx/sites-available/aria2
+" > /etc/nginx/sites-available/aria2
 ln -s /etc/nginx/sites-available/aria2 /etc/nginx/sites-enabled/aria2
 
 title "Restart nginx ..."

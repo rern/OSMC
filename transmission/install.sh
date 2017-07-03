@@ -36,6 +36,10 @@ setpwd() {
 	fi
 }
 
+if type transmission-daemon &>/dev/null; then
+	titleend "$info Transmission already installed."
+	exit
+fi
 # user inputs
 if (( $# == 0 )); then # with no argument
 	title "$info Set password:"
@@ -69,15 +73,11 @@ fi
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/uninstall_tran.sh
 chmod +x uninstall_tran.sh
 
-if ! type transmission-daemon &>/dev/null; then
-	title2 "Install Transmission ..."
-	# skip with any argument
-	(( $# == 0 )) && apt update
-	apt install -y transmission-daemon transmission-cli
-else
-	title "$info Transmission already installed."
-	exit
-fi
+title2 "Install Transmission ..."
+# skip with any argument
+(( $# == 0 )) && apt update
+apt install -y transmission-daemon transmission-cli
+
 if [[ $answebui == 1 ]] && ! type bsdtar &>/dev/null; then
 	title2 "Install bsdtar ..."
 	apt install -y bsdtar

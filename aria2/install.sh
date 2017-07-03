@@ -57,11 +57,14 @@ if ! type nginx &>/dev/null; then
 	title "Install NGINX ..."
 	apt install -y nginx
 fi
-title "Get WebUI files ..."
-wget -qN --show-progress https://github.com/ziahamza/webui-aria2/archive/master.zip
-mkdir -p /var/www/html/aria2
-bsdtar -xf master.zip -s'|[^/]*/||' -C /var/www/html/aria2/
-rm master.zip
+
+if (( $# == 0 )); then
+	title "Get WebUI files ..."
+	wget -qN --show-progress https://github.com/ziahamza/webui-aria2/archive/master.zip
+	mkdir -p /var/www/html/aria2
+	bsdtar -xf master.zip -s'|[^/]*/||' -C /var/www/html/aria2/
+	rm master.zip
+fi
 
 if mount | grep '/dev/sda1' &>/dev/null; then
 	mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )

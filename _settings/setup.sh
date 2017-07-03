@@ -50,7 +50,7 @@ ln -s $mnt/varcache/apt /var/cache/apt
 #chown -R osmc:osmc /home/osmc/.kodi/addons/script.skinshortcuts
 #rm master.zip
 
-title2 "Install samba"
+title2 "Install Samba ..."
 #################################################################################
 apt install -y samba
 # make usb drive a common between os for smb.conf

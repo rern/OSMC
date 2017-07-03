@@ -89,7 +89,7 @@ if grep 'gpiooffsudo' $file &>/dev/null; then
 fi
 
 echo 'Nginx still installed.'
-echo 'Remove: apt remove nginx nginx-common nginx-full'
+echo 'Remove: apt purge nginx nginx-common nginx-full'
 title2 "$osmcgpio successfully uninstalled."
 
 rm uninstall.sh

@@ -30,6 +30,7 @@ echo -e '  \e[0;36m1\e[m Yes'
 echo
 echo -e '\e[0;36m0\e[m / 1 ? '
 read -n 1 ansstartup
+echo
 
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/uninstall_aria.sh
 chmod +x uninstall_aria.sh
@@ -52,7 +53,7 @@ if ! type nginx &>/dev/null; then
 fi
 title "Get WebUI files ..."
 wget -qN --show-progress https://github.com/ziahamza/webui-aria2/archive/master.zip
-mkdir /var/www/html/aria2
+mkdir -p /var/www/html/aria2
 bsdtar -xf master.zip -s'|[^/]*/||' -C /var/www/html/aria2/
 rm master.zip
 

@@ -68,6 +68,7 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/in
 # Aria2
 #################################################################################
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.sh; chmod +x install.sh; ./install.sh 1
+ln -s /mnt/hdd/aria2 /var/www/html/aria2
 
 # GPIO
 #################################################################################

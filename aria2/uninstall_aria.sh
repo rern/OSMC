@@ -15,6 +15,10 @@ title() {
 	echo $1
 	echo -e "$line\n"
 }
+titleend() {
+	echo -e "\n$1"
+	echo -e "\n$line\n"
+}
 
 # check installed #######################################
 if ! type aria2c &>/dev/null; then
@@ -40,6 +44,6 @@ rm -rv /var/www/html/aria2
 
 echo 'Nginx still installed.'
 echo 'Remove: apt purge nginx nginx-common nginx-full'
-title2 "Aria2 successfully uninstalled."
+titleend "Aria2 successfully uninstalled."
 
 rm uninstall_aria.sh

@@ -29,7 +29,6 @@ rm /etc/systemd/system/aria2.service
 systemctl daemon-reload
 # uninstall package #######################################
 apt remove -y aria2
-#[[ ! type transmission-daemon &>/dev/null ]] && apt remove -y nginx
 
 # remove files #######################################
 title "Remove files ..."

@@ -88,7 +88,7 @@ Type=forking
 ExecStart=/usr/bin/aria2c
 [Install]
 WantedBy=multi-user.target
-' > /lib/systemd/system/aria2.service
+' > /etc/systemd/system/aria2.service
 
 echo 'server {
 	listen 88;

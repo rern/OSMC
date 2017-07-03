@@ -40,6 +40,6 @@ systemctl daemon-reload
 
 echo 'Nginx still installed.'
 echo 'Remove: apt purge nginx nginx-common nginx-full'
-titleend "Transmission successfully uninstalled."
+titleend "Transmission uninstalled successfully."
 
 rm uninstall_tran.sh

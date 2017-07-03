@@ -130,9 +130,6 @@ net.core.wmem_max=1048576
 ' >> /etc/sysctl.conf
 sysctl -p
 
-# hash password by start
-systemctl start transmission
-
 # web ui alternative
 fi [[ $answebui == 1 ]]; then
 	wget -qN --show-progress https://github.com/ronggang/transmission-web-control/raw/master/release/transmission-control-full.tar.gz
@@ -143,8 +140,10 @@ fi [[ $answebui == 1 ]]; then
 	chown -R root:root $path/web
 fi
 
-# startup
+# start
 [[ $ansstartup == 1 ]] && systemctl enable transmission
+title "Start Transmission ..."
+systemctl start transmission
 
 title2 "Transmission installed and started successfully."
 echo 'Uninstall: ./uninstall_tran.sh'

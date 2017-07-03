@@ -58,15 +58,6 @@ if ! type nginx &>/dev/null; then
 	apt install -y nginx
 fi
 
-if (( $# == 0 )); then
-	title "Get WebUI files ..."
-	wget -qN --show-progress https://github.com/ziahamza/webui-aria2/archive/master.zip
-	mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
-	mkdir -p $mnt/aria2/web
-	bsdtar -xf master.zip -s'|[^/]*/||' -C $mnt/aria2/web
-	rm master.zip
-fi
-
 if mount | grep '/dev/sda1' &>/dev/null; then
 	mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
 	mkdir -p $mnt/aria2
@@ -75,6 +66,14 @@ else
 	mkdir -p /root/aria2
 	path=/root/aria2
 fi
+if (( $# == 0 )); then
+	title "Get WebUI files ..."
+	wget -qN --show-progress https://github.com/ziahamza/webui-aria2/archive/master.zip
+	mkdir -p $path/web
+	bsdtar -xf master.zip -s'|[^/]*/||' -C $path/web
+	rm master.zip
+fi
+
 mkdir -p /root/.aria2
 echo "enable-rpc=true
 rpc-listen-all=true
@@ -97,7 +96,7 @@ WantedBy=multi-user.target
 echo "server {
 	listen 88;
 	location / {
-		root  $mnt/aria2;
+		root  $path/web;
 		index  index.php index.html index.htm;
 	}
 }

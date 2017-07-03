@@ -88,5 +88,6 @@ testparm
 
 **Add user + password**
 ```sh
+adduser [user] # create new system user if not exist
 smbpasswd -a [user]
 ```

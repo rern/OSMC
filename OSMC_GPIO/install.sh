@@ -108,4 +108,5 @@ sed -i -e ''"$(( $linenum - 2 ))"' i\
 
 title2 "$osmcgpio successfully installed."
 echo $info 'Browser: [OSMC_IP]/gpio/ for settings.'
+echo 'Power menu > GPIO On / GPIO Off
 titleend 'To uninstall:   ./uninstall.sh'

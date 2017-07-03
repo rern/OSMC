@@ -24,7 +24,7 @@ titleend() {
 }
 
 if type aria2c &>/dev/null; then
-	title "$info Aria2 already installed."
+	titleend "$info Aria2 already installed."
 	exit
 fi
 

@@ -37,7 +37,7 @@ apt remove -y aria2
 # remove files #######################################
 title "Remove files ..."
 rm -rv /root/.aria2
-rm -rv /var/www/html/aria2
+rm -r /var/www/html/aria2
 
 # skip if reinstall - pwduninstall.sh re (any argument)
 [ $# -ne 0 ] && exit

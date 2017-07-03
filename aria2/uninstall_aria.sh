@@ -23,6 +23,10 @@ if ! type aria2c &>/dev/null; then
 fi
 
 title2 "Uninstall Aria2 ..."
+systemctl disable aria2
+systemctl stop aria2
+rm /etc/systemd/system/aria2.service
+systemctl daemon-reload
 # uninstall package #######################################
 apt remove -y aria2 bsdtar
 [[ ! type transmission-daemon &>/dev/null ]] && apt remove -y nginx

@@ -25,11 +25,7 @@ fi
 title2 "Uninstall Aria2 ..."
 # uninstall package #######################################
 apt remove -y aria2 bsdtar
-if ! type transmission-daemon &>/dev/null ]]; then
-	apt remove nginx
-	rm -rv /etc/nginx
-	rm -rv /usr/share/nginx
-fi
+[[ ! type transmission-daemon &>/dev/null ]] && apt remove -y nginx
 
 # remove files #######################################
 title "Remove files ..."

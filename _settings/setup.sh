@@ -55,12 +55,9 @@ ln -s $mnt/varcache/apt /var/cache/apt
 title2 "Install Samba ..."
 #################################################################################
 apt install -y samba
-# make usb drive a common between os for smb.conf
-[[ ! -e $mnt/samba/smb.conf ]] && wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/smb.conf -P $mnt/samba
-rm /etc/samba/smb.conf
-ln -s $mnt/samba/smb.conf /etc/samba/smb.conf
-systemctl restart nmbd
-systemctl restart smbd
+wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/smb.conf -P /etc/samba
+systemctl daemon-reload
+systemctl restart nmbd smbd
 # set samba password
 (echo $pwd1; echo $pwd1) | smbpasswd -s -a root
 
@@ -75,10 +72,7 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.s
 # GPIO
 #################################################################################
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh 1
-# make usb drive a common between os for gpio.json
-[[ ! -e $mnt/gpio/gpio.json ]] && wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/gpio.json -P $mnt/gpio
-rm /home/osmc/gpio.json
-ln -s $mnt/gpio/gpio.json /home/osmc/gpio.json
+wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/gpio.json -P /home/osmc/gpio
 systemctl restart gpioset
 
 title2 "System upgrade ..."

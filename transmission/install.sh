@@ -59,6 +59,7 @@ if (( $# == 0 )); then # with no argument
 	echo
 	echo -e '\e[0;36m0\e[m / 1 ? '
 	read -n 1 ansstartup
+	echo
 else # with arguments
 	pwd1=$1
 	(( $# > 1 )) && answebui=$2 || answebui=0

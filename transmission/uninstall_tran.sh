@@ -16,6 +16,10 @@ title() {
 	echo $1
 	echo -e "$line\n"
 }
+titleend() {
+	echo -e "\n$1"
+	echo -e "\n$line\n"
+}
 
 # check installed #######################################
 if ! type transmission-daemon &>/dev/null; then
@@ -36,6 +40,6 @@ systemctl daemon-reload
 
 echo 'Nginx still installed.'
 echo 'Remove: apt purge nginx nginx-common nginx-full'
-title2 "Transmission successfully uninstalled."
+titleend "Transmission successfully uninstalled."
 
 rm uninstall_tran.sh

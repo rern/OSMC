@@ -23,14 +23,18 @@ titleend() {
 	echo -e "\n$line\n"
 }
 
-# user input
-title "$info Start Aria2 on system startup:"
-echo -e '  \e[0;36m0\e[m No'
-echo -e '  \e[0;36m1\e[m Yes'
-echo
-echo -e '\e[0;36m0\e[m / 1 ? '
-read -n 1 ansstartup
-echo
+if (( $# == 0 )); then
+	# user input
+	title "$info Start Aria2 on system startup:"
+	echo -e '  \e[0;36m0\e[m No'
+	echo -e '  \e[0;36m1\e[m Yes'
+	echo
+	echo -e '\e[0;36m0\e[m / 1 ? '
+	read -n 1 ansstartup
+	echo
+else
+	ansstartup=1
+fi
 
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/uninstall_aria.sh
 chmod +x uninstall_aria.sh

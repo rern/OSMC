@@ -77,7 +77,7 @@ else
 	title "$info Transmission already installed."
 	exit
 fi
-if ! type bsdtar &>/dev/null; then
+if [[ $answebui == 1 ]] && ! type bsdtar &>/dev/null; then
 	title2 "Install bsdtar ..."
 	apt install -y bsdtar
 fi
@@ -131,13 +131,15 @@ if [[ $anspwd == 1 ]] && [[ -n $pwd1 ]]; then
 fi
 
 # fix buffer warning on osmc
-echo 'net.core.rmem_max=4194304
-net.core.wmem_max=1048576
-' >> /etc/sysctl.conf
-sysctl -p
+if ! grep 'net.core.rmem_max=4194304' /etc/sysctl.conf &> /dev/null; then
+	echo -n 'net.core.rmem_max=4194304
+	net.core.wmem_max=1048576
+	' >> /etc/sysctl.conf
+	sysctl -p
+fi
 
 # web ui alternative
-fi [[ $answebui == 1 ]]; then
+if [[ $answebui == 1 ]]; then
 	wget -qN --show-progress https://github.com/ronggang/transmission-web-control/raw/master/release/transmission-control-full.tar.gz
 	mv /usr/share/transmission/web $path
 	mv $path/web/index.html $path/web/index.original.html

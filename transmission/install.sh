@@ -124,7 +124,7 @@ if [[ $anspwd == 1 ]] && [[ -n $pwd1 ]]; then
 	' $file
 fi
 
-# fix buffer warning
+# fix buffer warning on osmc
 echo 'net.core.rmem_max=4194304
 net.core.wmem_max=1048576
 ' >> /etc/sysctl.conf

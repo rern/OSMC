@@ -73,7 +73,7 @@ hostnamectl set-hostname [name]
 #	host allow = [IP1] [IP2]
 ```
 
-**Restart samba**
+**Restart**
 ```sh
 systemctl restart smbd
 
@@ -81,12 +81,12 @@ systemctl restart smbd
 systemctl restart nmbd
 ```
 
-**Test samba parameters**
+**Test conf parameters**
 ```
 testparm
 ```
 
-**Add samba user + password**
+**Add user + password**
 ```sh
 smbpasswd -a [user]
 ```

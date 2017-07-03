@@ -94,14 +94,16 @@ ExecStart=/usr/bin/aria2c
 WantedBy=multi-user.target
 ' > /etc/systemd/system/aria2.service
 
-echo "server {
-	listen 88;
-	location / {
-		root  $mnt/aria2;
-		index  index.php index.html index.htm;
+if ! grep -qs 'aria2' /etc/nginx/nginx.conf; then
+	echo "server {
+		listen 88;
+		location / {
+			root  $mnt/aria2;
+			index  index.php index.html index.htm;
+		}
 	}
-}
-" > /etc/nginx/sites-available/aria2
+	" > /etc/nginx/sites-available/aria2
+fi
 ln -s /etc/nginx/sites-available/aria2 /etc/nginx/sites-enabled/aria2
 
 title "Restart nginx ..."

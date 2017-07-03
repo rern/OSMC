@@ -30,6 +30,8 @@ setpwd() {
 	fi
 }
 
+rm setup.sh
+
 # passwords
 title "$info root password for Samba and Transmission ..."
 setpwd

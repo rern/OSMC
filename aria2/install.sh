@@ -96,8 +96,8 @@ ln -s /etc/nginx/sites-available/aria2 /etc/nginx/sites-enabled/aria2
 title "Restart nginx ..."
 systemctl restart nginx
 
+# start
 [[ $ansstartup == 1 ]] && systemctl enable aria2
-
 title "Start Aria2 ..."
 systemctl start aria2
 

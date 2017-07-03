@@ -44,6 +44,6 @@ rm -rv /var/www/html/aria2
 
 echo 'Nginx still installed.'
 echo 'Remove: apt purge nginx nginx-common nginx-full'
-titleend "Aria2 successfully uninstalled."
+titleend "Aria2 uninstalled successfully."
 
 rm uninstall_aria.sh

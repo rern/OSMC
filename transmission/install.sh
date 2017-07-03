@@ -29,12 +29,35 @@ setpwd() {
 	echo 'Retype password: '
 	read -s pwd2
 	echo
-	if [[ $pwd != $pwd2 ]]; then
+	if [[ $pwd1 != $pwd2 ]]; then
 		echo
 		echo "$info Passwords not matched. Try again."
 		setpwd
 	fi
 }
+
+# user inputs
+title "$info Set password:"
+echo -e '  \e[0;36m0\e[m No'
+echo -e '  \e[0;36m1\e[m Yes'
+echo
+echo -e '\e[0;36m0\e[m / 1 ? '
+read -n 1 anspwd
+[[ $anspwd == 1 ]] && setpwd
+
+title "$info Install WebUI alternative (Transmission Web Control):"
+echo -e '  \e[0;36m0\e[m No'
+echo -e '  \e[0;36m1\e[m Yes'
+echo
+echo -e '\e[0;36m0\e[m / 1 ? '
+read -n 1 answebui
+
+title "$info Start Transmission on system startup:"
+echo -e '  \e[0;36m0\e[m No'
+echo -e '  \e[0;36m1\e[m Yes'
+echo
+echo -e '\e[0;36m0\e[m / 1 ? '
+read -n 1 ansstartup
 
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/uninstall_tran.sh
 chmod +x uninstall_tran.sh
@@ -47,6 +70,10 @@ if ! type transmission-daemon &>/dev/null; then
 else
 	title "$info Transmission already installed."
 	exit
+fi
+if ! type bsdtar &>/dev/null; then
+	title2 "Install bsdtar ..."
+	apt install -y bsdtar
 fi
 
 if mount | grep '/dev/sda1' &>/dev/null; then
@@ -89,73 +116,37 @@ sed -i -e 's|"download-dir": ".*"|"download-dir": "'"$path"'"|
     "watch-dir-enabled": true
 ' $file
 
-title "$info Set password:"
-echo -e '  \e[0;36m0\e[m No'
-echo -e '  \e[0;36m1\e[m Yes'
-echo
-echo -e '\e[0;36m0\e[m / 1 ? '
-read -n 1 answer
-case $answer in
-	1 ) echo
-		echo 'Password: '
-		setpwd
-		sed -i -e 's|"rpc-authentication-required": false|"rpc-authentication-required": true|
-		' -e 's|"rpc-password": ".*"|"rpc-password": "'"$pwd1"'"|
-		' -e 's|"rpc-username": ".*"|"rpc-username": "root"|
-		' $file
-		;;
-	* ) echo;;
-esac
-# hash password by start
-systemctl start transmission
+# set password
+if [[ $anspwd == 1 ]] && [[ -n $pwd1 ]]; then
+	sed -i -e 's|"rpc-authentication-required": false|"rpc-authentication-required": true|
+	' -e 's|"rpc-password": ".*"|"rpc-password": "'"$pwd1"'"|
+	' -e 's|"rpc-username": ".*"|"rpc-username": "root"|
+	' $file
+fi
 
-# web ui alternative
-title "$info Install WebUI alternative (Transmission Web Control):"
-echo -e '  \e[0;36m0\e[m No'
-echo -e '  \e[0;36m1\e[m Yes'
-echo
-echo -e '\e[0;36m0\e[m / 1 ? '
-read -n 1 answer
-case $answer in
-	1 ) echo
-		wget -qN --show-progress https://github.com/ronggang/transmission-web-control/raw/master/release/transmission-control-full.tar.gz
-		mv /usr/share/transmission/web $path
-		mv $path/web/index.html $path/web/index.original.html
-		bsdtar -xf transmission-control-full.tar.gz -C $path
-		rm transmission-control-full.tar.gz
-		chown -R root:root $path/web
-		;;
-	* ) echo;;
-esac
 # fix buffer warning
 echo 'net.core.rmem_max=4194304
 net.core.wmem_max=1048576
 ' >> /etc/sysctl.conf
 sysctl -p
 
-title "$info Start Transmission on system startup:"
-echo -e '  \e[0;36m0\e[m No'
-echo -e '  \e[0;36m1\e[m Yes'
-echo
-echo -e '\e[0;36m0\e[m / 1 ? '
-read -n 1 answer
-case $answer in
-	1 ) systemctl enable transmission;;
-	* ) echo;;
-esac
+# hash password by start
+systemctl start transmission
 
-title "$info Start Transmission now:"
-echo -e '  \e[0;36m0\e[m No'
-echo -e '  \e[0;36m1\e[m Yes'
-echo
-echo -e '\e[0;36m0\e[m / 1 ? '
-read -n 1 answer
-case $answer in
-	1 ) echo;;
-	* ) systemctl stop transmission;;
-esac
+# web ui alternative
+fi [[ $answebui == 1 ]]; then
+	wget -qN --show-progress https://github.com/ronggang/transmission-web-control/raw/master/release/transmission-control-full.tar.gz
+	mv /usr/share/transmission/web $path
+	mv $path/web/index.html $path/web/index.original.html
+	bsdtar -xf transmission-control-full.tar.gz -C $path
+	rm transmission-control-full.tar.gz
+	chown -R root:root $path/web
+fi
 
-title2 "Transmission installed successfully."
+# startup
+[[ $ansstartup == 1 ]] && systemctl enable transmission
+
+title2 "Transmission installed and started successfully."
 echo 'Uninstall: ./uninstall_tran.sh'
 echo 'Start: sudo systemctl start transmission'
 echo 'Stop: sudo systemctl stop transmission'

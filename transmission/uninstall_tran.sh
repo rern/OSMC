@@ -34,6 +34,8 @@ systemctl disable transmission
 rm /etc/systemd/system/transmission.service
 systemctl daemon-reload
 
+echo 'Nginx still installed.'
+echo 'Remove: apt remove nginx'
 title2 "Transmission successfully uninstalled."
 
 rm uninstall_tran.sh

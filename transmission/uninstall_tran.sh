@@ -26,7 +26,11 @@ fi
 title2 "Uninstall Transmission ..."
 # uninstall package #######################################
 apt remove -y transmission-daemon transmission-cli
-
+if ! type transmission-daemon &>/dev/null ]]; then
+	apt remove -y nginx
+	rm -rv /etc/nginx
+	rm -rv /usr/share/nginx
+fi
 # remove files #######################################
 title "Remove files ..."
 rm -rfv /etc/transmission-daemon

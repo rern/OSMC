@@ -3,6 +3,7 @@
 line2='\e[0;36m=========================================================\e[m'
 line='\e[0;36m---------------------------------------------------------\e[m'
 bar=$( echo -e "$(tput setab 6)   $(tput setab 0)" )
+info=$( echo $(tput setab 6; tput setaf 0) i $(tput setab 0; tput setaf 7) )
 
 title2() {
 	echo -e "\n$line2\n"
@@ -14,6 +15,24 @@ title() {
 	echo $1
 	echo -e "$line\n"
 }
+setpwd() {
+	echo
+	echo 'Password: '
+	read -s pwd1
+	echo
+	echo 'Retype password: '
+	read -s pwd2
+	echo
+	if [[ $pwd1 != $pwd2 ]]; then
+		echo
+		echo "$info Passwords not matched. Try again."
+		setpwd
+	fi
+}
+
+# passwords
+title "$info root password for Samba and Transmission ..."
+setpwd
 
 title2 "Set apt cache to usb drive ..."
 #################################################################################
@@ -45,7 +64,7 @@ smbpasswd -a root
 
 # Transmission
 #################################################################################
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh 1
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh $pwd1 0 1
 
 # Aria2
 #################################################################################

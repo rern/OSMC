@@ -24,7 +24,8 @@ fi
 
 title2 "Uninstall Aria2 ..."
 # uninstall package #######################################
-apt remove -y aria2 nginx bsdtar
+apt remove -y aria2 bsdtar
+[[ ! type transmission-daemon &>/dev/null ]] && apt remove nginx
 
 # remove files #######################################
 title "Remove files ..."

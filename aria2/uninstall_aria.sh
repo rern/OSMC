@@ -28,9 +28,10 @@ apt remove -y aria2 nginx bsdtar
 
 # remove files #######################################
 title "Remove files ..."
-rm -v /etc/nginx/nginx.conf
-rm -v /root/.config/aria2/aria2.conf
+rm -rfv /etc/nginx
+rm -rfv /root/.aria2
 rm -rfv /usr/share/nginx
+rm -rfv /var/www/html/aria2
 
 # skip if reinstall - pwduninstall.sh re (any argument)
 [ $# -ne 0 ] && exit

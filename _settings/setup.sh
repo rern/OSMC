@@ -38,6 +38,7 @@ setpwd
 
 title2 "Set apt cache to usb drive ..."
 #################################################################################
+mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
 rm -r /var/cache/apt
 mkdir -p $mnt/varcache/apt
 ln -s $mnt/varcache/apt /var/cache/apt
@@ -68,7 +69,7 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/in
 # Aria2
 #################################################################################
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.sh; chmod +x install.sh; ./install.sh 1
-ln -s /mnt/hdd/aria2 /var/www/html/aria2
+ln -s $mnt/aria2/web /var/www/html/aria2
 
 # GPIO
 #################################################################################

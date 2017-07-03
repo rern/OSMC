@@ -37,27 +37,33 @@ setpwd() {
 }
 
 # user inputs
-title "$info Set password:"
-echo -e '  \e[0;36m0\e[m No'
-echo -e '  \e[0;36m1\e[m Yes'
-echo
-echo -e '\e[0;36m0\e[m / 1 ? '
-read -n 1 anspwd
-[[ $anspwd == 1 ]] && setpwd
+if (( $# == 0 )); then # with no argument
+	title "$info Set password:"
+	echo -e '  \e[0;36m0\e[m No'
+	echo -e '  \e[0;36m1\e[m Yes'
+	echo
+	echo -e '\e[0;36m0\e[m / 1 ? '
+	read -n 1 anspwd
+	[[ $anspwd == 1 ]] && setpwd
 
-title "$info Install WebUI alternative (Transmission Web Control):"
-echo -e '  \e[0;36m0\e[m No'
-echo -e '  \e[0;36m1\e[m Yes'
-echo
-echo -e '\e[0;36m0\e[m / 1 ? '
-read -n 1 answebui
+	title "$info Install WebUI alternative (Transmission Web Control):"
+	echo -e '  \e[0;36m0\e[m No'
+	echo -e '  \e[0;36m1\e[m Yes'
+	echo
+	echo -e '\e[0;36m0\e[m / 1 ? '
+	read -n 1 answebui
 
-title "$info Start Transmission on system startup:"
-echo -e '  \e[0;36m0\e[m No'
-echo -e '  \e[0;36m1\e[m Yes'
-echo
-echo -e '\e[0;36m0\e[m / 1 ? '
-read -n 1 ansstartup
+	title "$info Start Transmission on system startup:"
+	echo -e '  \e[0;36m0\e[m No'
+	echo -e '  \e[0;36m1\e[m Yes'
+	echo
+	echo -e '\e[0;36m0\e[m / 1 ? '
+	read -n 1 ansstartup
+else # with arguments
+	pwd1=$1
+	(( $# > 1 )) && answebui=$2 || answebui=0
+	(( $# > 2 )) && ansstartup=$3 || ansstartup=0
+fi
 
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/uninstall_tran.sh
 chmod +x uninstall_tran.sh

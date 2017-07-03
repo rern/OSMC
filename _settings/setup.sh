@@ -60,7 +60,7 @@ ln -s $mnt/samba/smb.conf /etc/samba/smb.conf
 systemctl restart nmbd
 systemctl restart smbd
 # set samba password
-(echo $pwd1; echo $pwd1) | smbpasswd -s
+(echo $pwd1; echo $pwd1) | smbpasswd -s -a root
 
 # Transmission
 #################################################################################

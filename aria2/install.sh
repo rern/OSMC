@@ -23,6 +23,11 @@ titleend() {
 	echo -e "\n$line\n"
 }
 
+if type aria2c &>/dev/null; then
+	title "$info Aria2 already installed."
+	exit
+fi
+
 if (( $# == 0 )); then
 	# user input
 	title "$info Start Aria2 on system startup:"
@@ -39,14 +44,11 @@ fi
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/uninstall_aria.sh
 chmod +x uninstall_aria.sh
 
-if ! type aria2c &>/dev/null; then
-	title2 "Install Aria2 ..."
-	# skip with any argument
-	(( $# == 0 )) && apt update
-	apt install -y aria2
-else
-	title "$info Aria2 already installed."
-fi
+title2 "Install Aria2 ..."
+# skip with any argument
+(( $# == 0 )) && apt update
+apt install -y aria2
+
 if ! type bsdtar &>/dev/null; then
 	title "Install bsdtar ..."
 	apt install -y bsdtar

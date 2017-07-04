@@ -15,6 +15,10 @@ title() {
 	echo $1
 	echo -e "$line\n"
 }
+titleend() {
+	echo -e "\n$1"
+	echo -e "\n$line\n"
+}
 setpwd() {
 	echo
 	echo 'Password: '

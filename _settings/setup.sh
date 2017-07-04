@@ -40,7 +40,8 @@ rm setup.sh
 title "$info root password for Samba and Transmission ..."
 setpwd
 
-### osmc setting ##############################
+# setting
+#################################################################################
 gitpath=https://github.com/rern/OSMC/raw/master/_settings
 kodipath=/home/osmc/.kodi/userdata
 wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
@@ -49,14 +50,6 @@ chown -R osmc:osmc $kodipath
 # setup marker file
 touch /walkthrough_completed
 
-title2 "Set apt cache to usb drive ..."
-#################################################################################
-mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
-rm -r /var/cache/apt
-mkdir -p $mnt/varcache/apt
-ln -s $mnt/varcache/apt /var/cache/apt
-
-#################################################################################
 # 'skin shortcuts' addon
 #apt update
 #apt install -y bsdtar

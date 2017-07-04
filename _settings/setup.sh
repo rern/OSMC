@@ -40,6 +40,15 @@ rm setup.sh
 title "$info root password for Samba and Transmission ..."
 setpwd
 
+### osmc setting ##############################
+gitpath=https://github.com/rern/OSMC/raw/master/_settings
+kodipath=/home/osmc/.kodi/userdata
+wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
+wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts
+chown -R osmc:osmc $kodipath
+# setup marker file
+touch /walkthrough_completed
+
 title2 "Set apt cache to usb drive ..."
 #################################################################################
 mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )

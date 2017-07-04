@@ -85,6 +85,7 @@ systemctl restart gpioset
 #title2 "System upgrade ..."
 #################################################################################
 #apt -y upgrade
+#systemctl restart mediacenter
 
 title "Finished."
 titleend "Please proceed to Settings > Interface > Enable customize home menu."

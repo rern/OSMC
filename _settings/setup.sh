@@ -81,3 +81,4 @@ title2 "System upgrade ..."
 apt upgrade
 
 title "Finished."
+titleend "Please proceed to Settings > Interface > Enable customize home menu."

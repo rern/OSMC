@@ -52,7 +52,6 @@ touch /walkthrough_completed
 systemctl restart mediacenter
 
 # 'skin shortcuts' addon
-#apt update
 #apt install -y bsdtar
 #wget -qN --show-progress https://github.com/BigNoid/script.skinshortcuts/archive/master.zip
 #bsdtar -xf master.zip -C /home/osmc/.kodi/addons
@@ -83,9 +82,9 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/insta
 wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/gpio.json -P /home/osmc/gpio
 systemctl restart gpioset
 
-title2 "System upgrade ..."
+#title2 "System upgrade ..."
 #################################################################################
-apt -y upgrade
+#apt -y upgrade
 
 title "Finished."
 titleend "Please proceed to Settings > Interface > Enable customize home menu."

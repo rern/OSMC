@@ -61,6 +61,7 @@ systemctl restart mediacenter
 
 title2 "Install Samba ..."
 #################################################################################
+apt update
 apt install -y samba
 wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/smb.conf -P /etc/samba
 systemctl daemon-reload

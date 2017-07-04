@@ -59,9 +59,12 @@ systemctl restart mediacenter
 #chown -R osmc:osmc /home/osmc/.kodi/addons/script.skinshortcuts
 #rm master.zip
 
-title2 "Install Samba ..."
+title2 "Update package list ..."
 #################################################################################
 apt update
+
+title2 "Install Samba ..."
+#################################################################################
 apt install -y samba
 wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/smb.conf -P /etc/samba
 systemctl daemon-reload

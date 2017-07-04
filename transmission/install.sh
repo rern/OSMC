@@ -148,6 +148,8 @@ if [[ $answebui == 1 ]]; then
 	bsdtar -xf transmission-control-full.tar.gz -C $path
 	rm transmission-control-full.tar.gz
 	chown -R root:root $path/web
+else
+	rm -r /usr/share/transmission
 fi
 
 # start

@@ -2,7 +2,6 @@
 
 arg=$#
 
-linered=$( printf '\e[0;31m%*s\e[m\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' - )
 line2=$( printf '\e[0;36m%*s\e[m\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' = )
 line=$( printf '\e[0;36m%*s\e[m\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' - )
 info=$( echo $(tput setab 6; tput setaf 0) i $(tput setab 0; tput setaf 7) )

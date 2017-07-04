@@ -40,7 +40,7 @@ rm setup.sh
 title "$info root password for Samba and Transmission ..."
 setpwd
 
-# setting
+title "Restore settings ..."
 #################################################################################
 gitpath=https://github.com/rern/OSMC/raw/master/_settings
 kodipath=/home/osmc/.kodi/userdata
@@ -85,7 +85,7 @@ systemctl restart gpioset
 
 title2 "System upgrade ..."
 #################################################################################
-apt upgrade
+apt -y upgrade
 
 title "Finished."
 titleend "Please proceed to Settings > Interface > Enable customize home menu."

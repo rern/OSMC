@@ -92,4 +92,6 @@ systemctl restart gpioset
 #systemctl restart mediacenter
 
 title "Finished."
-titleend "Please proceed to Settings > Interface > Enable customize home menu."
+echo
+echo 'Please proceed to Settings > Interface > Skin'
+titleend "    Configure skin > Enable menu customization."

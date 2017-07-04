@@ -142,8 +142,9 @@ fi
 # web ui alternative
 if [[ $answebui == 1 ]]; then
 	wget -qN --show-progress https://github.com/ronggang/transmission-web-control/raw/master/release/transmission-control-full.tar.gz
+	mv /usr/share/transmission/web/index{,.original.}.html
 	mv /usr/share/transmission/web $path
-	mv $path/web/index.html $path/web/index.original.html
+	rm /usr/share/transmission
 	bsdtar -xf transmission-control-full.tar.gz -C $path
 	rm transmission-control-full.tar.gz
 	chown -R root:root $path/web

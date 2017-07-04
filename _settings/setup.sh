@@ -49,6 +49,7 @@ wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/scri
 chown -R osmc:osmc $kodipath
 # setup marker file
 touch /walkthrough_completed
+systemctl restart mediacenter
 
 # 'skin shortcuts' addon
 #apt update

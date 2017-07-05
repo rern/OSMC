@@ -59,7 +59,7 @@ systemctl restart mediacenter
 #chown -R osmc:osmc /home/osmc/.kodi/addons/script.skinshortcuts
 #rm master.zip
 
-title2 "Update package list ..."
+title "Update package list ..."
 #################################################################################
 apt update
 
@@ -91,7 +91,5 @@ systemctl restart gpioset
 #apt -y upgrade
 #systemctl restart mediacenter
 
-title "Finished."
-echo
-echo 'Please proceed to Settings > Interface > Skin'
-titleend "    Configure skin > Enable menu customization."
+title2 "Setup finished successfully."
+titleend "Proceed to Settings > Interface > Configure skin > Enable menu customization."

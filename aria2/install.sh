@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# install.sh [1] (1 - force startup + no package update)
+# install.sh [startup] ( [startup] = 1 / null )
+# any argument = no prompt + no package update
 
 # import heading function
 wget -qN https://github.com/rern/tips/raw/master/bash/f_heading.sh; . f_heading.sh; rm f_heading.sh

@@ -3,10 +3,7 @@
 # install.sh - run as root
 
 # import heading function
-wget -qN https://github.com/rern/tips/raw/master/bash/f_heading.sh
-chmod +x f_heading.sh
-. f_heading.sh
-rm install.sh f_heading.sh
+wget -qN https://github.com/rern/tips/raw/master/bash/f_heading.sh; . f_heading.sh; rm f_heading.sh
 
 if type aria2c &>/dev/null; then
 	titleend "$info Aria2 already installed."

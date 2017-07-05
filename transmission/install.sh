@@ -1,40 +1,12 @@
 #!/bin/bash
 
-rm install.sh
-
-line2=$( printf '\e[0;36m%*s\e[m\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' = )
-line=$( printf '\e[0;36m%*s\e[m\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' - )
-bar=$( echo -e "$(tput setab 6)   $(tput setab 0)" )
-info=$( echo $(tput setab 6; tput setaf 0) i $(tput setab 0; tput setaf 7) )
-
-title2() {
-	echo $line2
-	echo -e "$bar $1"
-	echo $line2
-}
-title() {
-	echo $line
-	echo -e "$1"
-	echo $line
-}
-titleend() {
-	echo -e "\n$1"
-	echo $line
-}
-setpwd() {
-	echo
-	echo 'Password: '
-	read -s pwd1
-	echo
-	echo 'Retype password: '
-	read -s pwd2
-	echo
-	if [[ $pwd1 != $pwd2 ]]; then
-		echo
-		echo "$info Passwords not matched. Try again."
-		setpwd
-	fi
-}
+# import heading and password function
+wget -qN https://github.com/rern/tips/raw/master/bash/f_heading.sh
+wget -qN https://github.com/rern/tips/raw/master/bash/f_password.sh
+chmod +x f_heading.sh f_password.sh
+. f_heading.sh
+. f_password.sh
+rm install.sh f_heading.sh f_password.sh
 
 if type transmission-daemon &>/dev/null; then
 	titleend "$info Transmission already installed."

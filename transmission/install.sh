@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# install.sh [password] [webui] [startup]
+# install.sh [password] [webui] [startup] ( [webui] = 1 / 0; [startup] = 1 / null )
 
 # import heading and password function
 wget -qN https://github.com/rern/tips/raw/master/bash/f_heading.sh; . f_heading.sh; rm f_heading.sh

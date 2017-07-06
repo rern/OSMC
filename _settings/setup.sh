@@ -26,6 +26,7 @@ kodipath=/home/osmc/.kodi/userdata
 
 # 'skin shortcuts' addon
 addonpath=/home/osmc/.kodi/addons
+: <<'END'
 apt install -y bsdtar
 wget -qN --show-progress $gitpath/addons.zip
 bsdtar -xf addons.zip -C $addonpath/packages
@@ -37,6 +38,7 @@ chown -R osmc:osmc $addonpath
 find $addonpath/. -name "*.py" -exec chmod +x {} +
 xbmc-send -a "UpdateAddonRepos()"
 xbmc-send -a "UpdateLocalAddons()"
+END
 
 wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts

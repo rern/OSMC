@@ -22,14 +22,16 @@ gitpath=https://github.com/rern/OSMC/raw/master/_settings
 kodipath=/home/osmc/.kodi/userdata
 
 # 'skin shortcuts' addon
-#addonpath=/home/osmc/.kodi/addons
-#apt install -y bsdtar
-#wget -qN --show-progress https://github.com/BigNoid/script.skinshortcuts/archive/master.zip
-#bsdtar -xf master.zip -C $addonpath
-#mv $addonpath/script.skinshortcuts{-master,}
-#chown -R osmc:osmc $addonpath/script.skinshortcuts
-#rm master.zip
-#xbmc-send -a "UpdateLocalAddons"
+addonpath=/home/osmc/.kodi/addons
+apt install -y bsdtar
+wget -qN --show-progress $gitpath/addons.zip
+bsdtar -xf addons.zip -C $addonpath/packages
+rm addons.zip
+bsdtar -xf $addonpath/packages/script.module.simplejson*.zip -C $addonpath
+bsdtar -xf $addonpath/packages/script.module.unidecode*.zip -C $addonpath
+bsdtar -xf $addonpath/packages/script.skinshortcuts*.zip -C $addonpath
+chown -R osmc:osmc $addonpath
+xbmc-send -a "UpdateLocalAddons"
 
 wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts

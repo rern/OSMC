@@ -42,6 +42,8 @@ systemctl restart nmbd smbd
 # set samba password
 (echo $pwd1; echo $pwd1) | smbpasswd -s -a root
 
+title "Samba installed successfully." 
+
 # Transmission
 #################################################################################
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh $pwd1 0 1

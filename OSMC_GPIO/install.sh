@@ -10,7 +10,7 @@ rm install.sh
 title2 "Install $osmcgpio ..."
 
 # install packages #######################################
-title "$info Update package databases"
+title "Update package databases"
 # skip with any argument
 (( $# == 0 )) && apt update
 

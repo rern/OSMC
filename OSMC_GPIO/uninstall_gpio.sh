@@ -74,4 +74,4 @@ echo 'Nginx still installed.'
 echo 'Remove: apt purge nginx nginx-common nginx-full'
 titleend "$osmcgpio successfully uninstalled."
 
-rm uninstall.sh
+rm uninstall_gpio.sh

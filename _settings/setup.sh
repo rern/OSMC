@@ -55,7 +55,7 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.s
 # GPIO
 #################################################################################
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh 1
-wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/gpio.json -P /home/osmc/gpio
+wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/gpio.json -P /home/osmc
 systemctl restart gpioset
 
 #title2 "System upgrade ..."

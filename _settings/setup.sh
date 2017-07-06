@@ -35,7 +35,8 @@ bsdtar -xf $addonpath/packages/script.module.unidecode*.zip -C $addonpath
 bsdtar -xf $addonpath/packages/script.skinshortcuts*.zip -C $addonpath
 chown -R osmc:osmc $addonpath
 find $addonpath/. -name "*.py" -exec chmod +x {} +
-xbmc-send -a "UpdateLocalAddons"
+xbmc-send -a "UpdateAddonRepos()"
+xbmc-send -a "UpdateLocalAddons()"
 
 wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts

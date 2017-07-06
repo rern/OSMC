@@ -8,6 +8,9 @@ wget -qN https://github.com/rern/tips/raw/master/bash/f_password.sh; . f_passwor
 
 rm setup.sh
 
+title "This setup will take 11 min.:
+echo
+
 # passwords
 title "$info root password for Samba and Transmission ..."
 setpwd

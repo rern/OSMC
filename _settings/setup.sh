@@ -75,4 +75,5 @@ timesec=$(( $timediff % 60 ))
 
 title2 "Setup finished successfully."
 echo "Duration: $timemin min $timesec sec"
+echo
 titleend "Proceed to Settings > Interface > Configure skin > Enable menu customization."

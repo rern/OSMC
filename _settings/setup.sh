@@ -1,5 +1,7 @@
 #!/bin/bash
 
+timestart=$( date +%s )
+
 # import heading and password function
 wget -qN https://github.com/rern/tips/raw/master/bash/f_heading.sh; . f_heading.sh; rm f_heading.sh
 wget -qN https://github.com/rern/tips/raw/master/bash/f_password.sh; . f_password.sh; rm f_password.sh
@@ -63,5 +65,10 @@ systemctl restart gpioset
 #apt -y upgrade
 #systemctl restart mediacenter
 
+timeend=$( date +%s )
+timediff=$(( $timeend - $timestart ))
+timemin=$(( $timediff / 60 ))
+timesec=$(( $timediff % 60 ))
+echo "Duration: $timemin min $timesec sec"
 title2 "Setup finished successfully."
 titleend "Proceed to Settings > Interface > Configure skin > Enable menu customization."

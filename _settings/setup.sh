@@ -12,6 +12,10 @@ rm setup.sh
 title "$info root password for Samba and Transmission ..."
 setpwd
 
+title "Update package list ..."
+#################################################################################
+apt update
+
 title "Restore settings ..."
 #################################################################################
 gitpath=https://github.com/rern/OSMC/raw/master/_settings
@@ -33,10 +37,6 @@ chown -R osmc:osmc $kodipath
 # setup marker file
 touch /walkthrough_completed
 systemctl restart mediacenter
-
-title "Update package list ..."
-#################################################################################
-apt update
 
 title2 "Install Samba ..."
 #################################################################################

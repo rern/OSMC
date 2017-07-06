@@ -72,6 +72,7 @@ timeend=$( date +%s )
 timediff=$(( $timeend - $timestart ))
 timemin=$(( $timediff / 60 ))
 timesec=$(( $timediff % 60 ))
-echo "Duration: $timemin min $timesec sec"
+
 title2 "Setup finished successfully."
+echo "Duration: $timemin min $timesec sec"
 titleend "Proceed to Settings > Interface > Configure skin > Enable menu customization."

@@ -16,20 +16,23 @@ title "Restore settings ..."
 #################################################################################
 gitpath=https://github.com/rern/OSMC/raw/master/_settings
 kodipath=/home/osmc/.kodi/userdata
+
+# 'skin shortcuts' addon
+#addonpath=/home/osmc/.kodi/addons
+#apt install -y bsdtar
+#wget -qN --show-progress https://github.com/BigNoid/script.skinshortcuts/archive/master.zip
+#bsdtar -xf master.zip -C $addonpath
+#mv $addonpath/script.skinshortcuts{-master,}
+#chown -R osmc:osmc $addonpath/script.skinshortcuts
+#rm master.zip
+#xbmc-send -a "UpdateLocalAddons"
+
 wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts
 chown -R osmc:osmc $kodipath
 # setup marker file
 touch /walkthrough_completed
 systemctl restart mediacenter
-
-# 'skin shortcuts' addon
-#apt install -y bsdtar
-#wget -qN --show-progress https://github.com/BigNoid/script.skinshortcuts/archive/master.zip
-#bsdtar -xf master.zip -C /home/osmc/.kodi/addons
-#mv /home/osmc/.kodi/addons/script.skinshortcuts-master /home/osmc/.kodi/addons/script.skinshortcuts
-#chown -R osmc:osmc /home/osmc/.kodi/addons/script.skinshortcuts
-#rm master.zip
 
 title "Update package list ..."
 #################################################################################

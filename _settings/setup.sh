@@ -36,8 +36,7 @@ xbmc-send -a "UpdateLocalAddons"
 wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts
 chown -R osmc:osmc $kodipath
-# setup marker file
-touch /walkthrough_completed
+
 systemctl restart mediacenter
 
 title2 "Install Samba ..."

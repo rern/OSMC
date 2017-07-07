@@ -19,8 +19,10 @@ apt remove -y aria2
 
 # remove files #######################################
 title "Remove files ..."
+mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
+rm -rv $mnt/aria2/web
+rm -rv /root/aria2/web
 rm -rv /root/.aria2
-rm -r /var/www/html/aria2
 
 # skip if reinstall - pwduninstall.sh re (any argument)
 [ $# -ne 0 ] && exit

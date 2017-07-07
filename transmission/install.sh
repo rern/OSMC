@@ -131,8 +131,9 @@ systemctl start transmission
 
 title2 "Transmission installed and started successfully."
 echo 'Uninstall: ./uninstall_tran.sh'
-echo 'Start: sudo systemctl start transmission'
-echo 'Stop: sudo systemctl stop transmission'
+echo 'Start / Stop: sudo systemctl [ start / stop ] transmission'
+echo 'Startup: sudo systemctl [ enable / disable ] transmission'
+echo
 echo 'Download directory: '$path
-echo 'WebUI: [OSMC_IP]:9091'
+echo 'Web UI: [OSMC_IP]:9091'
 titleend "user: root"

@@ -131,7 +131,7 @@ systemctl start transmission
 
 title2 "Transmission installed and started successfully."
 echo 'Uninstall: ./uninstall_tran.sh'
-echo 'Start / Stop: sudo systemctl [ start / stop ] transmission'
+echo 'Run: sudo systemctl [ start / stop ] transmission'
 echo 'Startup: sudo systemctl [ enable / disable ] transmission'
 echo
 echo 'Download directory: '$path

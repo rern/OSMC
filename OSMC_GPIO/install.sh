@@ -92,6 +92,6 @@ if ! grep 'gpioonsudo.py' $file &> /dev/null; then
 fi
 
 title2 "$osmcgpio successfully installed."
-echo 'Browser: [OSMC_IP]/gpio/ for settings.'
-echo 'Power menu > GPIO On / GPIO Off
+echo Browser: [OSMC_IP]/gpio/ for settings.
+echo Power menu > GPIO On / GPIO Off
 titleend "To uninstall:   ./uninstall_gpio.sh"

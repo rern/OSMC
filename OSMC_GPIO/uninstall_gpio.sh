@@ -28,7 +28,7 @@ case $answer in
 		title "Uninstall packages ..."
 		python -c "import RPi.GPIO" &>/dev/null && pip uninstall -y RPi.GPIO
 		dpkg -s bsdtar | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y bsdtar
-		dpkg -s nginx | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y nginx
+		dpkg -s nginx | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y nginx nginx-common nginx-full
 		dpkg -s php5-fpm | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y php5-fpm
 		dpkg -s gcc | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y gcc
 		dpkg -s python-dev | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y python-dev
@@ -70,8 +70,6 @@ if grep 'gpiooffsudo' $file &>/dev/null; then
 	sed -i "$(( $linenum - 2 )), $(( $linenum + 1 )) d" $file
 fi
 
-echo Nginx still installed.
-echo Remove: apt purge nginx nginx-common nginx-full
 titleend "$osmcgpio successfully uninstalled."
 
 rm uninstall_gpio.sh

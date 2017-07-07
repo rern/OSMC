@@ -20,8 +20,8 @@ systemctl disable transmission
 rm /etc/systemd/system/transmission.service
 systemctl daemon-reload
 
-echo 'Nginx still installed.'
-echo 'Remove: apt purge nginx nginx-common nginx-full'
+echo Nginx still installed.
+echo Remove: apt purge nginx nginx-common nginx-full
 titleend "Transmission uninstalled successfully."
 
 rm uninstall_tran.sh

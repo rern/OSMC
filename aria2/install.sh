@@ -79,14 +79,14 @@ ExecStart=/usr/bin/aria2c
 WantedBy=multi-user.target
 ' > /etc/systemd/system/aria2.service
 
-echo 'server {
+echo 'server { #aria2
 	listen 88;
 	location / {
 		root  '$path'/web;
 		index  index.php index.html index.htm;
 	}
-}
-' > /etc/nginx/sites-available/aria2
+} #aria2
+' >> /etc/nginx/sites-available/aria2
 ln -s /etc/nginx/sites-available/aria2 /etc/nginx/sites-enabled/aria2
 
 title "Restart nginx ..."

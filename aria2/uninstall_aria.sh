@@ -29,14 +29,14 @@ rm -rv /root/aria2
 
 # restore modified files #######################################
 title "Restore modified files ..."
-echo '/etc/nginx/nginx.conf'
+echo /etc/nginx/nginx.conf
 sed -i '/server { #aria2/, /} #aria2/ d' /etc/nginx/nginx.conf
 
 # skip if reinstall - pwduninstall.sh re (any argument)
 [ $# -ne 0 ] && exit
 
-echo 'Nginx still installed.'
-echo 'Remove: apt purge nginx nginx-common nginx-full'
+echo Nginx still installed.
+echo Remove: apt purge nginx nginx-common nginx-full
 titleend "Aria2 uninstalled successfully."
 
 rm uninstall_aria.sh

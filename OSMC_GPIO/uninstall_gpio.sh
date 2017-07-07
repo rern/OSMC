@@ -70,8 +70,8 @@ if grep 'gpiooffsudo' $file &>/dev/null; then
 	sed -i "$(( $linenum - 2 )), $(( $linenum + 1 )) d" $file
 fi
 
-echo 'Nginx still installed.'
-echo 'Remove: apt purge nginx nginx-common nginx-full'
+echo Nginx still installed.
+echo Remove: apt purge nginx nginx-common nginx-full
 titleend "$osmcgpio successfully uninstalled."
 
 rm uninstall_gpio.sh

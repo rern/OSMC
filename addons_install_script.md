@@ -4,8 +4,9 @@
 - check depends in `./script.skinshortcuts/addon.xml` field `<requires>`
 - download the required addons > extract to `/home/osmc/.kodi/addons`
 - check each new `addon.xml` for other `<requires>`
-- update addons database (add rows)
-- enable each addon in each row
+- add addons to database
+- enable each addon in database
+- update addons database
 - reload skin
 
 ```sh

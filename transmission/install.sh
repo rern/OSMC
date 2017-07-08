@@ -12,12 +12,12 @@ wget -qN https://github.com/rern/tips/raw/master/bash/f_password.sh; . f_passwor
 rm install.sh
 
 if type transmission-daemon &>/dev/null; then
-	titleend "$info Transmission already installed."
+	titleinfo "Transmission already installed."
 	exit
 fi
 # user inputs
 if (( $# == 0 )); then # with no argument
-	title "$info Set password:"
+	titleinfo "Set password:"
 	echo -e '  \e[0;36m0\e[m No'
 	echo -e '  \e[0;36m1\e[m Yes'
 	echo
@@ -25,14 +25,14 @@ if (( $# == 0 )); then # with no argument
 	read -n 1 anspwd
 	[[ $anspwd == 1 ]] && setpwd
 
-	title "$info Install WebUI alternative (Transmission Web Control):"
+	titleinfo "Install WebUI alternative (Transmission Web Control):"
 	echo -e '  \e[0;36m0\e[m No'
 	echo -e '  \e[0;36m1\e[m Yes'
 	echo
 	echo -e '\e[0;36m0\e[m / 1 ? '
 	read -n 1 answebui
 
-	title "$info Start Transmission on system startup:"
+	titleinfo "Start Transmission on system startup:"
 	echo -e '  \e[0;36m0\e[m No'
 	echo -e '  \e[0;36m1\e[m Yes'
 	echo

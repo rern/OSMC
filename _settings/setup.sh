@@ -42,13 +42,15 @@ bsdtar -xf $pkgpath/script.skinshortcuts.zip -C $addonpath
 bsdtar -xf $pkgpath/script.module.simplejson.zip -C $addonpath
 bsdtar -xf $pkgpath/script.module.unidecode.zip -C $addonpath
 chown -R osmc:osmc $addonpath
-# update addons data
+# add addons to database
 xbmc-send -a "UpdateLocalAddons()"
 # enable addons in database
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.simplejson'"
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.unidecode'"
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.skinshortcuts'"
-
+# update addons database
+xbmc-send -a "UpdateLocalAddons()"
+# force reload skin
 xbmc-send -a "ReloadSkin()"
 
 title2 "Install Samba ..."

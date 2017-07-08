@@ -27,12 +27,14 @@ bsdtar -xf $pkgpath/script.module.unidecode.zip -C $addonpath
 chown -R osmc:osmc $addonpath
 # add addons to database
 xbmc-send -a "UpdateLocalAddons()"
+sleep 2
 # enable addons in database
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.simplejson'"
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.unidecode'"
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.skinshortcuts'"
 # update addons database
 xbmc-send -a "UpdateLocalAddons()"
+sleep 2
 # force reload skin
 xbmc-send -a "ReloadSkin()"
 ```

@@ -24,10 +24,15 @@ title "Restore settings ..."
 gitpath=https://github.com/rern/OSMC/raw/master/_settings
 kodipath=/home/osmc/.kodi/userdata
 
+# get backup settings
+wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
+wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts
+chown -R osmc:osmc $kodipath
+
 # 'skin shortcuts' addon
 addonpath=/home/osmc/.kodi/addons
-#: <<'END'
 apt install -y bsdtar
+# get addons and depends
 wget -qN --show-progress $gitpath/addons.zip
 bsdtar -xf addons.zip -C $addonpath/packages
 rm addons.zip
@@ -35,20 +40,15 @@ bsdtar -xf $addonpath/packages/script.module.simplejson*.zip -C $addonpath
 bsdtar -xf $addonpath/packages/script.module.unidecode*.zip -C $addonpath
 bsdtar -xf $addonpath/packages/script.skinshortcuts*.zip -C $addonpath
 chown -R osmc:osmc $addonpath
-#find $addonpath/. -name "*.py" -exec chmod +x {} +
-#xbmc-send -a "UpdateAddonRepos()"
-#xbmc-send -a "UpdateLocalAddons()"
-#END
-# enable addons
+# enable addons in database
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 0 WHERE addonID = 'script.module.simplejson'"
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 0 WHERE addonID = 'script.module.unidecode'"
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 0 WHERE addonID = 'script.skinshortcuts'"
-
-wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
-wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts
-chown -R osmc:osmc $kodipath
-
-systemctl restart mediacenter
+# update addons status
+xbmc-send -a "UpdateAddonRepos()"
+xbmc-send -a "UpdateLocalAddons()"
+xbmc-send -a "ReloadSkin()"
+#systemctl restart mediacenter
 
 title2 "Install Samba ..."
 #################################################################################

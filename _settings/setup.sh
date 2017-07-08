@@ -39,6 +39,7 @@ chown -R osmc:osmc $addonpath
 #xbmc-send -a "UpdateAddonRepos()"
 #xbmc-send -a "UpdateLocalAddons()"
 #END
+# enable addons
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 0 WHERE addonID = 'script.module.simplejson'"
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 0 WHERE addonID = 'script.module.unidecode'"
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 0 WHERE addonID = 'script.skinshortcuts'"

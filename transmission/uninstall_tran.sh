@@ -5,7 +5,7 @@ wget -qN https://github.com/rern/tips/raw/master/bash/f_heading.sh; . f_heading.
 
 # check installed #######################################
 if ! type transmission-daemon &>/dev/null; then
-	title "$info Transmission not found."
+	titleinfo "Transmission not found."
 	exit
 fi
 
@@ -20,8 +20,8 @@ systemctl disable transmission
 rm /etc/systemd/system/transmission.service
 systemctl daemon-reload
 
-echo Nginx still installed.
-echo Remove: apt purge nginx nginx-common nginx-full
-titleend "Transmission uninstalled successfully."
+title2 "Transmission uninstalled successfully."
+echo $info Nginx still installed.
+titleend "Remove: apt purge nginx nginx-common nginx-full"
 
 rm uninstall_tran.sh

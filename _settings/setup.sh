@@ -44,9 +44,10 @@ bsdtar -xf $addonpath/packages/script.module.simplejson.zip -C $addonpath
 bsdtar -xf $addonpath/packages/script.module.unidecode.zip -C $addonpath
 chown -R osmc:osmc $addonpath
 # enable addons in database
-sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.simplejson'"
-sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.unidecode'"
-sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.skinshortcuts'"
+dbpath=$kodipath/Database
+sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.simplejson'"
+sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.unidecode'"
+sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.skinshortcuts'"
 # update addons status
 xbmc-send -a "UpdateAddonRepos()"
 xbmc-send -a "UpdateLocalAddons()"

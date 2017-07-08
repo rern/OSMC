@@ -10,13 +10,13 @@ wget -qN https://github.com/rern/tips/raw/master/bash/f_heading.sh; . f_heading.
 rm install.sh
 
 if type aria2c &>/dev/null; then
-	titleend "$info Aria2 already installed."
+	titleinfo "Aria2 already installed."
 	exit
 fi
 
 if (( $# == 0 )); then
 	# user input
-	title "$info Start Aria2 on system startup:"
+	titleinfo "Start Aria2 on system startup:"
 	echo -e '  \e[0;36m0\e[m No'
 	echo -e '  \e[0;36m1\e[m Yes'
 	echo
@@ -97,7 +97,7 @@ systemctl restart nginx
 title "Start Aria2 ..."
 systemctl start aria2
 
-title2 Aria2 installed and started successfully.
+title2 "Aria2 installed and started successfully.
 echo Uninstall: ./uninstall_aria.sh
 echo Run: sudo systemctl [ start /stop ] aria2
 echo Startup: sudo systemctl [ enable /disable ] aria2

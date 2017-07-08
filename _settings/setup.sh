@@ -33,12 +33,15 @@ chown -R osmc:osmc $kodipath
 addonpath=/home/osmc/.kodi/addons
 apt install -y bsdtar
 # get addons and depends
-wget -qN --show-progress $gitpath/addons.zip
-bsdtar -xf addons.zip -C $addonpath/packages
-rm addons.zip
-bsdtar -xf $addonpath/packages/script.module.simplejson*.zip -C $addonpath
-bsdtar -xf $addonpath/packages/script.module.unidecode*.zip -C $addonpath
-bsdtar -xf $addonpath/packages/script.skinshortcuts*.zip -C $addonpath
+#wget -qN --show-progress $gitpath/addons.zip
+#bsdtar -xf addons.zip -C $addonpath/packages
+#rm addons.zip
+wget -qN --show-progress https://github.com/BigNoid/script.skinshortcuts/archive/master.zip -O $addonpath/packages/script.skinshortcuts.zip
+wget -qN --show-progress https://github.com/XBMC-Addons/script.module.simplejson/archive/master.zip -O $addonpath/packages/script.module.simplejson.zip
+wget -qN --show-progress http://mirrors.kodi.tv/addons/jarvis/script.module.unidecode/script.module.unidecode-0.4.16.zip -O $addonpath/packages/script.module.unidecode.zip
+bsdtar -xf $addonpath/packages/script.skinshortcuts.zip -C $addonpath
+bsdtar -xf $addonpath/packages/script.module.simplejson.zip -C $addonpath
+bsdtar -xf $addonpath/packages/script.module.unidecode.zip -C $addonpath
 chown -R osmc:osmc $addonpath
 # enable addons in database
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.simplejson'"

@@ -7,6 +7,12 @@ wget -qN https://github.com/rern/tips/raw/master/bash/f_heading.sh; . f_heading.
 
 rm install.sh
 
+# check installed #######################################
+if [ -e /home/osmc/gpioon.py ]; then
+	titleinfo "$osmcgpio already installed"
+	exit
+fi
+
 title2 "Install $osmcgpio ..."
 
 # install packages #######################################
@@ -91,7 +97,7 @@ if ! grep 'gpioonsudo.py' $file &> /dev/null; then
 	' $file
 fi
 
-title2 "$osmcgpio successfully installed."
+title2 "$osmcgpio installed successfully."
 echo Browser: [OSMC_IP]/gpio/ for settings.
 echo Power menu > GPIO On / GPIO Off
 titleend "To uninstall:   ./uninstall_gpio.sh"

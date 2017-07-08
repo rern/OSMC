@@ -15,10 +15,6 @@ echo
 title "$info root password for Samba and Transmission ..."
 setpwd
 
-title "Update package list ..."
-#################################################################################
-apt update
-
 title "Restore settings ..."
 #################################################################################
 gitpath=https://github.com/rern/OSMC/raw/master/_settings
@@ -49,6 +45,10 @@ wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/scri
 chown -R osmc:osmc $kodipath
 
 systemctl restart mediacenter
+
+title "Update package database ..."
+#################################################################################
+apt update
 
 title2 "Install Samba ..."
 #################################################################################

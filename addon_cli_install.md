@@ -1,4 +1,4 @@
-**Install `script.skinshortcuts` with command line**  
+**`script.skinshortcuts` - install with command line**  
 
 - download > extract to `/home/osmc/.kodi/addons`
 - check depends in `./script.skinshortcuts/addon.xml` field `<requires>`

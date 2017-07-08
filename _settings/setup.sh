@@ -12,7 +12,7 @@ title "This setup will take 11 min."
 echo
 
 # passwords
-title "$info root password for Samba and Transmission ..."
+titleinfo "root password for Samba and Transmission ..."
 setpwd
 
 title "Update package database ..."
@@ -63,7 +63,7 @@ systemctl restart nmbd smbd
 # set samba password
 (echo $pwd1; echo $pwd1) | smbpasswd -s -a root
 
-title "Samba installed successfully." 
+title2 "Samba installed successfully." 
 
 # Transmission
 #################################################################################
@@ -90,5 +90,4 @@ timemin=$(( $timediff / 60 ))
 timesec=$(( $timediff % 60 ))
 
 title2 "Setup finished successfully."
-echo "Duration: $timemin min $timesec sec"
-titleend "Proceed to Settings > Interface > Configure skin > Enable menu customization."
+titleend "Duration: $timemin min $timesec sec"

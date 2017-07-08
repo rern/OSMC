@@ -6,7 +6,7 @@ wget -qN https://github.com/rern/tips/raw/master/bash/f_heading.sh; . f_heading.
 # check installed #######################################
 
 if [ ! -e /home/osmc/gpioon.py ]; then
-	title "$info $osmcgpio not found."
+	titleinfo "$osmcgpio not found."
 	exit
 fi
 
@@ -70,6 +70,6 @@ if grep 'gpiooffsudo' $file &>/dev/null; then
 	sed -i "$(( $linenum - 2 )), $(( $linenum + 1 )) d" $file
 fi
 
-titleend "$osmcgpio successfully uninstalled."
+title2 "$osmcgpio successfully uninstalled."
 
 rm uninstall_gpio.sh

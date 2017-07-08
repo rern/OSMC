@@ -1,4 +1,4 @@
-**`script.skinshortcuts` - addons install script**  
+**Addons install script** for `script.skinshortcuts`  
 
 - download > extract to `/home/osmc/.kodi/addons`
 - check depends in `./script.skinshortcuts/addon.xml` field `<requires>`

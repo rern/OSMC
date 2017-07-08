@@ -5,7 +5,7 @@ wget -qN https://github.com/rern/tips/raw/master/bash/f_heading.sh; . f_heading.
 
 # check installed #######################################
 if ! type aria2c &>/dev/null; then
-	title "$info Aria2 not found."
+	titleinfo "Aria2 not found."
 	exit
 fi
 
@@ -37,6 +37,6 @@ sed -i '/server { #aria2/, /} #aria2/ d' /etc/nginx/nginx.conf
 
 echo Nginx still installed.
 echo Remove: apt purge nginx nginx-common nginx-full
-titleend "Aria2 uninstalled successfully."
+title2 "Aria2 uninstalled successfully."
 
 rm uninstall_aria.sh

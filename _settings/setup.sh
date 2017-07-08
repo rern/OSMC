@@ -23,6 +23,9 @@ title "Restore settings ..."
 #################################################################################
 gitpath=https://github.com/rern/OSMC/raw/master/_settings
 kodipath=/home/osmc/.kodi/userdata
+addonpath=/home/osmc/.kodi/addons
+pkgpath=$addonpath/packages
+dbpath=$kodipath/Database
 
 # get backup settings
 wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
@@ -30,29 +33,22 @@ wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/scri
 chown -R osmc:osmc $kodipath
 
 # 'skin shortcuts' addon
-addonpath=/home/osmc/.kodi/addons
 apt install -y bsdtar
 # get addons and depends
-#wget -qN --show-progress $gitpath/addons.zip
-#bsdtar -xf addons.zip -C $addonpath/packages
-#rm addons.zip
-wget -qN --show-progress https://github.com/BigNoid/script.skinshortcuts/archive/master.zip -O $addonpath/packages/script.skinshortcuts.zip
-wget -qN --show-progress https://github.com/XBMC-Addons/script.module.simplejson/archive/master.zip -O $addonpath/packages/script.module.simplejson.zip
-wget -qN --show-progress http://mirrors.kodi.tv/addons/jarvis/script.module.unidecode/script.module.unidecode-0.4.16.zip -O $addonpath/packages/script.module.unidecode.zip
-bsdtar -xf $addonpath/packages/script.skinshortcuts.zip -C $addonpath
-bsdtar -xf $addonpath/packages/script.module.simplejson.zip -C $addonpath
-bsdtar -xf $addonpath/packages/script.module.unidecode.zip -C $addonpath
+wget -qN --show-progress https://github.com/BigNoid/script.skinshortcuts/archive/master.zip -O $pkgpath/script.skinshortcuts.zip
+wget -qN --show-progress https://github.com/XBMC-Addons/script.module.simplejson/archive/master.zip -O $pkgpath/script.module.simplejson.zip
+wget -qN --show-progress http://mirrors.kodi.tv/addons/jarvis/script.module.unidecode/script.module.unidecode-0.4.16.zip -O $pkgpath/script.module.unidecode.zip
+bsdtar -xf $pkgpath/script.skinshortcuts.zip -C $addonpath
+bsdtar -xf $pkgpath/script.module.simplejson.zip -C $addonpath
+bsdtar -xf $pkgpath/script.module.unidecode.zip -C $addonpath
 chown -R osmc:osmc $addonpath
 # update addons data
-xbmc-send -a "UpdateAddonRepos()"
 xbmc-send -a "UpdateLocalAddons()"
 # enable addons in database
-dbpath=$kodipath/Database
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.simplejson'"
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.unidecode'"
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.skinshortcuts'"
 
-#systemctl restart mediacenter
 xbmc-send -a "ReloadSkin()"
 
 title2 "Install Samba ..."

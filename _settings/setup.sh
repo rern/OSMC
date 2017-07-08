@@ -26,7 +26,7 @@ kodipath=/home/osmc/.kodi/userdata
 
 # 'skin shortcuts' addon
 addonpath=/home/osmc/.kodi/addons
-: <<'END'
+#: <<'END'
 apt install -y bsdtar
 wget -qN --show-progress $gitpath/addons.zip
 bsdtar -xf addons.zip -C $addonpath/packages
@@ -35,10 +35,13 @@ bsdtar -xf $addonpath/packages/script.module.simplejson*.zip -C $addonpath
 bsdtar -xf $addonpath/packages/script.module.unidecode*.zip -C $addonpath
 bsdtar -xf $addonpath/packages/script.skinshortcuts*.zip -C $addonpath
 chown -R osmc:osmc $addonpath
-find $addonpath/. -name "*.py" -exec chmod +x {} +
-xbmc-send -a "UpdateAddonRepos()"
-xbmc-send -a "UpdateLocalAddons()"
-END
+#find $addonpath/. -name "*.py" -exec chmod +x {} +
+#xbmc-send -a "UpdateAddonRepos()"
+#xbmc-send -a "UpdateLocalAddons()"
+#END
+sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 0 WHERE addonID = 'script.module.simplejson'"
+sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 0 WHERE addonID = 'script.module.unidecode'"
+sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 0 WHERE addonID = 'script.skinshortcuts'"
 
 wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts

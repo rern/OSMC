@@ -48,7 +48,7 @@ sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET ena
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.unidecode'"
 sqlite3 /home/osmc/.kodi/userdata/Database/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.skinshortcuts'"
 # update addons status
-#xbmc-send -a "UpdateAddonRepos()"
+xbmc-send -a "UpdateAddonRepos()"
 xbmc-send -a "UpdateLocalAddons()"
 xbmc-send -a "ReloadSkin()"
 #systemctl restart mediacenter

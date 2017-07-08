@@ -8,18 +8,18 @@ wget -qN https://github.com/rern/tips/raw/master/bash/f_password.sh; . f_passwor
 
 rm setup.sh
 
-title "This setup will take 11 min."
+titlebar "This setup will take 11 min."
 echo
 
 # passwords
 titleinfo "root password for Samba and Transmission ..."
 setpwd
 
-title "Update package database ..."
+titlebar "Update package database ..."
 #################################################################################
 apt update
 
-title "Restore settings ..."
+titlebar "Restore settings ..."
 #################################################################################
 gitpath=https://github.com/rern/OSMC/raw/master/_settings
 kodipath=/home/osmc/.kodi/userdata
@@ -32,9 +32,12 @@ wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts
 chown -R osmc:osmc $kodipath
 
-# 'skin shortcuts' addon
+title2 "Install bsdtar ..."
 apt install -y bsdtar
-# get addons and depends
+
+title2 "Install addons ..."
+# 'skin shortcuts' addon
+title "Get addons and depends ..."
 wget -qN --show-progress https://github.com/BigNoid/script.skinshortcuts/archive/master.zip -O $pkgpath/script.skinshortcuts.zip
 wget -qN --show-progress https://github.com/XBMC-Addons/script.module.simplejson/archive/master.zip -O $pkgpath/script.module.simplejson.zip
 wget -qN --show-progress http://mirrors.kodi.tv/addons/jarvis/script.module.unidecode/script.module.unidecode-0.4.16.zip -O $pkgpath/script.module.unidecode.zip
@@ -43,6 +46,7 @@ bsdtar -xf $pkgpath/script.module.simplejson.zip -C $addonpath
 bsdtar -xf $pkgpath/script.module.unidecode.zip -C $addonpath
 chown -R osmc:osmc $addonpath
 # add addons to database
+title "Update addons database ..."
 xbmc-send -a "UpdateLocalAddons()"
 sleep 2
 # enable addons in database
@@ -54,6 +58,7 @@ xbmc-send -a "UpdateLocalAddons()"
 sleep 2
 # force reload skin
 xbmc-send -a "ReloadSkin()"
+title "Skin reloaded"
 
 title2 "Install Samba ..."
 #################################################################################

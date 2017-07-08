@@ -97,7 +97,7 @@ systemctl restart nginx
 title "Start Aria2 ..."
 systemctl start aria2
 
-title2 "Aria2 installed and started successfully.
+title2 "Aria2 installed and started successfully."
 echo Uninstall: ./uninstall_aria.sh
 echo Run: sudo systemctl [ start /stop ] aria2
 echo Startup: sudo systemctl [ enable /disable ] aria2

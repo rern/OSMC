@@ -1,9 +1,9 @@
 **Install `script.skinshortcuts` with command line**  
 
 - download > extract to `/home/osmc/.kodi/addons`
-- check depends in `./script.skinshortcuts/addon.xml` field `required`
+- check depends in `./script.skinshortcuts/addon.xml` field `<requires>`
 - download the required addons > extract to `/home/osmc/.kodi/addons`
-- check each new `addon.xml` for other `required`
+- check each new `addon.xml` for other `<requires>`
 - update addons database (add rows)
 - enable each addon in each row
 - reload skin

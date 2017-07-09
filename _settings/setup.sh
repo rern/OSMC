@@ -48,9 +48,9 @@ sleep 2
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.simplejson'"
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.unidecode'"
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.skinshortcuts'"
-# refresh addons database after enable
+# refresh addons data after enable
 xbmc-send -a "UpdateLocalAddons()"
-sleep 2
+#sleep 2
 # force reload skin
 #xbmc-send -a "ReloadSkin()"
 #title "Skin reloaded"

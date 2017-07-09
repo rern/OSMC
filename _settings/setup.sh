@@ -32,10 +32,10 @@ wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts
 chown -R osmc:osmc $kodipath
 
-title2 "Install bsdtar ..."
+titlebar "Install bsdtar ..."
 apt install -y bsdtar
 
-title2 "Install addons ..."
+titlebar "Install skin.shortcuts addons ..."
 # 'skin shortcuts' addon
 title "Get addons and depends ..."
 wget -qN --show-progress https://github.com/BigNoid/script.skinshortcuts/archive/master.zip -O $pkgpath/script.skinshortcuts.zip
@@ -53,7 +53,7 @@ sleep 2
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.simplejson'"
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.unidecode'"
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.skinshortcuts'"
-# update addons database
+# refresh addons database after enable
 xbmc-send -a "UpdateLocalAddons()"
 sleep 2
 # force reload skin

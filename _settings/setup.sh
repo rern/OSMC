@@ -27,11 +27,6 @@ addonpath=/home/osmc/.kodi/addons
 pkgpath=$addonpath/packages
 dbpath=$kodipath/Database
 
-# get backup settings
-wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
-wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts
-chown -R osmc:osmc $kodipath
-
 titlebar "Install bsdtar ..."
 apt install -y bsdtar
 
@@ -57,8 +52,16 @@ sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 's
 xbmc-send -a "UpdateLocalAddons()"
 sleep 2
 # force reload skin
-xbmc-send -a "ReloadSkin()"
-title "Skin reloaded"
+#xbmc-send -a "ReloadSkin()"
+#title "Skin reloaded"
+
+# get backup settings
+wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
+wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts
+chown -R osmc:osmc $kodipath
+
+systemctl restart mediacenter
+title "OSMC restarted."
 
 title2 "Install Samba ..."
 #################################################################################

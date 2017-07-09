@@ -57,10 +57,12 @@ if (( $# == 0 )); then
 	mkdir -p $path/web
 	bsdtar -xf master.zip -s'|[^/]*/||' -C $path/web
 	rm master.zip
-	ln -s $path/web /usr/share/kodi/addons/webinterface.default/aria2
-	sed -i 's/8080/80/g' /home/osmc/.kodi/userdata/guisettings.xml
 fi
-
+# link to kodi web root
+ln -s $path/web /usr/share/kodi/addons/webinterface.default/aria2
+# change webui port to 80
+sed -i 's/8080/80/g' /home/osmc/.kodi/userdata/guisettings.xml
+	
 mkdir -p /root/.aria2
 echo "enable-rpc=true
 rpc-listen-all=true

@@ -21,6 +21,14 @@ title2 "Install $osmcgpio ..."
 if (( $# == 0 )); then
 	title "Update package databases"
 	apt update
+	if ! type php5-fpm &>/dev/null; then
+		title "Install PHP-FPM ..."
+		apt install -y php5-fpm
+	fi
+	if ! type nginx &>/dev/null; then
+		title "Install NGINX ..."
+		apt install -y nginx
+	fi
 fi
 if ! dpkg -s python-pip 2>/dev/null | grep 'Status: install ok installed' &>/dev/null; then
 	title "Install Python-Pip ..."
@@ -33,15 +41,6 @@ fi
 if ! type gcc &>/dev/null; then
 	title "Install GCC ..."
 	apt install -y gcc
-fi
-
-if ! type php5-fpm &>/dev/null; then
-	title "Install PHP-FPM ..."
-	apt install -y php5-fpm
-fi
-if ! type nginx &>/dev/null; then
-	title "Install NGINX ..."
-	apt install -y nginx
 fi
 if ! type bsdtar &>/dev/null; then
 	title "Install bsdtar ..."
@@ -72,7 +71,6 @@ rm OSMC_GPIO.tar.xz
 
 chmod 755 /home/osmc/*.py
 chmod 666 /home/osmc/gpio.json
-chmod 755 /var/www/html/gpio/*.php
 
 chmod 644 /etc/udev/rules.d/usbsound.rules
 udevadm control --reload
@@ -82,7 +80,12 @@ systemctl daemon-reload
 systemctl enable gpioset
 systemctl start gpioset
 
-systemctl restart nginx
+if (( $# == 0 )); then
+	chmod 755 /var/www/html/gpio/*.php
+	systemctl restart nginx
+else
+	rm -r /var/www
+fi
 
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'

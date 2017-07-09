@@ -89,7 +89,7 @@ echo 'server { #aria2
 ' >> /etc/nginx/sites-available/aria2
 ln -s /etc/nginx/sites-available/aria2 /etc/nginx/sites-enabled/aria2
 
-title "Restart nginx ..."
+title "Restart NGINX ..."
 systemctl restart nginx
 
 # start

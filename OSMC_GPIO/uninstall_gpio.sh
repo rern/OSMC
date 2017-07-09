@@ -16,7 +16,7 @@ fi
 title2 "Uninstall $osmcgpio ..."
 
 title "$osmcgpio installed packages"
-echo 'Uninstall Python-Pip, Python-Dev, GCC, PHP-FPM, NGINX, bsdtar and RPi.GPIO:'
+echo 'Uninstall Python-Pip, Python-Dev, GCC, bsdtar and RPi.GPIO:'
 echo -e '  \e[0;36m0\e[m Uninstall'
 echo -e '  \e[0;36m1\e[m Keep'
 echo
@@ -28,8 +28,6 @@ case $answer in
 		title "Uninstall packages ..."
 		python -c "import RPi.GPIO" &>/dev/null && pip uninstall -y RPi.GPIO
 		dpkg -s bsdtar | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y bsdtar
-		dpkg -s nginx | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y nginx nginx-common nginx-full
-		dpkg -s php5-fpm | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y php5-fpm
 		dpkg -s gcc | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y gcc
 		dpkg -s python-dev | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y python-dev
 		dpkg -s python-pip | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y python-pip
@@ -46,7 +44,6 @@ rm -v /home/osmc/gpiotimer.py
 rm -v /home/osmc/poweroff.py
 rm -v /home/osmc/poweroffsudo.py
 rm -v /home/osmc/rebootsudo.py
-rm -vr /var/www/html/gpio
 
 # restore backup files
 if [[ -e /home/osmc/rebootosmc.py ]]; then

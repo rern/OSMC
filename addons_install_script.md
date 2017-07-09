@@ -2,12 +2,12 @@
 
 - download > extract to `/home/osmc/.kodi/addons`
 - check depends in `./script.skinshortcuts/addon.xml` field `<requires>`
-- download the required addons > extract to `/home/osmc/.kodi/addons`
+- download the `<requires>` addons > extract to `/home/osmc/.kodi/addons`
 - check each new `addon.xml` for other `<requires>`
 - add addons to database
 - enable each addon in database
-- update addons database
-- reload skin
+- refresh addons data
+- restart kodi
 
 ```sh
 kodipath=/home/osmc/.kodi/userdata
@@ -32,9 +32,9 @@ sleep 2
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.simplejson'"
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.module.unidecode'"
 sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 'script.skinshortcuts'"
-# update addons database
+# refresh addons data
 xbmc-send -a "UpdateLocalAddons()"
 sleep 2
 # force reload skin
-xbmc-send -a "ReloadSkin()"
+systemctl restart mediacenter
 ```

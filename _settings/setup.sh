@@ -63,7 +63,7 @@ title "Skin reloaded"
 title2 "Install Samba ..."
 #################################################################################
 apt install -y samba
-wget -q --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/smb.conf -O /etc/samba
+wget -q --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/smb.conf -O /etc/samba/smb.conf
 systemctl daemon-reload
 systemctl restart nmbd smbd
 # set samba password

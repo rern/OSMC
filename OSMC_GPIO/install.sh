@@ -7,6 +7,7 @@ wget -qN https://github.com/rern/tips/raw/master/bash/f_heading.sh; . f_heading.
 
 rm install.sh
 
+osmcgpio=$( textcolor "OSMC GPIO" 6 )
 # check installed #######################################
 if [ -e /home/osmc/gpioon.py ]; then
 	titleinfo "$osmcgpio already installed"

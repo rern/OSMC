@@ -94,4 +94,4 @@ echo 'Startup: sudo systemctl [ enable /disable ] aria2'
 echo
 echo "Download directory: $path"
 echo "$info OSMC web interface changed to port:80"
-titleend "WebUI: [OSMC_IP]/aria2"
+titleend "WebUI: [OSMC_IP]/aria2/"

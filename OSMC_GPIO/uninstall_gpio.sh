@@ -3,8 +3,8 @@
 # import heading function
 wget -qN https://github.com/rern/tips/raw/master/bash/f_heading.sh; . f_heading.sh; rm f_heading.sh
 
+osmcgpio=$( textcolor "OSMC GPIO" 6 )
 # check installed #######################################
-
 if [ ! -e /home/osmc/gpioon.py ]; then
 	titleinfo "$osmcgpio not found."
 	exit

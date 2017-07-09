@@ -58,7 +58,7 @@ if (( $# == 0 )); then
 	bsdtar -xf master.zip -s'|[^/]*/||' -C $path/web
 	rm master.zip
 	ln -s $path/web /usr/share/kodi/addons/webinterface.default/aria2
-	sed -i 's/8080/80/' /home/osmc/userdata/guisettings.xml
+	sed -i 's/8080/80/g' /home/osmc/.kodi/userdata/guisettings.xml
 fi
 
 mkdir -p /root/.aria2

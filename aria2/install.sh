@@ -35,22 +35,6 @@ title2 "Install Aria2 ..."
 if (( $# == 0 )); then
 	title "Update package databases"
 	apt update
-	if ! type nginx &>/dev/null; then
-		title "Install NGINX ..."
-		apt install -y nginx
-	fi
-	echo 'server { #aria2
-		listen 88;
-			location / {
-			root  '$path'/web;
-			index  index.php index.html index.htm;
-		}
-	} #aria2
-	' >> /etc/nginx/sites-available/aria2
-	ln -s /etc/nginx/sites-available/aria2 /etc/nginx/sites-enabled/aria2
-
-	title "Restart NGINX ..."
-	systemctl restart nginx
 fi
 
 apt install -y aria2
@@ -73,6 +57,8 @@ if (( $# == 0 )); then
 	mkdir -p $path/web
 	bsdtar -xf master.zip -s'|[^/]*/||' -C $path/web
 	rm master.zip
+	ln -s $path/web /usr/share/kodi/addons/webinterface.default/aria2
+	sed -i 's/8080/80/' /home/osmc/userdata/guisettings.xml
 fi
 
 mkdir -p /root/.aria2
@@ -105,4 +91,5 @@ echo 'Run: sudo systemctl [ start /stop ] aria2'
 echo 'Startup: sudo systemctl [ enable /disable ] aria2'
 echo
 echo "Download directory: $path"
-titleend "WebUI: [OSMC_IP]:88"
+echo "$info OSMC web interface changed to port:80"
+titleend "WebUI: [OSMC_IP]/aria2"

@@ -32,16 +32,31 @@ chmod +x uninstall_aria.sh
 
 title2 "Install Aria2 ..."
 # skip with any argument
-(( $# == 0 )) && apt update
-apt install -y aria2
+if (( $# == 0 )); then
+	title "Update package databases"
+	apt update
+	if ! type nginx &>/dev/null; then
+		title "Install NGINX ..."
+		apt install -y nginx
+	fi
+	echo 'server { #aria2
+		listen 88;
+			location / {
+			root  '$path'/web;
+			index  index.php index.html index.htm;
+		}
+	} #aria2
+	' >> /etc/nginx/sites-available/aria2
+	ln -s /etc/nginx/sites-available/aria2 /etc/nginx/sites-enabled/aria2
 
+	title "Restart NGINX ..."
+	systemctl restart nginx
+fi
+
+apt install -y aria2
 if ! type bsdtar &>/dev/null; then
 	title "Install bsdtar ..."
 	apt install -y bsdtar
-fi
-if ! type nginx &>/dev/null; then
-	title "Install NGINX ..."
-	apt install -y nginx
 fi
 
 if mount | grep '/dev/sda1' &>/dev/null; then
@@ -78,19 +93,6 @@ ExecStart=/usr/bin/aria2c
 [Install]
 WantedBy=multi-user.target
 ' > /etc/systemd/system/aria2.service
-
-echo 'server { #aria2
-	listen 88;
-	location / {
-		root  '$path'/web;
-		index  index.php index.html index.htm;
-	}
-} #aria2
-' >> /etc/nginx/sites-available/aria2
-ln -s /etc/nginx/sites-available/aria2 /etc/nginx/sites-enabled/aria2
-
-title "Restart NGINX ..."
-systemctl restart nginx
 
 # start
 [[ $ansstartup == 1 ]] && systemctl enable aria2

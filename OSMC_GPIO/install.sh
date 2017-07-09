@@ -21,14 +21,6 @@ title2 "Install $osmcgpio ..."
 if (( $# == 0 )); then
 	title "Update package databases"
 	apt update
-	if ! type php5-fpm &>/dev/null; then
-		title "Install PHP-FPM ..."
-		apt install -y php5-fpm
-	fi
-	if ! type nginx &>/dev/null; then
-		title "Install NGINX ..."
-		apt install -y nginx
-	fi
 fi
 if ! dpkg -s python-pip 2>/dev/null | grep 'Status: install ok installed' &>/dev/null; then
 	title "Install Python-Pip ..."
@@ -80,13 +72,6 @@ systemctl daemon-reload
 systemctl enable gpioset
 systemctl start gpioset
 
-if (( $# == 0 )); then
-	chmod 755 /var/www/html/gpio/*.php
-	systemctl restart nginx
-else
-	rm -r /var/www
-fi
-
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
 if ! grep 'gpioonsudo.py' $file &> /dev/null; then
@@ -104,6 +89,6 @@ if ! grep 'gpioonsudo.py' $file &> /dev/null; then
 fi
 
 title2 "$osmcgpio installed successfully."
-echo 'Browser: [OSMC_IP]/gpio/ for settings.'
+echo 'Setting: /home/osmc/gpio.json'
 echo 'Power menu > GPIO On / GPIO Off'
 titleend "To uninstall:   ./uninstall_gpio.sh"

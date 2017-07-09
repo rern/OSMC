@@ -99,7 +99,7 @@ sed -i -e 's|"download-dir": ".*"|"download-dir": "'"$path"'"|
 ' $file
 
 # set password
-if [[ $anspwd == 1 ]] && [[ -n $pwd1 ]]; then
+if [[ -n $pwd1 ]]; then
 	sed -i -e 's|"rpc-authentication-required": false|"rpc-authentication-required": true|
 	' -e 's|"rpc-password": ".*"|"rpc-password": "'"$pwd1"'"|
 	' -e 's|"rpc-username": ".*"|"rpc-username": "root"|

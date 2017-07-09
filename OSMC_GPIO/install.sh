@@ -17,10 +17,11 @@ fi
 title2 "Install $osmcgpio ..."
 
 # install packages #######################################
-title "Update package databases"
 # skip with any argument
-(( $# == 0 )) && apt update
-
+if (( $# == 0 )); then
+	title "Update package databases"
+	apt update
+fi
 if ! dpkg -s python-pip 2>/dev/null | grep 'Status: install ok installed' &>/dev/null; then
 	title "Install Python-Pip ..."
 	apt install -y python-pip
@@ -33,6 +34,7 @@ if ! type gcc &>/dev/null; then
 	title "Install GCC ..."
 	apt install -y gcc
 fi
+
 if ! type php5-fpm &>/dev/null; then
 	title "Install PHP-FPM ..."
 	apt install -y php5-fpm

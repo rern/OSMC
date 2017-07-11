@@ -58,6 +58,8 @@ sleep 2
 # get backup settings
 wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts
+wget -qN --show-progress $gitpath/cmd.sh -P /root
+chmod +x /root/cmd.sh
 chown -R osmc:osmc $kodipath
 
 title -l = $bar Install Samba ...

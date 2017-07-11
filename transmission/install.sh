@@ -126,7 +126,7 @@ fi
 
 # start
 [[ $ansstartup == 1 ]] && systemctl enable transmission
-title "Start Transmission ..."
+title Start Transmission ...
 systemctl start transmission
 
 title -l = $bar Transmission installed and started successfully.

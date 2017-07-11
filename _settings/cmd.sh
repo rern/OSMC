@@ -13,6 +13,7 @@ bootrune() {
 	reboot
 }
 hardreset() {
+	echo
 	echo 'Reset to virgin NOOBS?'
 	echo -e '  \e[0;36m0\e[m No'
 	echo -e '  \e[0;36m1\e[m Yes'

@@ -64,8 +64,7 @@ title -l = $bar Install Samba ...
 #################################################################################
 apt install -y samba
 wget -q --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/smb.conf -O /etc/samba/smb.conf
-systemctl daemon-reload
-systemctl restart nmbd smbd
+
 # set samba password
 (echo $pwd1; echo $pwd1) | smbpasswd -s -a root
 
@@ -81,15 +80,15 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.s
 
 # GPIO
 #################################################################################
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh 1
 wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/gpio.json -P /home/osmc
-systemctl restart gpioset
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh 1
 
 #title2 "System upgrade ..."
 #################################################################################
 #apt -y upgrade
 
-systemctl restart mediacenter
+#systemctl daemon-reload # done in GPIO install
+systemctl restart nmbd smbd mediacenter
 title OSMC restarted.
 
 timeend=$( date +%s )

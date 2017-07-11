@@ -76,7 +76,7 @@ systemctl start gpioset
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
 if ! grep 'gpioonsudo.py' $file &> /dev/null; then
 	linenum=$( sed -n '/Quit()/{=}' $file ) # normal
-	sed -i -e ''"$(( $linenum - 2 ))"' i\
+	sed -i -e "$(( $linenum - 2 ))"' i\
 	\t\t\t\t\t<item>\
 	\t\t\t\t\t\t<label>GPIO On</label>\
 	\t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpioonsudo.py)</onclick>\

@@ -3,49 +3,49 @@
 # install.sh - run as root
 
 # import heading function
-wget -qN https://github.com/rern/tips/raw/master/bash/f_heading.sh; . f_heading.sh; rm f_heading.sh
+wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
+osmcgpio=$( textcolor "OSMC GPIO" )
 
 rm install.sh
 
-osmcgpio=$( textcolor "OSMC GPIO" 6 )
 # check installed #######################################
 if [ -e /home/osmc/gpioon.py ]; then
 	titleinfo "$osmcgpio already installed"
 	exit
 fi
 
-title2 "Install $osmcgpio ..."
+title -l = $bar Install $osmcgpio ...
 
 # install packages #######################################
 # skip with any argument
 if (( $# == 0 )); then
-	title "Update package databases"
+	title Update package databases ...
 	apt update
 fi
 if ! dpkg -s python-pip 2>/dev/null | grep 'Status: install ok installed' &>/dev/null; then
-	title "Install Python-Pip ..."
+	title Install Python-Pip ...
 	apt install -y python-pip
 fi
 if ! dpkg -s python-dev 2>/dev/null | grep 'Status: install ok installed' &>/dev/null; then
-	title "Install Python-Dev ..."
+	title Install Python-Dev ...
 	apt install -y python-dev
 fi
 if ! type gcc &>/dev/null; then
-	title "Install GCC ..."
+	title Install GCC ...
 	apt install -y gcc
 fi
 if ! type bsdtar &>/dev/null; then
-	title "Install bsdtar ..."
+	title Install bsdtar ...
 	apt install -y bsdtar
 fi
 
 if ! python -c "import RPi.GPIO" &>/dev/null; then
-	title "Install Python-RPi.GPIO ..."
+	title Install Python-RPi.GPIO ...
 	yes | pip install RPi.GPIO
 fi
 
 # install OSMC GPIO #######################################
-title "Get files ..."
+title Get files ...
 
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/uninstall_gpio.sh
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/_repo/OSMC_GPIO.tar.xz
@@ -57,7 +57,7 @@ if [[ -e /home/osmc/rebootosmc.py ]]; then
 	sed -i "/rebootrune.sh/ i\os.system('/usr/bin/sudo /home/osmc/gpiooffsudo.py r &')" /home/osmc/rebootrune.py
 fi
 
-title "Install files ..."
+title Install files ...
 bsdtar -xvf OSMC_GPIO.tar.xz -C / $([ -f /home/osmc/gpio.json ] && echo ' --exclude=gpio.json')
 rm OSMC_GPIO.tar.xz
 
@@ -88,7 +88,8 @@ if ! grep 'gpioonsudo.py' $file &> /dev/null; then
 	' $file
 fi
 
-title2 "$osmcgpio installed successfully."
+title -l = $bar $osmcgpio installed successfully.
+echo 'Uninstall: ./uninstall_gpio.sh'
+echo
 echo 'Setting: /home/osmc/gpio.json'
-echo 'Power menu > GPIO On / GPIO Off'
-titleend "To uninstall:   ./uninstall_gpio.sh"
+title -nt 'Power menu > GPIO On / GPIO Off'

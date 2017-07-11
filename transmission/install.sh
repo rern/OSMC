@@ -6,18 +6,18 @@
 #   any argument = no prompt + no package update
 
 # import heading and password function
-wget -qN https://github.com/rern/tips/raw/master/bash/f_heading.sh; . f_heading.sh; rm f_heading.sh
+wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 wget -qN https://github.com/rern/tips/raw/master/bash/f_password.sh; . f_password.sh; rm f_password.sh
 
 rm install.sh
 
 if type transmission-daemon &>/dev/null; then
-	titleinfo "Transmission already installed."
+	title $info Transmission already installed.
 	exit
 fi
 # user inputs
 if (( $# == 0 )); then # with no argument
-	titleinfo "Set password:"
+	title $info Set password:
 	echo -e '  \e[0;36m0\e[m No'
 	echo -e '  \e[0;36m1\e[m Yes'
 	echo
@@ -25,14 +25,14 @@ if (( $# == 0 )); then # with no argument
 	read -n 1 anspwd
 	[[ $anspwd == 1 ]] && setpwd
 
-	titleinfo "Install WebUI alternative (Transmission Web Control):"
+	title $info Install WebUI alternative \(Transmission Web Control\):
 	echo -e '  \e[0;36m0\e[m No'
 	echo -e '  \e[0;36m1\e[m Yes'
 	echo
 	echo -e '\e[0;36m0\e[m / 1 ? '
 	read -n 1 answebui
 
-	titleinfo "Start Transmission on system startup:"
+	title $info Start Transmission on system startup:
 	echo -e '  \e[0;36m0\e[m No'
 	echo -e '  \e[0;36m1\e[m Yes'
 	echo
@@ -48,13 +48,13 @@ fi
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/uninstall_tran.sh
 chmod +x uninstall_tran.sh
 
-title2 "Install Transmission ..."
+title -l = $bar Install Transmission ...
 # skip with any argument
 (( $# == 0 )) && apt update
 apt install -y transmission-daemon transmission-cli
 
 if [[ $answebui == 1 ]] && ! type bsdtar &>/dev/null; then
-	title2 "Install bsdtar ..."
+	title Install bsdtar ...
 	apt install -y bsdtar
 fi
 
@@ -129,11 +129,11 @@ fi
 title "Start Transmission ..."
 systemctl start transmission
 
-title2 "Transmission installed and started successfully."
+title -l = $bar Transmission installed and started successfully.
 echo 'Uninstall: ./uninstall_tran.sh'
 echo 'Run: sudo systemctl [ start / stop ] transmission'
 echo 'Startup: sudo systemctl [ enable / disable ] transmission'
 echo
 echo "Download directory: $path"
-echo Web UI: [OSMC_IP]:9091
-titleend "user: root"
+echo 'Web UI: [OSMC_IP]:9091'
+title -nt user: root

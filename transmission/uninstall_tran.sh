@@ -1,27 +1,25 @@
 #!/bin/bash
 
 # import heading function
-wget -qN https://github.com/rern/tips/raw/master/bash/f_heading.sh; . f_heading.sh; rm f_heading.sh
+wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 
 # check installed #######################################
 if ! type transmission-daemon &>/dev/null; then
-	titleinfo "Transmission not found."
+	title $info Transmission not found.
 	exit
 fi
 
-title2 "Uninstall Transmission ..."
+title -l = $bar Uninstall Transmission ...
 # uninstall package #######################################
 apt remove -y transmission-daemon transmission-cli
 
 # remove files #######################################
-title "Remove files ..."
+title Remove files ...
 rm -rfv /etc/transmission-daemon
 systemctl disable transmission
 rm /etc/systemd/system/transmission.service
 systemctl daemon-reload
 
-title2 "Transmission uninstalled successfully."
-echo $info Nginx still installed.
-titleend "Remove: apt purge nginx nginx-common nginx-full"
+title -l = $bar Transmission uninstalled successfully.
 
 rm uninstall_tran.sh

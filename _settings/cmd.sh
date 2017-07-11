@@ -1,13 +1,15 @@
 #!/bin/bash
 
 bootosmc() {
-	echo 6 > /sys/module/bcm2709/parameters/reboot_part
-	/var/www/command/rune_shutdown
+	mkdir -p /tmp/p5
+	mount /dev/mmcblk0p5 /tmp/p5
+	sed -i "s/default_partition_to_boot=./default_partition_to_boot=6/" /tmp/p5/noobs.conf
 	reboot
 }
 bootrune() {
-	echo 8 > /sys/module/bcm2709/parameters/reboot_part
-	/var/www/command/rune_shutdown
+	mkdir -p /tmp/p5
+	mount /dev/mmcblk0p5 /tmp/p5
+	sed -i "s/default_partition_to_boot=./default_partition_to_boot=8/" /tmp/p5/noobs.conf
 	reboot
 }
 hardreset() {
@@ -22,7 +24,6 @@ hardreset() {
 		mkdir /tmp/p1
 		mount /dev/mmcblk0p1 /tmp/p1
 		echo -n " forcetrigger" >> /tmp/p1/recovery.cmdline
-		/var/www/command/rune_shutdown
 		reboot
 	fi
 }

@@ -25,7 +25,7 @@ if (( $# == 0 )); then # with no argument
 	read -n 1 anspwd
 	[[ $anspwd == 1 ]] && setpwd
 
-	title $info Install WebUI alternative \(Transmission Web Control\):
+	title "$info Install WebUI alternative (Transmission Web Control):"
 	echo -e '  \e[0;36m0\e[m No'
 	echo -e '  \e[0;36m1\e[m Yes'
 	echo

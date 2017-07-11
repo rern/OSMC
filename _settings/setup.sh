@@ -60,9 +60,6 @@ wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts
 chown -R osmc:osmc $kodipath
 
-systemctl restart mediacenter
-title OSMC restarted.
-
 title -l = $bar Install Samba ...
 #################################################################################
 apt install -y samba
@@ -91,7 +88,9 @@ systemctl restart gpioset
 #title2 "System upgrade ..."
 #################################################################################
 #apt -y upgrade
-#systemctl restart mediacenter
+
+systemctl restart mediacenter
+title OSMC restarted.
 
 timeend=$( date +%s )
 timediff=$(( $timeend - $timestart ))

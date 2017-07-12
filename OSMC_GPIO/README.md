@@ -1,6 +1,6 @@
 OSMC_GPIO
 ---
-![screen0](https://github.com/rern/OSMC/blob/master/OSMC_GPIO/kodigpio.jpg)  
+![screen0](https://github.com/rern/OSMC/blob/master/OSMC_GPIO/_repo/kodigpio.jpg)  
 
 **Install**
 ```sh

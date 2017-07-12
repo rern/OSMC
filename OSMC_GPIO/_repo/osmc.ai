@@ -1,728 +1,439 @@
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-  <link rel="dns-prefetch" href="https://assets-cdn.github.com">
-  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com">
-  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com">
-  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com">
-  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
-  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
-  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
-
-
-
-  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-e04a23d39bf81b7db3c635177756ef51bc171feb440be9e174933c6eb56382da.css" integrity="sha256-4Eoj05v4G32zxjUXd1bvUbwXH+tEC+nhdJM8brVjgto=" media="all" rel="stylesheet" />
-  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-24334c18831214381e60cd2cee0b86be216d64096d129d8c2b644d1fdcba1d4e.css" integrity="sha256-JDNMGIMSFDgeYM0s7guGviFtZAltEp2MK2RNH9y6HU4=" media="all" rel="stylesheet" />
-  
-  
-  
-  
-
-  <meta name="viewport" content="width=device-width">
-  
-  <title>Assets/osmc.ai at master ¬∑ rern/Assets</title>
-  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
-  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
-  <meta property="fb:app_id" content="1401488693436528">
-
-    
-    <meta content="https://avatars1.githubusercontent.com/u/10094236?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="rern/Assets" property="og:title" /><meta content="https://github.com/rern/Assets" property="og:url" /><meta content="Contribute to Assets development by creating an account on GitHub." property="og:description" />
-
-  <link rel="assets" href="https://assets-cdn.github.com/">
-  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MTg1OTI1Nzk5OjE1ZDY1NWQ1ZDYyZjkyNjgxZjljZTdjNmMzNzI1YzExNjUxMzQzZDBkN2U0MzllMWIyZDhkZmYzZDU2NTc4MWI=--e67aaeed0cc15412926fef65646bfa4c1a849cc3">
-  <meta name="pjax-timeout" content="1000">
-  <link rel="sudo-modal" href="/sessions/sudo_modal">
-  <meta name="request-id" content="E0E7:159E:2CA43A4:444AB00:5965E120" data-pjax-transient>
-  
-
-  <meta name="selected-link" value="repo_source" data-pjax-transient>
-
-  <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
-<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
-    <meta name="google-analytics" content="UA-3769691-2">
-
-<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="E0E7:159E:2CA43A4:444AB00:5965E120" name="octolytics-dimension-request_id" /><meta content="sea" name="octolytics-dimension-region_edge" /><meta content="iad" name="octolytics-dimension-region_render" /><meta content="10094236" name="octolytics-actor-id" /><meta content="rern" name="octolytics-actor-login" /><meta content="5638f5299831b7e42e267087495190e066d5c79f495333e1c8b4c3503b245770" name="octolytics-actor-hash" />
-<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location" />
-
-
-
-
-  <meta class="js-ga-set" name="dimension1" content="Logged In">
-
-
-  
-
-      <meta name="hostname" content="github.com">
-  <meta name="user-login" content="rern">
-
-      <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="YThmMzM2ZmRhZjNkZDNiZmJkNjUyYzY3NzYwZmU0ZWJjNDU3NTI0Yjg3NTkyOWM5NDU0ZWU4ZWVjMzkyNzdlZHx7InJlbW90ZV9hZGRyZXNzIjoiMTgyLjUyLjE3My4yNDkiLCJyZXF1ZXN0X2lkIjoiRTBFNzoxNTlFOjJDQTQzQTQ6NDQ0QUIwMDo1OTY1RTEyMCIsInRpbWVzdGFtcCI6MTQ5OTg0OTAwMCwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
-
-
-  <meta name="html-safe-nonce" content="c21b5b007091738d3c221eb86648e797350e8269">
-
-  <meta http-equiv="x-pjax-version" content="a1f043a5bc97e73c6eae7150ed853a0f">
-  
-
-      <link href="https://github.com/rern/Assets/commits/master.atom" rel="alternate" title="Recent Commits to Assets:master" type="application/atom+xml">
-
-  <meta name="description" content="Contribute to Assets development by creating an account on GitHub.">
-  <meta name="go-import" content="github.com/rern/Assets git https://github.com/rern/Assets.git">
-
-  <meta content="10094236" name="octolytics-dimension-user_id" /><meta content="rern" name="octolytics-dimension-user_login" /><meta content="77155493" name="octolytics-dimension-repository_id" /><meta content="rern/Assets" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="77155493" name="octolytics-dimension-repository_network_root_id" /><meta content="rern/Assets" name="octolytics-dimension-repository_network_root_nwo" /><meta content="true" name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" />
-
-
-    <link rel="canonical" href="https://github.com/rern/Assets/blob/master/OSMC_GPIO/osmc.ai" data-pjax-transient>
-
-
-  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
-
-  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
-
-  <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000">
-  <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
-
-<meta name="theme-color" content="#1e2327">
-
-
-  <meta name="u2f-support" content="true">
-
-  </head>
-
-  <body class="logged-in env-production page-blob">
-    
-
-
-
-  <div class="position-relative js-header-wrapper ">
-    <a href="#start-of-content" tabindex="1" class="bg-black text-white p-3 show-on-focus js-skip-to-content">Skip to content</a>
-    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
-
-    
-    
-    
-
-
-
-        
-<div class="header" role="banner">
-  <div class="container clearfix">
-    <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
-  <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-</a>
-
-
-        <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
-  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/rern/Assets/search" class="js-site-search-form" data-scoped-search-url="/rern/Assets/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
-    <label class="form-control header-search-wrapper js-chromeless-input-container">
-        <a href="/rern/Assets/blob/master/OSMC_GPIO/osmc.ai" class="header-search-scope no-underline">This repository</a>
-      <input type="text"
-        class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable"
-        data-hotkey="s"
-        name="q"
-        value=""
-        placeholder="Search"
-        aria-label="Search this repository"
-        data-unscoped-placeholder="Search GitHub"
-        data-scoped-placeholder="Search"
-        autocapitalize="off">
-        <input type="hidden" class="js-site-search-type-field" name="type" >
-    </label>
-</form></div>
-
-
-      <ul class="header-nav float-left" role="navigation">
-        <li class="header-nav-item">
-          <a href="/pulls" aria-label="Pull requests you created" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:pulls context:user" data-hotkey="g p" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls">
-            Pull requests
-</a>        </li>
-        <li class="header-nav-item">
-          <a href="/issues" aria-label="Issues you created" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:issues context:user" data-hotkey="g i" data-selected-links="/issues /issues/assigned /issues/mentioned /issues">
-            Issues
-</a>        </li>
-            <li class="header-nav-item">
-              <a href="/marketplace" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:marketplace context:user" data-selected-links=" /marketplace">
-                Marketplace
-</a>            </li>
-          <li class="header-nav-item">
-            <a class="header-nav-link" href="https://gist.github.com/" data-ga-click="Header, go to gist, text:gist">Gist</a>
-          </li>
-      </ul>
-
-    
-<ul class="header-nav user-nav float-right" id="user-links">
-  <li class="header-nav-item">
-    
-    <a href="/notifications" aria-label="You have no unread notifications" class="header-nav-link notification-indicator tooltipped tooltipped-s js-socket-channel js-notification-indicator " data-channel="notification-changed:10094236" data-ga-click="Header, go to notifications, icon:read" data-hotkey="g n">
-        <span class="mail-status "></span>
-        <svg aria-hidden="true" class="octicon octicon-bell float-left" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z"/></svg>
-</a>
-  </li>
-
-  <li class="header-nav-item dropdown js-menu-container">
-    <a class="header-nav-link tooltipped tooltipped-s js-menu-target" href="/new"
-       aria-label="Create new‚Ä¶"
-       aria-expanded="false"
-       aria-haspopup="true"
-       data-ga-click="Header, create new, icon:add">
-      <svg aria-hidden="true" class="octicon octicon-plus float-left" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5z"/></svg>
-      <span class="dropdown-caret"></span>
-    </a>
-
-    <div class="dropdown-menu-content js-menu-content">
-      <ul class="dropdown-menu dropdown-menu-sw">
-        
-<a class="dropdown-item" href="/new" data-ga-click="Header, create new repository">
-  New repository
-</a>
-
-  <a class="dropdown-item" href="/new/import" data-ga-click="Header, import a repository">
-    Import repository
-  </a>
-
-<a class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, create new gist">
-  New gist
-</a>
-
-  <a class="dropdown-item" href="/organizations/new" data-ga-click="Header, create new organization">
-    New organization
-  </a>
-
-
-
-  <div class="dropdown-divider"></div>
-  <div class="dropdown-header">
-    <span title="rern/Assets">This repository</span>
-  </div>
-    <a class="dropdown-item" href="/rern/Assets/issues/new" data-ga-click="Header, create new issue">
-      New issue
-    </a>
-
-      </ul>
-    </div>
-  </li>
-
-  <li class="header-nav-item dropdown js-menu-container">
-    <a class="header-nav-link name tooltipped tooltipped-sw js-menu-target" href="/rern"
-       aria-label="View profile and more"
-       aria-expanded="false"
-       aria-haspopup="true"
-       data-ga-click="Header, show menu, icon:avatar">
-      <img alt="@rern" class="avatar" src="https://avatars2.githubusercontent.com/u/10094236?v=3&amp;s=40" height="20" width="20">
-      <span class="dropdown-caret"></span>
-    </a>
-
-    <div class="dropdown-menu-content js-menu-content">
-      <div class="dropdown-menu dropdown-menu-sw">
-        <div class="dropdown-header header-nav-current-user css-truncate">
-          Signed in as <strong class="css-truncate-target">rern</strong>
-        </div>
-
-        <div class="dropdown-divider"></div>
-
-        <a class="dropdown-item" href="/rern" data-ga-click="Header, go to profile, text:your profile">
-          Your profile
-        </a>
-        <a class="dropdown-item" href="/rern?tab=stars" data-ga-click="Header, go to starred repos, text:your stars">
-          Your stars
-        </a>
-        <a class="dropdown-item" href="/explore" data-ga-click="Header, go to explore, text:explore">
-          Explore
-        </a>
-        <a class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">
-          Help
-        </a>
-
-        <div class="dropdown-divider"></div>
-
-        <a class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">
-          Settings
-        </a>
-
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="ywv5yL5Zk96ye9cP587dRZj3RRHqPl8PFduRSphfUJEXpdOFfBrUzOamoGHREjhCki3l5VVPy7J/ksMCtwiDVA==" /></div>
-          <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
-            Sign out
-          </button>
-</form>      </div>
-    </div>
-  </li>
-</ul>
-
-
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="sr-only right-0" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="/vce3fcvbI6lM0MeL1OxfzbYVOSvIynlN/mYKUDVfYoiWTSQNWwrnPHuNHAZj1R4PAL0EBBSvVhdsMphb4KuTw==" /></div>
-      <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
-        Sign out
-      </button>
-</form>  </div>
-</div>
-
-
-      
-
-  </div>
-
-  <div id="start-of-content" class="show-on-focus"></div>
-
-    <div id="js-flash-container">
-</div>
-
-
-
-  <div role="main">
-        <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
-    <div id="js-repo-pjax-container" data-pjax-container>
-      
-
-
-
-
-    <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
-      <div class="container repohead-details-container">
-
-        <ul class="pagehead-actions">
-  <li>
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Wk/ZRhxIolWt0QsE4X3EfOkG6H2RvilTnCqSfBaxV9FTY6gj3k4qQYKT2xaP5ONyjL9IC/mSrcirwZpb9ZayvQ==" /></div>      <input class="form-control" id="repository_id" name="repository_id" type="hidden" value="77155493" />
-
-        <div class="select-menu js-menu-container js-select-menu">
-          <a href="/rern/Assets/subscription"
-            class="btn btn-sm btn-with-count select-menu-button js-menu-target"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-            aria-label="Toggle repository notifications menu"
-            data-ga-click="Repository, click Watch settings, action:blob#show">
-            <span class="js-select-button">
-                <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
-                Unwatch
-            </span>
-          </a>
-            <a class="social-count js-social-count"
-              href="/rern/Assets/watchers"
-              aria-label="1 user is watching this repository">
-              1
-            </a>
-
-        <div class="select-menu-modal-holder">
-          <div class="select-menu-modal subscription-menu-modal js-menu-content">
-            <div class="select-menu-header js-navigation-enable" tabindex="-1">
-              <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
-              <span class="select-menu-title">Notifications</span>
-            </div>
-
-              <div class="select-menu-list js-navigation-container" role="menu">
-
-                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
-                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
-                  <div class="select-menu-item-text">
-                    <input id="do_included" name="do" type="radio" value="included" />
-                    <span class="select-menu-item-heading">Not watching</span>
-                    <span class="description">Be notified when participating or @mentioned.</span>
-                    <span class="js-select-button-text hidden-select-button-text">
-                      <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
-                      Watch
-                    </span>
-                  </div>
-                </div>
-
-                <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
-                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
-                  <div class="select-menu-item-text">
-                    <input checked="checked" id="do_subscribed" name="do" type="radio" value="subscribed" />
-                    <span class="select-menu-item-heading">Watching</span>
-                    <span class="description">Be notified of all conversations.</span>
-                    <span class="js-select-button-text hidden-select-button-text">
-                      <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
-                        Unwatch
-                    </span>
-                  </div>
-                </div>
-
-                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
-                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
-                  <div class="select-menu-item-text">
-                    <input id="do_ignore" name="do" type="radio" value="ignore" />
-                    <span class="select-menu-item-heading">Ignoring</span>
-                    <span class="description">Never be notified.</span>
-                    <span class="js-select-button-text hidden-select-button-text">
-                      <svg aria-hidden="true" class="octicon octicon-mute" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8 2.81v10.38c0 .67-.81 1-1.28.53L3 10H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h2l3.72-3.72C7.19 1.81 8 2.14 8 2.81zm7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06L11.44 8 9.47 9.97l1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06L13.56 8l1.97-1.97z"/></svg>
-                        Stop ignoring
-                    </span>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-        </div>
-</form>
-  </li>
-
-  <li>
-    
-  <div class="js-toggler-container js-social-container starring-container ">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/rern/Assets/unstar" class="starred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="4ZtpcUlQViJQfuP+6lflXhoiLClzrCVkBIM2Bpo2WCJUBBKUkJiF4rHl4sAC1UjoP1fcn9B9HpVi+9kQlrblGg==" /></div>
-      <button
-        type="submit"
-        class="btn btn-sm btn-with-count js-toggler-target"
-        aria-label="Unstar this repository" title="Unstar rern/Assets"
-        data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">
-        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg>
-        Unstar
-      </button>
-        <a class="social-count js-social-count" href="/rern/Assets/stargazers"
-           aria-label="0 users starred this repository">
-          0
-        </a>
-</form>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/rern/Assets/star" class="unstarred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Jv7TFNUp0ifftPvve7VejmwbxSPEt/gX9C1iAm4Zf7/oizZvJESzrlF/M2Yr1i1W8a0E5euIrSBe1KXsglNrtA==" /></div>
-      <button
-        type="submit"
-        class="btn btn-sm btn-with-count js-toggler-target"
-        aria-label="Star this repository" title="Star rern/Assets"
-        data-ga-click="Repository, click star button, action:blob#show; text:Star">
-        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg>
-        Star
-      </button>
-        <a class="social-count js-social-count" href="/rern/Assets/stargazers"
-           aria-label="0 users starred this repository">
-          0
-        </a>
-</form>  </div>
-
-  </li>
-
-  <li>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/rern/Assets/fork" class="btn-with-count" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="+EcIgvU7qOORP4pVubEenTNbJKjS3ADidr4SrFsEkApQfRUbHrvcJMRX/E1uezmSy/0o/OFCMeDq/wpa7jgqpQ==" /></div>
-            <button
-                type="submit"
-                class="btn btn-sm btn-with-count"
-                data-ga-click="Repository, show fork modal, action:blob#show; text:Fork"
-                title="Fork your own copy of rern/Assets to your account"
-                aria-label="Fork your own copy of rern/Assets to your account">
-              <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
-              Fork
-            </button>
-</form>
-    <a href="/rern/Assets/network" class="social-count"
-       aria-label="0 users forked this repository">
-      0
-    </a>
-  </li>
-</ul>
-
-        <h1 class="public ">
-  <svg aria-hidden="true" class="octicon octicon-repo" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
-  <span class="author" itemprop="author"><a href="/rern" class="url fn" rel="author">rern</a></span><!--
---><span class="path-divider">/</span><!--
---><strong itemprop="name"><a href="/rern/Assets" data-pjax="#js-repo-pjax-container">Assets</a></strong>
-
-</h1>
-
-      </div>
-      <div class="container">
-        
-<nav class="reponav js-repo-nav js-sidenav-container-pjax"
-     itemscope
-     itemtype="http://schema.org/BreadcrumbList"
-     role="navigation"
-     data-pjax="#js-repo-pjax-container">
-
-  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-    <a href="/rern/Assets" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /rern/Assets" itemprop="url">
-      <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
-      <span itemprop="name">Code</span>
-      <meta itemprop="position" content="1">
-</a>  </span>
-
-    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-      <a href="/rern/Assets/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /rern/Assets/issues" itemprop="url">
-        <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
-        <span itemprop="name">Issues</span>
-        <span class="Counter">0</span>
-        <meta itemprop="position" content="2">
-</a>    </span>
-
-  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-    <a href="/rern/Assets/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /rern/Assets/pulls" itemprop="url">
-      <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
-      <span itemprop="name">Pull requests</span>
-      <span class="Counter">0</span>
-      <meta itemprop="position" content="3">
-</a>  </span>
-
-    <a href="/rern/Assets/projects" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /rern/Assets/projects">
-      <svg aria-hidden="true" class="octicon octicon-project" height="16" version="1.1" viewBox="0 0 15 16" width="15"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
-      Projects
-      <span class="Counter" >0</span>
-</a>
-    <a href="/rern/Assets/wiki" class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /rern/Assets/wiki">
-      <svg aria-hidden="true" class="octicon octicon-book" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg>
-      Wiki
-</a>
-      <a href="/rern/Assets/settings" class="js-selected-navigation-item reponav-item" data-selected-links="repo_settings repo_branch_settings hooks integration_installations /rern/Assets/settings">
-        <svg aria-hidden="true" class="octicon octicon-gear" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 8.77v-1.6l-1.94-.64-.45-1.09.88-1.84-1.13-1.13-1.81.91-1.09-.45-.69-1.92h-1.6l-.63 1.94-1.11.45-1.84-.88-1.13 1.13.91 1.81-.45 1.09L0 7.23v1.59l1.94.64.45 1.09-.88 1.84 1.13 1.13 1.81-.91 1.09.45.69 1.92h1.59l.63-1.94 1.11-.45 1.84.88 1.13-1.13-.92-1.81.47-1.09L14 8.75v.02zM7 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
-        Settings
-</a>
-    <div class="reponav-dropdown js-menu-container">
-      <button type="button" class="btn-link reponav-item reponav-dropdown js-menu-target " data-no-toggle aria-expanded="false" aria-haspopup="true">
-        Insights
-        <svg aria-hidden="true" class="octicon octicon-triangle-down v-align-middle text-gray" height="11" version="1.1" viewBox="0 0 12 16" width="8"><path fill-rule="evenodd" d="M0 5l6 6 6-6z"/></svg>
-      </button>
-      <div class="dropdown-menu-content js-menu-content">
-        <div class="dropdown-menu dropdown-menu-sw">
-            <a class="dropdown-item" href="/rern/Assets/community" data-skip-pjax>
-              <svg aria-hidden="true" class="octicon octicon-heart" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11.2 3c-.52-.63-1.25-.95-2.2-1-.97 0-1.69.42-2.2 1-.51.58-.78.92-.8 1-.02-.08-.28-.42-.8-1-.52-.58-1.17-1-2.2-1-.95.05-1.69.38-2.2 1-.52.61-.78 1.28-.8 2 0 .52.09 1.52.67 2.67C1.25 8.82 3.01 10.61 6 13c2.98-2.39 4.77-4.17 5.34-5.33C11.91 6.51 12 5.5 12 5c-.02-.72-.28-1.39-.8-2.02V3z"/></svg>
-              <span itemprop="name">Community</span>
-            </a>
-          <a class="dropdown-item" href="/rern/Assets/pulse" data-skip-pjax>
-            <svg aria-hidden="true" class="octicon octicon-pulse" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0v2h3.6l.9-1.8.9 5.4L9 8.5l1.6 1.5H14V8z"/></svg>
-            Pulse
-          </a>
-          <a class="dropdown-item" href="/rern/Assets/graphs" data-skip-pjax>
-            <svg aria-hidden="true" class="octicon octicon-graph" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"/></svg>
-            Graphs
-          </a>
-        </div>
-      </div>
-    </div>
-</nav>
-
-      </div>
-    </div>
-
-<div class="container new-discussion-timeline experiment-repo-nav">
-  <div class="repository-content">
-
-    
-  <a href="/rern/Assets/blob/1ef48f21e9009a18f4ef83187a3acdd9bc61ab56/OSMC_GPIO/osmc.ai" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a>
-
-  <!-- blob contrib key: blob_contributors:v21:a1f78b6f9c077f52ad74e61685804127 -->
-
-  <div class="file-navigation js-zeroclipboard-container">
-    
-<div class="select-menu branch-select-menu js-menu-container js-select-menu float-left">
-  <button class=" btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
-    
-    type="button" aria-label="Switch branches or tags" aria-expanded="false" aria-haspopup="true">
-      <i>Branch:</i>
-      <span class="js-select-button css-truncate-target">master</span>
-  </button>
-
-  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax>
-
-    <div class="select-menu-modal">
-      <div class="select-menu-header">
-        <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
-        <span class="select-menu-title">Switch branches/tags</span>
-      </div>
-
-      <div class="select-menu-filters">
-        <div class="select-menu-text-filter">
-          <input type="text" aria-label="Find or create a branch‚Ä¶" id="context-commitish-filter-field" class="form-control js-filterable-field js-navigation-enable" placeholder="Find or create a branch‚Ä¶">
-        </div>
-        <div class="select-menu-tabs">
-          <ul>
-            <li class="select-menu-tab">
-              <a href="#" data-tab-filter="branches" data-filter-placeholder="Find or create a branch‚Ä¶" class="js-select-menu-tab" role="tab">Branches</a>
-            </li>
-            <li class="select-menu-tab">
-              <a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag‚Ä¶" class="js-select-menu-tab" role="tab">Tags</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
-
-        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
-
-
-            <a class="select-menu-item js-navigation-item js-navigation-open selected"
-               href="/rern/Assets/blob/master/OSMC_GPIO/osmc.ai"
-               data-name="master"
-               data-skip-pjax="true"
-               rel="nofollow">
-              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
-              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
-                master
-              </span>
-            </a>
-        </div>
-
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/rern/Assets/branches" class="js-create-branch select-menu-item select-menu-new-item-form js-navigation-item js-new-item-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="bSfdrZBEimuU0mkxlN/nPvytSSy2Iu3T7gcZtsryZunPK9PwaBcX2bqD1wfyrX1Gk0v3SIEIQDqcBN5oe8ne/w==" /></div>
-          <svg aria-hidden="true" class="octicon octicon-git-branch select-menu-item-icon" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 0 0-1-3.72C.88 1 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
-            <div class="select-menu-item-text">
-              <span class="select-menu-item-heading">Create branch: <span class="js-new-item-name"></span></span>
-              <span class="description">from ‚Äòmaster‚Äô</span>
-            </div>
-            <input type="hidden" name="name" id="name" class="js-new-item-value">
-            <input type="hidden" name="branch" id="branch" value="master">
-            <input type="hidden" name="path" id="path" value="OSMC_GPIO/osmc.ai">
-</form>
-      </div>
-
-      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
-        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
-
-
-        </div>
-
-        <div class="select-menu-no-results">Nothing to show</div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-    <div class="BtnGroup float-right">
-      <a href="/rern/Assets/find/master"
-            class="js-pjax-capture-input btn btn-sm BtnGroup-item"
-            data-pjax
-            data-hotkey="t">
-        Find file
-      </a>
-      <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm BtnGroup-item tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">Copy path</button>
-    </div>
-    <div class="breadcrumb js-zeroclipboard-target">
-      <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/rern/Assets"><span>Assets</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a href="/rern/Assets/tree/master/OSMC_GPIO"><span>OSMC_GPIO</span></a></span><span class="separator">/</span><strong class="final-path">osmc.ai</strong>
-    </div>
-  </div>
-
-
-  <include-fragment class="commit-tease" src="/rern/Assets/contributors/master/OSMC_GPIO/osmc.ai">
-    <div>
-      Fetching contributors&hellip;
-    </div>
-
-    <div class="commit-tease-contributors">
-      <img alt="" class="loader-loading float-left" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif" width="16" />
-      <span class="loader-error">Cannot retrieve contributors at this time</span>
-    </div>
-</include-fragment>
-  <div class="file">
-    <div class="file-header">
-  <div class="file-actions">
-
-    <div class="BtnGroup">
-      <a href="/rern/Assets/raw/master/OSMC_GPIO/osmc.ai" class="btn btn-sm BtnGroup-item" id="raw-url">Download</a>
-      <a href="/rern/Assets/commits/master/OSMC_GPIO/osmc.ai" class="btn btn-sm BtnGroup-item" rel="nofollow">History</a>
-    </div>
-
-        <a class="btn-octicon tooltipped tooltipped-nw"
-           href="github-windows://openRepo/https://github.com/rern/Assets?branch=master&amp;filepath=OSMC_GPIO%2Fosmc.ai"
-           aria-label="Open this file in GitHub Desktop"
-           data-ga-click="Repository, open with desktop, type:windows">
-            <svg aria-hidden="true" class="octicon octicon-device-desktop" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg>
-        </a>
-
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/rern/Assets/delete/master/OSMC_GPIO/osmc.ai" class="inline-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="rRQqqtklkFJQ+zfyDqQUmJqCEeTXA6UhK8kLtL6OqsoAGPCETenpYt+Lzly3Wc1rFRjxgypdByP23dg+7akqFA==" /></div>
-          <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
-            aria-label="Delete this file" data-disable-with>
-            <svg aria-hidden="true" class="octicon octicon-trashcan" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
-          </button>
-</form>  </div>
-
-  <div class="file-info">
-    59.8 KB
-  </div>
-</div>
-
-    
-
-  <div itemprop="text" class="blob-wrapper data type-text">
-      <div class="image">
-          <a href="/rern/Assets/blob/master/OSMC_GPIO/osmc.ai?raw=true">View Raw</a>
-      </div>
-  </div>
-
-  </div>
-
-  <button type="button" data-facebox="#jump-to-line" data-facebox-class="linejump" data-hotkey="l" class="d-none">Jump to Line</button>
-  <div id="jump-to-line" style="display:none">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="" class="js-jump-to-line-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
-      <input class="form-control linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" aria-label="Jump to line" autofocus>
-      <button type="submit" class="btn">Go</button>
-</form>  </div>
-
-  </div>
-  <div class="modal-backdrop js-touch-events"></div>
-</div>
-
-    </div>
-  </div>
-
-  </div>
-
-      
-<div class="container site-footer-container">
-  <div class="site-footer " role="contentinfo">
-    <ul class="site-footer-links float-right">
-        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact GitHub</a></li>
-      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
-      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
-      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
-        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
-        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
-
-    </ul>
-
-    <a href="https://github.com" aria-label="Homepage" class="site-footer-mark" title="GitHub">
-      <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-</a>
-    <ul class="site-footer-links">
-      <li>&copy; 2017 <span title="0.13169s from unicorn-2731289428-sltnz">GitHub</span>, Inc.</li>
-        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
-        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
-        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
-        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
-        <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
-    </ul>
-  </div>
-</div>
-
-
-
-  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
-    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
-    <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
-      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
-    </button>
-    You can't perform that action at this time.
-  </div>
-
-
-    
-    <script crossorigin="anonymous" integrity="sha256-ppOnsBnDIasqNFKIsGSIce0coP+bwNb7uTuu6vc2HpU=" src="https://assets-cdn.github.com/assets/frameworks-a693a7b019c321ab2a345288b0648871ed1ca0ff9bc0d6fbb93baeeaf7361e95.js"></script>
-    
-    <script async="async" crossorigin="anonymous" integrity="sha256-/QJ7WXIrEeu9ggxXjuSABuuFllsa20zf/rN3fESzYag=" src="https://assets-cdn.github.com/assets/github-fd027b59722b11ebbd820c578ee48006eb85965b1adb4cdffeb3777c44b361a8.js"></script>
-    
-    
-    
-    
-  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
-    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
-    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
-    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
-  </div>
-  <div class="facebox" id="facebox" style="display:none;">
-  <div class="facebox-popup">
-    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
-    </div>
-    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
-      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
-    </button>
-  </div>
-</div>
-
-
-  </body>
-</html>
-
+%PDF-1.5%‚„œ”
+1 0 obj<</Metadata 2 0 R/OCProperties<</D<</ON[5 0 R 21 0 R 36 0 R]/Order 37 0 R/RBGroups[]>>/OCGs[5 0 R 21 0 R 36 0 R]>>/Pages 3 0 R/Type/Catalog>>endobj2 0 obj<</Length 21713/Subtype/XML/Type/Metadata>>stream
+<?xpacket begin="Ôªø" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c111 79.158366, 2015/09/25-01:12:00        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""
+            xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+            xmlns:xmpGImg="http://ns.adobe.com/xap/1.0/g/img/"
+            xmlns:xmpTPg="http://ns.adobe.com/xap/1.0/t/pg/"
+            xmlns:stDim="http://ns.adobe.com/xap/1.0/sType/Dimensions#"
+            xmlns:xmpG="http://ns.adobe.com/xap/1.0/g/"
+            xmlns:illustrator="http://ns.adobe.com/illustrator/1.0/"
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+            xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/">
+         <xmp:CreatorTool>Adobe Illustrator CC 2015 (Windows)</xmp:CreatorTool>
+         <xmp:CreateDate>2016-07-27T09:15:54+07:00</xmp:CreateDate>
+         <xmp:ModifyDate>2016-07-27T17:40:34+07:00</xmp:ModifyDate>
+         <xmp:MetadataDate>2016-07-27T17:40:34+07:00</xmp:MetadataDate>
+         <xmp:Thumbnails>
+            <rdf:Alt>
+               <rdf:li rdf:parseType="Resource">
+                  <xmpGImg:width>256</xmpGImg:width>
+                  <xmpGImg:height>256</xmpGImg:height>
+                  <xmpGImg:format>JPEG</xmpGImg:format>
+                  <xmpGImg:image>/9j/4AAQSkZJRgABAgEASABIAAD/7QAsUGhvdG9zaG9wIDMuMAA4QklNA+0AAAAAABAASAAAAAEA&#xA;AQBIAAAAAQAB/+4ADkFkb2JlAGTAAAAAAf/bAIQABgQEBAUEBgUFBgkGBQYJCwgGBggLDAoKCwoK&#xA;DBAMDAwMDAwQDA4PEA8ODBMTFBQTExwbGxscHx8fHx8fHx8fHwEHBwcNDA0YEBAYGhURFRofHx8f&#xA;Hx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8f/8AAEQgBAAEAAwER&#xA;AAIRAQMRAf/EAaIAAAAHAQEBAQEAAAAAAAAAAAQFAwIGAQAHCAkKCwEAAgIDAQEBAQEAAAAAAAAA&#xA;AQACAwQFBgcICQoLEAACAQMDAgQCBgcDBAIGAnMBAgMRBAAFIRIxQVEGE2EicYEUMpGhBxWxQiPB&#xA;UtHhMxZi8CRygvElQzRTkqKyY3PCNUQnk6OzNhdUZHTD0uIIJoMJChgZhJRFRqS0VtNVKBry4/PE&#xA;1OT0ZXWFlaW1xdXl9WZ2hpamtsbW5vY3R1dnd4eXp7fH1+f3OEhYaHiImKi4yNjo+Ck5SVlpeYmZ&#xA;qbnJ2en5KjpKWmp6ipqqusra6voRAAICAQIDBQUEBQYECAMDbQEAAhEDBCESMUEFURNhIgZxgZEy&#xA;obHwFMHR4SNCFVJicvEzJDRDghaSUyWiY7LCB3PSNeJEgxdUkwgJChgZJjZFGidkdFU38qOzwygp&#xA;0+PzhJSktMTU5PRldYWVpbXF1eX1RlZmdoaWprbG1ub2R1dnd4eXp7fH1+f3OEhYaHiImKi4yNjo&#xA;+DlJWWl5iZmpucnZ6fkqOkpaanqKmqq6ytrq+v/aAAwDAQACEQMRAD8A9U4q7FXYq7FXYq7FXYq7&#xA;FXYq7FUm8y+cvKnle1F15h1a10uEglPrMqoz06iNCebn2UHFXjHmr/nMz8u9NLxaBY3mvTLXjJQW&#xA;du3+zlDS/wDJLFXlHmH/AJzM/M2/Zk0iz0/R4T9hlja5mHzeVvTP/IvFXn+r/nz+cWqkm682agnL&#xA;qLSQWY616WwhxVit75n8y3zcr3Vr26Y9TNcSyHpT9pj2xVLMVdiqZ2XmfzLYtystWvbVh0MNxLGe&#xA;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</xmpGImg:image>
+               </rdf:li>
+            </rdf:Alt>
+         </xmp:Thumbnails>
+         <xmpTPg:NPages>1</xmpTPg:NPages>
+         <xmpTPg:HasVisibleTransparency>False</xmpTPg:HasVisibleTransparency>
+         <xmpTPg:HasVisibleOverprint>False</xmpTPg:HasVisibleOverprint>
+         <xmpTPg:MaxPageSize rdf:parseType="Resource">
+            <stDim:w>210.001556</stDim:w>
+            <stDim:h>297.000083</stDim:h>
+            <stDim:unit>Millimeters</stDim:unit>
+         </xmpTPg:MaxPageSize>
+         <xmpTPg:PlateNames>
+            <rdf:Seq>
+               <rdf:li>Cyan</rdf:li>
+               <rdf:li>Magenta</rdf:li>
+               <rdf:li>Yellow</rdf:li>
+               <rdf:li>Black</rdf:li>
+            </rdf:Seq>
+         </xmpTPg:PlateNames>
+         <xmpTPg:SwatchGroups>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <xmpG:groupName>Default Swatch Group</xmpG:groupName>
+                  <xmpG:groupType>0</xmpG:groupType>
+               </rdf:li>
+            </rdf:Seq>
+         </xmpTPg:SwatchGroups>
+         <illustrator:Type>Document</illustrator:Type>
+         <dc:format>application/pdf</dc:format>
+         <xmpMM:RenditionClass>proof:pdf</xmpMM:RenditionClass>
+         <xmpMM:DocumentID>uuid:43408925-06b6-472d-a3d4-bc67fa75f486</xmpMM:DocumentID>
+         <xmpMM:InstanceID>uuid:207fb52e-3007-4760-b57a-590d53eeda52</xmpMM:InstanceID>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?>
+endstreamendobj3 0 obj<</Count 1/Kids[7 0 R]/Type/Pages>>endobj7 0 obj<</ArtBox[199.131 321.732 397.556 520.158]/BleedBox[0.0 0.0 595.28 841.89]/Contents 38 0 R/CropBox[0.0 0.0 595.28 841.89]/LastModified(D:20160727174034+08'00')/MediaBox[0.0 0.0 595.28 841.89]/Parent 3 0 R/PieceInfo<</Illustrator 39 0 R>>/Resources<</ExtGState<</GS0 40 0 R>>/Properties<</MC0 36 0 R>>>>/Thumb 41 0 R/TrimBox[0.0 0.0 595.28 841.89]/Type/Page>>endobj38 0 obj<</Filter/FlateDecode/Length 425>>stream
+Hâ\SKNd1‹Áæ@‹∂„¸∂Ù V°YÃZ3l$	â€SI'›z“À+€eóÌº√√ë˜G°õG
+ØA®πrÎî{fk|˚~—‹„y{
+áªüBOˇ¬+È4)YÈ‹´ë{bwItzû·„›Y‘Èo®¨ôb*úãí:´vä÷Ÿz%S¿
+h,bt
+KÜgÒF‡öQ¨Ïv.z
+πpiçÑ•**%g´m	ßë´(™N’ëG`F(-ÕAﬂCÅû!œ‡®§ ô4≥g‰ﬂ÷8©N!π°≥Ä°h ÉYùe“ £TÙZFŒ⁄±€lRRŸﬁò3R:ΩO˜–$sß…9]‡˚Ï“∂∞¶…6˛òÓzÍ¨ÆÙﬂ<>¬ü¯eC©U6+Ö‹Ñªc¢_V‰êß3OCÅ÷∏°—8Oﬂp,UË∏X¢÷ }Cô±ƒÌ\‹¯-{º¶_Â∑E6˜ºml+YüÇ◊gÃc  `Ûÿqì‘Æbp-ÀX˛QƒH/◊€p÷æ¿té´≥Ëì}∏‡P>,º‘-ÚEˆi.‰ˆ⁄c¯` ›Î´A
+endstreamendobj41 0 obj<</BitsPerComponent 8/ColorSpace 42 0 R/Filter[/ASCII85Decode/FlateDecode]/Height 105/Length 188/Width 74>>stream
+8;Z\u5n8Df$j?J-&,&*)-s47mm@&9e3J]ib"B&.Q!<<*"!8t%_8*)22JtV6EZN\mB
+bc4uiH.2S;b,jk<[AXC*D2IAOW<k0KX_<S.F5LLMR'$Ok9J/&ZrNGp4^(cu0KtWaG
+XnJID="VlDB+iGjh0`Chea[E.s&kWNTi-0I9jdu%!!!"LR:?6,Js<D~>
+endstreamendobj42 0 obj[/Indexed/DeviceRGB 255 43 0 R]endobj43 0 obj<</Filter[/ASCII85Decode/FlateDecode]/Length 428>>stream
+8;X]O>EqN@%''O_@%e@?J;%+8(9e>X=MR6S?i^YgA3=].HDXF.R$lIL@"pJ+EP(%0
+b]6ajmNZn*!='OQZeQ^Y*,=]?C.B+\Ulg9dhD*"iC[;*=3`oP1[!S^)?1)IZ4dup`
+E1r!/,*0[*9.aFIR2&b-C#s<Xl5FH@[<=!#6V)uDBXnIr.F>oRZ7Dl%MLY\.?d>Mn
+6%Q2oYfNRF$$+ON<+]RUJmC0I<jlL.oXisZ;SYU[/7#<&37rclQKqeJe#,UF7Rgb1
+VNWFKf>nDZ4OTs0S!saG>GGKUlQ*Q?45:CI&4J'_2j<etJICj7e7nPMb=O6S7UOH<
+PO7r\I.Hu&e0d&E<.')fERr/l+*W,)q^D*ai5<uuLX.7g/>$XKrcYp0n+Xl_nU*O(
+l[$6Nn+Z_Nq0]s7hs]`XX1nZ8&94a\~>
+endstreamendobj36 0 obj<</Intent 44 0 R/Name(Layer 1)/Type/OCG/Usage 45 0 R>>endobj44 0 obj[/View/Design]endobj45 0 obj<</CreatorInfo<</Creator(Adobe Illustrator 19.2)/Subtype/Artwork>>>>endobj40 0 obj<</AIS false/BM/Normal/CA 1.0/OP false/OPM 1/SA true/SMask/None/Type/ExtGState/ca 1.0/op false>>endobj39 0 obj<</LastModified(D:20160727174034+08'00')/Private 46 0 R>>endobj46 0 obj<</AIMetaData 47 0 R/AIPrivateData1 48 0 R/AIPrivateData2 49 0 R/ContainerVersion 11/CreatorVersion 19/NumBlock 2/RoundtripStreamType 1/RoundtripVersion 17>>endobj47 0 obj<</Length 1353>>stream
+%!PS-Adobe-3.0 
+%%Creator: Adobe Illustrator(R) 17.0
+%%AI8_CreatorVersion: 19.2.1
+%%For: (R e r n .) ()
+%%Title: (osmc.ai)
+%%CreationDate: 7/27/2016 5:40 PM
+%%Canvassize: 16383
+%%BoundingBox: 199 321 398 521
+%%HiResBoundingBox: 199.13057962818 321.732401574805 397.555776478574 520.157598425198
+%%DocumentProcessColors: Cyan Magenta Yellow Black
+%AI5_FileFormat 13.0
+%AI12_BuildNumber: 147
+%AI3_ColorUsage: Color
+%AI7_ImageSettings: 0
+%%RGBProcessColor: 0 0 0 ([Registration])
+%AI3_Cropmarks: 0 0 595.280000000001 841.89
+%AI3_TemplateBox: 297.5 420.5 297.5 420.5
+%AI3_TileBox: 8.43999446868929 8.44496948242158 586.839981689453 833.44499332428
+%AI3_DocumentPreview: None
+%AI5_ArtSize: 14400 14400
+%AI5_RulerUnits: 1
+%AI9_ColorModel: 1
+%AI5_ArtFlags: 0 0 0 1 0 0 1 0 0
+%AI5_TargetResolution: 800
+%AI5_NumLayers: 1
+%AI17_Begin_Content_if_version_gt:17 1
+%AI9_OpenToView: 86.75 542.75 4 1829 963 26 1 0 46 113 0 0 0 0 1 0 1 1 0 1
+%AI17_Alternate_Content
+%AI9_OpenToView: 86.75 542.75 4 1829 963 26 1 0 46 113 0 0 0 0 1 0 1 1 0 1
+%AI17_End_Versioned_Content
+%AI5_OpenViewLayers: 7
+%%PageOrigin:0 0
+%AI7_GridSettings: 50.4566917419434 1 50.4566917419434 1 1 0 0.800000011920929 0.800000011920929 0.800000011920929 0.899999976158142 0.899999976158142 0.899999976158142
+%AI9_Flatten: 1
+%AI12_CMSettings: 00.MS
+%%EndComments
+
+endstreamendobj48 0 obj<</Length 8362>>stream
+%%BoundingBox: 199 321 398 521
+%%HiResBoundingBox: 199.13057962818 321.732401574805 397.555776478574 520.157598425198
+%AI7_Thumbnail: 128 128 8
+%%BeginData: 8175 Hex Bytes
+%0000330000660000990000CC0033000033330033660033990033CC0033FF
+%0066000066330066660066990066CC0066FF009900009933009966009999
+%0099CC0099FF00CC0000CC3300CC6600CC9900CCCC00CCFF00FF3300FF66
+%00FF9900FFCC3300003300333300663300993300CC3300FF333300333333
+%3333663333993333CC3333FF3366003366333366663366993366CC3366FF
+%3399003399333399663399993399CC3399FF33CC0033CC3333CC6633CC99
+%33CCCC33CCFF33FF0033FF3333FF6633FF9933FFCC33FFFF660000660033
+%6600666600996600CC6600FF6633006633336633666633996633CC6633FF
+%6666006666336666666666996666CC6666FF669900669933669966669999
+%6699CC6699FF66CC0066CC3366CC6666CC9966CCCC66CCFF66FF0066FF33
+%66FF6666FF9966FFCC66FFFF9900009900339900669900999900CC9900FF
+%9933009933339933669933999933CC9933FF996600996633996666996699
+%9966CC9966FF9999009999339999669999999999CC9999FF99CC0099CC33
+%99CC6699CC9999CCCC99CCFF99FF0099FF3399FF6699FF9999FFCC99FFFF
+%CC0000CC0033CC0066CC0099CC00CCCC00FFCC3300CC3333CC3366CC3399
+%CC33CCCC33FFCC6600CC6633CC6666CC6699CC66CCCC66FFCC9900CC9933
+%CC9966CC9999CC99CCCC99FFCCCC00CCCC33CCCC66CCCC99CCCCCCCCCCFF
+%CCFF00CCFF33CCFF66CCFF99CCFFCCCCFFFFFF0033FF0066FF0099FF00CC
+%FF3300FF3333FF3366FF3399FF33CCFF33FFFF6600FF6633FF6666FF6699
+%FF66CCFF66FFFF9900FF9933FF9966FF9999FF99CCFF99FFFFCC00FFCC33
+%FFCC66FFCC99FFCCCCFFCCFFFFFF33FFFF66FFFF99FFFFCC110000001100
+%000011111111220000002200000022222222440000004400000044444444
+%550000005500000055555555770000007700000077777777880000008800
+%000088888888AA000000AA000000AAAAAAAABB000000BB000000BBBBBBBB
+%DD000000DD000000DDDDDDDDEE000000EE000000EEEEEEEE0000000000FF
+%00FF0000FFFFFF0000FF00FFFFFF00FFFFFF
+%524C45FD35FFA87D52522727FD09F8272752527D7DA8A8FD64FFA87D2727
+%FD19F8527DA8A8FD5CFF7D52FD21F827527DA8FD56FF7D52FD28F8277DA8
+%FD50FFA852FD2DF82752A8FD4CFF7D27FD32F8277DFD48FF7D27FD15F827
+%F8272752275227522727FD17F87DFD44FF7DFD13F852527D7DA8A8FD09FF
+%A8FFA8A87D7D2727FD11F8277DFD40FFA827FD0FF82752A8A8FD19FF7D52
+%27FD0FF827A8FD3DFF52FD0EF82752A8FD20FFA87D27FD0EF852A8FD39FF
+%7DFD0DF82752A8FD26FFA87DFD0DF8277DFD36FFA852FD0CF8277DA8FD2B
+%FF7D27FD0CF827FD34FF7D27FD0BF852A8FD30FFA827FD0CF8A8FD31FF52
+%FD0BF827A8FD34FF7D27FD0BF87DFD2FFF27FD0AF8277DFD38FFA8FD0BF8
+%52FD2DFF27FD0AF852A8FD3BFF52FD0AF827A8FD2AFFFD0AF827A8FD3EFF
+%A827FD09F827A8FD27FFA8FD0AF852FD42FF52FD0AF8A8FD25FFA8FD0AF8
+%7DFD44FFA8FD0AF8A8FD23FFA8FD09F827A8FD46FFA8FD0AF8A8FD22FFFD
+%09F852FD4AFF27FD08F827A8FD20FFFD09F852FD4CFF27FD08F827A8FD1E
+%FF27FD08F87DFD4EFF52FD08F827FD1DFF27FD08F852FD50FF52FD08F852
+%FD1BFF7DFD08F87DFD52FF52FD08F87DFD19FF7DFD08F852FD54FF27FD08
+%F8A8FD18FF27FD07F827FD56FF27FD08F8FD17FF52FD07F827A8FD57FFFD
+%08F827FD15FFA8FD07F827A8FD59FFFD08F87DFD14FFFD08F87DFD5AFF7D
+%FD08F8A8FD12FF52FD07F852FD5CFF52FD07F852FD11FF7DFD08F8FD5EFF
+%27FD07F8A8FD10FF27FD07F8A8FD5EFFA8FD07F827FD0FFF7DFD07F852FD
+%16FFA8A8FD30FFA8FD17FF52FD07F87DFD0EFF27FD06F827FD18FFF8A8FD
+%2EFFA827A8FD17FFFD07F827FD0DFF52FD07F87DFD17FFA8F8F8A8FD2CFF
+%7DF8F8FD18FF7DFD07F87DFD0CFF27FD06F827FD19FFF8F8F8FD2BFFA8F8
+%F827FD19FF52FD06F827FD0BFF7DFD07F8A8FD18FFA8FD04F8A8FD28FFA8
+%FD04F8FD19FF7DFD07F87DFD0AFF27FD06F852FD1AFFFD05F8FD27FFA827
+%F8F8F827FD1AFF27FD06F827FD09FF7DFD07F87DFD19FFA8FD06F8A8FD24
+%FFA8FD06F8FD1AFFA8FD07F8A8FD08FF52FD06F827FD1BFFFD07F8FD23FF
+%A827FD05F827FD1BFF52FD06F852FD08FFFD07F87DFD1AFFA8FD08F8FD21
+%FFA827FD07F8FD1BFF7DFD07F8A8FD06FF7DFD06F827FD1CFFFD08F827FD
+%1FFFA827FD07F827FD1CFFFD07F87DFD06FF52FD06F852FD1BFFA8FD0AF8
+%FD1DFFA8FD0AF8FD1CFF52FD06F827FD06FFFD07F8FD1DFFFD0AF827FD1B
+%FFA827FD09F827FD1CFFA8FD06F827A8FD04FF7DFD06F827FD1CFFA8FD0C
+%F8FD19FFA827FD0BF8FD1DFF27FD06F87DFD04FF52FD06F87DFD1DFFFD0C
+%F827FD17FFA827FD0BF827FD1DFF7DFD06F852FD04FFFD07F8A8FD1CFFA8
+%FD0EF8FD15FFA827FD0DF8FD1DFFA8FD06F827FFFFFFA8FD06F827FD1EFF
+%FD0EF827FD14FF27FD0DF827FD1EFF27FD06F8A8FFFF7DFD06F852FD1DFF
+%A8FD06F827FD08F827FD11FFA827FD0FF8FD1EFF52FD06F87DFFFF52FD06
+%F87DFD1EFFFD06F8277DFD08F827FD10FF27FD08F87D52FD05F827FD1EFF
+%7DFD06F852FFFF27FD06F8A8FD1DFFA8FD06F827FF7DFD08F827FD0DFFA8
+%27FD08F87DFF27FD06F8FD1EFFA8FD07F8FFFFFD06F827FD1FFFFD06F827
+%FFFF7DFD08F827FD0CFF27FD08F87DFFFF52FD05F827FD1FFF27FD05F827
+%FFA8FD06F852FD1EFFA8FD06F827FFFFFF52FD08F827FD0AFF27FD08F852
+%FFFFFF27FD06F8FD1FFF27FD06F8A87DFD06F852FD1FFFFD06F827FD04FF
+%52FD08F827FD08FF52FD08F852FD04FF52FD05F827FD1FFF7DFD06F87D52
+%FD06F87DFD1EFFA8FD06F852FD05FF52FD08F827FD06FF27FD08F852FD05
+%FF27FD06F8FD1FFF7DFD06F85252FD06F8A8FD1FFFFD06F827FD06FF52FD
+%08F852FD04FF52FD08F852FD06FF52FD05F827FD1FFFA8FD06F85227FD06
+%F8A8FD1EFFA8FD06F852FD07FF52FD08F827FFFF27FD08F827FD07FF27FD
+%06F8FD1FFFA8FD06F82727FD05F827FD20FFFD06F827FD08FF52FD08F852
+%52FD08F827FD08FF52FD05F827FD20FFFD06F827FD07F8FD1FFFA8FD06F8
+%27FD09FF27FD10F827FD09FF27FD06F8FD20FF27FD05F827FD06F827FD20
+%FFFD06F827FD0AFF27FD0EF827FD0AFF52FD05F827FD20FF27FD0CF827FD
+%1FFFA8FD06F827FD0AFFA827FD0CF827FD0BFF27FD06F8FD20FF27FD0CF8
+%52FD20FFFD06F827FD0CFF27FD0AF827FD0CFF52FD05F827FD20FF27FD0C
+%F827FD1FFFA8FD06F852FD0AFFA8FFA8FD0AF8FD0DFF27FD06F8FD20FF52
+%FD0CF852FD20FFFD06F827FD0CFF7DFD08F827FD0EFF52FD05F827FD20FF
+%27FD0CF827FD1FFFA8FD06F852FD0BFF52FD09F8FD0FFF27FD06F8FD20FF
+%52FD0CF852FD20FFFD06F827FD0AFF7DFD09F8FD10FF52FD05F827FD20FF
+%27FD0DF8FD1FFFA8FD06F827FD09FF7DFD09F8A8FD10FF27FD06F8FD20FF
+%27FD06F827FD05F827FD20FFFD06F827FD08FF7DFD09F8FD12FF52FD05F8
+%27FD20FF27FD06F827FD06F8FD1FFFA8FD06F827FD07FF7DFD09F8A8FD12
+%FF27FD06F8FD1FFFA8FD06F82752FD06F8A8FD1FFFFD06F827FD06FFA8FD
+%09F8A8FD13FF52FD05F827FD20FFFD06F82727FD06F8A8FD1EFFA8FD06F8
+%52FD05FF7DFD09F8A8FD14FF27FD06F8FD1FFF7DFD06F8527DFD06F87DFD
+%1FFFFD06F827FD04FFA8FD09F8A8FD15FF52FD05F827FD1FFFA8FD06F852
+%7DFD06F852FD1EFFA8FD06F852FFFFFFA8FD09F87DFD16FF27FD06F8FD1F
+%FF52FD06F87DA8FD06F827FD1FFFFD06F827FFFFA8FD09F8A8FD17FF52FD
+%05F827FD1FFF52FD06F8A8A8FD06F827FD1EFFA8FD06F827FFA8FD09F87D
+%FD18FF27FD06F8FD1FFFFD07F8FFFF27FD06F8FD1FFFFD06F852FFFD09F8
+%7DFD19FF52FD05F827FD1EFFA8FD06F827FFFF52FD06F87DFD1DFFA8FD06
+%F827FD09F87DFD1AFF27FD06F8FD1EFF7DFD06F827FFFF7DFD06F852FD1E
+%FFFD0FF87DFD1BFF52FD05F827FD1EFF52FD06F87DFFFFA8FD07F8FD1DFF
+%A8FD0EF852FD1CFF27FD06F8FD1EFF27FD06F8A8FFFFFF27FD06F8A8FD1D
+%FFFD0DF87DFD1DFF52FD05F827FD1DFFA8FD07F8FD04FF27FD06F87DFD1C
+%FFA8FD0CF852FD1EFF27FD06F8FD1DFF52FD06F852FD04FF7DFD06F827FD
+%1DFFFD0BF852FD1FFF52FD05F827FD1DFF27FD06F87DFD04FFA8FD07F8A8
+%FD1BFFA8FD0AF852FD20FF27FD06F8FD1CFFA8FD07F8A8FD05FF27FD06F8
+%7DFD1CFFFD09F852FD21FF52FD05F827FD1CFF52FD06F852FD06FF7DFD07
+%F8FD1BFFA8FD08F827FD22FF27FD06F8FD1CFF27FD06F87DFD06FFA827FD
+%06F87DFD1BFFFD07F827FD23FF7DFD05F827FD1BFFA8FD07F8FD08FF27FD
+%06F827FD1AFFA8FD06F827FD24FFA8FD05F87DFD1BFF27FD06F852FD08FF
+%A8FD07F8A8FD1AFFFD05F827FD26FFA85227277DFD1BFFA8FD07F8A8FD09
+%FF27FD06F827FD19FFA8FD04F827A8FD46FF27FD06F827FD0AFF7DFD07F8
+%7DFD19FFF8F8F827FD47FFA8FD07F8A8FD0BFFFD07F827FD18FFA8F8F8F8
+%A8FD47FF27FD06F827A8FD0BFF7DFD07F8A8FD18FFF827A8FD47FF7DFD07
+%F87DFD0DFF27FD07F8FD17FFA827A8FD47FFA827FD07F8FD0EFF7DFD07F8
+%52FD17FFA8FD48FF7DFD07F87DFD0FFF27FD07F87DFD5EFFA8FD07F827FD
+%10FFA8FD07F827FD5EFF27FD07F8A8FD11FF52FD07F852FD5CFF52FD07F8
+%52FD12FFA827FD07F8A8FD5AFF7DFD08F8FD14FF7DFD08F8A8FD58FFA8FD
+%08F87DFD15FF52FD07F827FD58FF27FD07F852FD17FFFD08F827FD56FF27
+%FD07F827A8FD17FFA8FD08F852FD54FF52FD08F87DFD19FF7DFD08F852FD
+%52FF52FD08F852FD1BFF52FD08F852FD50FF7DFD08F852FD1DFF27FD08F8
+%52FD4EFF52FD08F827FD1FFF27FD08F827FD4CFF52FD09F8FD20FFA8FD09
+%F827FD49FFA827FD09F8A8FD21FFA827FD08F827FD47FFA827FD09F8FD24
+%FF7DFD0AF87DFD44FF7DFD0AF8A8FD25FFA827FD09F852FD42FF52FD0AF8
+%FD28FFA827FD09F8277DFD3EFFA8FD0BF8A8FD2AFF27FD0AF852FD3CFF7D
+%FD0AF827FD2DFF52FD0BF87DFD38FF7D27FD0AF827FD2FFF7DFD0BF8277D
+%FD34FFA827FD0BF87DFD31FFA8FD0CF827A8FD30FF7D27FD0BF8277DFD34
+%FF52FD0CF8277DFD2CFFA827FD0CF852FD37FF7DFD0EF87DA8FD26FFA852
+%27FD0DF87DFD3AFF52FD0EF8277DA8FD20FFA87D27FD0EF852FD3DFFA827
+%FD10F8527DA8A8FD17FFA87D5227FD0FF8277DFD40FF7D27FD11F827527D
+%7DA8A8FD0DFFA8A852522727FD10F8277DFD44FF7DFD17F8272752272727
+%522727F827FD15F82752FD48FF7D27FD32F827A8FD4CFFA852FD2EF8527D
+%FD50FFA87D2727FD27F8527DFD56FFA87D2727FD21F8527DFD5DFFA87D52
+%2727FD17F827527DA8FD64FFA8A87D522727F827FD09F8272752527D7DFD
+%34FFFF
+%%EndData
+
+endstreamendobj49 0 obj<</Length 25289>>stream
+%AI12_CompressedDataxú‹Ω◊z2π“0∫èÁy|`crhöL¶â6òdÉçâm¿D70kÕw∞Ø}KÍ‹t"ºﬂûˇüYÀ¥∫J*ï*©Jz4÷õÆÙt;&]>7f∏˚ÎÒ1Kë£√ñä–œÜ“ju‹(¯ìµa3xCn∂Jó¬¶eá§ˆãÌ&jF‹∏€ü}k√@(√∆‡∂¨6¯skqXë‡¡vøû∏Gáºû¿£êˇ√ºAC Í«ıg‘d¥˘{¥ﬂ/˛4}a¸1≥=n¶ãÕ,≥˝/ƒ1¯pØ¡	8ÍBq— ˜“FnØÑ"A<Ï√‹!Ó«ºÅê?å¿€!w ÖÇ˛P¸@an0	˚ÒÄ7Üps€…qMnuj;!˜˚Ïvµ•ˆQCˆü—∆<öÅ'#Có\≠∂ˇ1dV£…ºì.ƒbE™¨GÉ◊áHò.yÒAÊ∏XM_éÎ1	Êıá–ÔæÇ⁄ﬁp 2¸å~JkSì<¿ò R4çBFÿ+˙◊˙— g4sÄ∫}ô⁄Ó÷#jπß€"7∆ÿºÜ∞ﬂÎGò∆-rΩ[ÅyA‰√!u~@íÄ3€å5ª˝æH$‚˜√¡pè¿¸˛H0‚„~‹ ∫√†Mÿ¯>CÿÁCm">0xòÅ»ö¸{A˛'jxŸnHÜöiÍ–§Ÿ¡Ô«0˙/Û®q\ëT{≥8Äz—oöúœ€)πbC à’h∂gÈÂÂˇ2-Z#jF mW«b0áLYuÙIqHº°A–{pm†◊É≈˜‡ozafá®7ƒu¶∂#7≠m	P"0¸8¸èﬂ‡zEÇ>D=ÒÉˇx}LÈŒyÈø,ŒÙÍ@R0E,ﬁ?Å$øôòENNEàD√RrcpiçZ rDYrÜj1ÂY7Äπ˝Å`0‚˘ΩøtKÓ'4nÜ?ΩﬁéAé“˘K˝
+ûÛ˙q=ø0ƒ|q C‰¶düãs?7·(Y≤€5d—=Hp˙¡J\mgÃS˛z@wŸh^]ß¯ÓØ˙YxP_¡√µ=ÓJõÔÌ›_VZW“@?4†ß@¨¢ﬂF‘·?[j	æñ¶‰àó4@ƒÓl@õKÚ0ôK¡2ø^∏CNÄn ãtj®ç¿ä/CãM¿à¡wÆçÄ`V(v¸‡]Ùï˝Øû˜s‰7Ë<Ä˛5ø˘õ\mw¿t;=Î´—fDqDcgÈodfï	íáw]0¡*⁄≤ (‚I—l x§’Ë0:ä‹L˜t˙+ﬂs8˙7=≥£’j1£Fª˘bb»P«˝‹–⁄nWtôÁ&·3Ùæ©sP÷6ÙxN±2§Å†ﬂ˘c„ﬁí√˛üÑÖ%L~∫ ã^ÅπU€4ˇ3R©∫Îb∆Ê?ÎÒvµÿØ9Ë¬_Í@∂-&+≤˘œ˛@ÍZÌÕ	Íúçƒè8:1?üE•?çN€˜b3pö«≈Å‰◊ÊvΩÉ÷≤°9ÌHD!∂eì@∆Ä@oπ\ö-B?É6€·ü	î•ß≤Ÿ˛gÉæ¢†S@Êéé´Cﬂfºå÷§¡	⁄4¿¯$πFò°ˇ∞F
+¸˜}iÄ?¿≤¡Äﬁca051®˛É¿Ã„Å 0ı˝˛∞˝Ç·8∞‚˝æpòõ‡óp4¸>Óz‡Ôiñ˚ˆ¸Vü~¿oˇ1x1√≥·£è¶w‡!@éz2¶Ö~ÏÓ/Éå~@É]õÜı—
+ÿ$=ÿ˙¯÷£ì˙àöÔˇgAÍ0‘'‡ˇæœ\œŒõ* *ö‰S¬–M.‰//F?§ó7ıˇ∞ø`“_ï00ùfΩ‡éÓzxÿ ¬Øã	$œà˙á˘·˝π˙<Ö«1ÉıøÎ’4pÅUJ-∆«	¥≠5NS‘ËÃç∞⁄MÊ¿•»”
+7xJÄT‹c¯Á'Ë±’ºŸ˛Q˚XËMÄa3∑˝{¥:rç·ÉΩB√êL;¶7{Ò◊ˇ„IµŒñ*≠∂ì%9’E&∂©Û_1¿ÒÖfºz	xxO/h4:*l~K¶∏û(^u¢Ë#≈b4^ë∫VÜûô˛ˇùŒ
+—øıãÿˆﬂ¡púì„˛∞]ˇƒﬂe—Ë~m7®C¡:‘œ©ˇÎtËﬂ÷üˇªñÚ˛˚?ˇ˛˛?@íÔWã…ˇ=bmÃ<r¥RÛú\ÃÊ∫ ◊Ù_!ºıçÓ?ãÈaÆkpLÀ«ÿûÃv´6ÆÒˆ ¥Vï¸>–Q}]C<}È_1ZW(ÒkŒ‰ı	¶ÕòB!ØÊò˛—5¶˛EÜíêÕÌëöêh'˜ﬂaI ˜ØË«ö<å¶¿ƒ∫Ag"WwÊa ƒIt1ô†5˙	c√›È4Eé“hCN≠K◊ZÕÄ˝1∑óYıÌÌNV¥,í>,¢‹bø[ç˛y¡›-ziÍ0ﬁé®©z§ÌÕbzÕéD‡JrÎ¨ûn0?ùl¢cÇû4»Uk€†;A˜™æ›/‡–cúÎΩÛÆˇMØT|óˆÏòH€ã∞mQ≈⁄Q&]b#^t⁄‹góbJó ±Îπ'©øICã¸ÔEÏG„≈jq¯áë+Äa's"ÿ§Ç;¬0 ¸B¨∂[™3⁄,ˆs@rÙÇdŒNﬁÑˆ⁄ZÎ,ˆwÛ0:∞›{#^wpGP¥ª¬lmw¬∞ê¬˛≥!eêÜ 0ƒ*∏ C–uCï%Q( 0}h3;¡aJÖ7®&‘œ®£Yrµ ˇ˜p∫&Oz¡/™“fJ˛∑IN∂õÈô/jœƒÔ„‚≈Ba˝ùÁ…¨ª˜àÕTòFÈ=éN7‚5ﬁµ¨∆:Â4`p\
+˚œ‡4Tñ—Ñ" 3|”â$eÿ±¬`˚7IÌ`d}ØÒ∆dµÿ&['¯ØÅ"g@¨qØ`'åDÔP£˝Å§\£¥√xÜ=·4–«39]◊>aß*»ë‰‚B˙(#√@pëH;Ñ“>Ä±Ú>]äû…˝‹–@ΩX¸⁄'†c^Òa¢Wj«√Óx–zI0‡ì˛UGõŸ&N‘∑;∏JóN∂h€e∫DW+ˆe&a<ÂQ0äKnI‘æø˜$;À≈∂»úﬂç&ºò>ï5”‡ŒÅp$ÏUiô·≠	<à{˝*M…ô. }•«%Í¨CjíÅÔÆfSA˝ÅpH©ø®≠®√aÃÕX
+H¸´PZ$—tæád¢.Qì‰∏Ezj<Iõ7'£ïT‹ÈñRPV≤ÜK¥∞‚Ã¡Ñ2¿”¿H;V∏_ïVƒhB¶7≥ïvkD!ise6BÕOy>†fïl§jºXHç›P[!· Ω-¬|™Ì¶(û¯[Cµ)4ifÅ∆Çƒ∫⁄‚ùL ¯É!>⁄Ü—j1⁄À4J˚ÌÒ∞ÇÈm˚µ]íz[Ä5*”‘k`]√»^†πcò◊Ñ—hÄπßúé¿‰7⁄ò¿ÏQnò	±V„1?µß>KΩÈn·fŸï˘	ºOIªøÌY/≈dgh7öNπ’À4‹Ô∂'cîƒN”%C˙xÿrÍHn≤§Zn∂ì%†,˚ñS=Ç∂√n¥ƒﬂ/÷«’H†œpm‘h≥ﬂçÄ∑9˘ ZL{ëO°@Dôµ&Ci/∞¶zõ
+gP≥±`5gõÔÉó◊˛@!◊G∞% •˜Õ„ËWb£$TÖ¸G:{¢ˆı3r@SëS≈íK‘ˆmæòÃÎ‘ˆ{±"y∏ò\”¸zLNOö w‚—ûü’⁄dKM…©k</€É¯9€›*`7÷Ò,Âdx.¿=ı≈…ê+ﬂ(gÙ‘
+Û‚¿≈j4]¿Ê£Õî1ÀT1˙-î.3⁄‡[»o=yKåÀk»◊õÁ#£_”Åç£¡â¬úoˇS\LO\Ôìvõ—N⁄≤ËfÀõ‚Ü≈Y⁄0z +îTfŒ√ˇ<?€±≠VÏ`eãı‘÷ñæ æƒ¡LÍnI€ÇÖµ:u §≠(¶ÿì∞€îF”˝r±ai”7æì»◊IC`ëG„¬"ê‚ÂÌ&‹ ïeı!ƒP¶°"‰ïê–[BõÖnRñqì"7	ì∂≠1*∞≈´¿/‚Ë6¥‡˜–ô◊Üå»ÖÚJ⁄÷§æúÇè%rÆ „´zTJΩn*™˘ *G.Ì!z˚C˜^Ö‰ßçµ{/nß07t#ùì√@îŒé÷íVZ„≈a=Çí˛D4—ÚLÿ~7[/›¿p"ß€Ôo7Ω≈£≤¢ƒÕè{H˘¸ ˆ9®à)ù •ä™»(?HDÒTüÙpXπß4HDLNêh4¯ÛÇ ¥≠Á•›tØ6˙˚µõÍO'òØ»M˙nG1Ì‘¶4b: s√éc!ÃÁïù:ñpoµC0(
+EH0¢Ùéh≥7Ï¶ÉÅÅ¿‰(æ¥ÄÂ$Óp˛.zÒ∞e5'¨H””K˙=JÿUX∫=r‡˚±†O˝M1+Najˇc»Q@üSÍ≥¡òFvyN§ÙWn%¢∏
+∞≠00§N⁄ÓÑ°P3‰h®Í)π_Ã6rﬁÑ¨≤3;É™0QKdıÍi8⁄”2Qøm#ûò”±Ø(7\ıM&€`Ét„‘õr∆›ô≤ómNM›[
+⁄Ø#ôà£¥Â7–~Û-ı?Ï“Ph∂c∂¢T!ûπ’ôëiƒ¶È	(i≥=å@q–4˛≠1“˝d∑öH´”FìÕ^ï≠A£p—8õDyî` V£ùr0’Ät$πÅd™¢6€√{}ºå⁄”∫A∞XÙºV¡ñw≥ùq„E›Ù
+4Ü$ÇJ≈z–j4°∂;≠6–`_ õ\´%®Ç–ƒ˝ˇÒà⁄´M©ÿ®+≠¬qi5*&Üï†':ZÛ=——XÿπïıΩ9∏ß+âH7⁄Qﬂ€ç™8ÑÌˆ«1∑J}r≥µ√˝õ\©Ù	4/†Ò¨6È{˜Üúç…	
+≠&'±≈Ü@/m4†≠º:ç5HÓÁ#‡
+ìj‘Ç≠»åõn@ˇxz»¬ì4…iÉˇÓ‹‚ù8&á4£N|lëk:ìsG‰2*Sıïõ[æ!L÷h
+T†:V√â]QÖñ€›DM‚†{µÈG-¶GK¥ÿwà›˛3_Hn°Í€ïÄ“∞d®)µ◊°wP≥Ô„f¢∆`t#∆7ﬂÎå$°óFõÈñ—†föNŒd-4À¨mw”mx#«¿˚Äe˛imæ’Íü6√ﬂ∏ÜªπÜ£–ºîõ'–˙ã¢ÕtπFÏ^˙d˝œRÖƒÇñ€√úÛ[≈q®4€^â“
+X?áæÆp∏Â∫;WœxFDI§éOÑmãB≠ÌNÖn¢¶’ÖjúèmÀEPtt!í·5Ω\?lÀ9‘¡‚∞iãÌvZ-ΩtÀ≈¶´©öb*˙]°∑®Õ√h3QS›p3ZQûf¥LSl?¨≠9‡X<»∞¨Åâ/ˆÃ·ÜˇÃ…ça?˙≤◊h#<{» óa¥á?3µ‚9Ç€®r⁄{¸˚g{4ÏÄv2l7 ·Ñö7-60:.@‰4 d‹´0^√aALH√Ö“GÜ’Ë∏)¶nµò–˚#</co(mr»}Â¡–ÿ6Ä§G–ªÌ7è~±77KX
+ÌV_\ÏT–j±”–ä,˘‰Ï<Üià#äÄâ—˛ §$‹•◊¡_tL	√Ï<AQﬂ⁄©y_ú†`Ñú`éÚÙDfG;:Âp¡Y<Ú∂ÍyªŸNÊ‘vMÊ —È"•ì-Y#ÁåD$Ö®nÅU:]†Fˇ∂‚*ãÕT’
+Pb≠˘q=ﬁå+5õêõX∫á-¡Ü≠ñR6-°å¥∆OåÊ®Œø}ävOı †‡gY@59˜@(±§[Æ
+›“»=P?“&Rú…∏BFê5£E»T^¡ù–üº¶5Ó}=é§ïı$9Ìåätö>ÜHèﬁ—ŒQUåx*m&@‘†t%Åå“∞K5ƒÀ∏Çtëõ)t\RzºÂúÕÛË•œ`b≈kzBm«£}éÛû_K 'ıëäWÁ…@’≠
+@§±îP„ù5øŸÌfä‚ü•)òÁ≈˜Ç≥øu0¶ZÍ´ÍJSÌdjJ˘ô:ﬂMîËò#åˆUÂg•BEO≠&» Aø*ı «™úRƒRjÄøëW3çQL=`‚0IìÁK!¡Î/∫∑'Ÿóôs`˛ºyﬁ≤“Èy0<πaŒIçS’u§˜]·dÚÅ„“åòÂºQ÷®â3! €±°ÜÈΩA†É≠ºkAÇaÌ-›NöW !†î'≥`Ît3[*Ö9=ı'kÊG¸Ì…Ω;À>sÕïIQÖı<:€ÀÑ—iµd#˜ﬁlÛ¡áh™]H<˚ì—ÍßÂ9E'!"è?áΩ~ˇÜÌs?πô3•b_n{*Ó‹ÌS˚
+ÓhR±™ëb[ïôYÒµöä˚…fvÒîò‰‹nÀÏWu⁄C9‚1Íπü~∆ﬂs9”Îmuü.5sG"¯p$r~”[ÊgeyhrﬂXy,Õä|á:ØüÈV÷›Q∆*lÌß‚K¢üäÓ›kGŒ˘x$¨ÖÈ7@ÉËE¡" }˜ﬂBôUjı˝ŒÃŸy®ÁQdhŒMº’ﬂT<iy£ÅNÔ≥_≥Ø-¯d˛Õï¶%c∆˛1•õÆá›â˜—Ù–D~¨éI~xµfÁ˛A,û~ÙôôÁ–ë Z⁄Dñ<⁄ùÚ√<6ôåñ”¬ëˇÆŒi‘^Ã3
+Q”0∫¯*O3´«§≈E9>èÈj”¸`K≈ sxpm0÷Èß“õâeÌxzéyBÎœßE(‰Ÿ˚“‘§‰u,£^‰$Wﬁw ÂB2ÙÊ√¶—E÷3ìÏ}~≤∫údf™ØÈ1t´è©l)˛ñwFò©\È#¯êe∑_éxg˙≈«}7±yCJÌpZ>Ço¡◊$U"≥¥]Év¶UÃ€xŒyFq3atÙ(à&|!(®	@ÉçÔK~Ù≈ë ‚Ãß¯[æB∑œ:ÛCﬁ≈KÄÉﬂ1G"ëw‚π‰ÏâÙˆèM^æ–lr=jô ã¥ îπ.Ù˘.x≠OÿäÙ£ﬂ∆LnÄ»`“Ï&ÈVÓ«ë˚ˆT~Û£ë≈î	é€Øë˙„{;]ÀfÍπÔÊ‚7ı€è¬s:3˛nk@¥úˆÚØ£ìÒøßkDÓÁmê]¸=±Ôı„å»~€ΩÄÜâa(‘ònyÑ·ÊÔ∫íÆUÌ"gõVhÍ∞¥¶ó dÅ√Œ˝ÍHvFøÙê¡(kÓ”≠Ú·x:8	qî`'„ù2≤†ö`’≤0?ﬂõ>Œa<ô√àœîÒA|'rÄGÏNGf˘íŒóò∏¬…e'Éfü‰|DtÇ£í™\-§e/‚õ∏c÷Ôä;ç≈[=‹f˙ä”=S$xlDH¬jﬁŸ≤Û`côwT›œØ`t∑Hÿ4ÛS»®)∞∫÷f0∏[v6œÔC±Iªëı7È<‘ã´é¯}!Ôré#r”Yíï,@ìn=O@ÿ$"πLµªîÎ/j*hWËÜæ¡‚…„^?ü≤œ°NÿÍ´ëÙpG¢0ÑÁçÒC„ö|˘\ î	∫j${‹ﬁb«â∞Ê<√ù=ÛsòÆ3´MgõnÕﬂM F≈¡ÿÂù€ú0ªBÈ∆˜‹^Îõ3AGuŒàN[Ó€RÇ˛nÁ¥HÃwﬁã¨D*˝ñèHÕûﬁ°ºÊ∆˛˘[∫˝8Ÿã€ô”ç÷«*¸≥r≈ët„ıD√7ÿñ±xfi›-àx¡kà˙^√>íËÅËˆb„cﬁ˙Ù˚∆k…S»–÷Ch:H6OÑáéXiˇ‰˜‰!êÒWÈÊ∞úeûF“√TºòuÉ&√êUs∆€;“ÕcÀœ?Eç°Lø¨S‘$j¶ßL∏P=›x≤ñ›ÑBï—V>|§∞äuù¶¨‚ù¶ÈOÂÓS|zOÄﬂF)·oﬁYΩ—õéò7+÷Yñ}Û|≤EÍÙKÃÎ,mGÄv…¯Ùì£õ0çwÆÉ∞ïB≥ŒIa∫œΩQ^NsLwË>¡ﬁ!(†=RvÀñi“ø1––∏¯∫îJ\ß•X´qÜ: =öè§‡ıÚ°≠⁄IÁ#-§&¬o˝J±Ñåø
+à@ì¥gya°|•y‚B4‚Ÿíüﬂs'C2<‹X`È∫ ¥ˇH∞§QÑn«•ô±D}⁄	•—Ëô4˙íy*˙
+yÕç{®FœXéãÁóSz°çΩË·"b∞å6ñ•+b¡®ÚDìºƒ ‰`àª#X≠ÙÄ?"¨çı=AØ~ ƒSKìÇ§€b»-fe¬◊‡:≤*¬ı√Ãlp.π5ôQ˝ùúÄ”∏ŸÁ_¢◊„,{3¢iaL≠ià›¨±ü–ê‡@Ë±Z>≈6°=›ÍT6D B∂ÄçıG$Ω⁄sV%Üœ›(a¥ª°Z√»q4ÃZ .∞grÀ‘€C{ñ]|R˘…Ú◊LÎ6Åç8‘ï›°-‚xCÓÙ÷ƒÍjnÊ≤%iõ∞^≤}ÚJO‰èa©é≈…Œèç^ÆR˘ÕáîêÈ∆&WK5ø®14nW©µWå∆Å\ãË∂ƒ]Cb+}Íπ∑} Gµ≥ÀOú-O&Ëƒ]◊“õœr§=_‰M.d@ïèû6åuˆÆ	º;°e¸WË GVƒˆõ6€N º˚¡kÆ≠ÁπÒôÜÉ∞ÂΩkúû2†Æt^tx.¨9»1™év¨EÚ◊í˜`¬+7UdÊ°˝∏dÃ¶˜rY∏<©xPˇ◊9»ﬂf=Æ‚gÆí	Z €8Ûö˙∞g^˚d*cÂÇ7$C*°´Ç∏?¨∏s•ü–àßt< Òò)Hoä°Œ™⁄J◊⁄¿ˆ`ô“< ˜D…Á†IöÌ‹:(dV¡ŸÚ ﬁ=8Ì*YÀñè$XgØq˛òÄOŒCaw?éD1ˇãnU¡áâ[aSH7W)x}ˆÎù4í5<’6Fw∂e'Ωñ~ç‡ ﬁ[>dÁü∆(ËÒ`¿≤@ﬂÏÜR ≥|v G•˛ÌÁJ˙_ô%˛d‰p<èEßÎß™,Ú§É"ûˇtsPBƒWﬂ˛@‰7G∏<Ò«»:LÛó”‰˘á&’rÊµû™„∂Ó˙ÖÈÍ±˚ò~}iv†KŒ>x˚Ò1dﬁö±–Ú8Æc’ù{Uÿ◊HJÇö]ûÏ∑F–púI§(jﬁˆGüﬂíCK∆Ü–ÃbﬂëlI º∂À3˛cÛ:€{£h>æ“ëX≈≈=h˘›ã4Ì≠Âù)Íæ\$Ï6ßàÆ7‡ 9ß†Æ1∞Áp¨æT|¸µIΩΩ:Ã—π£π ⁄0ÚÉÿ] ´OBEWÆLŸáßùÚç1ü†õr+YMﬂ2∆Éi3Râ(f£µí}|úR}zó1∑ﬂŸ≈~D·◊0*ÚøY	H— ‹W#PÊÏ2ˆyŸ 
+5âz√∆(l›˙!]ÈzßÙ\>U^¶πÈ:‚dY–z‹˘$ñÀhÂ‰⁄n:`@G€ﬁûQrh&RÎûÃ ›†Õ≤E ÁK;‹œæ?@˜g∆‘oÊÀ ©∞9«}@MèÄë‘A≥¸ÿ”[à-$ø?êãœ®ÍP°∑Á]S¨œÈ¶°∏/OÊøj„∞XbPˆ|€Úˆôˆ[#Ø@æÖi˚Ä¡Ô{H≈ìmsÆ¥^|dùww˙’^ü•-◊Õc° ,ΩSJh¿–
+Ê…ì+}TÌ–i†&@V«õr›∑Ã¶&1x0wsﬂÄdôUÿ‰Ãï≠6+2yx)ÄÃãŸ„pF‰>ˆmjŒe∞˙ÅZmÏÛ{[®Ô‡|ÌôØT«t8p®´`ög∆‡°J@ß0hπ]¢g#V˙(ƒú Eq›ÁüÔÔË¬Ú˙l=gö»uãvπ¡â⁄ M¨ø˝¯Tk’±á^&±ö§Iå¸≤-Q‹-˙2ã-ÚŒmœƒd¿õnà~a}∞[`ªNÿú“√ËñÁ9mﬁ$ÉÔÖÏK∂ìî0≥˜A?ÄI˝€ 3ù˙òç(Ã(¸o@˚'2Û‡µ>ø≈xnU23ë_∆‹ws∏Õ.ÓM¿ﬂ˛Zzì(mÂ	Õ‰Ω⁄v≤ã<{ºÈZ4_I≈2;°YŒÙ-nMQÆ»JËT:‘üæ‰æ#COæGÃíF~(Kÿ_›Ùv^≥C¢âYÜ≥¢–◊Oæ˚†[…íÄUOAüóDñÈ|+ä4ê=9»}øÓ°í¶•”ﬂ‚ëM˜gD65kMOﬁR:‚Y¶Âõ§Ì?©N´4"‚πÉ†;@.?‹ß¢o‰,ﬁQ îAì«mv4_ÄóÍsΩc•Ì?1îxaıºv$BÖ"‘7øΩXóõ-êö˘=Òø˘1ß:ﬂ≠£ x"X>Ê‹ç©+}˘Y
+,wßº'6YfÎÜ[∑øinEd÷@ä¶¿≤ÚÃ…Ø!Kn“/§H±vÃøˆ˚úsL‰„6”cpd˜7≥Æ%ßLÛz‘Ÿ≤á®ò◊
+Ñûˇÿp-OÓªE˚^ñbiﬂ	c%E=|rﬂ[ -√∑†Gg6∏9ÙNdøì>~±˛¥B0|Kõ^ÑÈ˝gÅ·ÅÂ<WH<í¿ÓàÈ»Ì§”€spcÑµ4}ÉË'îÔ92˛â£É˜πm"ü›j®ÿ0ñ
+?Èö7„ﬁxrôä'v¬E…ZG‡”‘# $∂wˆÇâ∂?ü∏*ØPdxe–†V®´_ﬁíUR˜Duìü6 µÀmì°ó%j>`∫ıÙ6˝mU@®_	+¡∞£
+õEü>†[[f£Æ%+‚~fnî ∑«`9∑6iOØÄµÜX~“•πTq˜À6vn°°§π©–M≠–ˆ#kr8û Ω≤Ä@@ı3´P Ñ<fC4w&Bˆ#ç®Î;Nqc∆*ûã6,≥ZÌÜ?_¿iU>Œè±∏Ehﬂ3 ÉÙÉÙjD¬=ç∏ŸÉ•€Í!Á¨˝NYjy‰∫-“7ç9?πˆÅßc§à|∏QîZ ø≈Fπ”±ÔµŸº˚ü o"…Xœ@~Á›h¬!C#ˆñw‘,@√/óZªƒ3Xè@M∏ÂP4ˆ∑T|EÿÑ∫ZSy¬µ¸õ}…GÜH¡8˚^ÑîPt¬Q=Y_m]Ë¡ºx—8cÎ≤≠à¡ 3∏JÖﬁg˘t∏∞?¿çta-ª:Yo{ΩèëQÛå∫a¢N¸Æëyâ$trBäEÁ1ÔfÅƒoÔuTF‡ã}IJ*à∑ˆúG∑«å8F9~Ωë&0∆õëöfo[Sm6"œQz	œÄáﬁp`§ƒü”Mg
+ÃÕÃæ°A<öüÔÈ∞À}M≈†Ñ…Ä~⁄êˇr:v⁄˝N8îÃ≥ÛèÈ=t¡ÓSÒWﬂWÆRâﬂs˚Œ“◊†ùFåÃ˘T¨ﬂiË’Å·Œﬂ	˙Ω%P√ﬂªtcxâ‰—{jo{øœU >¿˝ôùúteì ÍΩPkpÑßÀÇ¶Ÿß‹,ºè;èüã`‚◊ûní˝óàÜ)9Y≈â)V<12mœ¯u≥„)∫œ°d–ì~6‘ún„–Tﬂôæ\|D4:ùNZQ|dØgV.o´ﬁ{ﬂÄπ9d¯¯›‰Âk|$Ü˝„fpXêÛ‰⁄8[~4¬	«–µMÙå|{\o`ˆ€÷Ùf<€srNÚ_#≠(»€¡Ì ªˆÎhÿ}"Óı»?e8Ì-›jáZ<˘"À‘O~˝&
+sBJﬂÄŒ⁄a˚4Ÿ	©à^Kºï≥/<ì∏≥[…§√ŒÑg^¿—†UÀŸIJ‘g'à1˝Ú¿∆ L“µJÓªŒ∫ê∏®OØ˜@Wê±—€ˆ∫∏û¸œ#ëèl˘Ø˜y»WW¶˝0ÿÆ}¸0¬¶J|*'láÿ6?	⁄ôgõm⁄î^»aóÜ±_Å-LX WõzyW7<À¯ﬂ|.,æú≥t+∑∑+£‰†≠¿˚ä{≈9(ˆ'∏n∆—ÂSÆøË>ÿçÑ‹†É÷J0|ØŸyjÍ ïVŸ7âÄ·ØüÑµíA7◊{Œ≠Ä¢zêìË£Ú„V>¿ãIÍ4&äSÈfÉ)Ω
+ø O⁄áM≈Òôh~4¸q¶7IcùZ˚8\üπ≤Ò„;»|≈Jµb#}oè¡hHÇ±√1r£å¡ 1¥ˇl √ß0Œå>Ùue-"G˛Ÿ´œ·k©µœOE ™mﬁô"Ì¸á)2{Éû4Ë[∆Ù›_È÷|rÄΩ¸w\Òö8∑.áé8gìŸcuö£ø…Á„Í∞ÿ≠»¥‰,™òLMõ‡6>…o0´êæ˚ûÕ√>º˚•
+íOÈs$√ê#Ÿ{0è„ŸÂHŒ>¯	˜«_£>Ó¡+˜	=à˘í≠CòÖeÒ°Ò4ÇNAÇ{ä;û¡π—Ê+>]å
+âe‹h{ÈEåŒ˘<~ªçéc¥it>øÁå.Ï«<O]+¬0fmØ˛=æZ,ê[˙ìµa¬ó	˚¬ÄQ◊="C≈?≈ä¶øPT‚iúvÓ^ ©Jdü„onb€ÛwÚ‘gÀıànãxJ?Mº¿‰ÿ`ûŸv$∫}+◊Y¨8x°±XÛ:-ÛébO ù°®§Òò>ü”≈‡§5oˆB‡úùË4SûFD˚µ‹62l∫“‡›Úõöª9+å
+0ìÒ‘ı”TÕl˜/Ù'f2™{äÚÁòÁ}í6ÅS@}é>¸n_5|t$
+F3?∑g.‡«ÓpL≥@a≈`Á·∆ˆÔTﬂñ{∆<˛&=-¸‡¿Àéûˇè⁄¡kﬁÏoMÄµﬂ¶ñ+çÜAxı-)%¨C™ˇ{h+`ÕéÉçëó≈∫ø¡ØïÜ[ÙG”Ky¨Ò{Ûﬁb⁄Ó‰∞R«°€dõü<Vò
+À!∆,W¿|0Öcﬂy¨˛Ó'F¥2Ø≤cΩ'v∞Õ«⁄‚π!7\¨∞≠*bµî´˛g%
+∑©œ	^ÜXm+ùÿÀ˘˛Õ˜8X¿õ˛Ì…‘FM	k›bë0îø*¨V∞æ∆y1V∏ULı;„èXÑ5:¥ß3è,÷/WÎEk»Û›¥X—∫L≠—FÌ£éΩ<÷zËÀˇ>Ø:Â∞Ó-âÆWk ∫Ñ6KÜ,»◊ﬂÌbD{ë≈zOÃB¶∆Ø…a≈à~ü‡±¬πOÌ„rÛúU¬:¬
+ŒaGkK[Hk®+áŒÕ·¡ôdw]V…‚Iæ¯ü>i¨˘œ%!¬⁄ãc’êÀ±⁄O∞…-ªdCP¶Iá[˝Ëç∞BÀ)Ò•Ñ5á=€˚9¨ Õ˛æÙM˝P/ÑXäµ≥¯±V»¶S¿˙·¬ö€=¬ Jh·p+EÚÂ£g≥ bÌX63E¨Õ˘Îp,á©5ˇGÎTvqy"W}èm"í«∫+ﬂ+bÌ
+˜Ñ†ën{KVrÚXü˘¡◊kø/ãµ_[ñ‰∞B	ˇtSBÅ»üa¨ø_π‰±æ¸Ï÷µHÿ'ãuPrmV§oNáK=6F¨›6ñ_¨À≤X√/Æ{c™Ô ¨—_+ä?A	uÑÃp«>õdÒÿz’ëa≈-	kQ<÷*6¥G”´ÛDÛ~~ÕﬁÚ†ÉvSÛu¢Ú∂Ê'Î!Èêå’îøç∆öÈzKb°Ë§ˆÌÑbuÛX!FBï\Ïp≥	VG¨x§±&ΩóD.:w˛ó!¬Í3E≥1VEç∆–]áà1Èp©4πeŸ∏lîJ„¿O4√`çæ∫%æﬂí√≠Ô»— (59≈∂˘kï4‡üv_ΩÎé“”90èäO·∫±ßsfÖ`Ãé,ccë?dHÚ4ˆÿûÔóaÈ”Õ¸˛ù]ûrBıRÙSÒı0noïüŒG_…S—Çi‹‹õ(æ^ulí∏Ú”qÌ;¶¯†©›O∆EÖ·¢πoÔÈßﬂñﬂà‰ı∂c˚aûzÔ£“ß„rs√M¶A'Á`ÌOôßoècèQ˘Èg.˙$y*"⁄Ò+dR|˝ÁPﬂü.;xÊUÒ)@≥^â/•†Ø±Ä‚”2ÓOº+>ùl∆Õ™
+—ÃFsÈ”ÆÙ∫9ü~ìäOÀxÚﬁ´B¥¥7Ÿ¢
+ØäX˛…Œé:jçIû:ZØ˚$Û4ÎéKû4≠a¡ûVj0∑õí¨©,˜4ŸK’ÑO˝Œ„˙LØé¨Àû≈¶ñè,oCW»cú7bPqﬁÉ	z∆Y£´Èœ¯ßˇ∏·oÑ—ôkd·ü7 ˆ"&ÙùégZÿ0Gç+D©{‹ÚTw1 ¡˚(Tâü˘ô¥3ú7¡™Ú<á7‡iæë3DªQﬂqŒÈ,û∆6 ÁÓÛ–râD∑´#éœ^∞⁄ª’á»"ˆw{äXÅJ˙Ò*b≈àÔó¶"VÄj—â¸p˝›©´øi`ødö¨S≥˘Å«∫òì´1¥à»â_”öna%¬jÎ*b~¬±BÄÆèX2\ËZ|)`Ìˆï«zOÏ˝b[@åπäX°k1ó«7∫±"Sù®ZáãÏE¨–HiâÊïå∞¯—'f&†∑ñÌM◊:ö⁄æéÎçfª‡√ÔW˛Ω&i«SDMsÜ˚—ëˇL;·"~≠kH†Ü Óñ é#gÃÕ+°˘7·nóìˇìÿYß-&$ %§kbgãÔ8êV#)ö~P'ë¬G±Q¢ˆÒ2ä6Ø0k¯ë˘„|ﬁ2êqÕb‡ª˜¥£õà"ÜH f<s2˜»˝iH&ÙU„⁄Á öÇPÿÀI∂”Ì:¯jÜÎ—Œàˆ·,†a›„∂"2
+©èïèèË‰Ã7°É ◊ße§§ÿ'⁄Ü>Z ?;qK+Ò·I4Ô3	·O®ˇ0}ß]˜Wê“b‘1BÙGsõ˜®â ò";ç‹Ìä#Ñ6q[}¢Èò∆≠£™—KJ8ö◊û˘!¥†È·˘òã'=kŸ\Ã_Öœ_Ì’öÍã©wÕ
+‚• †ûÈE “K,Öl)–Ä}Â≈ÛÎªtFÚü%JHC∂«tvöÄåfZ…ìÔ+œQX°;Œºì˛√êèé” .œÆÀ(ë„ZÀEe◊ï.OnFŒú/Ÿi=k—∫P13¢≥°–ôúCœ∏»∫€Ã∞¿	œÁö¨íñõ≤≥ÜΩ≈wA'8Q(6Cõt='/g∫Œùwd≤u–Fë0¥ZÀaä¥ÒÃ∑é'ñÉ8ÜF—#y2{Â@°—ËÉ&^ÄˆS3`D(Æ>$”ŒYÄ£˚˜£Íl>xùmØ˛˘pplHUÃ@LZÛıYe˛Ä)Â£ﬂßFÂ!kßùB´Ωr›ÙåÊPêÌX¢0ﬁ+3Öb6á∂Áƒ:Sô«È¥LÍJçFAù∞ˆ2ºW4‘MII∏¥6Œ«AUS…N≤!ê&Eâq+—T∫ç™iA,µO’`_Ë{r∫X•[ádYA{÷Lw‘˙ƒ⁄t∑îm=n˙tÕaƒ$ôCëG¿jÅh7èzÁP≤Y,GØB}}5G0JBknn≈_@¡H@qª∏ó@Î™;9gM√‡;ìhÍfDK∑Ûâ∂≤€0Dùx∑áÑ¨<b’⁄9ñsÒo±°$”2Ôs£Î≠x˘ÂyHﬁﬂnyfﬁMz›iñ”òça%ΩïÍY:ÈNEØ$PbœijeGÇVk––ê7ã⁄‚AOO–˛ç^/Pπ'Ú éFGgƒVÁ=AD” ◊›°†GgEÛ˛ê„⁄[ìÛÈ›Q><ﬁ‡A‚˝˝ÿ-àÉÉO%»¯yı`äëíòàz¬1¬≠qZ›-÷—Á5+˜ÈA3.†[Ùè:ÀiUQP:G»éêãÄAZ.$¸	’O≠á}#a^%Kˇß∑ﬂÙéêw+NcÓ‡Õ˜˜˝ë◊∆l˙˚πÔfÙí_È'Q]ÙRZÏä¡¨Ÿ≈Ó3EñÒb/Kª¨wãí	¶ ÊΩø6ËPñri˜H∑œ±.ãç{ÖÄ£÷4§Ü∑bπzp»≤âæ>kzÕjÅê§∑|kjÈ∏¯∏ÄZ,0√/~ÕêÜ.ü(⁄ÇDÎ2‹cÓ F¢÷4i£î÷Ì?µ:!ÅÇ:$
+¢êÑÿÃNëô-wf–‘6≥+3[n›Ë _ÙıQΩ;ΩH[6Ú™—ólá,⁄l°C/V—ƒ™Ò¢¡Ÿ‘â¶πà+'
+Ò\vßzWëÍ¬ãÜdÎ@ÂË†™(H∂ä°-P9Q~Ú¥—6suƒöOë°ıôπpøÀÇíB„øI9‚‘)‘π a•Ç{´ó-Ñ!UÒ¿ﬂõ“≠Ãã’ﬂ{°πQîtLi	û#°·‚—ª≈!·WÒ‹¿…SWÉ:A{ö>…Ü‰9Äîñ¢ﬁÄítÌ>ÇÇÑ…Î<O BÌ2*õ∫ˆ9`É”*∂D≥(õV}{∆Ù≈…≤(KˆBıs‚{Bh∏˚ÃùBEj˛êvDMs#ÿ4Wïn˚•ÌD∫ÌóÅuïyë¥I˝™SìqqUÕº˜ˆ’“Mº–n&›⁄Èvô⁄gI7E) &Ô“@A“Mßi“ñn¥9®	Ëª∏ê éí3cÂ6Ç<≤+H<ir~∂Ä”Ñ;êÚ∂ìG∆Ê:èË$™ìŸ Ω(£n©ÎíGú≈&øãõ+æ¶.&ıÓL@P£Æ|6ñO®ê≈ßsç«Õœú<IŒ‘%‚B9µ˙úv Ì¨
+	πH¡Û>≥;lNì‚f±™Ω.Ö¶˜íÊß©ÈG0BáT?Çﬂ\:VêhOZY?éÓä9˙ù¬˜∑€Yˇor Qñ”ÙË«∑≥pqR8µüøZˇíôc—\Hb˝_¶÷†s¨%µÜ ]m˝C(ä ëﬁ¬;K?~˛™≠GyÂ(qq•˙qp∫Î;;—P…Ä“Hgñü⁄°8˛LTVô!5Ï·ZzW\‰º'≠ùøüo´Ñﬁu≠s=BM◊b◊v@¡l∫Õaπ48˘ÿ]ê¥„—«:ƒ®[:ŸB~ëI’T÷ÌBéáDSe› ù>Àç√3Ô”£JñjJGjú∏c ;àö≤ipä,3ﬁﬂ0µB”π˝£±˜A˘L±Jı&¡@¥êæ8¥“∆ÇxBz¸ î≤'›=…≈Rd]}∞Ö8ØÛ¨¥X^¡%œY«Éô¶"ﬂœåÆÕÎ¿ËÏ|ÂçÆ¥ÔÒÂœ*ÁSØÂC	˛∑(ÁSØÂìõÀÀ˘‘k˘„ˆ˙r>ıZæ;qÈ‚ÂÂ|Íµ|wí“≈ãÀ˘‘k˘ ö€îÛ©◊Ú›IJ/.ÁSØÂÉÎÊ&Â|Íµ|¥∏A9ﬂi;a-„x\_ŒßûÄ}∫Ôya9ü$Z¢¬Âc69ò…B®;«bÉOπ	9-Bµ¶ß[Ú}ROŒ#ü;®Q∑EHÛ[œ
+H	7$sR€XìTJGY ‚¢•I%	H…êäß”wfä|âõ]ƒ∑2ylOc´éä4R˝!;∑·*≈,/°c◊«1◊˘#‰√í≤;q†Kï™}ÚH7V.&ºV†Kc›®◊ÔÈ*ﬁcôñKTV‡€º4ì˚Ç8a◊y§ZÈJ1QÃ/A·f]b·Ê¸Ö˘%)–u=úîó'Ûi~â|¬•VŸ›Ÿ˘%rn,ªª6≤Â<j¡¥QŒ/ëz)C+8*yıB1müg'IKzO7}∆¯ØªÎ#‚NPY|ûs|2•cürû&ó•∑Óutˇ,[©hSz©dË¥âçàñ·ù$¢^oﬂ¨ÿbÜ>∑çm<-®'4ÀSîk
+èZäÛúö¬±z˝ÕÉ(∆•\#w/ï˙KO˚4PÍSäèH3)#Z”®ëyNZ¬¥ éz ò‘∫Áêí‘‰»Zùg@”rAP%≠M´DG≥c¸ˆ*Ñ¶ëÃ∆0%;WM≥pı,¢iù÷†⁄1.eÑ+ﬂ…ºw]‚<™¢z˘é^3Í.Z¨ΩÏ*”¥ÍˆË34`,Ô5:1ƒøºœPqë3πÍ≈õ˘É≥¢ƒîÀÂ‡¸AEZÇBÄ@ÿÃäZGπ”}n…û∞bE{¶ò^GMQ
+¿b;-)†ERE'OŒ˜T¶àVπÆ‚ûéDÿÄ!iÆxQ‘@•Ñ ∫ÁÕÀ;æ“+w8«CVÆ5í#ΩCkî@i∆Ç$eY
+ª∏xP‘ÒgŸi%¥ïÌ¥≥÷˛OInÌKÌ4}§:'$1¬E˘–∞ÇÕs>ê¯ç(œÊånâ˚ÑÎÌÑT+Ö;+z£^ÏÁø©¥kq’∫%éﬁ∏O£7Î≤zÙFÜ”¢7Âk¢7º∞ÒVL∑âﬁ¯LQËÁÎàrËàﬁîoíú`XoPø»Fo‰wÿı◊√Èåﬁ†Â©VwuÙ÷¡˘5√v˙h£Ut˜óŒ!X0(^{Á$™‹qágq•±…÷“≠“XMC˙é90√ól;‘Æ…ªäb¯GP|°œ´JGW1´8¸£†§¡‡¢÷´«[¬å∏ÑQìÌGÂXîÑKQ¢≤râür2ÑÓ!°]±…qaâüvB†fä"§Õ5≈¨"7™¢9’¨ÛìÊ÷•≤Ùh¿œ:∑.T5üreû–ø—ëI~ieûÏn,ßªmeﬁµú¶≥2OGç«-*Û–Ü‰iqﬁ…∞™ïyí‹Am@óÂÊﬁùî.^X•.◊'ﬁøTù7´ÃÁú]'¢∑2ÔNœô)◊WÊIÊÜ-Œªueû[úwÂæ,®ªA·?‘wgÌ.—hî¬ú⁄MR/ia”Ÿä˝Ì+ÿ|äoz©Ÿ∞Ÿ”úãÀJÂ Áµ&uˆ4AB±Ü]–m
+ ∏Ù9Ô˙¨ÛU—*Aqh≈ ⁄˘)÷ñ_˚I~µÂ◊©ÈﬂË\èu?˚é;<K≥†Íö›^IBªU*tw«/∆ÀMuHsˇLıÏMé:FP\7pq çeƒ	M@zí˛µNÁ…™üw¨◊Á@y%K[AÿËh€úß!/XwÍvv<Ùoa¡à·y4Tíióú¨ jpw≥"Ÿ—˝X9∞pßªHˆÌFE≤üø∑(íÖPnR$Î÷nR$]_$°ú…*t≠]Fˆ&w¨$	%¯k¶0qÎ—%≥ﬂuÑ¡Ù•ˆ^]î'UkÍèÂ…ŒÕÌãÚx[@À¡ø™(Ôîh§(OáÔyã¢<Nt™vÎÍ¢<Qí™À;ø(Oá≈Ho¡Í+e£Òº”Ô≥'9íçïÛK¸î˝&…é?7
+õ>öÆs∆TÛŸ®:Ñv}Hì!Z˜^ﬂnîˆŒ™•”sB‹ªÔ©†.∆{µ=†ÛtEóˆ§?œ—ùÓ /cxèûS!3ÖôtÉh¢6/¨:£AÓazÃSÍãh%Í˘îÁ`…≠d®ãÆÄœıÚT*]∂ Ÿå{íÕf<xÌBs«*ß«’I‰ñ	Qâã¬T
+‡‚∆ÂÀÏ¬Ø—∫ê_•≈~éÿ§ˆ,å[∞Êˆ«∏q´T ˜ÆvÖﬁ‘#I∏îî›µ2 ≈~&Úë÷°z±_¡`ï^uÏ9¨“≤;x;7w·£§ÌV‰´ï›y›äXÒÿZ©ÿ/¯<~*˚u?‘
+‡÷j≈~€VK+@cÆíÛ©R±©Vÿ¯˙Æå5ˇÚQ‡±ﬁù‹Sh⁄¯b%¨Ø'÷-É}bÿ=*«ÚMc∫@˙?´:⁄›°€±mu∫)Å©e¨Tv«ïT¡™ùó¶ˆÍºÁ¿±9IŒØõ∑:Ú@Ót›È•ÎºzAÄEıNØ_›“”'ôìÎU3∫.ª^OŒ0z““n]xΩﬁâÜ¨[å“òÕ≈§Rœƒ‘ügì”q€ä»ÙTøÔöõı$†xÂ,õãˆSs:.ZA#ÃçZ∑4nW–Ïc‰ŒM⁄TÈì\¿˘¬uS 5.cí‰’≤ÎÊÜÖ}r]∑7*Ïì≥ƒ9S˝vÖ}rÒ±;t›˚M˚DÉc™˙{k∑*ÏìÀ*·ˆ=Âe’%Ö}rU}êh7.Ïª8‹}^aüú/'aË[ˆ±™NX’«KÅõˆ…ÌÛHÖÕ
+˚‰ºk§÷n[ÿß∏ã{€¬>π™>⁄[ªiaüú…C«lnZÿ'7√äqÅÀ˚§ÈŸ∞™ÔN„ﬁ®
+˚§[æLhË÷Ö}rsx'=∏˘˙¬>~ORoYÿ'Íé≠˜º]aüéÕ‚[ˆ…Uı›Çhö∆‚YD”[ÿßèhWˆ…Uı	’⁄ç
+˚‰™˙Nbù◊ˆ…W¨‹§∞OÆ™OÆbÂ ¬>9ªZŸ≈Ω∏∞è¿Ô£ÚDªYaü‹,)dw_Sÿ'W’ßÌ{*RDw˝è‚F˛UÖ}í!ùú‡Vaü∏OZ>‚ù|ë¨ÿGîŸª˝)ùuÊîäU“∫∆SwEÿØ4˚Ac
+t›‚'«ñÁò:oÒ”uWÑÊ-~zIupÆOb<ÇÀHï;hZ“CÄTÆ∑;π≥˜¸>°Â©„?Ωı¶
+wı
+¸uìJ«=’í>…õíjz∆ô}ÇSù¬F—eJzÀ{âÀ‰3Ev“ƒ&[@%lvˆÂÚDìﬁˇwy
+s˘üêhg=j_˛ß+ Qæ˙Ú?D4Õ˚ˇt÷Ù)›´?˙™Àˇ]*˜ˇÈ/ïR∏¸OL—ó›r˛ÂP{jﬂˇ'ÏØÊÂ∫œ∂€UÆØÚL∂Ωè}sqöcEoq”›_⁄˘Æru˙ˇ<âº˝dªæ¶O5ΩQgv7™Èª¢ÆÈé/+}‘ùD≠VÏ(ü"‘û˙ÍŸ‰∆≥í‘d.!Åt·Ë,i*,‚î¶.–™è◊∑aT®ØO¸õ’4.$9'’
+@”ï˚¨/’
+@”ìDÆû”é§‡m
+1/∫ÇSî‘«∫∫–AÍ@y—©êrÜ÷ywHﬁËN˙…õV˚6OÛ0¿ow∑;ﬁ@S¨vπ◊{Í)x˝’#ÿÑ±%ÈÂ'BÇ∂tRSËl*ô¥æ±ŸO=XxÂ·\	÷m
+c§«:ü
+[≠t1¥™zA∆9ó;ÇguŒZ7äç˚ªã1œ*°PNÖÄÆﬁ'FW„›‡ê¶Öœ0¥& Òz‘æåHŸÒ@E´ä‚ú
+øÖh:7Zè2˜˛›]TÔyˆΩ4C´\˝wõí&îñ†vıüŒı®qÔüNS˝⁄{ˇxﬂS·Íøsóë¸ΩN;–π∑å©.æ˙O>‡yÓΩbas4iµØ⁄ΩjÈ<:´}ﬂt§NÈëiüøW?N–nUÌ˚˘+ÒΩ%˚ûz´}Ω˜Á›//Ñıéœ7(öP‹7»ËBÄÙ8Yç&†Î˝+:ı,-—U¨•“*˝Å∑™fBû_}µ:O÷c‘*[1-…‘µﬂœ/§:	€â+”æÕÃÛ
+©‡h¿HïcÆg•Ó@P≤ë—Ùû·°ÈYû*±N1—6: õu¯û¥’yF-ïÇPÍÖTB«C_•ËEÖTBô&1eé~DedóXå,qŸ›çR˘ê±å≤p7VŒ¨ªÌ™Ô¯‹—∑¸Í≠ªÌ^x™ñlTBª—eò„= —±•ÎAè˙ÂP≠ª=IÌP©ª’>9	vÎóa2·"8’B(óô¬⁄Ñ∞ˆÆ¯‘ -ΩŸåß¸ñ{ ÀÕ\“—l=máé ¯T®”uÜÔüƒ∑$Ós¥"Çaa¿ôWk¢í¿ódCàUTô∑ËtÎ¬»ñ¯j∫hˆ£+WôwG◊F)óR«a‘´à#0ªRb¡jÿ˙"W\7ˆ©Và∏Û)c-<Ù⁄rX˙j∫“ÿ=S∫öŒ¶R#W(WÊÌ-!3%ÃÓˆIä.m÷‰«J°FŒ¶zﬂH∂
+ç&r%ŒO≠¥$—ˇí*UÊT∞LAÒ∫ëﬁˇ˜˙–S¿.äJ=•XrXÈtƒ∆ïé"ë±|æMàß÷ü:πOLIË—˛‰ëkwGó.äö˙≤òêÿ–MÎhÁànyFB≥•«O]ø4Ç€ÔëQ¶Yˇä”|jó8àY@◊ÄMºùî;+;ÛN˝Z∑'ı˙™ì`äR˝ÉÊåƒ-Â>eïÁÓ∏S{u’WÌ/Ã_?µlN‚¿g$nIH≈´z	ó§jjÂµÍ/è”õ∏•»w|yúF2®nÆíÀª,k ûìFGª%üv~üNv£Æ®ïT…;s›lU
+gôÓú‰·ûf∫ö∞ãEW˛6±iznJ:ˆ5.ÆSèÖq	˛zˆª.çEYFÿ‹ ,˝ïóæsQ<Ì¸CÔ‰„i˘[ÏÂ˘àÙù“…I˙JıûÆ{«ﬂ.Oõ´º)CÁt∫ŒzRQdvj—Õ~79Ëö∏•'=".å!ÀÌ¿⁄?˚Î¨Ä¡àêŸ#8˜º$q¯≈ˇ{íë∞S“ Ò5uvÔ å∫N≤’%jŸs 3,MÄôtTÈ´¶ä‰,Î{™Ó©(◊Ÿ©˜™«TuKπHÄü>ı9dC™Ä™K”çjKen˝ël·ùQó®}ò ÅRÉ¶~¥æé›°"YM·&ËÜ)Ÿ˜ºíhö’DgMcÙL¢iﬁ	}∆0´˛Oe¢ùT1+zºÁ_4»ËõKKï,w•dÿKEùP©G‰LıÀJı÷# ∆°ıó$*¡I=¢ú’yFI¢ñ{ÃúOR≠Œ+I‘[èxö sVI¢^íJµÁô%â≤\"Sè®·Ikï$û„I_Tíò¢ªs:.ŸÀ
+≈úˆ«.+Tehç‚±3.+ºS90„Üó¢—‹Ë¢RïÀ
+E€DÓ≤¬SO˙è\V®7lwÂeÖ¬––º¨êSkˆ≤¬J/©Ç*v5ÍééS≠.∏Pˇ©VW]x»ï˝…ﬁv(…Lπ¸¬Cı¯Îùr9ˆy*ŒzÉ®≤Œ≠S≠Ù_x®^ xwÉS≠–Öá7©˜º∂C∞<ØªPbÕKn;º„ØuªAXÒ∂√ª3 .Ãâîâ@]v·°¬‡ò€yì„¢JB]á∞kƒ:œ∫P˝∂√;=WRËπPùAµìau^x®ßﬁÛ≤íØÿ9aËK/<TøÌP…N;˚¬√ÛÀ„nTå/ºÌPcè@ˇÖá◊röŒı›SxuEæ˙má<Ëtô{“W\x(Å"ë‰äõ^Á^x®ûGw'Wƒ˘™W«∞[ä’1òŒ’≥a°]w·°êöß∑*Œç`´G◊ÖáB4ß∑™≈lTSº•^^w≥zS§=oVr°r€·YR@Ì¬√3Ô)ºÙ¬C1i·∆)\x··%[ﬂ\x®≈£∂Sx˛ÖáÍ∑ﬁ—GÅ]·°¶sõœ(èªŸz<πÌPèL”u··Â¶˙Y™ﬂv(ÿ˜º
+ê∆2“Â‚ÍπPˇ=ÖW]x»Aë=Æ¥0Ê¬’}àì®˙•™ª›r)Ò£K.<î5w€°äã{ﬁÖáÍ∆œ›_∫´É’/<‘}‹‘uÚ≈ër•¡íêÍÂ™CëÀ≥πË¬Cy(l¯˙öå.—Öáßqpa¢é0™~’ÖáÍ•˙í≠àÀ/<TÉq¬Ê⁄%elgL¢÷.øP›ªŒÕU™{˜¬Ây’Öá¢ÈM∏<˜¬CæÁ-.<‘UVz˝ÖáÍ∑"4∑∏0°z€!ù sÉÂÖªGÉ8Ì™Ô¯0Dª˛¬CÆc≤ÒÃã,π’w&Ñn‘ÈÑ^_§À‹v®/ØSﬂ%å*E∫(lwÊ….]—S”µˆùËﬁ(ïà¸‰tHÙõÚ^®(ﬂ_Âê≠£qM>‰ïx⁄	Ø;•M9óU¢÷ÜÓ-OÃS#ÉU_DkuOQ¯~nj¶lt|ºò0œ˚2D7ÅU]F”s¢‰∆¨£gÚ±Û˚®yôH¨˙hŸ¥ÌV◊⁄f…¸f∞‚Ï%˝{Ãçü£©|¶L·ÿ1o~Æ˝6øÀÓG(‡ˆO¬œƒªª‚¶åÅj¡?Ã4ñÌ‰¥˘|õ∑»ó¿o«J~õﬁ“6ÓÁæ’®,£´8,.ﬂíIÎÊw˙}§Rõ‡ãÒÌ%i1˘¨Ö‡„˜G©d;Œ>¸€O2äÊïö&⁄≠f«Ëv|•å¯Ï∑„à˚,)å»T2Ò=)cÖ†πAQ√àï⁄áﬂJ˚áØ‡†Ÿ∆uÆ.±ÂxÚ∏ﬁ‹æj‰û-¿˚ÒP˚œ-ºÅ/Ú /NDıÆ±^uIO^wp©0d“Ÿvdﬁ∞¯hOß™e9z!äÄÃÂ3U«:∑é,d˝°”k%L CòqˇnØ>¨¶∆),o-≥Â™∆£sÁÅ	qœT!iL≠÷#f"ß‡∑˙VlÕÔ$ÀÆûÔ1qhZ{
+. "Néâ‡cˆòÎ‰;∫_4€/4ﬁÉ/ŸÈ} sàóSû˝4FDñı¸[ ˜(∑IVù˜œt1h”¬¶ÛÀ¬•ØµzÀ¨≠Ï~•bU#Ö∆ï^o´˚tÂÌm‡»wﬁãp}ÂÜ•ƒN:ót)‰ZaûÉ&7ú'Ì	∏-¥ÑˆºVsd	m¿◊êï#ŸS⁄ÅØONÙ®µ
+|Õ∫Ÿ◊ë«ü√ ns‰úèG¬Z,ïºNÀ|Ä˙Iè¶b>ãFÏ*·É™c¬=p	|ÖHÓÅG¯`óù	—xœ
+ô_XŸb˛÷∂éY@/N·Éô =p£´ΩES
+É¬‰-∫|‡Ehû∂Ko1ŸÄøº
+ÅègHﬂW'›db
+EI‰"d≤åw‚zÚ¬&X9µˆNí%HπW/Û∆ke.ﬁå?@ö;`’3“T&‹ÊÚCﬂ†%†nK¶bMnü72+˜ÃûÆOæ´πJ…ÿ‰Ÿí€P»Ú°}±ãÀ.Ön+ÒA ¡É¶∫Ìµ˙ƒÅÃuYË˜¬≥tÛhZ‰{”:«ÂÂŸÔøRŸ≈»„≈<›/Àd-ø`Ëπdà„ó7;7xÓ5µ‚õá] o ¯∏Ø´{Û2∆p‡)á-¸‰„>˘i ˘ÿ:æˆ\Ù◊¡Õ~œ√Wzz®'‡9òÇª`{‘Û	‰ñ¶¸d˘¡<Àü ;ös˚(f3Ö1|’|Ã;#6∞æ±éIRÆ0¥2ª≥Ùê¯?L∞ê	Ô%}7è’g∂’ ]˚‡O˜Õ
+?yπO8j–0Müg~¯≥_¶GØƒ∞”ÕÊaA‰ü;aFÀ÷åGÉêK›>S<>$∂èûúFÁÇ˜¥RgÃÄ0¯y∆0a%/3`tIs2dâö∑∏?ˇñ˘Ì —iœ9"ú¢ª$x\ŒGıx«àà©1ÕˆÀ≈ƒØi]ïûÆ¿LZyÕ»/–czâèÓÀ6¥‹ÿ&ù_»ﬂnHfHØœ=|ÍA
+–@˝øÑ($:QÈ5*ëâŒ¶áŒ–/3˚Åî’¡√x`ß9;åp&Î°8mH∑£í3∏à˜WÍS î∑9Î†E,ª™˙å8Od]∞ãVºøCˇ&≥∫ﬂb)X&‘)fáÀÙ¯™ª≥Qú†gd¿ÖΩ4˘Ä`Éû’h¡äƒê©FúÇØ0	$™'Wéo1 ®Ü¡.ÿ|¶ÿ,Õo„7H>á§Ã=+Ù˝ÄJX{ò’„≠=é”Ñﬂ!h¥ΩÙ"F«ƒùÇ2F'Nº–_mÒó®—Ÿ˘*]K√ËxΩ7√ßM£+ÌK¿?S£Û˘Ωh¥Qî”Ë4-–bÏv3k$ÎO®üô˚¨Ûüƒ/g\"±ó èÜ˘ejÛÎ¶:ñF7›ä˝Xs•è`HAÎ}*û$‹ú	ÒÀ∫ê=·ô?nùb˜D7÷ÏÇ0S ·˚oj[§∫ƒ¿Y|H◊fÒj∫ïÛõrﬂØ˚kßÌç}Kõ>nrı‘{@6ûõ‘íó°~Õ}õwQ_67Cü‡∫—3;‡@6˝RGÚ‹m∂–G10ÁQ<o‡tq˚7H~a˚‹&S´ß˙D.ûã˙3¢é˙éø[àùùìÅ=˚úrÓ∆ê ~?m∆rÑW§∫/Ms|ñÍˇß%⁄{^‚∫2¢≥Pq —…úÚAº%ÏÀÑ}·‡C¥⁄HEÛ‰"≥¥Z_Û≈˙¬õ˙M{“π“z±'r+oÜﬁ[Éã“ü[ ç÷8¿Âiq˚ãÈıÖ”-GpÄF?Õì—W⁄ÒIÕ∆≥ÜŒ∆°ıé^mË*ÏFoØÍ˝CO∆fﬁa˙Ûå~]“Èï©vÀC‹Ë¸›U°L≠Bgª∏((I·Ÿ›Fß-$Ø=„4∫¬Æ/£m±¢vÛ˙	_«`˚$ÏñI–«‹öá∂¿%À˛L‰ñ'ÉΩC¶:ïß18¥å˘a∞6◊ΩÏ/6∑ìs;M/πı≤[ÃkZùt¥≈>€ü‰Aú=”ä£fmhF∞uLπ≥ñùﬁ5–\-Âuàx$:œ’ÏÁ´uÑ¸
+Fb«\§÷Œ<ÿÏ"rü5`ÄF<fvÀXÆ6‡ ’ÅÛKL∞æÆÁ4©!wÖàŸ!◊JtCô\ -õqc8Ó∫/iÁK•'Ø/D.Èî”Œm‘íÎá~∫æ§æ[ªXûÍèkÅ’¯ÀÑ\¡îá:ò2√ºID	ëS;ŒŒå€OupK“^êƒÿÿs—<Ëú/7
+“∞‰8Ï¡á}ﬁ±ËÕ”≠Œ##‘åﬂ8˝UÄ&?Y‹˘ﬁÙ~é®/òá«m?Õxºﬁíh‘zQõL¿∂¯˝h‡<Ä)»~}Í≥1ˆ/ÃAlg`•E'B¸ÜÁ‹Ó¯}o*V^6Œ¿ XäFçÊ:ìRáQu'*˘˝∫Iîm'∞´Œ§π^Ç#ÀÊrkÚ¶‘ıjıî›¿®P∑(ËL»3›uç.áöfËÎTÕ;ë’yyãB^WŒæêÙP¶iQ_äˇ„¸Q£¬ò3µ:À¥Ã.∑ßÜîÍ0fÑNp8ÕÂEg°hø˛ $ò‚†8^–◊x‹uàçR®E‘¨¶<ád%]¥›@˝tö‡+FDÕ€\4˜0bFﬂ®àhuÍøg˚¥ŸMé3≈Ô%®Èπcﬂe≥ô•eÛôsá,{â∂UWµˇÀ˙ÊD’›	ãñÙì˚åa≥3±i	8p#—7@ ª6ÆJ.Ñp!˛X≈îÉñMÆPxZ„˚=k∫œ≤¨—ŒUπÁs:ùñp´∞ô"j4ökñ∏>ûcvΩÎÏ¬ÎîiWp0‹Ò8gù]∏»‰döﬁô>cëù¡ihù]∏»êS(Zgp{Ø+ÃYgø¢7ùπÉÄ/FGœö2:V~¬ËLÀ´≈ËúˇÙa»Ônªƒ`,F†å∂·wn…‰aSü—Uéto,‰ˆn®ó3y—n—∏’¡>Ωhè‡JwˆRO˙≤àÜ‹–OZó≠yÖì√zWmı‡?;r{„£xöåπ}c'*˘ãÎQq⁄µû∆üå‹j˚wt<,-kÒ¬x⁄fG≠§ˇ˘+D‰˛‚}9GÜŒº?ﬂó±X≥„áMØ“Å¬ÜKGtƒ¡7&e‰}t∏¿±ıZ»CvÍìZë[>|˘Î`rÎ∑èñπ	s¢L“Íπv@L6ÏüÈV˚ÁKóÖá>#¯s“¡$.r™»sw)≤}ö,Wv"Ω˝ËXÁËÄ‚ ˆ∆ß>õW;˙uK*Úˇ‘Ïs∆Ìüù˝ìm¢?3˚hÍQˆ√ù}ÓÇç?;˚Ç¥Î?9˚¨¯√≥œ⁄–xˆ—‘C}Ûgg_^ﬂ‹rˆ´ˇêt‹±≈~
+˘Y\L\R"ÉM§∞º;·kÀàe"i	x5 u2¯mq˛6Rzéßf~ Õ≥“≠Ò Ø[°ZÀ∂∆~æ´ËÁáﬂ‡ÒôÖ1|î¬8éÎøÎ‘‹√ÀÇ1†ﬂåO›5Á¡∂iµ∆_wÑ&æ+#õ[B
+√W˙‡a4i LÅ†	 ∂£Û∂âÅ∑≠3!ƒ5“Í-|Õ0»6Ù3úF;Û€ÚﬁÛˇ\v‡ÙƒÉÇ£F?qóŸSoˆ‚¿Mß%Í€”ãèÿÙ`Z~«÷—H¨Zè≠⁄/∞ü˜AW|îU47Ô∆≠'OÁˆSôÓ∑<Á÷±©ÒÈ›˚∞ ¿-b(˜ñ%⁄—±ij˙˜fv}°;Ø"ú∞Å=r·ﬂ≤tH˘txåá,¸û∞;K¡	≈ËÊ öπ}SxŸ÷ßê«èG…-\NûäD•^≠VÜ£dM™§—±ßH∞–Xç¬i9•ÉîIoyœ,Åå≠¬°ÿwﬂˇ¥i}√É"3–gª—º™-f¿è^!&µg%f∞pQ∫Á¯ÏUû°‘`9R b5Ù%KWt]u¬[6ó¨òZ\pËË#da9Û¢Å–áosJ˙¢Å@‰÷€	f›Ha¯Lë•Á÷í&≥9ÜU»õÏ:W_‰REl≤ß> BﬁºPÿXÈõxN;°¡¬îU»ûä0ÑùêRìÁM…îäù¬dtπaaÿ•‘‰ŸÛ|˛¶≥Tü≠g±ß‹@xﬁî£'T’ œûX1◊s◊ÎmƒÌl<bD+√u∂€?·4õ.NSóMN
+2ú¶ó66%N”`U!ßŸxNªlÌ€•†ò”‘a8Ì‹uÀpöçÁ¥¢ƒiüNSY˚6J⁄h…}æ2 ˝óÄ]¢§/bvû7;˜T˚!'œÍÑDI_≤ˆÌzxJ0Åíñ
+1˚•Jyd‰	”¢S¿il˝≥´È¡Ìî‹D)ù5õπÿ∞†ü+Ñ,∫Ÿ"ÏjƒÌ<§¬»‰jPøDeﬁëi˝	Î¡*`› ]øòy†:R[ô«VU15WEÆ@´hE5ò∞˙qÌ¥GÚÌΩw¢!›1≈~∞øn¶´ÃõŒ°˘V.%¸VÆ´}ljµFŸQ;ˇ¿õˇä∆Ÿ)àÜÜ[í’˚åpjUå ©úBOB‘Öî5æ£ æÑÿÑã'-†aõøU=L›Z°ÜA&wÄeø>+ßFá†ûu¿&N∆3¨ó\ºG )°›˙z’çZ°˚†¿◊Eë¸ô¬ØÔ4\ Ä£A◊†ö‹6¶û∏[B≥	–dΩ1∂V≥ÊUEƒ»/€wv$jôU¯!,p›i”Úëe‡Ñß?@è:…éá2†6&à≈¥ü¢Ÿt€fÁ° .›Joﬁ GÃá˝ãÊW€‰ù+‚l°Z\Æ*U8°„™ìõ†êZn‡°ètÈ5<£ÀF›wP±§p”N Ù|EGú/°O0äûÀÒ,Ä÷^[∂›Píx¡,Ö-Ë û∂“üF¶Ï”ùÂÁ∫3⁄Iˆ¡Ãœ’õÑ£˚ím¢»ÜËzÆúg7GgKõàÁ˝?'±ï¬˚+s∏˝á96áŒƒyÓC¬Ê·A•°†Ái;˝)ˇYv–ü=?Ã|Ë7∂Tÿù`o]\Âæ˜≠T<˘ÓOWﬁ1∏˘Ÿ 	Ú
+OCLÈ3/Õ®¿í.≥ŒíaàÓ ¢O!—˛`—Áù¯ Õ?UÙ	]∞ÓÛ}≤˙Ç¢œÌˇõ∏˚+é¯·†7x«I’®≈l±1 ëª˚Àì.yΩÌÕtKP$Ÿ"ˇ{»m'«5π9¢O∫ô-ï¬Å9ŸNIÉìIeq¸Ïb#âÑ'òà¢ãt≠zÓ;RXO£‹7÷MHlæ‚™ÖFâ#±å”UQŒ˘bÛ‹F«1⁄ÑuO9£{∆a§Vˆ∏*ÅàÍ◊Ω∏kHlCo>lÍß,"+;Ò4N;w/ÂT%≤OÑãÒ77±Ì˘;yÍ≥áÂzD∑E<•ü&å‡Øët⁄>éïÎx
+w¿Éç≈‰ûéÃÈ/A˛˜9uŸ˛±'ì«ã)Tíù˙n∑^PÇ>™ÀñeseﬂÇ‹ï7$“¨V(√πañ“˚“ÖäS'™O£5R?GúM◊°vèÑ∞Ö=ﬁÎ¡B'ˇz·π~⁄O""µ_£˙\ÀS„≠S˙kO“^peÌ∏g‹Jˆ”âmÜ¬C(ÑgB8≥è‹Å·ÅŒ∂ó≥≥*n·ÉŸ”∑`AÚ\¶“\ÄÊ≈∆,∏Í=wö∆ã4ç¬óõ;·ExöFaÖßºpf◊FGQVq¯ïÀòˆéø9‡Ø∫’xÁÖqæW∑ZLh˚˛ÊfŒµf!†Wﬁ≠Dy'≈˙ä3«\Ù>º¨A¿]œss	c´-ZÜ‡∂`î£MÀ≠xDÇê-%Á#úH—∑Y@zníÉáÒ ßy=˚∏££Çâ∂ˇ%ÍO≠ÃπΩ¶ëa„ÓØ≠á<ì·∂„t…i·ûuQ|ÇvÓWLèÁz%Z√R.∆¿Œ≠⁄8ÛÈ¯ÒE'AÁm£Û	üAŸ¸`ŒµË• »ûEπÒ¡™JwÇé2D3¥Ωœπ#-p·ë±È˜¿/∞*¯—ﬂåYâ–ÀSpñàô˚#=Kƒ˜x,q˙™Ô°Wºo˚; ˆ`>ÂFú◊˜±DÛô;Î¥¥Gµl´O‰V˜ìt£ıi…è])d∆—ÖPå…pÿi#J,0≈Ácô•«qá¯úqLP¥_€ZëÕÿVTH◊`1ì«‹-ŸcÇ∏Éàò≠X≠ôY[—∆.Ò˙ñ»˚“¡˙b_{∏	‰ˆ,ÓÎf⁄ˆƒ¨Ó=k≤∏È /=7˛-ù¥≈√âN†⁄¥á…ôG‡•F;dH3xkçåPıhˇLÊÄyz4ELÜ¥ºMøº®•Â,'@ƒÓòNèç>◊ÇÁâíå+I^ƒrﬁ©só≈£$QÛÚé=A¥}Px≤≥#ÇN2m]ÇÅ∏hôä§ßFú2∆IõX–Å*4¿Åj2ÅSï≤Î9|J(bNN*Ï¡[≈˜v–~JcCÒ>õæÁ6;';í¯ﬁ& ƒ1öùãºÜ#kJÊ˘Ω)‹È˙$õß˜˜âdÅ›<›⁄%õß˚{Ç$∞√—ê˜è∆˚{=Õ¡XXó%†8≤‰?c.( º¿ﬁÕ9·,—ßK¢ﬂ [∫—oÙ‹|»ºg£¡AD˝Î∂ôÇ\If√î9ìÏ	Á∑Ï‡Y_aﬂ“±—ªo)
+!˜-ªŒç‚ñùé˝:Iüﬂ—DspS;∑Pæ1K¥ùÃ!€õ~±D†∑ìÖtÄéñÏ&¡æe2˚ªÓ[ÇÂ)∑â–Hˆ±ï˜-Øÿ\bbª˚∑jõÿ6´Äêh€YÃM,ß©¬∞©√–`õ\C»JÀ†Q[6ÁµùpâóÁE0‹:ÇFqáN^óÖ·πv ÿı˘6ÔYº	}œN€˘Î\¿.pá*BœÉqa„t*¿–;#Nó öh"ŒˆC
+√≠cF4≤=ú◊≤ñS¿f≥k√Í†¶‚Jß-'Œ¬>Îl_®dE∏<væùi„ã’ôvƒ∑ìrâß©çÀsÅ íröGñQŒ`wè,ó†–êÓµÔπîKúÊ¡Æà≤ “Õi¸öN–úÊÒi/ª¢ˇÈ9Î†aPâÄO‘	\C ±˙Fç∏éL/ıN∏ƒJ˙í¡›:ÿ†Qõ\è…#'ƒ8 ÿÂJ:	\÷‘[+[&¢ïåˆÚpEÅ˝RÃéfÂ¬´·¶	<·ya–hºÕIºÙ‹»∆{√ìx9OZÊ0^«ÌN‚ebù≤áÒ:nw/B£pÔO‚Öä@È0ﬁûƒÀF’ıûú{·Iºw©ÅºŸIºp4JáÒﬁ$^öhÚáÒ:nw/óWt^X¯‹ìx—h„Ω·Iº0–E∆⁄ó‰n–„©k•ªùlg	Ÿ‹1M‡Äå»Ú[yë≈ù¯M7ø0◊j¿¢-'xﬂ˙
+˛t∑nfã%eÏ3;)Yö©;—ˆ∑gÒ~p”—æÖ3Í@Ú€gäÂÀ¸›w	.£%;/~´üŸÔ∑N€L¿ ≤	Ú9h!öxr∞ùÆ0B¡Ÿˆ∫i	∆Ìy¬–ê@$™>îà≥ ∑ÌiÁF££üi6vòu“ø¡ã¶¿◊›ÜT°æ°˜^Å$Û“íåŒã3Óv∏
+œHÅ{ûÉ¸f*‹Ô??Çüö‰·∏CMÉ9[l™£H £Ω˙_¸ˇÜ"/6‡Å ¯ÄøVÅlE≠^õ°
+ÃêÜ¶‰¿ì¶π≈‰∞ÿnF‘?Ü(˙Ì˝π⁄.ÂQ˝Œ º3XAœ∞hŸ–ÜÎ ˆwÄ`¡?ÔˇA…ªøÏG¯©˛∏C«"a,ÏÛGÇXƒÄπÉ°H0˙ÜáΩˇ_°÷“€∆ÑÔ¸x)–0Õ«êCÍñ∏-í¬M]ªI=,Ï≠º≠,í£ˇæﬂpı2i«{⁄Âºgæô°%*'∆9õ˘â‰$…∏rr>éë¡@'jw_ˇ…◊èx˚g ıì˙„O£néAº<>Ú.Ír01˘ê}RD^k=gaŸ+loHª`ºuAë3⁄∆d»ÊÏlBì”Ü]bk≤Á†|fmb¥ûcAä≥∆+q
+6D®Ïr»—fK&zuv|‘0ë	⁄[ü…êC.∏UC>Í(9Ç0‹2ƒ§åÑ`8Ÿbá‚M†kŸ"ﬁ@FL
+D(#û†…üG!áåXù}Œ$ŒB≠ÀI;î
+©åî$ùNπ0¿å∑V[»[r@£íT¯ë G⁄8Ü ≠Ÿ√â†·9Ô=JL #∂ú`$Rà1Sâ≈yÉ#.Väa ŒøÿíFæ¨)ü∆Ó‘å±¡Uüê ÖRÃO¢Â"∑Xú˚É%NsC¯¥Åœ¡ÛÑ48ÿX.K”ËB⁄&N~ﬁ®Ò`AÖî
+‚ré∆Å;Ø^∆)‘¸%m˛ä≥Œl3ª8ÊºÑVaì•øH0›†à@-π EGïk:rk–ñKz}√ Ñhr1¢HpêiD#uñŸÏä◊&ÍƒxÀQú™†ÄLòÄ
+Û∆	hù-∞ßQv!9`&i˙ ä∞7åÜ2"^Ç‡ÏLí9!-˚à◊πhò‹“3∆ÔŸr©∆ã©:+i}˝ÒplYıÊ^æëjÈˆsîæC‘22≥ylô5ìèÌ!›ç!∆ﬁ)`≠9yGi !◊L…å]áû≥å`ñ[ék$D@A90¶"¿—Ú _∞cÇ«hM≠#5C¨4<`%°Ü‚òØ›23cP^ò·m0Ã49iò⁄‰◊ûº\ûÎRﬂgv\}m7L&ﬂœf√˝™•N?Œ˘a—’z9Ãß™œá/˝’mwﬂO&Ô∫˘Õ¨_~ËÓ˙Õ*lÙuzŸw3u®w2πz,Ú7ÛÈl+¯,ﬂ’∫[Æ9≠:}ªX‘úg≥≈ı?√ÍÎ˙.ÎN‹´ÙΩüØ+∆˜Ûa=t≥_˛Ìnñ›|ΩeEQKab¬ÆƒT ∆o√Õ˙ˆi˜§¿ª~òﬁnM$õ›p“ìg∏ıÀﬂ˜" ∏Â<œ˙y{SiJx—-ªª’3‰Ê~søø>±vª±*x€/Èªä,„g≥h1Bâı~õ√:πqó~¡4Ûe¨PJ”gç5±YµèÂJ°L2ë{l≠&VûäÊ«ûÂ"@Å«õPmWˆ§â6∏—… Áä*Î˚Q¥˝0Iï›Ø•˜˙`Z£'ÂßÉÕNF∞…rK8«¯√+ıZÆ„“/?;º€ü0≥=‰´/ ;Åö–H÷èΩ©äPKûø›‹Ô1% ›˚D˛€˜ÕE7Ì]v√LÆ˚”U˜•W›|.=›ﬂÉ§¶À~µ^,{µ∫]<»âÌ«√œ?˝Ó+
+endstreamendobj5 0 obj<</Intent 14 0 R/Name(Layer 1)/Type/OCG/Usage 15 0 R>>endobj21 0 obj<</Intent 29 0 R/Name(Layer 1)/Type/OCG/Usage 30 0 R>>endobj29 0 obj[/View/Design]endobj30 0 obj<</CreatorInfo<</Creator(Adobe Illustrator 19.2)/Subtype/Artwork>>>>endobj14 0 obj[/View/Design]endobj15 0 obj<</CreatorInfo<</Creator(Adobe Illustrator 19.2)/Subtype/Artwork>>>>endobj37 0 obj[36 0 R]endobj50 0 obj<</CreationDate(D:20160727091554+07'00')/Creator(Adobe Illustrator CC 2015 \(Windows\))/ModDate(D:20160727174034+07'00')>>endobjxref
+0 51
+0000000004 65535 f
+0000000016 00000 n
+0000000173 00000 n
+0000021964 00000 n
+0000000006 00000 f
+0000059486 00000 n
+0000000008 00000 f
+0000022015 00000 n
+0000000009 00000 f
+0000000010 00000 f
+0000000011 00000 f
+0000000012 00000 f
+0000000013 00000 f
+0000000016 00000 f
+0000059743 00000 n
+0000059774 00000 n
+0000000017 00000 f
+0000000018 00000 f
+0000000019 00000 f
+0000000020 00000 f
+0000000026 00000 f
+0000059556 00000 n
+0000000000 00000 f
+0000000000 00000 f
+0000000000 00000 f
+0000000000 00000 f
+0000000000 00000 f
+0000000000 00000 f
+0000000000 00000 f
+0000059627 00000 n
+0000059658 00000 n
+0000000000 00000 f
+0000000000 00000 f
+0000000000 00000 f
+0000000000 00000 f
+0000000000 00000 f
+0000023777 00000 n
+0000059859 00000 n
+0000022389 00000 n
+0000024077 00000 n
+0000023964 00000 n
+0000022884 00000 n
+0000023215 00000 n
+0000023263 00000 n
+0000023848 00000 n
+0000023879 00000 n
+0000024151 00000 n
+0000024325 00000 n
+0000025730 00000 n
+0000034144 00000 n
+0000059884 00000 n
+trailer
+<</Size 51/Root 1 0 R/Info 50 0 R/ID[<6A73860FC538AB4EAADDD7767A0F14ED><B996DF04A8057B468AC7CB77DEAB1B02>]>>
+startxref
+60023
+%%EOF

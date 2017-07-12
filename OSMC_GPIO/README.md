@@ -1,7 +1,6 @@
 OSMC_GPIO
 ---
-
-![screen0](https://github.com/rern/Assets/blob/master/OSMC_GPIO/kodigpio.jpg)  
+![screen0](https://github.com/rern/OSMC/blob/master/OSMC_GPIO/kodigpio.jpg)  
 
 **Install**
 ```sh
@@ -11,7 +10,7 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/insta
 **Settings**  
 Browser: [OSMC IP]/gpiosettings.php (eg: 192.168.1.11/gpiosettings.php)  
 
-![gpio](https://github.com/rern/Assets/blob/master/OSMC_GPIO/gpio.jpg)  
+![gpio](https://github.com/rern/OSMC/blob/master/OSMC_GPIO/_repo/gpio.jpg)  
 
 **Control**  
 - Keyboard / Remote control: add the following to on / off buttons in `keyboard.xml` / `remote.xml`  

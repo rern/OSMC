@@ -61,6 +61,7 @@ wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/scri
 chown -R osmc:osmc $kodipath
 
 # reboot command
+wget -qN --show-progress $gitpath/motd -P /etc/
 wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
 chmod +x /etc/profile.d/cmd.sh
 

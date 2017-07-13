@@ -1,5 +1,26 @@
 #!/bin/bash
 
+tcolor() { 
+	echo -e "\e[38;5;10m$1\e[0m"
+}
+
+sstatus() {
+	echo -e '\n'$( tcolor "systemctl status $1" )'\n'
+	systemctl status $1
+}
+sstart() {
+	echo -e '\n'$( tcolor "systemctl start $1" )'\n'
+	systemctl start $1
+}
+sstop() {
+	echo -e '\n'$( tcolor "systemctl stop $1" )'\n'
+	systemctl stop $1
+}
+srestart() {
+	echo -e '\n'$( tcolor "systemctl restart $1" )'\n'
+	systemctl restart $1
+}
+
 bootosmc() {
 	mkdir -p /tmp/p5
 	mount /dev/mmcblk0p5 /tmp/p5

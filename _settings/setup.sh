@@ -64,7 +64,7 @@ chown -R osmc:osmc $kodipath
 wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
 chmod +x /etc/profile.d/cmd.sh
 # login banner
-wget -q --show-progress $gitpath/motd.sh -O /etc
+wget -qN --show-progress $gitpath/motd.sh -P /etc
 chmod +x /etc/motd.sh
 rm /etc/motd
 echo 'bash /etc/motd.sh' >> /etc/profile

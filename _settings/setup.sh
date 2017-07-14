@@ -62,12 +62,9 @@ chown -R osmc:osmc $kodipath
 
 # reboot command
 wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
-chmod +x /etc/profile.d/cmd.sh
 # login banner
-wget -qN --show-progress $gitpath/motd.sh -P /etc
-chmod +x /etc/motd.sh
+wget -qN --show-progress $gitpath/motd.sh -P /etc/profile.d
 rm /etc/motd
-echo 'bash /etc/motd.sh' >> /etc/profile
 
 title -l = $bar Install Samba ...
 #################################################################################

@@ -64,7 +64,7 @@ chown -R osmc:osmc $kodipath
 wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
 chmod +x /etc/profile.d/cmd.sh
 # login banner
-wget -qN --show-progress $gitpath/motd -O /etc/motd
+wget -q --show-progress $gitpath/motd -O /etc/motd
 sed -i "1 s/^/$(echo -e '\e[36m')/" /etc/motd
 echo -e '\e[0m' >> /etc/motd
 

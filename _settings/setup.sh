@@ -6,20 +6,17 @@ wget -qN https://github.com/rern/tips/raw/master/bash/f_password.sh; . f_passwor
 
 rm setup.sh
 
-title $bar This setup will take up to 12 minutes.
-echo
-
 # passwords
-title $info root password for Samba and Transmission ...
+title "$info root password for Samba and Transmission ..."
 setpwd
 
 timestart=$( date +%s )
 
-title $bar Update package database ...
+title "$bar Update package database ..."
 #################################################################################
 apt update
 
-title $bar Restore settings ...
+title "$bar Restore settings ..."
 #################################################################################
 gitpath=https://github.com/rern/OSMC/raw/master/_settings
 kodipath=/home/osmc/.kodi/userdata
@@ -27,12 +24,11 @@ addonpath=/home/osmc/.kodi/addons
 pkgpath=$addonpath/packages
 dbpath=$kodipath/Database
 
-title $bar Install bsdtar ...
+title "$bar Install bsdtar ..."
 apt install -y bsdtar
 
-title $bar Install skin.shortcuts addons ...
+title "$bar Install skin.shortcuts addons ..."
 # 'skin shortcuts' addon
-title Get addons and depends ...
 wget -qN --show-progress https://github.com/BigNoid/script.skinshortcuts/archive/master.zip -O $pkgpath/script.skinshortcuts.zip
 wget -qN --show-progress https://github.com/XBMC-Addons/script.module.simplejson/archive/master.zip -O $pkgpath/script.module.simplejson.zip
 wget -qN --show-progress http://mirrors.kodi.tv/addons/jarvis/script.module.unidecode/script.module.unidecode-0.4.16.zip -O $pkgpath/script.module.unidecode.zip
@@ -41,7 +37,7 @@ bsdtar -xf $pkgpath/script.module.simplejson.zip -C $addonpath
 bsdtar -xf $pkgpath/script.module.unidecode.zip -C $addonpath
 chown -R osmc:osmc $addonpath
 # add addons to database
-title Update addons database ...
+title "Update addons database ..."
 xbmc-send -a "UpdateLocalAddons()"
 sleep 2
 # enable addons in database
@@ -66,7 +62,7 @@ wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
 wget -qN --show-progress $gitpath/motd.sh -P /etc/profile.d
 rm /etc/motd
 
-title -l = $bar Install Samba ...
+title -l = "$bar Install Samba ..."
 #################################################################################
 apt install -y samba
 wget -q --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/smb.conf -O /etc/samba/smb.conf
@@ -74,7 +70,7 @@ wget -q --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/s
 # set samba password
 (echo $pwd1; echo $pwd1) | smbpasswd -s -a root
 
-title -l = $bar Samba installed successfully.
+title -l = "$bar Samba installed successfully."
 
 # Transmission
 #################################################################################
@@ -95,12 +91,12 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/insta
 
 #systemctl daemon-reload # done in GPIO install
 systemctl restart nmbd smbd mediacenter
-title OSMC restarted.
+title "OSMC restarted."
 
 timeend=$( date +%s )
 timediff=$(( $timeend - $timestart ))
 timemin=$(( $timediff / 60 ))
 timesec=$(( $timediff % 60 ))
 
-title -l = $bar Setup finished successfully.
+title -l = "$bar Setup finished successfully."
 title -nt "Duration: $timemin min $timesec sec"

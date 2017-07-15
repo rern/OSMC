@@ -6,35 +6,33 @@ osmcgpio=$( tcolor "OSMC GPIO" )
 
 # check installed #######################################
 if [ ! -e /home/osmc/gpioon.py ]; then
-	title $info $osmcgpio not found.
+	title "$info $osmcgpio not found."
 	exit
 fi
 
 # gpio off #######################################
 /home/osmc/gpiooff.py &>/dev/null &
 
-title -l = $bar Uninstall $osmcgpio ...
+title -l = "$bar Uninstall $osmcgpio ..."
 
 title "$osmcgpio installed packages"
-echo 'Uninstall Python-Pip, Python-Dev, GCC, bsdtar and RPi.GPIO:'
-echo -e '  \e[0;36m0\e[m Uninstall'
-echo -e '  \e[0;36m1\e[m Keep'
+echo "Uninstall Python-Pip, Python-Dev, GCC, bsdtar and RPi.GPIO:"
+echo -e "  \e[0;36m0\e[m Uninstall"
+echo -e "  \e[0;36m1\e[m Keep"
 echo
-echo -e '\e[0;36m0\e[m / 1 ? '
+echo -e "\e[0;36m0\e[m / 1 ? "
 read -n 1 answer
-case $answer in
-	1 ) echo;;
-	* ) echo
-		title Uninstall packages ...
-		python -c "import RPi.GPIO" &>/dev/null && pip uninstall -y RPi.GPIO
-		dpkg -s bsdtar | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y bsdtar
-		dpkg -s gcc | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y gcc
-		dpkg -s python-dev | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y python-dev
-		dpkg -s python-pip | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y python-pip
-esac
+if [[ $answer == 1 ]]; then
+	title "Uninstall packages ..."
+	python -c "import RPi.GPIO" &>/dev/null && pip uninstall -y RPi.GPIO
+	dpkg -s bsdtar | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y bsdtar
+	dpkg -s gcc | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y gcc
+	dpkg -s python-dev | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y python-dev
+	dpkg -s python-pip | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y python-pip
+fi
 
 # remove files
-title Remove files ...
+title "Remove files ..."
 rm -v /home/osmc/gpiooff.py
 rm -v /home/osmc/gpiooffsudo.py
 rm -v /home/osmc/gpioon.py
@@ -51,7 +49,7 @@ if [[ -e /home/osmc/rebootosmc.py ]]; then
 	sed -i '/gpiooffsudo.py/d' /home/osmc/rebootrune.py
 fi
 
-title Remove service ...
+title "Remove service ..."
 systemctl disable gpioset
 rm -v /lib/systemd/system/gpioset.service
 
@@ -67,6 +65,6 @@ if grep 'gpiooffsudo' $file &>/dev/null; then
 	sed -i "$(( $linenum - 2 )), $(( $linenum + 1 )) d" $file
 fi
 
-title -l = $bar $osmcgpio uninstalled successfully.
+title -l = "$bar $osmcgpio uninstalled successfully."
 
 rm uninstall_gpio.sh

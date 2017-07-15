@@ -12,31 +12,31 @@ wget -qN https://github.com/rern/tips/raw/master/bash/f_password.sh; . f_passwor
 rm install.sh
 
 if type transmission-daemon &>/dev/null; then
-	title $info Transmission already installed.
+	title "$info Transmission already installed."
 	exit
 fi
 # user inputs
 if (( $# == 0 )); then # with no argument
-	title $info Set password:
-	echo -e '  \e[0;36m0\e[m No'
-	echo -e '  \e[0;36m1\e[m Yes'
+	title "$info Set password:"
+	echo -e "  \e[0;36m0\e[m No"
+	echo -e "  \e[0;36m1\e[m Yes"
 	echo
-	echo -e '\e[0;36m0\e[m / 1 ? '
+	echo -e "\e[0;36m0\e[m / 1 ? "
 	read -n 1 anspwd
 	[[ $anspwd == 1 ]] && setpwd
 
 	title "$info Install WebUI alternative (Transmission Web Control):"
-	echo -e '  \e[0;36m0\e[m No'
-	echo -e '  \e[0;36m1\e[m Yes'
+	echo -e "  \e[0;36m0\e[m No"
+	echo -e "  \e[0;36m1\e[m Yes"
 	echo
-	echo -e '\e[0;36m0\e[m / 1 ? '
+	echo -e "\e[0;36m0\e[m / 1 ? "
 	read -n 1 answebui
 
-	title $info Start Transmission on system startup:
-	echo -e '  \e[0;36m0\e[m No'
-	echo -e '  \e[0;36m1\e[m Yes'
+	title "$info Start Transmission on system startup:"
+	echo -e "  \e[0;36m0\e[m No"
+	echo -e "  \e[0;36m1\e[m Yes"
 	echo
-	echo -e '\e[0;36m0\e[m / 1 ? '
+	echo -e "\e[0;36m0\e[m / 1 ? "
 	read -n 1 ansstartup
 	echo
 else # with arguments
@@ -48,13 +48,13 @@ fi
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/uninstall_tran.sh
 chmod +x uninstall_tran.sh
 
-title -l = $bar Install Transmission ...
+title -l = "$bar Install Transmission ..."
 # skip with any argument
 (( $# == 0 )) && apt update
 apt install -y transmission-daemon transmission-cli
 
 if [[ $answebui == 1 ]] && ! type bsdtar &>/dev/null; then
-	title Install bsdtar ...
+	title "Install bsdtar ..."
 	apt install -y bsdtar
 fi
 
@@ -126,14 +126,14 @@ fi
 
 # start
 [[ $ansstartup == 1 ]] && systemctl enable transmission
-title Start Transmission ...
+title "Start Transmission ..."
 systemctl start transmission
 
-title -l = $bar Transmission installed and started successfully.
-echo 'Uninstall: ./uninstall_tran.sh'
-echo 'Run: sudo systemctl [ start / stop ] transmission'
-echo 'Startup: sudo systemctl [ enable / disable ] transmission'
+title -l = "$bar Transmission installed and started successfully."
+echo "Uninstall: ./uninstall_tran.sh"
+echo "Run: sudo systemctl [ start / stop ] transmission"
+echo "Startup: sudo systemctl [ enable / disable ] transmission"
 echo
 echo "Download directory: $path"
-echo 'Web UI: [OSMC_IP]:9091'
-title -nt user: root
+echo "Web UI: [OSMC_IP]:9091"
+title -nt "User: root"

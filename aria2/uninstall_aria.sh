@@ -5,11 +5,11 @@ wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; r
 
 # check installed #######################################
 if ! type aria2c &>/dev/null; then
-	title $info Aria2 not found.
+	title "$info Aria2 not found."
 	exit
 fi
 
-title -l = $bar Uninstall Aria2 ...
+title -l = "$bar Uninstall Aria2 ..."
 systemctl disable aria2
 systemctl stop aria2
 rm /etc/systemd/system/aria2.service
@@ -18,7 +18,7 @@ systemctl daemon-reload
 apt remove -y aria2
 
 # remove files #######################################
-title Remove files ...
+title "Remove files ..."
 if mount | grep '/dev/sda1'; then
 	mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
 	rm -rv $mnt/aria2/web
@@ -30,6 +30,6 @@ rm -rv /root/aria2
 # skip if reinstall - pwduninstall.sh re (any argument)
 [ $# -ne 0 ] && exit
 
-title -l = $bar Aria2 uninstalled successfully.
+title -l = "$bar Aria2 uninstalled successfully."
 
 rm uninstall_aria.sh

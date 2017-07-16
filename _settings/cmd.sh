@@ -1,5 +1,8 @@
 #!/bin/bash
 
+motd=/etc/profile.d/motd
+[[ -e $motd ]] && cat $motd
+
 tcolor() { 
 	echo -e "\e[38;5;10m$1\e[0m"
 }

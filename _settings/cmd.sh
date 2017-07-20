@@ -1,6 +1,6 @@
 #!/bin/bash
 
-motd=/etc/profile.d/motd
+motd=/etc/motd.banner
 [[ -e $motd ]] && cat $motd
 
 tcolor() { 

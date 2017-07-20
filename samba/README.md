@@ -75,10 +75,7 @@ hostnamectl set-hostname [name]
 
 **Restart**
 ```sh
-systemctl restart smbd
-
-# if set new hostname
-systemctl restart nmbd
+systemctl restart smbd nmbd
 ```
 
 **Test conf parameters**

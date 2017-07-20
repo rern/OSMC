@@ -128,8 +128,8 @@
         <subtitlelanguage default="true">original</subtitlelanguage>
         <temperatureunit>c</temperatureunit>
         <timeformat default="true">regional</timeformat>
-        <timezone default="true">Asia/Bangkok</timezone>
-        <timezonecountry default="true">Thailand</timezonecountry>
+        <timezone default="true">Etc/UTC</timezone>
+        <timezonecountry>Thailand</timezonecountry>
         <use24hourclock default="true">regional</use24hourclock>
     </locale>
     <lookandfeel>
@@ -306,7 +306,7 @@
         <useairplaypassword default="true">false</useairplaypassword>
         <webserver default="true">true</webserver>
         <webserverpassword default="true"></webserverpassword>
-        <webserverport default="true">8080</webserverport>
+        <webserverport>80</webserverport>
         <webserverusername default="true"></webserverusername>
         <webskin default="true">webinterface.default</webskin>
         <zeroconf default="true">true</zeroconf>

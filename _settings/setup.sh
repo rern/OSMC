@@ -92,6 +92,9 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/insta
 systemctl restart nmbd smbd mediacenter
 title "OSMC restarted."
 
+# show installed packages status
+systemctl | egrep 'aria2|nmbd|smbd|transmission'
+
 timeend=$( date +%s )
 timediff=$(( $timeend - $timestart ))
 timemin=$(( $timediff / 60 ))

@@ -93,6 +93,7 @@ systemctl restart nmbd smbd mediacenter
 title "OSMC restarted."
 
 # show installed packages status
+title "Installed packages status"
 systemctl | egrep 'aria2|nmbd|smbd|transmission'
 
 timeend=$( date +%s )

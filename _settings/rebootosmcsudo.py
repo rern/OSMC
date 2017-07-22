@@ -6,4 +6,4 @@
 import os
 #import xbmc
 
-os.system('/usr/bin/sudo /home/osmc/rebootosmcsudo.py &')
+os.system('/usr/bin/sudo /home/osmc/rebootosmc.py &')

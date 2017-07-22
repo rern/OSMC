@@ -51,6 +51,7 @@ sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 's
 #title "Skin reloaded"
 
 # get backup settings
+wget -qN --show-progress $gitpath/advancedsettings.xml -P $kodipath
 wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts
 chown -R osmc:osmc $kodipath

@@ -61,6 +61,18 @@ wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
 # login banner
 wget -qN --show-progress $gitpath/motd.banner -P /etc
 rm /etc/motd
+# mod file
+linenum=$( sed -n '/Quit()/{=}' $file ) # normal
+sed -i -e "$(( $linenum - 2 ))"' i\
+\t\t\t\t\t<item>\
+\t\t\t\t\t\t<label>Reboot Rune</label>\
+\t\t\t\t\t\t<onclick>RunScript(/home/osmc/rebootrunesudo.py)</onclick>\
+\t\t\t\t\t</item>\
+\t\t\t\t\t<item>\
+\t\t\t\t\t\t<label>Reboot OSMC</label>\
+\t\t\t\t\t\t<onclick>RunScript(/home/osmc/rebootosmcsudo.py)</onclick>\
+\t\t\t\t\t</item>
+' /usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml
 
 title -l = "$bar Install Samba ..."
 #################################################################################

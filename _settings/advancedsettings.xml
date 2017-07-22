@@ -1,0 +1,13 @@
+<advancedsettings>
+  <video>
+    <excludefromscan>
+    </excludefromscan>
+    <excludefromlisting>
+      <regexp>/aria2</regexp>
+      <regexp>/Music</regexp>
+      <regexp>/transmission</regexp>
+      <regexp>/varcache</regexp>
+      <regexp>/x</regexp>
+    </excludefromlisting>
+  </video>
+</advancedsettings>

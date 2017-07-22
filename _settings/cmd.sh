@@ -24,6 +24,11 @@ srestart() {
 	systemctl restart $1
 }
 
+mountrune() {
+	mkdir -p /tmp/p9
+	mount /dev/mmcblk0p9 /tmp/p9
+}
+
 bootosmc() {
 	mkdir -p /tmp/p5
 	mount /dev/mmcblk0p5 /tmp/p5

@@ -61,6 +61,11 @@ wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
 # login banner
 wget -qN --show-progress $gitpath/motd.banner -P /etc
 rm /etc/motd
+
+wget -qN --show-progress $gitpath/rebootosmcsudo.py -P /home/osmc
+wget -qN --show-progress $gitpath/rebootrunesudo.py -P /home/osmc
+chown osmc:osmc /home/osmc/*.py
+chmod +x /home/osmc/*.py
 # mod file
 linenum=$( sed -n '/Quit()/{=}' $file ) # normal
 sed -i -e "$(( $linenum - 2 ))"' i\

@@ -14,7 +14,6 @@ This is just an example of setup script.
 - install **Aria2**
 - install **OSMC GPIO**
 
-note: uninstall `nginx` must use `apt purge` with all 3 packages 
-```sh
-apt purge nginx nginx-common nginx-full
-```
+**User setting files**  
+`/home/osmc/.kodi/userdataadvancedsettings.xml` - hide directories from browsing  
+`/home/osmc/.kodi/userdataguisettings.xml` - all settings  

@@ -2,11 +2,11 @@
 
 # install.sh - run as root
 
+rm $0
+
 # import heading function
 wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 osmcgpio=$( tcolor "OSMC GPIO" )
-
-rm install.sh
 
 # check installed #######################################
 if [ -e /home/osmc/gpioon.py ]; then

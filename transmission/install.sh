@@ -5,11 +5,11 @@
 #   [startup] = 1 / null )
 #   any argument = no prompt + no package update
 
+rm $0
+
 # import heading and password function
 wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 wget -qN https://github.com/rern/tips/raw/master/bash/f_password.sh; . f_password.sh; rm f_password.sh
-
-rm install.sh
 
 if type transmission-daemon &>/dev/null; then
 	title "$info Transmission already installed."

@@ -59,7 +59,7 @@ chown -R osmc:osmc $kodipath
 # reboot command
 wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
 # login banner
-wget -qN --show-progress $gitpath/motd.banner -P /etc
+wget -qN --show-progress ${gitpath/_settings/motd}/motd.banner -P /etc
 rm /etc/motd
 
 # reboot switch os

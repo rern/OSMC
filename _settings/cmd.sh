@@ -59,7 +59,7 @@ hardresetrune() {
 		umount -l /dev/mmcblk0p9
 		mkfs.ext4 /dev/mmcblk0p9
 		mountmmc 9
-		bsdtar -xvf /tmp/p1/os/OSMC/root-rbp2.tar.xz -C /tmp/p9
+		bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C /tmp/p9
 	fi
 }
 hardreset() {

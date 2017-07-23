@@ -4,10 +4,10 @@
 #   [startup] = 1 / null
 #   any argument = no prompt + no package update
 
+rm $0
+
 # import heading function
 wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
-
-rm install.sh
 
 if type aria2c &>/dev/null; then
 	title "$info Aria2 already installed."

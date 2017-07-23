@@ -1,7 +1,7 @@
 #!/bin/bash
 
 motd=/etc/motd.banner
-[[ -e $motd ]] && cat $motd
+[[ -e $motd ]] && echo -e "$(< $motd)"
 
 tcolor() { 
 	echo -e "\e[38;5;10m$1\e[0m"

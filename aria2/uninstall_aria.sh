@@ -32,4 +32,4 @@ rm -rv /root/aria2
 
 title -l = "$bar Aria2 uninstalled successfully."
 
-rm uninstall_aria.sh
+rm $0

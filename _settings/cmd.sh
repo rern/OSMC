@@ -44,9 +44,10 @@ bootrune() {
 }
 hardresetrune() {
 	mountmmc 1
-	mkfs.ext4 /dev/mmcblk0p8
-	mountmmc 8
-	bsdtar -xvf /tmp/p1/os/RuneAudio/boot.tar.xz -C /tmp/p8
+	umount -l /dev/mmcblk0p9
+	mkfs.ext4 /dev/mmcblk0p9
+	mountmmc 9
+	bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C /tmp/p9
 }
 hardreset() {
 	echo

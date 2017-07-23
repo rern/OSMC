@@ -2,6 +2,7 @@
 
 # need root access to /dev/mem
 # gpiooff.py cannot run sudo by itself
+# kodi has trouble with 'RunScript(*.sh)' - use *.py instead
 
 import os
 import sys

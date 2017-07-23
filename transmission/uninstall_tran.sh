@@ -22,4 +22,4 @@ systemctl daemon-reload
 
 title -l = "$bar Transmission uninstalled successfully."
 
-rm uninstall_tran.sh
+rm $0

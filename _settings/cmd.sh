@@ -43,11 +43,21 @@ bootrune() {
 	reboot
 }
 hardresetrune() {
-	mountmmc 1
-	umount -l /dev/mmcblk0p9
-	mkfs.ext4 /dev/mmcblk0p9
-	mountmmc 9
-	bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C /tmp/p9
+	echo
+	echo 'Reset to virgin Rune?'
+	echo -e '  \e[0;36m0\e[m No'
+	echo -e '  \e[0;36m1\e[m Yes'
+	echo
+	echo -e '\e[0;36m0\e[m / 1 ? '
+	read -n 1 ans
+	
+	if [[ $ans == 1 ]]; then
+		mountmmc 1
+		umount -l /dev/mmcblk0p9
+		mkfs.ext4 /dev/mmcblk0p9
+		mountmmc 9
+		bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C /tmp/p9
+	fi
 }
 hardreset() {
 	echo

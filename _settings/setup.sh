@@ -62,6 +62,7 @@ wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
 wget -qN --show-progress $gitpath/motd.banner -P /etc
 rm /etc/motd
 
+# reboot switch os
 wget -qN --show-progress $gitpath/rebootosmcsudo.py -P /home/osmc
 wget -qN --show-progress $gitpath/rebootrunesudo.py -P /home/osmc
 chown osmc:osmc /home/osmc/*.py
@@ -79,6 +80,9 @@ sed -e "$(( $linenum - 2 ))"' i\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/rebootosmcsudo.py)</onclick>\
 \t\t\t\t\t</item>
 ' $file
+
+# disable cec adapter
+sed -i 's/id="enabled" value="1"/id="enabled" value="0"/' /home/osmc/.kodi/userdata/peripheral_data/*CEC_Adapter.xml
 
 title -l = "$bar Install Samba ..."
 #################################################################################

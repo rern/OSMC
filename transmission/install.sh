@@ -68,9 +68,6 @@ else
 fi
 mkdir -p $path/{incomplete,watch}
 
-# clear rc.d for systemd only
-update-rc.d transmission-daemon remove
-
 # custom systemd unit
 systemctl stop transmission-daemon
 systemctl disable transmission-daemon
@@ -128,6 +125,9 @@ fi
 [[ $ansstartup == 1 ]] && systemctl enable transmission
 title "Start Transmission ..."
 systemctl start transmission
+
+# clear rc.d for systemd only
+update-rc.d transmission-daemon remove
 
 title -l = "$bar Transmission installed and started successfully."
 echo "Uninstall: ./uninstall_tran.sh"

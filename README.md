@@ -17,3 +17,6 @@ This is just an example of setup script.
 **User setting files**  
 `/home/osmc/.kodi/userdataadvancedsettings.xml` - hide directories from browsing  
 `/home/osmc/.kodi/userdataguisettings.xml` - all settings  
+
+**RunScript()**  
+Kodi has trouble `RunScript()` with bash `*.sh` - use python `*.py` instead  

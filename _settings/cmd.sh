@@ -24,22 +24,29 @@ srestart() {
 	systemctl restart $1
 }
 
+mountmmc() {
+	mkdir -p /tmp/p$1
+	mount /dev/mmcblk0p$1 /tmp/p$1
+}
 mountrune() {
-	mkdir -p /tmp/p9
-	mount /dev/mmcblk0p9 /tmp/p9
+	mountmmc 9
 }
 
 bootosmc() {
-	mkdir -p /tmp/p5
-	mount /dev/mmcblk0p5 /tmp/p5
+	mountmmc 5
 	sed -i "s/default_partition_to_boot=./default_partition_to_boot=6/" /tmp/p5/noobs.conf
 	reboot
 }
 bootrune() {
-	mkdir -p /tmp/p5
-	mount /dev/mmcblk0p5 /tmp/p5
+	mountmmc 5
 	sed -i "s/default_partition_to_boot=./default_partition_to_boot=8/" /tmp/p5/noobs.conf
 	reboot
+}
+hardresetrune() {
+	mountmmc 1
+	mkfs.ext4 /dev/mmcblk0p8
+	mountmmc 8
+	bsdtar -xvf /tmp/p1/os/RuneAudio/boot.tar.xz -C /tmp/p8
 }
 hardreset() {
 	echo

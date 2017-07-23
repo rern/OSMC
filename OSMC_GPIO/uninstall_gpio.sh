@@ -67,4 +67,4 @@ fi
 
 title -l = "$bar $osmcgpio uninstalled successfully."
 
-rm uninstall_gpio.sh
+rm $0

@@ -8,6 +8,7 @@ title -l = "$bar Install OSMC logo motd ..."
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/motd/uninstall_motd.sh; chmod +x uninstall_motd.sh
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/motd/motd.banner -P /etc
 echo '#!/bin/bash
+color=33
 echo -e "\e[38;5;${color}m$( < /etc/motd.banner )\e[0m\n"
 PS1=$( echo -e "\e[38;5;${color}m$PS1\e[0m" )
 ' > /etc/profile.d/motd.sh

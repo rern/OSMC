@@ -17,5 +17,5 @@ PS1='\''\u@\e[38;5;'${color}'m\h\e[0m:\W \$ '\'' # sigle quote only
 
 mv /etc/motd{,.original}
 
-echo "Uninstall: ./uninstall_motd.sh
+echo -e "\nUninstall: ./uninstall_motd.sh"
 title -nt "$info Relogin to see new OSMC logo motd."

@@ -58,7 +58,7 @@ chown -R osmc:osmc $kodipath
 
 # reboot command
 wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
-# login banner
+# login motd
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/motd/install.sh; chmod +x install.sh; ./install.sh
 
 # reboot switch os

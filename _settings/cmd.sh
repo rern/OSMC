@@ -40,31 +40,30 @@ bootrune() {
 	reboot
 }
 
-yesno() {
-	echo
-	echo "$1"
-	echo -e '  \e[0;36m0\e[m No'
-	echo -e '  \e[0;36m1\e[m Yes'
-	echo
-	echo -e '\e[0;36m0\e[m / 1 ? '
-	read -n 1 ans
-}
-hardresetrune() {
-	yesno 'Reset to virgin Rune?'
-	if [[ $ans == 1 ]]; then
-		mountmmc 1
-		umount -l /dev/mmcblk0p9
-		mkfs.ext4 /dev/mmcblk0p9
-		mountmmc 9
-		bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C /tmp/p9
-	fi
+resetrune() {
+	umount -l /dev/mmcblk0p9 &> /dev/null
+	echo y | mkfs.ext4 /dev/mmcblk0p9 &> /dev/null
+	mountmmc 9
+	mountmmc 1
+	bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C /tmp/p9
+	
+	sed -i "s|^.* /boot |$part1  /boot |" /tmp/p9/etc/fstab
+	cp -r /tmp/p1/os/RuneAudio/custom/. /tmp/p9
 }
 hardreset() {
-	yesno 'Reset to virgin NOOBS?'
-	if [[ $ans == 1 ]]; then
-		mkdir /tmp/p1
-		mount /dev/mmcblk0p1 /tmp/p1
-		echo -n " forcetrigger" >> /tmp/p1/recovery.cmdline
-		reboot
-	fi
+	echo
+	echo "Reset to virgin OS:"
+	echo -e '  \e[0;36m0\e[m Cancel'
+	echo -e '  \e[0;36m1\e[m OSMC'
+	echo -e '  \e[0;36m2\e[m NOOBS: OSMC + Rune'
+	echo
+	echo -e '\e[0;36m0\e[m / 1 / 2 ? '
+	read ans
+	case $ans in
+		1) resetrune;;
+		2) mountmmc 1
+			echo -n " forcetrigger" >> /tmp/p1/recovery.cmdline
+			reboot;;
+		*) ;;
+	esac
 }

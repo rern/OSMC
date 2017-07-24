@@ -6,7 +6,7 @@ title -l = "$bar Uninstall OSMC logo motd ..."
 
 mv /etc/motd{.original,}
 rm /etc/motd.banner
-rm /etc/profile.f/motd.sh
+rm /etc/profile.d/motd.sh
 
 title -nt "$info Relogin to see original motd."
 

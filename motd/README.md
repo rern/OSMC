@@ -1,7 +1,7 @@
 motd
 ---
 
-Message of the day - OSMC Logo  
+Message of the day - OSMC Logo and colored command prompt
 For SSH terminal login screen  
 
 (created with [**jp2a**](https://github.com/cslarsen/jp2a))  

@@ -49,14 +49,14 @@ resetrune() {
 	mountmmc 1
 	bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C /tmp/p9
 	
-	sed -i "s|^.* /boot |$part1  /boot |" /tmp/p9/etc/fstab
+	sed -i "s|^.* /boot |/dev/mmcblk0p8  /boot |" /tmp/p9/etc/fstab
 	cp -r /tmp/p1/os/RuneAudio/custom/. /tmp/p9
 }
 hardreset() {
 	echo
 	echo "Reset to virgin OS:"
 	echo -e '  \e[0;36m0\e[m Cancel'
-	echo -e '  \e[0;36m1\e[m OSMC'
+	echo -e '  \e[0;36m1\e[m Rune'
 	echo -e '  \e[0;36m2\e[m NOOBS: OSMC + Rune'
 	echo
 	echo -e '\e[0;36m0\e[m / 1 / 2 ? '

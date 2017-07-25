@@ -81,7 +81,8 @@ sed -e "$(( $linenum - 2 ))"' i\
 ' $file
 
 # disable cec adapter
-sed -i 's/key="enabled" type="bool" value="1"/key="enabled" type="bool" value="0"/' /usr/share/kodi/system/peripherals.xml
+sed -i 's/id="enabled" value="1"/id="enabled" value="0"/' /home/osmc/.kodi/userdata/peripheral_data/*CEC_Adapter.xml
+#sed -i 's/key="enabled" type="bool" value="1"/key="enabled" type="bool" value="0"/' /usr/share/kodi/system/peripherals.xml
 
 title -l = "$bar Install Samba ..."
 #################################################################################

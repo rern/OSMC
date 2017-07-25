@@ -1,5 +1,7 @@
 #!/bin/bash
 
+alias ls='ls -a --color'
+
 tcolor() { 
 	echo -e "\e[38;5;10m$1\e[0m"
 }

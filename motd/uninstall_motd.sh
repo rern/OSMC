@@ -8,6 +8,6 @@ mv /etc/motd{.original,}
 rm /etc/motd.logo
 rm /etc/profile.d/motd.sh
 
-title -nt "$info Relogin to see original motd."
+title -nt "\n$info Relogin to see original motd."
 
 rm $0

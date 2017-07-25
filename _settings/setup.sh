@@ -56,10 +56,10 @@ wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts
 chown -R osmc:osmc $kodipath
 
-# reboot command
+# reboot command and motd
 wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
-# login motd
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/motd/install.sh; chmod +x install.sh; ./install.sh
+wget -qN --show-progress $gitpath/motd/install.sh; chmod +x install.sh; ./install.sh
+touch /root/.hushlogin
 
 # reboot switch os
 wget -qN --show-progress $gitpath/rebootosmcsudo.py -P /home/osmc

@@ -15,5 +15,10 @@ color=33
 echo -e "\e[38;5;${color}m$( < /etc/motd.logo )\e[0m"
 '> /etc/profile.d/motd.sh
 
+sed -i -e "/^PS1=/ s/^/#/
+" -e '/PS1=/ a\
+PS1=\x27\\e[38;5;8m\\u@\\h:\\w\\$\\e[0m \x27
+' /etc/bash.bashrc
+
 echo -e "\nUninstall: ./uninstall_motd.sh"
 title -nt "$info Relogin to see new OSMC logo motd."

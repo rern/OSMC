@@ -12,7 +12,7 @@ mv /etc/motd{,.original}
 
 echo '#!/bin/bash
 color=33
-echo -e "\e[38;5;${color}m$( < /etc/motd )\e[0m"
+echo -e "\e[38;5;${color}m$( < /etc/motd.logo )\e[0m"
 '> /etc/profile.d/motd.sh
 
 echo -e "\nUninstall: ./uninstall_motd.sh"

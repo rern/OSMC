@@ -2,6 +2,19 @@
 
 rm $0
 
+timestart
+
+gitpath=https://github.com/rern/OSMC/raw/master/_settings
+kodipath=/home/osmc/.kodi/userdata
+addonpath=/home/osmc/.kodi/addons
+pkgpath=$addonpath/packages
+dbpath=$kodipath/Database
+
+# reboot command and motd
+wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
+wget -qN --show-progress $gitpath/motd/install.sh; chmod +x install.sh; ./install.sh
+touch /root/.hushlogin
+
 # import heading function
 wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 
@@ -9,24 +22,15 @@ wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; r
 title "$info root password for Samba and Transmission ..."
 setpwd
 
-timestart=$( date +%s )
-
 title "$bar Update package database ..."
 #################################################################################
 apt update
 
-title "$bar Restore settings ..."
-#################################################################################
-gitpath=https://github.com/rern/OSMC/raw/master/_settings
-kodipath=/home/osmc/.kodi/userdata
-addonpath=/home/osmc/.kodi/addons
-pkgpath=$addonpath/packages
-dbpath=$kodipath/Database
-
-title "$bar Install bsdtar ..."
+title "Install bsdtar ..."
 apt install -y bsdtar
 
 title "$bar Install skin.shortcuts addons ..."
+#################################################################################
 # 'skin shortcuts' addon
 wget -qN --show-progress https://github.com/BigNoid/script.skinshortcuts/archive/master.zip -O $pkgpath/script.skinshortcuts.zip
 wget -qN --show-progress https://github.com/XBMC-Addons/script.module.simplejson/archive/master.zip -O $pkgpath/script.module.simplejson.zip
@@ -49,17 +53,13 @@ sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 's
 #xbmc-send -a "ReloadSkin()" # !!! reset guisettings.xml
 #title "Skin reloaded"
 
-# get backup settings
+title "$bar Restore settings ..."
+#################################################################################
 wget -qN --show-progress $gitpath/advancedsettings.xml -P $kodipath
 wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts
 wget -qN --show-progress $gitpath/rpi_2708_1001_CEC_Adapter.xml -P $kodipath/peripheral_data
 chown -R osmc:osmc $kodipath
-
-# reboot command and motd
-wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
-wget -qN --show-progress $gitpath/motd/install.sh; chmod +x install.sh; ./install.sh
-touch /root/.hushlogin
 
 # reboot switch os
 wget -qN --show-progress $gitpath/rebootosmcsudo.py -P /home/osmc

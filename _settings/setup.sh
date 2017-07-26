@@ -14,7 +14,7 @@ dbpath=$kodipath/Database
 
 # reboot command and motd
 wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
-wget -qN --show-progress $gitpath/motd/install.sh; chmod +x install.sh; ./install.sh
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/motd/install.sh; chmod +x install.sh; ./install.sh
 touch /root/.hushlogin
 
 # passwords

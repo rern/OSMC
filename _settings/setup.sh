@@ -2,6 +2,8 @@
 
 rm $0
 
+# import heading function
+wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 timestart
 
 gitpath=https://github.com/rern/OSMC/raw/master/_settings
@@ -14,9 +16,6 @@ dbpath=$kodipath/Database
 wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
 wget -qN --show-progress $gitpath/motd/install.sh; chmod +x install.sh; ./install.sh
 touch /root/.hushlogin
-
-# import heading function
-wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 
 # passwords
 title "$info root password for Samba and Transmission ..."

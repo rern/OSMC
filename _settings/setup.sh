@@ -2,9 +2,8 @@
 
 rm $0
 
-# import heading and password function
+# import heading function
 wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
-wget -qN https://github.com/rern/tips/raw/master/bash/f_password.sh; . f_password.sh; rm f_password.sh
 
 # passwords
 title "$info root password for Samba and Transmission ..."

@@ -50,6 +50,11 @@ resetrune() {
 	echo y | mkfs.ext4 /dev/mmcblk0p9 &> /dev/null
 	mountmmc 9
 	mountmmc 1
+	if ! type bsdtar &>/dev/null; then
+		title "Install bsdtar ..."
+		apt update
+		apt install -y bsdtar
+	fi
 	bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C /tmp/p9
 	
 	sed -i "s|^.* /boot |/dev/mmcblk0p8  /boot |" /tmp/p9/etc/fstab

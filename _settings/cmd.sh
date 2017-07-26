@@ -60,6 +60,8 @@ resetrune() {
 	sed -i "s|^.* /boot |/dev/mmcblk0p8  /boot |" /tmp/p9/etc/fstab
 	cp -r /tmp/p1/os/RuneAudio/custom/. /tmp/p9
 	
+	wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/cmd.sh -P /etc/profile.d
+	
 	timeend=$( date +%s )
 	timediff=$(( $timeend - $timestart ))
 	timemin=$(( $timediff / 60 ))

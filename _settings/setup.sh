@@ -68,7 +68,7 @@ chmod +x /home/osmc/*.py
 # mod file
 file=/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml
 linenum=$( sed -n '/Quit()/{=}' $file )
-sed -e "$(( $linenum - 2 ))"' i\
+sed -i -e "$(( $linenum - 2 ))"' i\
 \t\t\t\t\t<item>\
 \t\t\t\t\t\t<label>Reboot Rune</label>\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/rebootrunesudo.py)</onclick>\

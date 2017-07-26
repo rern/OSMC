@@ -9,6 +9,7 @@ rm $0
 
 # import heading function
 wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
+timestart
 
 if type transmission-daemon &>/dev/null; then
 	title "$info Transmission already installed."
@@ -113,6 +114,7 @@ systemctl start transmission
 # clear rc.d for systemd only
 update-rc.d transmission-daemon remove
 
+timestop
 title -l = "$bar Transmission installed and started successfully."
 echo "Uninstall: ./uninstall_tran.sh"
 echo "Run: sudo systemctl [ start / stop ] transmission"

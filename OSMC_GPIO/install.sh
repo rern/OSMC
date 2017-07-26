@@ -6,6 +6,8 @@ rm $0
 
 # import heading function
 wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
+timestart
+
 osmcgpio=$( tcolor "OSMC GPIO" )
 
 # check installed #######################################
@@ -88,6 +90,7 @@ if ! grep 'gpioonsudo.py' $file &> /dev/null; then
 	' $file
 fi
 
+timestop
 title -l = "$bar $osmcgpio installed successfully."
 echo "Uninstall: ./uninstall_gpio.sh"
 echo

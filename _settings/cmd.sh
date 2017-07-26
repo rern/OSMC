@@ -43,17 +43,35 @@ bootrune() {
 }
 
 resetrune() {
+	wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
+	timestart=$( date +%s )
 	umount -l /dev/mmcblk0p9 &> /dev/null
+	title "$barFormat partition ..."
 	echo y | mkfs.ext4 /dev/mmcblk0p9 &> /dev/null
 	mountmmc 9
 	bsdtar -xvf /mnt/hdd/os/RuneAudio/root.tar.xz -C /tmp/p9
 	
 	sed -i "s|^.* /boot |/dev/mmcblk0p8  /boot |" /tmp/p9/etc/fstab
 	cp -r /mnt/hdd/os/RuneAudio/custom/. /tmp/p9
+	
+	timeend=$( date +%s )
+	timediff=$(( $timeend - $timestart ))
+	timemin=$(( $timediff / 60 ))
+	timesec=$(( $timediff % 60 ))
+	echo -e "\nDuration: $timemin min $timesec sec"
+	
+	title -l = "$bar Rune resetted successfully."
+	
+	echo -e '\nReboot to Rune:'
+	echo -e '  \e[0;36m0\e[m No'
+	echo -e '  \e[0;36m1\e[m Yes'
+	echo
+	echo -e '\e[0;36m0\e[m / 1 ? '
+	read ansre
+	[[ $ansre == 1 ]] && bootrune
 }
 hardreset() {
-	echo
-	echo "Reset to virgin OS:"
+	echo -e '\nReset to virgin OS:'
 	echo -e '  \e[0;36m0\e[m Cancel'
 	echo -e '  \e[0;36m1\e[m Rune'
 	echo -e '  \e[0;36m2\e[m NOOBS: OSMC + Rune'

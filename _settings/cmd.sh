@@ -61,7 +61,7 @@ resetrune() {
 	timesec=$(( $timediff % 60 ))
 	echo -e "\nDuration: $timemin min $timesec sec"
 	
-	title -l = "$bar Rune resetted successfully."
+	title -l = "$bar Rune reset successfully."
 	
 	echo -e '\nReboot to Rune:'
 	echo -e '  \e[0;36m0\e[m No'

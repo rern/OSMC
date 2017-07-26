@@ -44,7 +44,8 @@ bootrune() {
 
 resetrune() {
 	wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
-	timestart=$( date +%s )
+	timestart
+	
 	umount -l /dev/mmcblk0p9 &> /dev/null
 	title "$bar Format partition ..."
 	echo y | mkfs.ext4 /dev/mmcblk0p9 &> /dev/null
@@ -62,20 +63,10 @@ resetrune() {
 	
 	wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/cmd.sh -P /etc/profile.d
 	
-	timeend=$( date +%s )
-	timediff=$(( $timeend - $timestart ))
-	timemin=$(( $timediff / 60 ))
-	timesec=$(( $timediff % 60 ))
-	echo -e "\nDuration: $timemin min $timesec sec"
-	
+	timestop
 	title -l = "$bar Rune reset successfully."
 	
-	echo -e '\nReboot to Rune:'
-	echo -e '  \e[0;36m0\e[m No'
-	echo -e '  \e[0;36m1\e[m Yes'
-	echo
-	echo -e '\e[0;36m0\e[m / 1 ? '
-	read ansre
+	yesno "$info Reboot to Rune:" ansre
 	[[ $ansre == 1 ]] && bootrune
 }
 hardreset() {
@@ -85,7 +76,7 @@ hardreset() {
 	echo -e '  \e[0;36m2\e[m NOOBS: OSMC + Rune'
 	echo
 	echo -e '\e[0;36m0\e[m / 1 / 2 ? '
-	read ans
+	read -n 1 ans
 	case $ans in
 		1) resetrune;;
 		2) mountmmc 1

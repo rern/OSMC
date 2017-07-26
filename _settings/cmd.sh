@@ -46,7 +46,7 @@ resetrune() {
 	wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 	timestart=$( date +%s )
 	umount -l /dev/mmcblk0p9 &> /dev/null
-	title "$barFormat partition ..."
+	title "$bar Format partition ..."
 	echo y | mkfs.ext4 /dev/mmcblk0p9 &> /dev/null
 	mountmmc 9
 	mountmmc 1

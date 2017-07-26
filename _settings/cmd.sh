@@ -77,6 +77,7 @@ hardreset() {
 	echo
 	echo -e '\e[0;36m0\e[m / 1 / 2 ? '
 	read -n 1 ans
+	echo
 	case $ans in
 		1) resetrune;;
 		2) mountmmc 1

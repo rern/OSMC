@@ -84,12 +84,14 @@ echo
 
 title -l = "$bar Install Samba ..."
 #################################################################################
+timestart
 apt install -y samba
 wget -q --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/smb.conf -O /etc/samba/smb.conf
 
 # set samba password
 (echo $pwd1; echo $pwd1) | smbpasswd -s -a root
 
+timestop
 title -l = "$bar Samba installed successfully."
 echo
 

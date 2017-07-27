@@ -27,6 +27,7 @@ apt update
 
 title "Install bsdtar ..."
 apt install -y bsdtar
+echo
 
 title "$bar Install skin.shortcuts addons ..."
 #################################################################################
@@ -51,6 +52,7 @@ sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 's
 #sleep 2
 #xbmc-send -a "ReloadSkin()" # !!! reset guisettings.xml
 #title "Skin reloaded"
+echo
 
 title "$bar Restore settings ..."
 #################################################################################
@@ -78,6 +80,7 @@ sed -i -e "$(( $linenum - 2 ))"' i\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/rebootosmcsudo.py)</onclick>\
 \t\t\t\t\t</item>
 ' $file
+echo
 
 title -l = "$bar Install Samba ..."
 #################################################################################
@@ -88,19 +91,23 @@ wget -q --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/s
 (echo $pwd1; echo $pwd1) | smbpasswd -s -a root
 
 title -l = "$bar Samba installed successfully."
+echo
 
 # Transmission
 #################################################################################
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh $pwd1 0 1
+echo
 
 # Aria2
 #################################################################################
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.sh; chmod +x install.sh; ./install.sh 1
+echo
 
 # GPIO
 #################################################################################
 wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/gpio.json -P /home/osmc
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh 1
+echo
 
 #title2 "System upgrade ..."
 #################################################################################
@@ -109,10 +116,12 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/insta
 #systemctl daemon-reload # done in GPIO install
 systemctl restart nmbd smbd mediacenter
 title "OSMC restarted."
+echo
 
 # show installed packages status
 title "Installed packages status"
 systemctl | egrep 'aria2|nmbd|smbd|transmission'
+echo
 
 timestop l
 title -l = "$bar Setup finished successfully."

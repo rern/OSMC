@@ -4,7 +4,7 @@ rm $0
 
 # import heading function
 wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
-#timestart
+timestart l
 
 gitpath=https://github.com/rern/OSMC/raw/master/_settings
 kodipath=/home/osmc/.kodi/userdata
@@ -114,6 +114,6 @@ title "OSMC restarted."
 title "Installed packages status"
 systemctl | egrep 'aria2|nmbd|smbd|transmission'
 
-#timestop
+timestop l
 title -l = "$bar Setup finished successfully."
 title -nt "Duration: $timemin min $timesec sec"

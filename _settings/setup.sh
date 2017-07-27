@@ -54,10 +54,10 @@ sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 's
 
 title "$bar Restore settings ..."
 #################################################################################
-wget -qN --show-progress $gitpath/advancedsettings.xml -P $kodipath
-wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath
-wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts
-wget -qN --show-progress $gitpath/rpi_2708_1001_CEC_Adapter.xml -P $kodipath/peripheral_data
+wget -qN --show-progress $gitpath/advancedsettings.xml -P $kodipath                              # hide directory
+wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath                                   # all settings
+wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts # hide home menu item
+wget -qN --show-progress $gitpath/rpi_2708_1001_CEC_Adapter.xml -P $kodipath/peripheral_data     # disable cec adapter
 chown -R osmc:osmc $kodipath
 
 # reboot switch os
@@ -78,10 +78,6 @@ sed -i -e "$(( $linenum - 2 ))"' i\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/rebootosmcsudo.py)</onclick>\
 \t\t\t\t\t</item>
 ' $file
-
-# disable cec adapter
-#sed -i 's/id="enabled" value="1"/id="enabled" value="0"/' /home/osmc/.kodi/userdata/peripheral_data/*CEC_Adapter.xml
-#sed -i 's/key="enabled" type="bool" value="1"/key="enabled" type="bool" value="0"/' /usr/share/kodi/system/peripherals.xml
 
 title -l = "$bar Install Samba ..."
 #################################################################################

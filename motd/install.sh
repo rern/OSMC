@@ -25,7 +25,7 @@ PS1=\x27\\[\\e[38;5;\x27$color\x27m\\]\\u@\\h:\\[\\e[0m\\]\\w \\$ \x27
 # PS1='\[\e[38;5;'$color'm\]\u@\h:\[\e[0m\]\w \$ '
 # \x27       - escaped <'>
 # \\         - escaped <\>
-# \[ \]      - omit charater count when press <home> key
+# \[ \]      - omit charater count when press <home>, <end> key
 # \e[38;5;Nm - color
 # \e[0m      - reset color
 # \u         - username

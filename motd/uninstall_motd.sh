@@ -8,6 +8,10 @@ mv /etc/motd{.original,}
 rm /etc/motd.logo
 rm /etc/profile.d/motd.sh
 
+sed -i -e '/^PS1=/ d
+' -e '/^#PS1=/ s/^#//
+' /etc/bash.bashrc
+
 title -nt "\n$info Relogin to see original motd."
 
 rm $0

@@ -68,7 +68,7 @@ resetrune() {
 	sed '1 i\#device mount type option dump pass' $file'.original' | column -t > $file
 	w=$( wc -L < $file )                 # widest line
 	hr=$( printf "%${w}s\n" | tr ' ' - ) # horizontal line
-	sed -i '1 a'$hr $file
+	sed -i '1 a\#'$hr $file
 	
 	cp -r /tmp/p1/os/RuneAudio/custom/. /tmp/p9
 	

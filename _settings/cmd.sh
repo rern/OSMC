@@ -60,12 +60,12 @@ resetrune() {
 	bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C /tmp/p9
 	
 	file=/tmp/p9/etc/fstab
-	sed -i -e "s|^.* /boot |$part1 /boot |
-	" -e '/^#/ d
+	sed -i 's|^.* /boot |/dev/mmcblk0p8  /boot |
+	' -e '/^#/ d
 	' $file
 	# format header and column
 	mv $file{,.original}
-	sed '1 i\#device mount type option dump pass' $file'.original' | column -t > $file
+	sed '1 i\#device mount type options dump pass' $file'.original' | column -t > $file
 	w=$( wc -L < $file )                 # widest line
 	hr=$( printf "%${w}s\n" | tr ' ' - ) # horizontal line
 	sed -i '1 a\#'$hr $file

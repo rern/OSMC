@@ -1,6 +1,6 @@
 #!/bin/bash
 
-alias ls='ls -a --color'
+alias ls='ls -a --color --group-directories-first'
 export LS_COLORS=':tw=01;34:ow=01;34:ex=00;32:or=31'
 
 tcolor() { 

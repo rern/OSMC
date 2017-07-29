@@ -65,10 +65,11 @@ resetrune() {
 	' $file
 	# format header and column
 	mv $file{,.original}
-	sed '1 i\#device mount type option dump pass' $file'.original | column -t $file'.original' > $file
+	sed '1 i\#device mount type option dump pass' $file'.original' | column -t > $file
 	w=$( wc -L < $file )                 # widest line
 	hr=$( printf "%${w}s\n" | tr ' ' - ) # horizontal line
 	sed -i '1 a'$hr $file
+	
 	cp -r /tmp/p1/os/RuneAudio/custom/. /tmp/p9
 	
 	wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/cmd.sh -P /etc/profile.d

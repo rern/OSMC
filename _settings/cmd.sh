@@ -1,7 +1,7 @@
 #!/bin/bash
 
 alias ls='ls -a --color'
-export LS_COLORS=':tw=01;34:ow=01;34:ex=00;32'
+export LS_COLORS=':tw=01;34:ow=01;34:ex=00;32:or=31'
 
 tcolor() { 
 	echo -e "\e[38;5;10m$1\e[0m"

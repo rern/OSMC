@@ -59,7 +59,7 @@ resetrune() {
 		apt install -y bsdtar
 	fi
 	pathrune=/tmp/p9
-	bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C $pathrune
+	bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C $pathrune --exclude=/srv/http/.git
 	
 	sed -i -e 's|^.* /boot |/dev/mmcblk0p8  /boot |
 	' -e '/^#/ d

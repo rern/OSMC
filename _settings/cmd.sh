@@ -52,14 +52,16 @@ resetrune() {
 	echo y | mkfs.ext4 /dev/mmcblk0p9 &> /dev/null
 	mountmmc 9
 	mountmmc 1
+	
 	if ! type bsdtar &>/dev/null; then
 		title "Install bsdtar ..."
 		apt update
 		apt install -y bsdtar
 	fi
-	bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C /tmp/p9
+	pathrune=/tmp/p9
+	bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C $pathrune
 	
-	file=/tmp/p9/etc/fstab
+	file=$pathrune/etc/fstab
 	sed -i 's|^.* /boot |/dev/mmcblk0p8  /boot |
 	' -e '/^#/ d
 	' -e 's/\s\+0\s\+0\s\+$//
@@ -71,9 +73,9 @@ resetrune() {
 	hr=$( printf "%${w}s\n" | tr ' ' - ) # horizontal line
 	sed -i '1 a\#'$hr $file
 	
-	cp -r /tmp/p1/os/RuneAudio/custom/. /tmp/p9
+	cp -r /tmp/p1/os/RuneAudio/custom/. $pathrune
 	
-	wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/cmd.sh -P /etc/profile.d
+	wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/cmd.sh -P $pathrune/etc/profile.d
 	
 	timestop
 	title -l = "$bar Rune reset successfully."

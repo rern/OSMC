@@ -63,7 +63,7 @@ resetrune() {
 	
 	sed -i -e 's|^.* /boot |/dev/mmcblk0p8  /boot |
 	' -e '/^#/ d
-	' -e 's/\s\+0\s\+0\s\+$//
+	' -e 's/\s\+0\s\+0\s*$//
 	' $pathrune/etc/fstab
 	
 	cp -r /tmp/p1/os/RuneAudio/custom/. $pathrune

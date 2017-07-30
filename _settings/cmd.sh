@@ -66,12 +66,6 @@ resetrune() {
 	' -e '/^#/ d
 	' -e 's/\s\+0\s\+0\s\+$//
 	' $file
-	# format header and column
-	mv $file{,.original}
-	sed '1 i\#device mount type options dump pass' $file'.original' | column -t > $file
-	w=$( wc -L < $file )                 # widest line
-	hr=$( printf "%${w}s\n" | tr ' ' - ) # horizontal line
-	sed -i '1 a\#'$hr $file
 	
 	cp -r /tmp/p1/os/RuneAudio/custom/. $pathrune
 	

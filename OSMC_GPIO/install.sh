@@ -12,7 +12,7 @@ osmcgpio=$( tcolor "OSMC GPIO" )
 
 # check installed #######################################
 if [ -e /home/osmc/gpioon.py ]; then
-	title "$info $osmcgpio already installed"
+	echo -e "$info $osmcgpio already installed"
 	exit
 fi
 
@@ -21,33 +21,33 @@ title -l = "$bar Install $osmcgpio ..."
 # install packages #######################################
 # skip with any argument
 if (( $# == 0 )); then
-	title "Update package databases ..."
+	echo -e "$bar Update package databases ..."
 	apt update
 fi
 if ! dpkg -s python-pip 2>/dev/null | grep 'Status: install ok installed' &>/dev/null; then
-	title "Install Python-Pip ..."
+	echo -e "$bar Install Python-Pip ..."
 	apt install -y python-pip
 fi
 if ! dpkg -s python-dev 2>/dev/null | grep 'Status: install ok installed' &>/dev/null; then
-	title "Install Python-Dev ..."
+	echo -e "$bar Install Python-Dev ..."
 	apt install -y python-dev
 fi
 if ! type gcc &>/dev/null; then
-	title "Install GCC ..."
+	echo -e "$bar Install GCC ..."
 	apt install -y gcc
 fi
 if ! type bsdtar &>/dev/null; then
-	title "Install bsdtar ..."
+	echo -e "$bar Install bsdtar ..."
 	apt install -y bsdtar
 fi
 
 if ! python -c "import RPi.GPIO" &>/dev/null; then
-	title "Install Python-RPi.GPIO ..."
+	echo -e "$bar Install Python-RPi.GPIO ..."
 	yes | pip install RPi.GPIO
 fi
 
 # install OSMC GPIO #######################################
-title "Get files ..."
+echo -e "$bar Get files ..."
 
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/uninstall_gpio.sh
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/_repo/OSMC_GPIO.tar.xz
@@ -59,7 +59,7 @@ if [[ -e /home/osmc/rebootosmc.py ]]; then
 	sed -i "/rebootrune.sh/ i\os.system('/usr/bin/sudo /home/osmc/gpiooffsudo.py r &')" /home/osmc/rebootrune.py
 fi
 
-title "Install files ..."
+echo -e "$bar Install files ..."
 bsdtar -xvf OSMC_GPIO.tar.xz -C / $([ -f /home/osmc/gpio.json ] && echo ' --exclude=gpio.json')
 rm OSMC_GPIO.tar.xz
 

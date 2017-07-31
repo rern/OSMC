@@ -5,7 +5,7 @@ wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; r
 
 # check installed #######################################
 if ! type transmission-daemon &>/dev/null; then
-	title "$info Transmission not found."
+	echo -e "$info Transmission not found."
 	exit
 fi
 
@@ -14,7 +14,7 @@ title -l = "$bar Uninstall Transmission ..."
 apt remove -y transmission-daemon transmission-cli
 
 # remove files #######################################
-title "Remove files ..."
+echo -e "$bar Remove files ..."
 rm -rfv /etc/transmission-daemon
 systemctl disable transmission
 rm /etc/systemd/system/transmission.service

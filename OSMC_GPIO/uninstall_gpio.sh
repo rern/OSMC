@@ -6,7 +6,7 @@ osmcgpio=$( tcolor "OSMC GPIO" )
 
 # check installed #######################################
 if [ ! -e /home/osmc/gpioon.py ]; then
-	title "$info $osmcgpio not found."
+	echo -e "$info $osmcgpio not found."
 	exit
 fi
 
@@ -15,15 +15,10 @@ fi
 
 title -l = "$bar Uninstall $osmcgpio ..."
 
-title "$osmcgpio installed packages"
-echo "Uninstall Python-Pip, Python-Dev, GCC, bsdtar and RPi.GPIO:"
-echo -e "  \e[0;36m0\e[m Uninstall"
-echo -e "  \e[0;36m1\e[m Keep"
-echo
-echo -e "\e[0;36m0\e[m / 1 ? "
-read -n 1 answer
+echo -e "$bar Installed packages"
+yesno "Uninstall Python-Pip, Python-Dev, GCC, bsdtar and RPi.GPIO:" answer
 if [[ $answer == 1 ]]; then
-	title "Uninstall packages ..."
+	echo -e "$bar Uninstall packages ..."
 	python -c "import RPi.GPIO" &>/dev/null && pip uninstall -y RPi.GPIO
 	dpkg -s bsdtar | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y bsdtar
 	dpkg -s gcc | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y gcc
@@ -32,7 +27,7 @@ if [[ $answer == 1 ]]; then
 fi
 
 # remove files
-title "Remove files ..."
+echo -e "$bar Remove files ..."
 rm -v /home/osmc/gpiooff.py
 rm -v /home/osmc/gpiooffsudo.py
 rm -v /home/osmc/gpioon.py
@@ -49,7 +44,7 @@ if [[ -e /home/osmc/rebootosmc.py ]]; then
 	sed -i '/gpiooffsudo.py/d' /home/osmc/rebootrune.py
 fi
 
-title "Remove service ..."
+echo -e "$bar Remove service ..."
 systemctl disable gpioset
 rm -v /lib/systemd/system/gpioset.service
 

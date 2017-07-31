@@ -18,7 +18,7 @@ systemctl daemon-reload
 apt remove -y aria2
 
 # remove files #######################################
-title "Remove files ..."
+echo -e "$bar Remove files ..."
 if mount | grep '/dev/sda1'; then
 	mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
 	rm -rv $mnt/aria2/web

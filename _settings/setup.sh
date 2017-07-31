@@ -118,10 +118,9 @@ echo
 #systemctl daemon-reload # done in GPIO install
 systemctl restart nmbd smbd mediacenter
 echo -e "$bar OSMC restarted."
-echo
 
 # show installed packages status
-echo -e "$bar Installed packages status\n"
+echo -e "$bar Installed packages status"
 systemctl | egrep 'aria2|nmbd|smbd|transmission'
 
 timestop l

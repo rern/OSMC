@@ -84,6 +84,14 @@ sed -i -e "$(( $linenum - 2 ))"' i\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/rebootosmcsudo.py)</onclick>\
 \t\t\t\t\t</item>
 ' $file
+# uninstall
+sed -i -e '/rebootsudo.py/ a\
+rm -v /home/osmc/rebootosmcsudo.py \
+rm -v /home/osmc/rebootrunesudo.py
+' -e $'/DialogButtonMenu.xml/ a\
+sed -i -e \'/Reboot Rune/, /<item>/ d \
+\' -e \'/Reboot OSMC/, /<item>/ d
+' /root/uninstall_gpio.sh
 echo
 
 title -l = "$bar Install Samba ..."

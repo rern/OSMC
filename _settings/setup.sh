@@ -18,7 +18,7 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/motd/install.sh
 touch /root/.hushlogin
 
 # passwords
-echo -e "$bar root password for Samba and Transmission ..."
+echo -e "$bar root password for Samba and Transmission ...\n"
 setpwd
 
 echo -e "$bar Update package database ..."

@@ -33,8 +33,8 @@ hostnamectl set-hostname [name]
 	dns proxy = no
 	log level = 0
 
-	socket options = IPTOS_LOWDELAY SO_RCVBUF=131072 SO_SNDBUF=131072
-	min receivefile size = 2048
+	socket options = IPTOS_LOWDELAY TCP_NODELAY SO_RCVBUF=131072 SO_SNDBUF=131072
+	min receivefile size = 16384
 	use sendfile = yes
 	aio read size = 2048
 	aio write size = 2048
@@ -46,6 +46,8 @@ hostnamectl set-hostname [name]
 	max xmit = 32768
 	dead time = 15
 	large readwrite = yes
+	unix extensions = no
+	strict locking = no
 
 	guest ok = yes
 	map to guest = bad user

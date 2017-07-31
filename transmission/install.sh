@@ -12,7 +12,7 @@ wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; r
 timestart
 
 if type transmission-daemon &>/dev/null; then
-	title "$info Transmission already installed."
+	echo -e "$info Transmission already installed."
 	exit
 fi
 # user inputs
@@ -39,7 +39,7 @@ title -l = "$bar Install Transmission ..."
 apt install -y transmission-daemon transmission-cli
 
 if [[ $answebui == 1 ]] && ! type bsdtar &>/dev/null; then
-	title "Install bsdtar ..."
+	echo -e "$bar Install bsdtar ..."
 	apt install -y bsdtar
 fi
 
@@ -108,7 +108,7 @@ fi
 
 # start
 [[ $ansstartup == 1 ]] && systemctl enable transmission
-title "Start Transmission ..."
+echo -e "$bar Start Transmission ..."
 systemctl start transmission
 
 # clear rc.d for systemd only

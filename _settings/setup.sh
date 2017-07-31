@@ -63,8 +63,12 @@ wget -qN --show-progress $gitpath/rpi_2708_1001_CEC_Adapter.xml -P $kodipath/per
 chown -R osmc:osmc $kodipath
 
 # reboot switch os
-wget -qN --show-progress $gitpath/rebootosmcsudo.py -P /home/osmc
-wget -qN --show-progress $gitpath/rebootrunesudo.py -P /home/osmc
+echo '
+#!/usr/bin/python
+import os
+os.system("/usr/bin/sudo /home/osmc/rebootosmc.py &")
+" > /home/osmc/rebootosmcsudo.py
+cat /home/osmc/rebootosmcsudo.py | sed 's/rebootosmc/rebootrune/' > /home/osmc/rebootrunesudo.py
 chown osmc:osmc /home/osmc/*.py
 chmod +x /home/osmc/*.py
 # mod file

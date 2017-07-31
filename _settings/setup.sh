@@ -18,14 +18,14 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/motd/install.sh
 touch /root/.hushlogin
 
 # passwords
-title "$bar root password for Samba and Transmission ..."
+echo -e "$bar root password for Samba and Transmission ..."
 setpwd
 
-title "$bar Update package database ..."
+echo -e "$bar Update package database ..."
 #################################################################################
 apt update
 
-title "Install bsdtar ..."
+title "$bar Install bsdtar ..."
 apt install -y bsdtar
 echo
 
@@ -40,7 +40,7 @@ bsdtar -xf $pkgpath/script.module.simplejson.zip -C $addonpath
 bsdtar -xf $pkgpath/script.module.unidecode.zip -C $addonpath
 chown -R osmc:osmc $addonpath
 # add addons to database
-title "Update addons database ..."
+echo -e "$bar Update addons database ..."
 xbmc-send -a "UpdateLocalAddons()"
 sleep 2
 # enable addons in database
@@ -54,7 +54,7 @@ sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 's
 #title "Skin reloaded"
 echo
 
-title "$bar Restore settings ..."
+echo -e "$bar Restore settings ..."
 #################################################################################
 wget -qN --show-progress $gitpath/advancedsettings.xml -P $kodipath                              # hide directory
 wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath                                   # all settings
@@ -111,17 +111,17 @@ wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh 1
 echo
 
-#title2 "System upgrade ..."
+#echo -e "$bar System upgrade ..."
 #################################################################################
 #apt -y upgrade
 
 #systemctl daemon-reload # done in GPIO install
 systemctl restart nmbd smbd mediacenter
-title "OSMC restarted."
+echo -e "$bar OSMC restarted."
 echo
 
 # show installed packages status
-title "Installed packages status"
+echo -e "$bar Installed packages status"
 systemctl | egrep 'aria2|nmbd|smbd|transmission'
 echo
 

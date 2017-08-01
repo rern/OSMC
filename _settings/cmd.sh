@@ -44,10 +44,13 @@ bootrune() {
 }
 
 setup() {
-	[[ -e /etc/motd.logo ]] && echo -e "$info Already setup."; exit
-	wget -qN --show-progress https://github.com/rern/OSMC/raw/master/_settings/setup.sh
-	chmod +x setup.sh
-	./setup.sh
+	if [[ -e /etc/motd.logo ]]; then
+		wget -qN --show-progress https://github.com/rern/OSMC/raw/master/_settings/setup.sh
+		chmod +x setup.sh
+		./setup.sh
+	else
+		echo -e "$info Already setup."
+	fi
 }
 resetrune() {
 	wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh

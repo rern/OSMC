@@ -44,6 +44,7 @@ bootrune() {
 }
 
 setup() {
+	[[ -e /etc/motd.logo ]] && echo -e "$info Already setup."; exit
 	wget -qN --show-progress https://github.com/rern/OSMC/raw/master/_settings/setup.sh
 	chmod +x setup.sh
 	./setup.sh

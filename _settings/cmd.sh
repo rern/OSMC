@@ -53,7 +53,7 @@ resetrune() {
 	timestart
 	
 	umount -l /dev/mmcblk0p9 &> /dev/null
-	title "$bar Format partition ..."
+	echo -e "$bar Format partition ..."
 	echo y | mkfs.ext4 /dev/mmcblk0p9 &> /dev/null
 	mountmmc 9
 	mountmmc 1

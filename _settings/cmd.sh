@@ -44,7 +44,7 @@ bootrune() {
 }
 
 setup() {
-	if [[ -e /etc/motd.logo ]]; then
+	if [[ ! -e /etc/motd.logo ]]; then
 		wget -qN --show-progress https://github.com/rern/OSMC/raw/master/_settings/setup.sh
 		chmod +x setup.sh
 		./setup.sh

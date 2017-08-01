@@ -62,38 +62,6 @@ wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/scri
 wget -qN --show-progress $gitpath/rpi_2708_1001_CEC_Adapter.xml -P $kodipath/peripheral_data     # disable cec adapter
 chown -R osmc:osmc $kodipath
 
-# reboot switch os
-echo '
-#!/usr/bin/python
-import os
-os.system("/usr/bin/sudo /home/osmc/rebootosmc.py &")
-" > /home/osmc/rebootosmcsudo.py
-cat /home/osmc/rebootosmcsudo.py | sed 's/rebootosmc/rebootrune/' > /home/osmc/rebootrunesudo.py
-chown osmc:osmc /home/osmc/*.py
-chmod +x /home/osmc/*.py
-# mod file
-file=/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml
-linenum=$( sed -n '/Quit()/{=}' $file )
-sed -i -e "$(( $linenum - 2 ))"' i\
-\t\t\t\t\t<item>\
-\t\t\t\t\t\t<label>Reboot Rune</label>\
-\t\t\t\t\t\t<onclick>RunScript(/home/osmc/rebootrunesudo.py)</onclick>\
-\t\t\t\t\t</item>\
-\t\t\t\t\t<item>\
-\t\t\t\t\t\t<label>Reboot OSMC</label>\
-\t\t\t\t\t\t<onclick>RunScript(/home/osmc/rebootosmcsudo.py)</onclick>\
-\t\t\t\t\t</item>
-' $file
-# uninstall
-sed -i -e '/rebootsudo.py/ a\
-rm -v /home/osmc/rebootosmcsudo.py \
-rm -v /home/osmc/rebootrunesudo.py
-' -e $'/DialogButtonMenu.xml/ a\
-sed -i -e \'/Reboot Rune/, /<item>/ d \
-\' -e \'/Reboot OSMC/, /<item>/ d
-' /root/uninstall_gpio.sh
-echo
-
 title -l = "$bar Install Samba ..."
 #################################################################################
 timestart

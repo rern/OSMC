@@ -56,6 +56,7 @@ resetrune() {
 	wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 	timestart
 	
+	title -l = "$bar Rune reset ..."
 	umount -l /dev/mmcblk0p9 &> /dev/null
 	echo -e "$bar Format partition ..."
 	echo y | mkfs.ext4 /dev/mmcblk0p9 &> /dev/null

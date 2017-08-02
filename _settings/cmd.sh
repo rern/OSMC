@@ -71,6 +71,7 @@ resetrune() {
 	pathrune=/tmp/p9
 	bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C $pathrune --exclude=./srv/http/.git --exclude=./usr/share/doc --exclude=./usr/share/man
 	
+	# from partition_setup.sh
 	sed -i -e 's|^.* /boot |/dev/mmcblk0p8  /boot |
 	' -e '/^#/ d
 	' -e 's/\s\+0\s\+0\s*$//

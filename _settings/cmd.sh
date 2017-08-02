@@ -63,7 +63,7 @@ resetrune() {
 	mountmmc 1
 	
 	if ! type bsdtar &>/dev/null; then
-		title "Install bsdtar ..."
+		title "$bar Install bsdtar ..."
 		apt update
 		apt install -y bsdtar
 	fi

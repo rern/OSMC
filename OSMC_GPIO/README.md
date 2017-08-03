@@ -8,9 +8,7 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/insta
 ```
 
 **Settings**  
-Browser: [OSMC IP]/gpiosettings.php (eg: 192.168.1.11/gpiosettings.php)  
-
-![gpio](https://github.com/rern/OSMC/blob/master/OSMC_GPIO/_repo/gpio.jpg)  
+Edit: `/home/osmc/gpio.json`  
 
 **Control**  
 - Keyboard / Remote control: add the following to on / off buttons in `keyboard.xml` / `remote.xml`  

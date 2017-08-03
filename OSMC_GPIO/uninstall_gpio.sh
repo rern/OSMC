@@ -38,14 +38,9 @@ rm -v /home/osmc/poweroff.py
 rm -v /home/osmc/poweroffsudo.py
 rm -v /home/osmc/rebootsudo.py
 
-# restore backup files
-if [[ -e /home/osmc/rebootosmc.py ]]; then
-	sed -i '/gpiooffsudo.py/d' /home/osmc/rebootosmc.py
-	sed -i '/gpiooffsudo.py/d' /home/osmc/rebootrune.py
-fi
-
 echo -e "$bar Remove service ..."
-systemctl disable gpioset
+systemctl disable gpiooff gpioset
+rm -v /lib/systemd/system/gpiooff.service
 rm -v /lib/systemd/system/gpioset.service
 
 # modify shutdown menu #######################################

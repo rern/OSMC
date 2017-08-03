@@ -60,7 +60,8 @@ if [[ -e /home/osmc/rebootosmc.py ]]; then
 fi
 
 echo -e "$bar Install files ..."
-bsdtar -xvf OSMC_GPIO.tar.xz -C / $([ -f /home/osmc/gpio.json ] && echo ' --exclude=gpio.json')
+[[ -e /home/osmc/gpio.json ]] && gpio='--exclude=gpio.json'
+bsdtar -xvf OSMC_GPIO.tar.xz -C / $gpio
 rm OSMC_GPIO.tar.xz
 
 chmod 755 /home/osmc/*.py
@@ -71,8 +72,8 @@ udevadm control --reload
 
 # set initial gpio #######################################
 systemctl daemon-reload
-systemctl enable gpioset
-systemctl start gpioset
+systemctl enable gpiooff gpioset
+systemctl start gpiooff gpioset
 
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'

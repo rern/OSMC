@@ -3,8 +3,10 @@ Description=Initial setup GPIO
 After=multi-user.target
 
 [Service]
-Type=idle
-ExecStart = /home/osmc/gpioset.py
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/home/osmc/gpioset.py
+ExecStop=/home/osmc/gpiooff.py
 
 [Install]
 WantedBy=multi-user.target

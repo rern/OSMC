@@ -60,7 +60,7 @@ if [[ -e /home/osmc/rebootosmc.py ]]; then
 fi
 
 echo -e "$bar Install files ..."
-bsdtar -xvf OSMC_GPIO.tar.xz -C /usr/share/kodi/addons/webinterface.default $([ -f /home/osmc/gpio.json ] && echo ' --exclude=gpio.json')
+bsdtar -xvf OSMC_GPIO.tar.xz -C / $([ -f /home/osmc/gpio.json ] && echo ' --exclude=gpio.json')
 rm OSMC_GPIO.tar.xz
 
 chmod 755 /home/osmc/*.py

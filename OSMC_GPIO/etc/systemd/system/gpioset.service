@@ -5,8 +5,8 @@ After=multi-user.target
 [Service]
 Type=oneshot
 RemainAfterExit=true
-ExecStart=/home/osmc/gpioset.py
-ExecStop=/home/osmc/gpiooff.py
+ExecStart=/usr/bin/python /home/osmc/gpioset.py
+ExecStop=/usr/bin/python /home/osmc/gpiooff.py
 
 [Install]
 WantedBy=multi-user.target

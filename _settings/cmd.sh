@@ -23,6 +23,11 @@ srestart() {
 	echo -e '\n'$( tcolor "systemctl restart $1" )'\n'
 	systemctl restart $1
 }
+sreload() {
+	systemctl disable $1
+	systemctl daemon-reload
+	systemctl enable $1
+}
 
 mountmmc() {
 	if [[ ! $( mount | grep p$1 ) ]]; then

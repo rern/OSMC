@@ -24,9 +24,16 @@ srestart() {
 	systemctl restart $1
 }
 sreload() {
+	echo -e '\n'$( tcolor "systemctl stop $1" )
+	systemctl stop $1
+	echo -e '\n'$( tcolor "systemctl disable $1" )
 	systemctl disable $1
+	echo -e '\n'$( tcolor "systemctl daemon-reload" )
 	systemctl daemon-reload
+	echo -e '\n'$( tcolor "systemctl enable $1" )
 	systemctl enable $1
+	echo -e '\n'$( tcolor "systemctl start $1" )
+	systemctl start $1
 }
 
 mountmmc() {

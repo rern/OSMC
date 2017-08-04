@@ -2,6 +2,15 @@ OSMC_GPIO
 ---
 ![screen0](https://github.com/rern/OSMC/blob/master/OSMC_GPIO/_repo/kodigpio.jpg)  
 
+**Features**
+- Power `on` `off` audio equipments in sequence
+- up to 4 equipments(relays)
+- delay setting for each equipment(relay)
+- Notification for `on` `off`
+- Idle timer power off by polling 'play' status every minute
+- notification last minute warning
+- Auto power off on reboot / shutdown
+
 **Install**
 ```sh
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh

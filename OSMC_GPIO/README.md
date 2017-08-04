@@ -5,8 +5,8 @@ OSMC_GPIO
 **Features**
 - Power `on` `off` audio equipments in sequence
 - delay setting for each equipment(relay)
-- Notification for `on` `off` with last minute warning
-- Idle timer power off by polling 'play' status every minute
+- Notification for `on` `off`
+- Idle timer power off by polling 'play' status every minute with last minute warning
 - Auto power off on reboot / shutdown
 
 **Install**

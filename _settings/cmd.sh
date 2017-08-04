@@ -72,9 +72,7 @@ resetrune() {
 	bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C $pathrune \
 		--exclude=./srv/http/.git \
 		--exclude=./usr/include \
-		--exclude=./usr/lib/libgo.* \
-		--exclude=./usr/lib/python2.7/test \
-		--exclude=./usr/lib/python3.5 \
+		--exclude=./usr/lib/{python2.7/test,python3*,libgo.*} \
 		--exclude=./usr/share/{doc,gtk-doc,info,man}
 	
 	# from partition_setup.sh

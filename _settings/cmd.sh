@@ -71,10 +71,11 @@ resetrune() {
 	pathrune=/tmp/p9
 	bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C $pathrune \
 		--exclude=./srv/http/.git \
-		--exclude=./usr/share/doc \
-		--exclude=./usr/share/gtk-doc \
-		--exclude=./usr/share/man \
-		--exclude=./usr/share/locale
+		--exclude=./usr/include \
+		--exclude=./usr/lib/libgo* \
+		--exclude=./usr/lib/python2.7/test \
+		--exclude=./usr/lib/python3.5 \
+		--exclude=./usr/share/{doc,gtk-doc,info,man}
 	
 	# from partition_setup.sh
 	sed -i -e 's|^.* /boot |/dev/mmcblk0p8  /boot |

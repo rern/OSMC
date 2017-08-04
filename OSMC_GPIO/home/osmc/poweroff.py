@@ -2,7 +2,7 @@
 
 # need root access to /dev/mem, /sys/module
 # this script cannot run sudo by itself
-
+import gpiooff
 import RPi.GPIO as GPIO
 import json
 import os

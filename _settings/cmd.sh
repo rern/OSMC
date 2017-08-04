@@ -73,7 +73,8 @@ resetrune() {
 		--exclude=./srv/http/.git \
 		--exclude=./usr/share/doc \
 		--exclude=./usr/share/gtk-doc \
-		--exclude=./usr/share/man
+		--exclude=./usr/share/man \
+		--exclude=./usr/share/locale
 	
 	# from partition_setup.sh
 	sed -i -e 's|^.* /boot |/dev/mmcblk0p8  /boot |

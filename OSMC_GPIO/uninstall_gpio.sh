@@ -51,8 +51,7 @@ sed -i -e "$(( $linenum - 2 )), $(( $linenum + 7 )) d
 sed -i '/import gpiooff/ d' /home/osmc/rebootosmc.py
 sed -i '/import gpiooff/ d' /home/osmc/rebootrune.py
 
-gpasswd -d root osmc
-chmod g-rw /dev/gpiomem
+chmod go-r /dev/gpiomem
 
 title -l = "$bar $osmcgpio uninstalled successfully."
 

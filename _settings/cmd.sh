@@ -44,12 +44,12 @@ mmc() {
 }
 
 bootosmc() {
-	mountmmc 5
+	mmc 5
 	sed -i "s/default_partition_to_boot=./default_partition_to_boot=6/" /tmp/p5/noobs.conf
 	reboot
 }
 bootrune() {
-	mountmmc 5
+	mmc 5
 	sed -i "s/default_partition_to_boot=./default_partition_to_boot=8/" /tmp/p5/noobs.conf
 	reboot
 }
@@ -71,8 +71,8 @@ resetrune() {
 	umount -l /dev/mmcblk0p9 &> /dev/null
 	echo -e "$bar Format partition ..."
 	echo y | mkfs.ext4 /dev/mmcblk0p9 &> /dev/null
-	mountmmc 9
-	mountmmc 1
+	mmc 9
+	mmc 1
 	
 	if ! type bsdtar &>/dev/null; then
 		echo -e "$bar Install bsdtar ..."
@@ -113,7 +113,7 @@ hardreset() {
 	echo
 	case $ans in
 		1) resetrune;;
-		2) mountmmc 1
+		2) mmc 1
 			echo -n " forcetrigger" >> /tmp/p1/recovery.cmdline
 			reboot;;
 		*) ;;

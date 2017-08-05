@@ -92,6 +92,9 @@ if [[ -e /home/osmc/rebootosmc.py ]]; then
 	import gpiooff
 	' /home/osmc/rebootrune.py
 fi
+# '-a' append '-G' group root with osmc
+usermod -a -G root osmc
+chmod g+rw /dev/gpiomem
 
 timestop
 title -l = "$bar $osmcgpio installed successfully."

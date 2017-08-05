@@ -45,14 +45,15 @@ rm -v /lib/systemd/system/gpioset.service
 
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
-
 if grep 'gpioonsudo' $file &>/dev/null; then
 	linenum=$( sed -n '/gpioonsudo/{=}' $file ) # normal
 	sed -i "$(( $linenum - 2 )), $(( $linenum + 1 )) d" $file
-fi
-if grep 'gpiooffsudo' $file &>/dev/null; then
 	linenum=$( sed -n '/gpiooffsudo/{=}' $file ) # normal
 	sed -i "$(( $linenum - 2 )), $(( $linenum + 1 )) d" $file
+fi
+if [[ -e /home/osmc/rebootosmc.py ]]; then
+	sed -i '/import gpiooff/ d' /home/osmc/rebootosmc.py
+	sed -i '/import gpiooff/ d' /home/osmc/rebootrune.py
 fi
 
 title -l = "$bar $osmcgpio uninstalled successfully."

@@ -128,8 +128,8 @@
         <subtitlelanguage default="true">original</subtitlelanguage>
         <temperatureunit>c</temperatureunit>
         <timeformat default="true">regional</timeformat>
-        <timezone default="true">Etc/UTC</timezone>
-        <timezonecountry>Thailand</timezonecountry>
+        <timezone default="true">Asia/Bangkok</timezone>
+        <timezonecountry default="true">Thailand</timezonecountry>
         <use24hourclock default="true">regional</use24hourclock>
     </locale>
     <lookandfeel>
@@ -291,7 +291,7 @@
         <airplayvideosupport default="true">true</airplayvideosupport>
         <airplayvolumecontrol default="true">true</airplayvolumecontrol>
         <devicename>osmc</devicename>
-        <esallinterfaces default="true">false</esallinterfaces>
+        <esallinterfaces>true</esallinterfaces>
         <escontinuousdelay default="true">25</escontinuousdelay>
         <esenabled default="true">true</esenabled>
         <esinitialdelay default="true">750</esinitialdelay>

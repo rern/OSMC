@@ -96,7 +96,7 @@ sed -i '/import os/ i\
 import gpiooff
 ' /home/osmc/rebootrune.py
 fi
-# '-a' append '-G' group root with osmc
+# '-a' append '-G' group root with user osmc
 usermod -a -G root osmc
 chmod g+rw /dev/gpiomem
 

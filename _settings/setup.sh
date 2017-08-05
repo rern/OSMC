@@ -105,7 +105,7 @@ echo
 
 #systemctl daemon-reload # done in GPIO install
 systemctl restart nmbd smbd mediacenter
-echo -e "$bar OSMC restarted."
+echo -e "$bar OSMC restarted.\n"
 
 # show installed packages status
 echo -e "$bar Installed packages status"

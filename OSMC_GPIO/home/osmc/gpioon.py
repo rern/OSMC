@@ -24,7 +24,7 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(onx, GPIO.OUT)
 
 if GPIO.input(onx[1]) == 0:
-	os.system('/usr/bin/xbmc-send -a "Notification(GPIO,Already ON)" &> /dev/null')
+	os.system('/usr/bin/xbmc-send -a "Notification(GPIO,Already ON)"')
 else:
 	import time
 

@@ -66,8 +66,8 @@ udevadm control --reload
 
 # set initial gpio #######################################
 systemctl daemon-reload
-systemctl enable gpiooff gpioset
-systemctl start gpiooff gpioset
+systemctl enable gpioset
+systemctl start gpioset
 
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
@@ -82,8 +82,8 @@ sed -i -e "$(( $linenum - 2 ))"' i\
 \t\t\t\t\t\t<label>GPIO Off</label>\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpiooff.py)</onclick>\
 \t\t\t\t\t</item>
-' -e 's/XBMC.Powerdown()/RunScript(/home/osmc/poweroff.py)/
-' -e 's/XBMC.Reset()/RunScript(/home/osmc/reboot.py)/
+' -e 's|XBMC.Powerdown()|RunScript(/home/osmc/poweroff.py)|
+' -e 's|XBMC.Reset()|RunScript(/home/osmc/reboot.py)|
 ' $file
 fi
 if [[ -e /home/osmc/rebootosmc.py ]]; then

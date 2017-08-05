@@ -71,7 +71,7 @@ systemctl start gpiooff gpioset
 
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
-if ! grep 'gpioonsudo.py' $file &> /dev/null; then
+if ! grep 'gpioon.py' $file &> /dev/null; then
 	linenum=$( sed -n '/Quit()/{=}' $file ) # normal
 	sed -i -e "$(( $linenum - 2 ))"' i\
 \t\t\t\t\t<item>\

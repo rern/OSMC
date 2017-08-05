@@ -20,8 +20,8 @@ Edit: `/home/osmc/gpio.json`
 **Control**  
 - Keyboard / Remote control: add the following to on / off buttons in `keyboard.xml` / `remote.xml`  
 ```xml
-<key1>RunScript(/home/osmc/gpioonsudo.py)</key1>
-<key2>RunScript(/home/osmc/gpiooffsudo.py)</key2>
+<key1>RunScript(/home/osmc/gpioon.py)</key1>
+<key2>RunScript(/home/osmc/gpiooff.py)</key2>
 ```
 
 - Menu: add the following to `DialogButtonMenu.xml` in skin directory  
@@ -29,12 +29,12 @@ Edit: `/home/osmc/gpio.json`
 <!-- within <content> ... </content> -->
 	<item>
 		<label>GPIO On</label>
-		<onclick>RunScript(/home/osmc/gpioonsudo.py)</onclick>
+		<onclick>RunScript(/home/osmc/gpioon.py)</onclick>
 		<visible>System.CanReboot</visible>
 	</item>
 	<item>
 		<label>GPIO Off</label>
-		<onclick>RunScript(/home/osmc/gpiooffsudo.py)</onclick>
+		<onclick>RunScript(/home/osmc/gpiooff.py)</onclick>
 		<visible>System.CanReboot</visible>
 	</item>
 ```

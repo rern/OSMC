@@ -61,6 +61,8 @@ wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath                  
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts # hide home menu item
 wget -qN --show-progress $gitpath/rpi_2708_1001_CEC_Adapter.xml -P $kodipath/peripheral_data     # disable cec adapter
 chown -R osmc:osmc $kodipath
+echo 'Asia/Bangkok' > /etc/timezone                                                              # extra command
+ln -s -f /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
 
 title -l = "$bar Install Samba ..."
 #################################################################################

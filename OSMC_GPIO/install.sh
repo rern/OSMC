@@ -77,10 +77,12 @@ sed -i -e "$(( $linenum - 2 ))"' i\
 \t\t\t\t\t<item>\
 \t\t\t\t\t\t<label>GPIO On</label>\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpioon.py)</onclick>\
+\t\t\t\t\t\t<onclick>dialog.close(all,true)</onclick>\
 \t\t\t\t\t</item>\
 \t\t\t\t\t<item>\
 \t\t\t\t\t\t<label>GPIO Off</label>\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpiooff.py)</onclick>\
+\t\t\t\t\t\t<onclick>dialog.close(all,true)</onclick>\
 \t\t\t\t\t</item>
 ' -e 's|XBMC.Powerdown()|RunScript(/home/osmc/poweroff.py)|
 ' -e 's|XBMC.Reset()|RunScript(/home/osmc/reboot.py)|

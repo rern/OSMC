@@ -43,11 +43,9 @@ rm -v /lib/systemd/system/gpioset.service
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
 if grep 'gpioon' $file &>/dev/null; then
-	linenum1=$( sed -n '/gpioon/{=}' $file )
-	linenum2=$( sed -n '/gpiooff/{=}' $file )
-	sed -i -e "$(( $linenum1 - 2 )), $(( $linenum1 + 2 )) d
-	" -e "$(( $linenum2 - 2 )), $(( $linenum2 + 2 )) d
-	" -e ' -e 's|RunScript(/home/osmc/poweroff.py)|XBMC.Powerdown()|
+	linenum=$( sed -n '/gpioon/{=}' $file )
+	sed -i -e "$(( $linenum - 2 )), $(( $linenum + 7 )) d
+	" -e 's|RunScript(/home/osmc/poweroff.py)|XBMC.Powerdown()|
 	' -e 's|RunScript(/home/osmc/reboot.py)|XBMC.Reset()|
 	' $file
 fi

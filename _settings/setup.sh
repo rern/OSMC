@@ -63,7 +63,8 @@ wget -qN --show-progress $gitpath/rpi_2708_1001_CEC_Adapter.xml -P $kodipath/per
 chown -R osmc:osmc $kodipath
 # extra command for some settings
 echo 'Asia/Bangkok' > /etc/timezone
-ln -s -f /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
+rm /etc/localtime
+ln -s /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
 #hostname RT-AC66U
 
 title -l = "$bar Install Samba ..."

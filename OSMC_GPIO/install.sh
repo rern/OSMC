@@ -70,13 +70,6 @@ systemctl enable gpiooff gpioset
 systemctl start gpiooff gpioset
 
 # modify shutdown menu #######################################
-sed -i '/import os/ i\
-import gpiooff
-' /home/osmc/rebootosmc.py
-sed -i '/import os/ i\
-import gpiooff
-' /home/osmc/rebootrune.py
-
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
 if ! grep 'gpioonsudo.py' $file &> /dev/null; then
 	linenum=$( sed -n '/Quit()/{=}' $file ) # normal
@@ -90,6 +83,14 @@ if ! grep 'gpioonsudo.py' $file &> /dev/null; then
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpiooffsudo.py)</onclick>\
 \t\t\t\t\t</item>
 	' $file
+fi
+if [[ -e /home/osmc/rebootosmc.py ]]; then
+	sed -i '/import os/ i\
+	import gpiooff
+	' /home/osmc/rebootosmc.py
+	sed -i '/import os/ i\
+	import gpiooff
+	' /home/osmc/rebootrune.py
 fi
 
 timestop

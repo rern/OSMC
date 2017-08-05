@@ -40,7 +40,7 @@ Edit: `/home/osmc/gpio.json`
 ```
 
 **Fix permission errors**  
-run script with sudo or:
+run script by another script with sudo or:
 ```sh
 chmod +r /dev/gpiomem
 ```

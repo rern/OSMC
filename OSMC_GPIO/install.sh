@@ -72,8 +72,8 @@ systemctl start gpiooff gpioset
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
 if ! grep 'gpioon.py' $file &> /dev/null; then
-	linenum=$( sed -n '/Quit()/{=}' $file ) # normal
-	sed -i -e "$(( $linenum - 2 ))"' i\
+linenum=$( sed -n '/Quit()/{=}' $file ) # normal
+sed -i -e "$(( $linenum - 2 ))"' i\
 \t\t\t\t\t<item>\
 \t\t\t\t\t\t<label>GPIO On</label>\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpioon.py)</onclick>\
@@ -82,15 +82,17 @@ if ! grep 'gpioon.py' $file &> /dev/null; then
 \t\t\t\t\t\t<label>GPIO Off</label>\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpiooff.py)</onclick>\
 \t\t\t\t\t</item>
-	' $file
+' -e 's/XBMC.Powerdown()/RunScript(/home/osmc/poweroff.py)/
+' -e 's/XBMC.Reset()/RunScript(/home/osmc/reboot.py)/
+' $file
 fi
 if [[ -e /home/osmc/rebootosmc.py ]]; then
-	sed -i '/import os/ i\
-	import gpiooff
-	' /home/osmc/rebootosmc.py
-	sed -i '/import os/ i\
-	import gpiooff
-	' /home/osmc/rebootrune.py
+sed -i '/import os/ i\
+import gpiooff
+' /home/osmc/rebootosmc.py
+sed -i '/import os/ i\
+import gpiooff
+' /home/osmc/rebootrune.py
 fi
 # '-a' append '-G' group root with osmc
 usermod -a -G root osmc

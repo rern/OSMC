@@ -38,3 +38,11 @@ Edit: `/home/osmc/gpio.json`
 		<visible>System.CanReboot</visible>
 	</item>
 ```
+
+**Fix permission errors**  
+run script with sudo or:
+```sh
+# '-a' append '-G' group root with osmc
+usermod -a -G root osmc
+chmod g+rw /dev/gpiomem
+```

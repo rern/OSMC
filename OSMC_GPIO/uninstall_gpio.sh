@@ -42,17 +42,17 @@ rm -v /lib/systemd/system/gpioset.service
 
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
-if grep 'gpioon' $file &>/dev/null; then
-	linenum=$( sed -n '/gpioon/{=}' $file )
-	sed -i -e "$(( $linenum - 2 )), $(( $linenum + 7 )) d
-	" -e 's|RunScript(/home/osmc/poweroff.py)|XBMC.Powerdown()|
-	' -e 's|RunScript(/home/osmc/reboot.py)|XBMC.Reset()|
-	' $file
-fi
-if [[ -e /home/osmc/rebootosmc.py ]]; then
-	sed -i '/import gpiooff/ d' /home/osmc/rebootosmc.py
-	sed -i '/import gpiooff/ d' /home/osmc/rebootrune.py
-fi
+linenum=$( sed -n '/gpioon/{=}' $file )
+sed -i -e "$(( $linenum - 2 )), $(( $linenum + 7 )) d
+" -e 's|RunScript(/home/osmc/poweroff.py)|XBMC.Powerdown()|
+' -e 's|RunScript(/home/osmc/reboot.py)|XBMC.Reset()|
+' $file
+
+sed -i '/import gpiooff/ d' /home/osmc/rebootosmc.py
+sed -i '/import gpiooff/ d' /home/osmc/rebootrune.py
+
+gpasswd -d root osmc
+chmod g-rw /dev/gpiomem
 
 title -l = "$bar $osmcgpio uninstalled successfully."
 

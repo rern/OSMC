@@ -9,4 +9,4 @@ import sys
 #import xbmc
 
 ar = 'r' if len(sys.argv) > 1 else ''
-os.system('/usr/bin/sudo /home/osmc/gpiooff.py '+ ar +'&')
+os.system('/usr/bin/sudo /home/osmc/gpiooff.py '+ ar)

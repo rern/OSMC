@@ -40,6 +40,7 @@ rm -v /home/osmc/rebootsudo.py
 
 echo -e "$bar Remove service ..."
 systemctl disable gpiooff gpioset
+systemctl daemon-reload
 rm -v /lib/systemd/system/gpiooff.service
 rm -v /lib/systemd/system/gpioset.service
 

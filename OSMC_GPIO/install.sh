@@ -96,8 +96,9 @@ sed -i '/import os/ i\
 import gpiooff
 ' /home/osmc/rebootrune.py
 fi
-# allow read
-chmod +r /dev/gpiomem
+# '-a' append '-G' group root with osmc
+usermod -a -G root osmc
+chmod g+rw /dev/gpiomem
 
 timestop
 title -l = "$bar $osmcgpio installed successfully."

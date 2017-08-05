@@ -29,28 +29,27 @@ fi
 # remove files
 echo -e "$bar Remove files ..."
 rm -v /home/osmc/gpiooff.py
-rm -v /home/osmc/gpiooffsudo.py
 rm -v /home/osmc/gpioon.py
-rm -v /home/osmc/gpioonsudo.py
 rm -v /home/osmc/gpioset.py
 rm -v /home/osmc/gpiotimer.py
 rm -v /home/osmc/poweroff.py
-rm -v /home/osmc/poweroffsudo.py
-rm -v /home/osmc/rebootsudo.py
+rm -v /home/osmc/reboot.py
 
 echo -e "$bar Remove service ..."
-systemctl disable gpiooff gpioset
+systemctl disable gpioset
 systemctl daemon-reload
-rm -v /lib/systemd/system/gpiooff.service
 rm -v /lib/systemd/system/gpioset.service
 
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
-if grep 'gpioonsudo' $file &>/dev/null; then
-	linenum=$( sed -n '/gpioonsudo/{=}' $file ) # normal
-	sed -i "$(( $linenum - 2 )), $(( $linenum + 1 )) d" $file
-	linenum=$( sed -n '/gpiooffsudo/{=}' $file ) # normal
-	sed -i "$(( $linenum - 2 )), $(( $linenum + 1 )) d" $file
+if grep 'gpioon' $file &>/dev/null; then
+	linenum1=$( sed -n '/gpioon/{=}' $file )
+	linenum2=$( sed -n '/gpiooff/{=}' $file )
+	sed -i -e "$(( $linenum1 - 2 )), $(( $linenum1 + 2 )) d
+	" -e "$(( $linenum2 - 2 )), $(( $linenum2 + 2 )) d
+	" -e ' -e 's|RunScript(/home/osmc/poweroff.py)|XBMC.Powerdown()|
+	' -e 's|RunScript(/home/osmc/reboot.py)|XBMC.Reset()|
+	' $file
 fi
 if [[ -e /home/osmc/rebootosmc.py ]]; then
 	sed -i '/import gpiooff/ d' /home/osmc/rebootosmc.py

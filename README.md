@@ -20,4 +20,11 @@ This is just an example of setup script.
 - `<esallinterfaces>true</esallinterfaces>` - Allow remote control from applications on other systems
 
 **RunScript()**  
-Kodi has trouble `RunScript()` with bash `*.sh` - use python `*.py` instead  
+- Kodi cannot run `sudo` directly  
+    * directory / file permissions must be set properly
+    * or run another script which `sudo` the script instead
+
+**Kodi command line**  
+```sh
+xbmc-send --host=localhost --port=9777 --action="<built-in function>"
+```

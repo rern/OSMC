@@ -15,8 +15,9 @@ This is just an example of setup script.
 - install **OSMC GPIO**
 
 **User setting files**  
-`/home/osmc/.kodi/userdataadvancedsettings.xml` - hide directories from browsing  
-`/home/osmc/.kodi/userdataguisettings.xml` - all settings  
+`/home/osmc/.kodi/userdata/advancedsettings.xml` - hide directories from scanning / listing  
+`/home/osmc/.kodi/userdata/guisettings.xml` - all settings  
+- `<esallinterfaces>true</esallinterfaces>` - Allow remote control from applications on other systems
 
 **RunScript()**  
 Kodi has trouble `RunScript()` with bash `*.sh` - use python `*.py` instead  

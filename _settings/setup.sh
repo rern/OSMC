@@ -35,7 +35,7 @@ hdmi_ignore_cec=1 # disable cec
 ! grep '^hdmi_mode=' /tmp/p1/config.txt &> /dev/null && echo "$hdmimode" >> /tmp/p1/config.txt
 ! grep '^hdmi_mode=' /boot/config.txt &> /dev/null && echo "$hdmimode" >> /boot/config.txt
 fi
-sed -i '/^gpio/ s/^/#/
+sed -i '/gpio/ s/^/#/
 ' /boot/config.txt
 echo
 

@@ -60,43 +60,8 @@ setup() {
 	fi
 }
 resetrune() {
-	wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
-	timestart
-	
-	title -l = "$bar Rune reset ..."
-	umount -l /dev/mmcblk0p9 &> /dev/null
-	echo -e "$bar Format partition ..."
-	echo y | mkfs.ext4 /dev/mmcblk0p9 &> /dev/null
-	mmc 9
-	mmc 1
-	
-	if ! type bsdtar &>/dev/null; then
-		echo -e "$bar Install bsdtar ..."
-		apt update
-		apt install -y bsdtar
-	fi
-	pathrune=/tmp/p9
-	bsdtar -xvf /tmp/p1/os/RuneAudio/root.tar.xz -C $pathrune \
-		--exclude=./srv/http/.git \
-		--exclude=./usr/include \
-		--exclude=./usr/lib/{python2.7/test,python3*,libgo.*} \
-		--exclude=./usr/share/{doc,gtk-doc,info,man}
-	
-	# from partition_setup.sh
-	sed -i -e 's|^.* /boot |/dev/mmcblk0p8  /boot |
-	' -e '/^#/ d
-	' -e 's/\s\+0\s\+0\s*$//
-	' $pathrune/etc/fstab
-	
-	cp -r /tmp/p1/os/RuneAudio/custom/. $pathrune
-	
+	runereset n	
 	wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/cmd.sh -P $pathrune/etc/profile.d
-	
-	timestop
-	title -l = "$bar Rune reset successfully."
-	
-	yesno "$info Reboot to Rune:" ansre
-	[[ $ansre == 1 ]] && bootrune
 }
 hardreset() {
 	echo -e '\nReset to virgin OS:'

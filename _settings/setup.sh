@@ -36,7 +36,7 @@ hdmi_ignore_cec=1 # disable cec
 ! grep '^hdmi_mode=' /boot/config.txt &> /dev/null && echo "$hdmimode" >> /boot/config.txt
 fi
 sed -i '/^gpio/ s/^/#/
-' /tmp/p6/config.txt
+' /boot/config.txt
 echo
 
 mnt0=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )

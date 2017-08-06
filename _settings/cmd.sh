@@ -60,8 +60,10 @@ setup() {
 	fi
 }
 resetrune() {
-	runereset n	
-	wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/cmd.sh -P $pathrune/etc/profile.d
+	runereset n
+	
+	mmc 9
+	wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/cmd.sh -P /tmp/p9/etc/profile.d
 }
 hardreset() {
 	echo -e '\nReset to virgin OS:'

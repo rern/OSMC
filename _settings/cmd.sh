@@ -69,7 +69,7 @@ resetrune() {
 	[[ $ansre == 1 ]] && bootosmc
 }
 hardreset() {
-	echo -e '\nReset to virgin OS:'
+	echo -e "\n\e[30m\e[43m ! \e[0m Reset to virgin OS:"
 	echo -e '  \e[0;36m0\e[m Cancel'
 	echo -e '  \e[0;36m1\e[m Rune'
 	echo -e '  \e[0;36m2\e[m NOOBS: OSMC + Rune'
@@ -79,9 +79,7 @@ hardreset() {
 	echo
 	case $ans in
 		1) resetrune;;
-		2) mmc 1
-			echo -n " forcetrigger" >> /tmp/p1/recovery.cmdline
-			reboot;;
+		2) noobsreset;;
 		*) ;;
 	esac
 }

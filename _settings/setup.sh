@@ -21,6 +21,48 @@ touch /root/.hushlogin
 echo -e "$bar root password for Samba and Transmission ...\n"
 setpwd
 
+if ! grep '^hdmi_mode=' /boot/config.txt &> /dev/null; then
+echo -e "$bar Set HDMI mode ..."
+#################################################################################
+mmc 1
+# force hdmi mode, remove black border (overscan)
+hdmimode='
+hdmi_group=1
+hdmi_mode=31      # 1080p 50Hz
+disable_overscan=1
+hdmi_ignore_cec=1 # disable cec
+'
+! grep '^hdmi_mode=' /tmp/p1/config.txt &> /dev/null && echo "$hdmimode" >> /tmp/p1/config.txt
+! grep '^hdmi_mode=' /boot/config.txt &> /dev/null && echo "$hdmimode" >> /boot/config.txt
+fi
+sed -i '/^gpio/ s/^/#/
+' /tmp/p6/config.txt
+echo
+
+mnt0=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
+label=${mnt0##/*/}
+mnt="/mnt/$label"
+mkdir -p "$mnt"
+fstabmnt="/dev/sda1       $mnt         ext4  defaults,noatime"
+if ! grep $mnt /etc/fstab &> /dev/null; then
+  echo -e "$bar Mount USB drive to /mnt/hdd ..."
+  #################################################################################
+  echo "$fstabmnt" >> /etc/fstab
+fi
+echo
+
+if [[ ! -L /var/cache/apt ]]; then
+  echo -e "$bar Set apt cache ..."
+  #################################################################################
+	mkdir -p $mnt/varcache/apt
+	rm -r /var/cache/apt
+	ln -s $mnt/varcache/apt /var/cache/apt
+fi
+# disable setup marker files
+touch /walkthrough_completed # initial setup
+rm -f /vendor # noobs marker for update prompt
+echo
+
 echo -e "$bar Update package database ..."
 #################################################################################
 apt update

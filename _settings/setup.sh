@@ -103,6 +103,7 @@ wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath                  
 wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts # hide home menu item
 wget -qN --show-progress $gitpath/rpi_2708_1001_CEC_Adapter.xml -P $kodipath/peripheral_data     # disable cec adapter
 chown -R osmc:osmc $kodipath
+sed -i 's/id="check_freq" value="."/id="check_freq" value="0"/' $kodipath/addon_data/script.module.osmcsetting.updates/settings.xml
 # extra command for some settings
 echo 'Asia/Bangkok' > /etc/timezone
 rm /etc/localtime

@@ -67,7 +67,7 @@ resetrune() {
 	mmc 9
 	wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/cmd.sh -P /tmp/p9/etc/profile.d
 	
-	yesno "Reboot to OSMC after reset:" ansre
+	yesno "Reboot to OSMC:" ansre
 	[[ $ansre == 1 ]] && bootosmc
 }
 hardreset() {

@@ -60,18 +60,12 @@ setup() {
 	fi
 }
 resetrune() {
-	runereset n
+	. runereset n
 	
 	mmc 9
 	wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/cmd.sh -P /tmp/p9/etc/profile.d
 	
-	echo "Reboot to OSMC after reset:"
-	echo -e '  \e[0;36m0\e[m No'
-	echo -e '  \e[0;36m1\e[m Yes'
-	echo
-	echo -e '\e[0;36m0\e[m / 1 ? '
-	read -n 1 ansre
-	echo
+	yesno "Reboot to OSMC after reset:" ansre
 	[[ $ansre == 1 ]] && bootosmc
 }
 hardreset() {

@@ -38,7 +38,7 @@ rm -v /home/osmc/reboot.py
 echo -e "$bar Remove service ..."
 systemctl disable gpioset
 systemctl daemon-reload
-rm -v /lib/systemd/system/gpioset.service
+rm -v /etc/systemd/system/gpioset.service
 
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm $0
+
 mmc() {
 	if [[ ! $( mount | grep p$1 ) ]]; then
 		mkdir -p /tmp/p$1

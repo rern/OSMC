@@ -2,6 +2,7 @@
 
 # command shortcuts and motd
 # passwords for samba and transmission
+# hdmi mode, fstab, apt cache
 # 'skin shortcuts' addon
 # restore settings
 # install samba
@@ -30,6 +31,7 @@ touch /root/.hushlogin
 echo -e "$bar root password for Samba and Transmission ...\n"
 setpwd
 
+# hdmi mode, fstab, apt cache
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/_settings/presetup.sh
 . presetup.sh
 echo

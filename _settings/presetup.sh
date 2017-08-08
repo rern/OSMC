@@ -14,23 +14,23 @@ mmc() {
 	fi
 }
 
-if ! grep -q '^hdmi_mode=' /boot/config.txt; then
 echo -e "$bar Set HDMI mode ..."
 #################################################################################
-mmc 1
-if ! mount | grep -q 'mmcblk0p7'; then
-  mmc 7
-  mntroot=/tmp/p7
-fi
-# force hdmi mode, remove black border (overscan)
-hdmimode='
+if ! grep -q '^hdmi_mode=' /boot/config.txt; then
+	mmc 1
+	if ! mount | grep -q 'mmcblk0p7'; then
+	  mmc 7
+	  mntroot=/tmp/p7
+	fi
+	# force hdmi mode, remove black border (overscan)
+	hdmimode='
 hdmi_group=1
 hdmi_mode=31      # 1080p 50Hz
 disable_overscan=1
 hdmi_ignore_cec=1 # disable cec
 '
-! grep -q '^hdmi_mode=' /tmp/p1/config.txt && echo "$hdmimode" >> /tmp/p1/config.txt
-! grep -q '^hdmi_mode=' /tmp/p7/boot/config.txt && echo "$hdmimode" >> $mntroot/boot/config.txt
+	! grep -q '^hdmi_mode=' /tmp/p1/config.txt && echo "$hdmimode" >> /tmp/p1/config.txt
+	! grep -q '^hdmi_mode=' /tmp/p7/boot/config.txt && echo "$hdmimode" >> $mntroot/boot/config.txt
 fi
 sed -i '/gpio/ s/^/#/
 ' $mntroot/boot/config.txt

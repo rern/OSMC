@@ -4,7 +4,7 @@
 # fstab usb mount
 # apt cache
 
-rm $0
+rm presetup.sh
 
 mmc() {
 	[[ -z $2 ]] && mntdir=/tmp/p$1 || mntdir=/tmp/$2

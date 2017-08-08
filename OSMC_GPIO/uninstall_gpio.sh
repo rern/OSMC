@@ -20,10 +20,10 @@ yesno "Uninstall Python-Pip, Python-Dev, GCC, bsdtar and RPi.GPIO:" answer
 if [[ $answer == 1 ]]; then
 	echo -e "$bar Uninstall packages ..."
 	python -c "import RPi.GPIO" &>/dev/null && pip uninstall -y RPi.GPIO
-	dpkg -s bsdtar | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y bsdtar
-	dpkg -s gcc | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y gcc
-	dpkg -s python-dev | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y python-dev
-	dpkg -s python-pip | grep 'Status: install ok installed' &>/dev/null && apt remove --purge --auto-remove -y python-pip
+	dpkg -s bsdtar | grep -q 'Status: install ok installed' && apt remove --purge --auto-remove -y bsdtar
+	dpkg -s gcc | grep -q 'Status: install ok installed' && apt remove --purge --auto-remove -y gcc
+	dpkg -s python-dev | grep -q 'Status: install ok installed' && apt remove --purge --auto-remove -y python-dev
+	dpkg -s python-pip | grep -q 'Status: install ok installed' && apt remove --purge --auto-remove -y python-pip
 fi
 
 # remove files

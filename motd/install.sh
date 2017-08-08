@@ -2,7 +2,7 @@
 
 rm $0
 
-[[ -e /etc/motd.logo ]] && echo '"OSMC logo motd" already installed'; exit
+[[ -e /etc/motd.logo ]] && echo -e '\n"OSMC logo motd" already installed.\n'; exit
 
 wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 

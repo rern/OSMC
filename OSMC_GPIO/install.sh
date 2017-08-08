@@ -24,11 +24,11 @@ if (( $# == 0 )); then
 	echo -e "$bar Update package databases ..."
 	apt update
 fi
-if ! dpkg -s python-pip 2>/dev/null | grep 'Status: install ok installed' &>/dev/null; then
+if ! dpkg -s python-pip 2>/dev/null | grep -q 'Status: install ok installed'; then
 	echo -e "$bar Install Python-Pip ..."
 	apt install -y python-pip
 fi
-if ! dpkg -s python-dev 2>/dev/null | grep 'Status: install ok installed' &>/dev/null; then
+if ! dpkg -s python-dev 2>/dev/null | grep -q 'Status: install ok installed'; then
 	echo -e "$bar Install Python-Dev ..."
 	apt install -y python-dev
 fi
@@ -71,7 +71,7 @@ systemctl start gpioset
 
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
-if ! grep 'gpioon.py' $file &> /dev/null; then
+if ! grep -q 'gpioon.py' $file; then
 linenum=$( sed -n '/Quit()/{=}' $file ) # normal
 sed -i -e "$(( $linenum - 2 ))"' i\
 \t\t\t\t\t<item>\

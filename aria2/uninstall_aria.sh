@@ -19,7 +19,7 @@ apt remove -y aria2
 
 # remove files #######################################
 echo -e "$bar Remove files ..."
-if mount | grep '/dev/sda1'; then
+if mount | grep -q '/dev/sda1'; then
 	mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
 	rm -rv $mnt/aria2/web
 else

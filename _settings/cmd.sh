@@ -68,8 +68,8 @@ resetrune() {
 	mmc 9
 	wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/cmd.sh -P /tmp/p9/etc/profile.d
 	
-	yesno "Reboot to OSMC:" ansre
-	[[ $ansre == 1 ]] && bootosmc
+	yesno "Reboot to Rune:" ansre
+	[[ $ansre == 1 ]] && bootrune
 }
 hardreset() {
 	echo -e "\n$info Reset to virgin OS:"

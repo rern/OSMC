@@ -39,9 +39,10 @@ sreload() {
 }
 
 mmc() {
-	if [[ ! $( mount | grep p$1 ) ]]; then
-		mkdir -p /tmp/p$1
-		mount /dev/mmcblk0p$1 /tmp/p$1
+	[[ -z $2 ]] && mntdir=/tmp/p$1 || mntdir=/tmp/$2
+	if [[ ! $( mount | grep $mntdir ) ]]; then
+		mkdir -p $mntdir
+		mount /dev/mmcblk0p$1 $mntdir
 	fi
 }
 

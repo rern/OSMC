@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# hdmi mode
+# fstab
+# apt cache
+
 rm $0
 
 mmc() {

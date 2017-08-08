@@ -63,6 +63,7 @@ setup() {
 }
 resetrune() {
 	. runereset n
+	[[ $? != 0 ]] && return
 	
 	mmc 9
 	wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/cmd.sh -P /tmp/p9/etc/profile.d

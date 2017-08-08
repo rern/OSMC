@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# command shortcuts and motd
+# passwords for samba and transmission
+# 'skin shortcuts' addon
+# restore settings
+# install samba
+# install transmission
+# install aria2
+# install osmc gpio
+
 rm $0
 
 # import heading function
@@ -12,12 +21,12 @@ addonpath=/home/osmc/.kodi/addons
 pkgpath=$addonpath/packages
 dbpath=$kodipath/Database
 
-# reboot command and motd
+# command shortcuts and motd
 [[ ! -e /etc/profile.d/cmd.sh ]] && wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/motd/install.sh; chmod +x install.sh; ./install.sh
 touch /root/.hushlogin
 
-# passwords
+# passwords for samba and transmission
 echo -e "$bar root password for Samba and Transmission ...\n"
 setpwd
 
@@ -35,7 +44,6 @@ echo
 
 title "$bar Install skin.shortcuts addons ..."
 #################################################################################
-# 'skin shortcuts' addon
 wget -qN --show-progress https://github.com/BigNoid/script.skinshortcuts/archive/master.zip -O $pkgpath/script.skinshortcuts.zip
 wget -qN --show-progress https://github.com/XBMC-Addons/script.module.simplejson/archive/master.zip -O $pkgpath/script.module.simplejson.zip
 wget -qN --show-progress http://mirrors.kodi.tv/addons/jarvis/script.module.unidecode/script.module.unidecode-0.4.16.zip -O $pkgpath/script.module.unidecode.zip

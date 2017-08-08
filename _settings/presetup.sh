@@ -25,7 +25,7 @@ hdmi_ignore_cec=1' # disable cec
 
 mmc 6
 ! grep -q '^hdmi_mode=' /tmp/p6/config.txt && echo "$hdmimode" >> /tmp/p6/config.txt
-sed -i '/gpio/ s/^/#/' /tmp/p6/onfig.txt
+sed -i '/gpio/ s/^/#/' /tmp/p6/config.txt
 echo
 
 echo -e "$bar Mount USB drive to /mnt/hdd ..."

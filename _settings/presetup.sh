@@ -9,7 +9,7 @@ mmc() {
 	fi
 }
 
-if ! grep '^hdmi_mode=' /boot/config.txt &> /dev/null; then
+if ! grep -q '^hdmi_mode=' /boot/config.txt; then
 echo -e "$bar Set HDMI mode ..."
 #################################################################################
 mmc 1
@@ -24,8 +24,8 @@ hdmi_mode=31      # 1080p 50Hz
 disable_overscan=1
 hdmi_ignore_cec=1 # disable cec
 '
-! grep '^hdmi_mode=' /tmp/p1/config.txt &> /dev/null && echo "$hdmimode" >> /tmp/p1/config.txt
-! grep '^hdmi_mode=' /tmp/p7/boot/config.txt &> /dev/null && echo "$hdmimode" >> $mntroot/boot/config.txt
+! grep -q '^hdmi_mode=' /tmp/p1/config.txt && echo "$hdmimode" >> /tmp/p1/config.txt
+! grep -q '^hdmi_mode=' /tmp/p7/boot/config.txt && echo "$hdmimode" >> $mntroot/boot/config.txt
 fi
 sed -i '/gpio/ s/^/#/
 ' $mntroot/boot/config.txt

@@ -46,10 +46,10 @@ mmc() {
 }
 
 bootosmc() {
-	/root/reboot.py 6
+	/home/osmc/rebootosmc.py
 }
 bootrune() {
-	/root/reboot.py 8
+	/home/osmc/rebootrune.py
 }
 
 setup() {

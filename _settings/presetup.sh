@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # hdmi mode
-# fstab
+# fstab usb mount
 # apt cache
 
 rm $0

@@ -49,3 +49,4 @@ fi
 # disable setup marker files
 touch $mntroot/walkthrough_completed # initial setup
 rm -f $mntroot/vendor # noobs marker for update prompt
+umount -l /tmp/p*

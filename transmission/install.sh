@@ -43,7 +43,7 @@ if [[ $answebui == 1 ]] && ! type bsdtar &>/dev/null; then
 	apt install -y bsdtar
 fi
 
-if mount | grep '/dev/sda1' &>/dev/null; then
+if mount | grep -q '/dev/sda1'; then
 	mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
 	mkdir -p $mnt/transmission
 	path=$mnt/transmission
@@ -89,7 +89,7 @@ if [[ -n $pwd1 ]]; then
 fi
 
 # fix buffer warning on osmc
-if ! grep 'net.core.rmem_max=4194304' /etc/sysctl.conf &> /dev/null; then
+if ! grep -q 'net.core.rmem_max=4194304' /etc/sysctl.conf; then
 	echo -n 'net.core.rmem_max=4194304
 	net.core.wmem_max=1048576
 	' >> /etc/sysctl.conf

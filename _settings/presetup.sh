@@ -23,13 +23,8 @@ hdmi_mode=31      # 1080p 50Hz
 disable_overscan=1
 hdmi_ignore_cec=1' # disable cec
 
-mmc 1
 mmc 6
-mmc 8
-! grep -q '^hdmi_mode=' /tmp/p1/config.txt && echo "$hdmimode" >> /tmp/p1/config.txt
 ! grep -q '^hdmi_mode=' /tmp/p6/boot/config.txt && echo "$hdmimode" >> /tmp/p6/boot/config.txt
-! grep -q '^hdmi_mode=' /tmp/p8/boot/config.txt && echo "$hdmimode" >> /tmp/p8/boot/config.txt
-
 sed -i '/gpio/ s/^/#/' /tmp/p6/boot/config.txt
 echo
 

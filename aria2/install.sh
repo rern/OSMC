@@ -37,7 +37,7 @@ if ! type bsdtar &>/dev/null; then
 	apt install -y bsdtar
 fi
 
-if mount | grep '/dev/sda1' &>/dev/null; then
+if mount | grep -q '/dev/sda1'; then
 	mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
 	mkdir -p $mnt/aria2
 	path=$mnt/aria2

@@ -16,12 +16,11 @@ mmc() {
 
 echo -e "$bar Set HDMI mode ..."
 #################################################################################
-# force hdmi mode, remove black border (overscan)
+# force hdmi mode
 hdmimode='
 hdmi_group=1
-hdmi_mode=31      # 1080p 50Hz
-disable_overscan=1
-hdmi_ignore_cec=1' # disable cec
+hdmi_mode=31 
+hdmi_ignore_cec=1'
 
 mmc 6
 ! grep -q '^hdmi_mode=' /tmp/p6/config.txt && echo "$hdmimode" >> /tmp/p6/config.txt

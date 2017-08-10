@@ -5,7 +5,7 @@
 rm $0
 
 # import heading function
-wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
+wget -qN https://raw.githubusercontent.com/rern/title_script/master/title.sh; . title.sh; rm title.sh
 timestart
 
 osmcgpio=$( tcolor "OSMC GPIO" )
@@ -49,8 +49,9 @@ fi
 # install OSMC GPIO #######################################
 echo -e "$bar Get files ..."
 
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/uninstall_gpio.sh
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/OSMC_GPIO/_repo/OSMC_GPIO.tar.xz
+gitpath=https://raw.githubusercontent.com/rern/OSMC/master/OSMC_GPIO
+wget -qN --show-progress $gitpath/uninstall_gpio.sh
+wget -qN --show-progress $gitpath/_repo/OSMC_GPIO.tar.xz
 chmod 755 uninstall_gpio.sh
 
 echo -e "$bar Install files ..."

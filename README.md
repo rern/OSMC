@@ -3,7 +3,7 @@ OSMC setup
 
 [**setup.sh**](https://github.com/rern/OSMC/blob/master/_settings/setup.sh)
 ```sh
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/_settings/setup.sh; chmod +x setup.sh; ./setup.sh
+wget -qN --show-progress https://raw.githubusercontent.com/rern/OSMC/master/_settings/setup.sh; chmod +x setup.sh; ./setup.sh
 ```
 
 This is just an example of setup script.  

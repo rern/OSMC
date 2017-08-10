@@ -7,11 +7,12 @@ if [[ -e /etc/motd.logo ]]; then
   exit
 fi
 
-wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
+wget -qN https://raw.githubusercontent.com/rern/title_script/master/title.sh; . title.sh; rm title.sh
 
+gitpath=https://raw.githubusercontent.com/rern/OSMC/master/motd
 title -l = "$bar Install OSMC logo motd ..."
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/motd/uninstall_motd.sh; chmod +x uninstall_motd.sh
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/motd/motd.logo -P /etc
+wget -qN --show-progress $gitpath/uninstall_motd.sh; chmod +x uninstall_motd.sh
+wget -qN --show-progress $gitpath/motd.logo -P /etc
 
 mv /etc/motd{,.original}
 

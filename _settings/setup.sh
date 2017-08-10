@@ -16,15 +16,16 @@ rm $0
 wget -qN https://raw.githubusercontent.com/rern/title_script/master/title.sh; . title.sh; rm title.sh
 timestart l
 
-gitpath=https://raw.githubusercontent.com/rern/OSMC/master/_settings
+gitpath=https://raw.githubusercontent.com/rern/OSMC/master
+gitpathrune=https://raw.githubusercontent.com/rern/RuneAudio/master
 kodipath=/home/osmc/.kodi/userdata
 addonpath=/home/osmc/.kodi/addons
 pkgpath=$addonpath/packages
 dbpath=$kodipath/Database
 
 # command shortcuts and motd
-[[ ! -e /etc/profile.d/cmd.sh ]] && wget -qN --show-progress $gitpath/cmd.sh -P /etc/profile.d
-wget -qN --show-progress https://raw.githubusercontent.com/rern/OSMC/master/motd/install.sh; chmod +x install.sh; ./install.sh
+[[ ! -e /etc/profile.d/cmd.sh ]] && wget -qN --show-progress $gitpath/_settings/cmd.sh -P /etc/profile.d
+wget -qN --show-progress $gitpath/motd/install.sh; chmod +x install.sh; ./install.sh
 touch /root/.hushlogin
 
 # passwords for samba and transmission
@@ -32,7 +33,7 @@ echo -e "$bar root password for Samba and Transmission ...\n"
 setpwd
 
 # hdmi mode, fstab, apt cache
-wget -qN --show-progress $gitpath/presetup.sh
+wget -qN --show-progress $gitpath/_settings/presetup.sh
 . presetup.sh
 echo
 
@@ -70,11 +71,11 @@ echo
 
 echo -e "$bar Restore settings ..."
 #################################################################################
-wget -qN --show-progress $gitpath/advancedsettings.xml -P $kodipath                              # hide directory
-wget -qN --show-progress $gitpath/guisettings.xml -P $kodipath                                   # all settings
-wget -qN --show-progress $gitpath/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts # hide home menu item
-wget -qN --show-progress $gitpath/rpi_2708_1001_CEC_Adapter.xml -P $kodipath/peripheral_data     # disable cec adapter
-wget -qN --show-progress $gitpath/settings.xml -P $kodipath/addon_data/script.module.osmcsetting.updates # websocket
+wget -qN --show-progress $gitpath/_settings/advancedsettings.xml -P $kodipath                              # hide directory
+wget -qN --show-progress $gitpath/_settings/guisettings.xml -P $kodipath                                   # all settings
+wget -qN --show-progress $gitpath/_settings/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts # hide home menu item
+wget -qN --show-progress $gitpath/_settings/rpi_2708_1001_CEC_Adapter.xml -P $kodipath/peripheral_data     # disable cec adapter
+wget -qN --show-progress $gitpath/_settings/settings.xml -P $kodipath/addon_data/script.module.osmcsetting.updates # websocket
 chown -R osmc:osmc $kodipath
 
 # extra command for some settings
@@ -87,7 +88,7 @@ title -l = "$bar Install Samba ..."
 #################################################################################
 timestart
 apt install -y samba
-wget -q --show-progress https://raw.githubusercontent.com/rern/RuneAudio/master/_settings/smb.conf -O /etc/samba/smb.conf
+wget -q --show-progress $gitpathrune/_settings/smb.conf -O /etc/samba/smb.conf
 
 # set samba password
 (echo $pwd1; echo $pwd1) | smbpasswd -s -a root
@@ -98,18 +99,18 @@ echo
 
 # Transmission
 #################################################################################
-wget -qN --show-progress https://raw.githubusercontent.com/rern/OSMC/master/transmission/install.sh; chmod +x install.sh; ./install.sh $pwd1 0 1
+wget -qN --show-progress $gitpath/transmission/install.sh; chmod +x install.sh; ./install.sh $pwd1 0 1
 echo
 
 # Aria2
 #################################################################################
-wget -qN --show-progress https://raw.githubusercontent.com/rern/OSMC/master/aria2/install.sh; chmod +x install.sh; ./install.sh 1
+wget -qN --show-progress $gitpath/aria2/install.sh; chmod +x install.sh; ./install.sh 1
 echo
 
 # GPIO
 #################################################################################
-wget -qN --show-progress https://raw.githubusercontent.com/rern/RuneAudio/master/_settings/gpio.json -P /home/osmc
-wget -qN --show-progress https://raw.githubusercontent.com/rern/OSMC/master/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh 1
+wget -qN --show-progress $gitpathrune/_settings/gpio.json -P /home/osmc
+wget -qN --show-progress $gitpath/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh 1
 # ir remote keymap
 sed -i -e 's|<homepage></homepage>|<homepage>RunScript(/home/osmc/gpioon.py)</homepage>|
 ' -e 's|<f4 mod="alt"></f4>|<f4 mod="alt">RunScript(/home/osmc/gpiooff.py)</f4>|

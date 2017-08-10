@@ -7,7 +7,7 @@
 rm $0
 
 # import heading function
-wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
+wget -qN https://raw.githubusercontent.com/rern/title_script/master/title.sh; . title.sh; rm title.sh
 timestart
 
 if type aria2c &>/dev/null; then
@@ -21,7 +21,7 @@ else
 	ansstartup=1
 fi
 
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/uninstall_aria.sh
+wget -qN --show-progress https://raw.githubusercontent.com/rern/OSMC/master/aria2/uninstall_aria.sh
 chmod +x uninstall_aria.sh
 
 title -l = "$bar Install Aria2 ..."

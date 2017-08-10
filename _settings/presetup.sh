@@ -41,12 +41,9 @@ echo
 
 echo -e "$bar Set apt cache ..."
 #################################################################################
-if [[ ! -L $mntroot/var/cache/apt ]]; then
-	mkdir -p $mnt/varcache/apt
-	rm -r $mntroot/var/cache/apt
-	ln -s $mnt/varcache/apt $mntroot/var/cache/apt
-fi
+mkdir -p $mnt/varcache/apt
+ln -s $mnt/varcache/apt $mntroot/var/cache/apt
+
 # disable setup marker files
 touch $mntroot/walkthrough_completed # initial setup
 rm -f $mntroot/vendor # noobs marker for update prompt
-umount -l /tmp/p*

@@ -8,7 +8,7 @@
 rm $0
 
 # import heading function
-wget -qN https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
+wget -qN https://raw.githubusercontent.com/rern/title_script/master/title.sh; . title.sh; rm title.sh
 timestart
 
 if type transmission-daemon &>/dev/null; then
@@ -30,7 +30,7 @@ else # with arguments
 	(( $# > 2 )) && ansstartup=$3 || ansstartup=0
 fi
 
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/uninstall_tran.sh
+wget -qN --show-progress https://raw.githubusercontent.com/rern/OSMC/master/transmission/uninstall_tran.sh
 chmod +x uninstall_tran.sh
 
 title -l = "$bar Install Transmission ..."
@@ -98,7 +98,7 @@ fi
 
 # web ui alternative
 if [[ $answebui == 1 ]]; then
-	wget -qN --show-progress https://github.com/ronggang/transmission-web-control/raw/master/release/transmission-control-full.tar.gz
+	wget -qN --show-progress https://raw.githubusercontent.com/ronggang/transmission-web-control/master/release/transmission-control-full.tar.gz
 	cp /usr/share/transmission/web $path
 	mv $path/web/index{,.original.}.html
 	bsdtar -xf transmission-control-full.tar.gz -C $path

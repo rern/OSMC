@@ -8,7 +8,7 @@ OSMC Aria2 with WebUI
 **Install**    
 ```sh
 sudo su
-wget -qN --show-progress https://github.com/rern/OSMC/raw/master/aria2/install.sh; chmod +x install.sh; ./install.sh
+wget -qN --show-progress https://raw.githubusercontent.com/rern/OSMC/master/aria2/install.sh; chmod +x install.sh; ./install.sh
 ```
 
 **Uninstall**  

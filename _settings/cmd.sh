@@ -57,7 +57,7 @@ setup() {
 		chmod +x setup.sh
 		./setup.sh
 	else
-		echo -e "\n$info Already setup."
+		echo -e "\n\e[30m\e[43m ! \e[0m Already setup."
 	fi
 }
 resetrune() {
@@ -71,7 +71,7 @@ resetrune() {
 	[[ $ansre == 1 ]] && bootrune
 }
 hardreset() {
-	echo -e "\n\e[30m\e[43m ! \e[0m Reset to virgin OS:"
+	echo -e "\n\e[30m\e[43m ? \e[0m Reset to virgin OS:"
 	echo -e '  \e[0;36m0\e[m Cancel'
 	echo -e '  \e[0;36m1\e[m Rune'
 	echo -e '  \e[0;36m2\e[m NOOBS: OSMC + Rune'

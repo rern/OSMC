@@ -52,7 +52,6 @@ sed -i '/import gpiooff/ d' /home/osmc/rebootosmc.py
 sed -i '/import gpiooff/ d' /home/osmc/rebootrune.py
 
 gpasswd -d osmc root
-chmod g-rw /dev/gpiomem
 
 title -l = "$bar $osmcgpio uninstalled successfully."
 

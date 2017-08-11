@@ -16,7 +16,7 @@ if type aria2c &>/dev/null; then
 fi
 
 if (( $# == 0 )); then
-	yesno "$info Start Aria2 on system startup:" ansstartup
+	yesno "Start Aria2 on system startup:" ansstartup
 else
 	ansstartup=1
 fi

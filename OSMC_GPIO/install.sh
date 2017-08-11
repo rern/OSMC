@@ -71,8 +71,8 @@ systemctl enable gpioset
 systemctl start gpioset
 
 # set /dev/gpiomem permission #######################################
-chmod g+rw /dev/gpiomem # allow group to access
 usermod -a -G root osmc # '-a' append '-G' group root with user osmc
+#chmod g+rw /dev/gpiomem # allow group to access set in gpioset.py for every boot
 
 # modify shutdown menu #######################################
 file=/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml

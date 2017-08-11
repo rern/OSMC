@@ -72,11 +72,11 @@ resetrune() {
 }
 hardreset() {
 	echo -e "\n\e[30m\e[43m ? \e[0m Reset to virgin OS:"
-	echo -e '  \e[0;36m0\e[m Cancel'
-	echo -e '  \e[0;36m1\e[m Rune'
-	echo -e '  \e[0;36m2\e[m NOOBS: OSMC + Rune'
+	echo -e '  \e[36m0\e[m Cancel'
+	echo -e '  \e[36m1\e[m Rune'
+	echo -e '  \e[36m2\e[m NOOBS: OSMC + Rune'
 	echo
-	echo -e '\e[0;36m0\e[m / 1 / 2 ? '
+	echo -e '\e[36m0\e[m / 1 / 2 ? '
 	read -n 1 ans
 	echo
 	case $ans in

@@ -42,7 +42,7 @@ echo
 echo -e "$bar Set apt cache ..."
 #################################################################################
 mkdir -p $mnt/varcache/apt
-ln -s $mnt/varcache/apt $mntroot/var/cache/apt
+ln -sf $mnt/varcache/apt $mntroot/var/cache/apt
 
 # disable setup marker files
 touch $mntroot/walkthrough_completed # initial setup

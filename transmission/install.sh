@@ -17,12 +17,12 @@ if type transmission-daemon &>/dev/null; then
 fi
 # user inputs
 if (( $# == 0 )); then # with no argument
-	yesno "$info Set password:" anspwd
+	yesno "Set password:" anspwd
 	[[ $anspwd == 1 ]] && setpwd
 
-	yesno "$info Install WebUI alternative (Transmission Web Control):" answebui
+	yesno "Install WebUI alternative (Transmission Web Control):" answebui
 
-	yesno "$info Start Transmission on system startup:" ansstartup
+	yesno "Start Transmission on system startup:" ansstartup
 	echo
 else # with arguments
 	pwd1=$1

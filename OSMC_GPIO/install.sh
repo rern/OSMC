@@ -70,6 +70,10 @@ systemctl daemon-reload
 systemctl enable gpioset
 systemctl start gpioset
 
+# set /dev/gpiomem permission #######################################
+chmod g+rw /dev/gpiomem # allow group to access
+usermod -a -G root osmc # '-a' append '-G' group root with user osmc
+
 # modify shutdown menu #######################################
 file=/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml
 if ! grep -q 'gpioon.py' $file; then
@@ -98,9 +102,6 @@ sed -i '/import os/ i\
 import gpiooff
 ' /home/osmc/rebootrune.py
 fi
-# fix permission /dev/mem
-chmod g+rw /dev/gpiomem # allow group to access
-usermod -a -G root osmc # '-a' append '-G' group root with user osmc
 
 timestop
 title -l = "$bar $osmcgpio installed successfully."

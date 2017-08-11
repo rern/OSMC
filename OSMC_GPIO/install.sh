@@ -71,10 +71,10 @@ systemctl enable gpioset
 systemctl start gpioset
 
 # modify shutdown menu #######################################
-file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
+file=/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml
 if ! grep -q 'gpioon.py' $file; then
-linenum=$( sed -n '/Quit()/{=}' $file ) # normal
-sed -i -e "$(( $linenum - 2 ))"' i\
+linenum=$(( $( sed -n '/Quit()/=' $file ) - 2 ))
+sed -i -e "$linenum i\
 \t\t\t\t\t<item>\
 \t\t\t\t\t\t<label>GPIO On</label>\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpioon.py)</onclick>\
@@ -85,7 +85,7 @@ sed -i -e "$(( $linenum - 2 ))"' i\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpiooff.py)</onclick>\
 \t\t\t\t\t\t<onclick>dialog.close(all,true)</onclick>\
 \t\t\t\t\t</item>
-' -e 's|XBMC.Powerdown()|RunScript(/home/osmc/poweroff.py)|
+" -e 's|XBMC.Powerdown()|RunScript(/home/osmc/poweroff.py)|
 ' -e 's|XBMC.Reset()|RunScript(/home/osmc/reboot.py)|
 ' $file
 fi

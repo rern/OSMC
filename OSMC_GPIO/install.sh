@@ -89,6 +89,7 @@ sed -i -e "$linenum i\
 ' -e 's|XBMC.Reset()|RunScript(/home/osmc/reboot.py)|
 ' $file
 fi
+
 if [[ -e /home/osmc/rebootosmc.py ]]; then
 sed -i '/import os/ i\
 import gpiooff
@@ -97,9 +98,9 @@ sed -i '/import os/ i\
 import gpiooff
 ' /home/osmc/rebootrune.py
 fi
-# '-a' append '-G' group root with user osmc
-usermod -a -G root osmc
-chmod g+rw /dev/gpiomem
+# fix permission /dev/mem
+chmod g+rw /dev/gpiomem # allow group to access
+usermod -a -G root osmc # '-a' append '-G' group root with user osmc
 
 timestop
 title -l = "$bar $osmcgpio installed successfully."

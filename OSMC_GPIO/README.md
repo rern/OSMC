@@ -38,3 +38,7 @@ Edit: `/home/osmc/gpio.json`
 		<visible>System.CanReboot</visible>
 	</item>
 ```
+
+**/dev/gpiomem**  
+`usermod -a -G root osmc` group permission for osmc  
+`chmod g+rw /dev/gpiomem` on startup (reset to rw------- every boot)  

@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import RPi.GPIO as GPIO
 import json
+import os
 
 with open('/home/osmc/gpio.json') as jsonfile:
 	gpio = json.load(jsonfile)
@@ -19,3 +20,5 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(pinx, GPIO.OUT)
 
 GPIO.output(pinx, 1)
+
+os.system('/bin/chmod g+rw /dev/gpiomem') # fix permission

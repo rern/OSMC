@@ -16,9 +16,9 @@ if type aria2c &>/dev/null; then
 fi
 
 if (( $# == 0 )); then
-	yesno "Start Aria2 on system startup:" ansstartup
+	yesno "Start Aria2 on system startup:" answer
 else
-	ansstartup=1
+	answer=1
 fi
 
 wget -qN --show-progress https://raw.githubusercontent.com/rern/OSMC/master/aria2/uninstall_aria.sh
@@ -78,7 +78,7 @@ WantedBy=multi-user.target
 ' > /etc/systemd/system/aria2.service
 
 # start
-[[ $ansstartup == 1 ]] && systemctl enable aria2
+[[ $answer == 1 ]] && systemctl enable aria2
 echo -e "$bar Start Aria2 ..."
 systemctl start aria2
 

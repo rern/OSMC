@@ -62,12 +62,14 @@ setup() {
 }
 resetrune() {
 	. runereset n
-	[[ $success != 1 ]] && return
+	if [[ $success != 1 ]]; then
+		echo -e "\e[37m\e[41m ! \e[0m OSMC reset failed."
+		return
+	fi
 	# preload command shortcuts
 	mmc 9
 	wget -qN --show-progress https://raw.githubusercontent.com/rern/RuneAudio/master/_settings/cmd.sh -P /tmp/p9/etc/profile.d
 	
-	yesno "Reboot to Rune:" ansre
 	[[ $ansre == 1 ]] && bootrune
 }
 hardreset() {

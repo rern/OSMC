@@ -23,6 +23,10 @@ srestart() {
 	echo -e '\n'$( tcolor "systemctl restart $1" )'\n'
 	systemctl restart $1
 }
+sdreload() {
+	echo -e '\n'$( tcolor "systemctl daemon-reload" )'\n'
+	systemctl daemon-reload
+}
 sreload() {
 	echo -e '\n'$( tcolor "systemctl stop $1" )
 	systemctl stop $1

@@ -57,12 +57,13 @@ mkdir -p $path/{incomplete,watch}
 systemctl stop transmission-daemon
 systemctl disable transmission-daemon
 #rm /etc/systemd/system/transmission*.service
-cp /lib/systemd/system/transmission*.service /etc/systemd/system/transmission.service
-sed -i -e 's|User=.*|User=root|
-' -e '/ExecStart/ i\
-Environment=TRANSMISSION_HOME='$path'\
-Environment=TRANSMISSION_WEB_HOME='$path'/web
-' /etc/systemd/system/transmission.service
+ln -s /lib/systemd/system/transmission{-daemon,}.service
+dir=/etc/systemd/system/transmission.service.d
+mkdir $dir
+echo "User=root
+Environment=TRANSMISSION_HOME=$path
+Environment=TRANSMISSION_WEB_HOME=$path/web
+" $dir/override.conf
 systemctl daemon-reload
 
 # create settings.json

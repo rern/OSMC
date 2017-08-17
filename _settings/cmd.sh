@@ -7,27 +7,23 @@ tcolor() {
 	echo -e "\e[38;5;10m$1\e[0m"
 }
 
-sstatus() {
+sstt() {
 	echo -e '\n'$( tcolor "systemctl status $1" )'\n'
 	systemctl status $1
 }
-sstart() {
+ssta() {
 	echo -e '\n'$( tcolor "systemctl start $1" )'\n'
 	systemctl start $1
 }
-sstop() {
+ssto() {
 	echo -e '\n'$( tcolor "systemctl stop $1" )'\n'
 	systemctl stop $1
 }
-srestart() {
+sres() {
 	echo -e '\n'$( tcolor "systemctl restart $1" )'\n'
 	systemctl restart $1
 }
-sdreload() {
-	echo -e '\n'$( tcolor "systemctl daemon-reload" )'\n'
-	systemctl daemon-reload
-}
-sreload() {
+srel() {
 	echo -e '\n'$( tcolor "systemctl stop $1" )
 	systemctl stop $1
 	echo -e '\n'$( tcolor "systemctl disable $1" )
@@ -38,6 +34,10 @@ sreload() {
 	systemctl enable $1
 	echo -e '\n'$( tcolor "systemctl start $1" )
 	systemctl start $1
+}
+sdrel() {
+	echo -e '\n'$( tcolor "systemctl daemon-reload" )'\n'
+	systemctl daemon-reload
 }
 
 mmc() {

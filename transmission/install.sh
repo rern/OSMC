@@ -69,7 +69,7 @@ systemctl daemon-reload
 # create settings.json
 file=$path/settings.json
 [[ -e $file ]] && rm $file
-systemctl start transmission; systemctl stop transmission
+systemctl start trans; systemctl stop trans
 
 sed -i -e 's|"download-dir": ".*"|"download-dir": "'"$path"'"|
 ' -e 's|"incomplete-dir": ".*"|"incomplete-dir": "'"$path"'/incomplete"|
@@ -108,9 +108,9 @@ if [[ $answebui == 1 ]]; then
 fi
 
 # start
-[[ $ansstartup == 1 ]] && systemctl enable transmission
+[[ $ansstartup == 1 ]] && systemctl enable trans
 echo -e "$bar Start Transmission ..."
-systemctl start transmission
+systemctl start trans
 
 # clear rc.d for systemd only
 update-rc.d transmission-daemon remove

@@ -56,9 +56,9 @@ mkdir -p $path/{incomplete,watch}
 # custom systemd unit
 systemctl stop transmission-daemon
 systemctl disable transmission-daemon
-#rm /etc/systemd/system/transmission*.service
-ln -s /lib/systemd/system/transmission{-daemon,}.service
-dir=/etc/systemd/system/transmission.service.d
+
+ln -s /lib/systemd/system/trans{mission-daemon,}.service
+dir=/etc/systemd/system/trans.service.d
 mkdir $dir
 echo "User=root
 Environment=TRANSMISSION_HOME=$path
@@ -118,8 +118,8 @@ update-rc.d transmission-daemon remove
 timestop
 title -l = "$bar Transmission installed and started successfully."
 echo "Uninstall: ./uninstall_tran.sh"
-echo "Run: sudo systemctl [ start / stop ] transmission"
-echo "Startup: sudo systemctl [ enable / disable ] transmission"
+echo "Run: sudo systemctl [ start / stop ] trans"
+echo "Startup: sudo systemctl [ enable / disable ] trans"
 echo
 echo "Download directory: $path"
 echo "Web UI: [OSMC_IP]:9091"

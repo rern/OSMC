@@ -2,6 +2,8 @@
 #!/usr/bin/python
 import RPi.GPIO as GPIO
 import json
+import sys
+import os
 
 with open('/srv/http/gpio.json') as jsonfile:
 	gpio = json.load(jsonfile)
@@ -16,6 +18,11 @@ pinx = [pin1, pin2, pin3, pin4]
 GPIO.setwarnings(0)
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(pinx, GPIO.OUT)
+
+if len(sys.argv) > 1 and sys.argv[1] == 'set':
+	GPIO.output(pinx, 1)
+	os.system('/bin/chmod g+rw /dev/gpiomem') # fix permission
+	exit()
 
 on = gpio['on']
 on1 = int(on['on1'])

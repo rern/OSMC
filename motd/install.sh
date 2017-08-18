@@ -12,7 +12,7 @@ wget -qN https://raw.githubusercontent.com/rern/title_script/master/title.sh; . 
 gitpath=https://raw.githubusercontent.com/rern/OSMC/master/motd
 title -l = "$bar Install OSMC logo motd ..."
 wget -qN --show-progress $gitpath/uninstall_motd.sh; chmod +x uninstall_motd.sh
-echo '
+echo "
                ,:x0XNlNX0x:,             
            .oONWKOfffffffOKWNOo.         
        .lKWO:'              ':0WKl.      
@@ -33,7 +33,7 @@ echo '
         cOWKd;.            .:dXWO:       
            .oONWKOxooooxOKWNOo.          
                ':x0XNNX0x:'               
- ' > /etc/motd.logo
+ " > /etc/motd.logo
 
 mv /etc/motd{,.original}
 

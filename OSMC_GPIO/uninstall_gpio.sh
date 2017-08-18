@@ -28,12 +28,7 @@ fi
 
 # remove files
 echo -e "$bar Remove files ..."
-rm -v /home/osmc/gpiooff.py
-rm -v /home/osmc/gpioon.py
-rm -v /home/osmc/gpioset.py
-rm -v /home/osmc/gpiotimer.py
-rm -v /home/osmc/poweroff.py
-rm -v /home/osmc/reboot.py
+rm -v /home/osmc/{gpiooff.py,gpioon.py,gpioset.py,gpiotimer.py,poweroff.py,reboot.py}
 
 echo -e "$bar Remove service ..."
 systemctl disable gpioset
@@ -42,7 +37,7 @@ rm -v /etc/systemd/system/gpioset.service
 
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'
-linenum=$( sed -n '/gpioon/{=}' $file )
+linenum=$( sed -n '/gpioon/=' $file )
 sed -i -e "$(( $linenum - 2 )), $(( $linenum + 7 )) d
 " -e 's|RunScript(/home/osmc/poweroff.py)|XBMC.Powerdown()|
 ' -e 's|RunScript(/home/osmc/reboot.py)|XBMC.Reset()|

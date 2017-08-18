@@ -1,15 +1,10 @@
 #!/usr/bin/python
-import json
+from gpio import timer
 import os
 import sys
 import time
 import requests
 import xml.dom.minidom as minidom
-
-with open('/home/osmc/gpio.json') as jsonfile:
-	gpio = json.load(jsonfile)
-
-timer = int(gpio['timer']['timer'])
 
 xml = minidom.parse('/home/osmc/.kodi/userdata/guisettings.xml')
 element = xml.getElementsByTagName('webserverport')

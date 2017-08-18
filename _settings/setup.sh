@@ -37,7 +37,7 @@ wget -qN --show-progress $gitpath/_settings/presetup.sh
 . presetup.sh
 echo
 
-echo -e "$bar Update package database ..."
+title "$bar Update package database ..."
 #################################################################################
 apt update
 

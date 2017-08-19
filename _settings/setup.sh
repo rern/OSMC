@@ -85,6 +85,7 @@ echo 'Asia/Bangkok' > /etc/timezone
 rm /etc/localtime
 ln -s /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
 #hostname RT-AC66U
+#sed -i 's/info,man/info,locale,man/' /usr/local/bin/runereset
 
 title -l = "$bar Install Samba ..."
 #################################################################################

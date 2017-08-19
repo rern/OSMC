@@ -26,14 +26,14 @@ if [[ $answer == 1 ]]; then
 	dpkg -s python-pip | grep -q 'Status: install ok installed' && apt remove --purge --auto-remove -y python-pip
 fi
 
-# remove files
-echo -e "$bar Remove files ..."
-rm -v /home/osmc/{gpiooff.py,gpioon.py,gpioset.py,gpiotimer.py,poweroff.py,reboot.py}
-
 echo -e "$bar Remove service ..."
 systemctl disable gpioset
 systemctl daemon-reload
-rm -v /etc/systemd/system/gpioset.service
+
+# remove files
+echo -e "$bar Remove files ..."
+rm -v /home/osmc/{gpiooff.py,gpioon.py,gpioset.py,gpiotimer.py,poweroff.py,reboot.py}
+rm -v /etc/sudoers.d/osmc /etc/systemd/system/gpioset.service
 
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'

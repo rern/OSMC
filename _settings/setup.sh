@@ -71,7 +71,7 @@ sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 's
 #title "Skin reloaded"
 echo
 
-echo -e "$bar Restore settings ..."
+title "$bar Restore settings ..."
 #################################################################################
 wget -qN --show-progress $gitpath/_settings/advancedsettings.xml -P $kodipath                              # hide directory
 wget -qN --show-progress $gitpath/_settings/guisettings.xml -P $kodipath                                   # all settings

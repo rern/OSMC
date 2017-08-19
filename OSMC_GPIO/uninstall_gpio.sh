@@ -33,7 +33,7 @@ systemctl daemon-reload
 # remove files
 echo -e "$bar Remove files ..."
 rm -v /home/osmc/{gpiooff.py,gpioon.py,gpioset.py,gpiotimer.py,poweroff.py,reboot.py}
-rm -v /etc/sudoers.d/osmc /etc/systemd/system/gpioset.service
+rm -v /etc/systemd/system/gpioset.service
 
 # modify shutdown menu #######################################
 file='/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml'

@@ -66,6 +66,7 @@ chmod 644 /etc/udev/rules.d/usbsound.rules
 udevadm control --reload
 
 # set initial gpio #######################################
+echo -e "$bar GPIO service ..."
 systemctl daemon-reload
 systemctl enable gpioset
 systemctl start gpioset

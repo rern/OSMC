@@ -98,6 +98,11 @@ if ! grep -q 'net.core.rmem_max=4194304' /etc/sysctl.conf; then
 	sysctl -p
 fi
 
+# start
+[[ $ansstartup == 1 ]] && systemctl enable trans
+echo -e "$bar Start Transmission ..."
+systemctl start trans
+
 # web ui alternative
 if [[ $answebui == 1 ]]; then
 	wget -qN --show-progress https://raw.githubusercontent.com/ronggang/transmission-web-control/master/release/transmission-control-full.tar.gz
@@ -107,11 +112,6 @@ if [[ $answebui == 1 ]]; then
 	rm transmission-control-full.tar.gz
 	chown -R root:root $path/web
 fi
-
-# start
-[[ $ansstartup == 1 ]] && systemctl enable trans
-echo -e "$bar Start Transmission ..."
-systemctl start trans
 
 # clear rc.d for systemd only
 update-rc.d transmission-daemon remove

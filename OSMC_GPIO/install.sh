@@ -72,7 +72,7 @@ systemctl enable gpioset
 systemctl start gpioset
 
 # set permission #######################################
-echo 'osmc ALL=NOPASSWD: ALL' > /etc/sudoers.d/osmc
+#echo 'osmc ALL=NOPASSWD: ALL' > /etc/sudoers.d/osmc # already set
 chmod -R 550 /etc/sudoers.d
 usermod -a -G root osmc # add user osmc to group root to allow /dev/gpiomem access
 #chmod g+rw /dev/gpiomem # allow group to access set in gpioset.py for every boot

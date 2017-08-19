@@ -80,8 +80,7 @@ usermod -a -G root osmc # add user osmc to group root to allow /dev/gpiomem acce
 # modify shutdown menu #######################################
 file=/usr/share/kodi/addons/skin.osmc/16x9/DialogButtonMenu.xml
 if ! grep -q 'gpioon.py' $file; then
-linenum=$(( $( sed -n '/Quit()/=' $file ) - 2 ))
-sed -i -e $linenum' i\
+sed -i -e '/<content>/ a\
 \t\t\t\t\t<item>\
 \t\t\t\t\t\t<label>GPIO On</label>\
 \t\t\t\t\t\t<onclick>RunScript(/home/osmc/gpioon.py)</onclick>\

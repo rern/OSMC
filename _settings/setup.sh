@@ -33,9 +33,11 @@ echo -e "$bar root password for Samba and Transmission ...\n"
 setpwd
 
 # hdmi mode, fstab, apt cache
-wget -qN --show-progress $gitpath/_settings/presetup.sh
-. presetup.sh
-echo
+if [[ ! -e /walkthrough_completed ]]; then
+    wget -qN --show-progress $gitpath/_settings/presetup.sh
+    . presetup.sh
+    echo
+fi
 
 title "$bar Update package database ..."
 #################################################################################

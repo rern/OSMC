@@ -1,5 +1,5 @@
 [Unit]
-Description=Initial setup GPIO
+Description=GPIO initial setup
 
 [Service]
 Type=idle

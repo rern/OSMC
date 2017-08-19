@@ -21,7 +21,7 @@ GPIO.setup(pinx, GPIO.OUT)
 
 if len(sys.argv) > 1 and sys.argv[1] == 'set':
 	GPIO.output(pinx, 1)
-	os.system('/bin/chmod g+rw /dev/gpiomem') # fix permission
+	os.system('/bin/chmod g+rw /dev/gpiomem') # fix permission every boot
 	exit()
 
 on = gpio['on']

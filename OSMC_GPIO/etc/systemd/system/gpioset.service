@@ -1,9 +1,0 @@
-[Unit]
-Description=GPIO initial setup
-
-[Service]
-Type=idle
-ExecStart=/usr/bin/python /home/osmc/gpio.py set
-
-[Install]
-WantedBy=multi-user.target

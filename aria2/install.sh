@@ -49,7 +49,7 @@ if (( $# == 0 )); then
 	echo -e "$bar Get WebUI files ..."
 	wget -qN --show-progress https://github.com/ziahamza/webui-aria2/archive/master.zip
 	mkdir -p $path/web
-	bsdtar -xf master.zip -s'|[^/]*/||' -C $path/web
+	bsdtar -xf master.zip --strip 1 -C $path/web
 	rm master.zip
 fi
 # link to kodi web root

@@ -21,8 +21,8 @@ else
 	answer=1
 fi
 
-wget -qN --show-progress https://raw.githubusercontent.com/rern/OSMC/master/aria2/uninstall_aria.sh
-chmod +x uninstall_aria.sh
+wget -qN --show-progress https://raw.githubusercontent.com/rern/OSMC/master/aria2/uninstall_aria.sh -P /usr/local/bin
+chmod +x /usr/local/bin/uninstall_aria.sh
 
 title -l = "$bar Install Aria2 ..."
 # skip with any argument
@@ -84,7 +84,7 @@ systemctl start aria2
 
 timestop
 title -l = "$bar Aria2 installed and started successfully."
-echo "Uninstall: ./uninstall_aria.sh"
+echo "Uninstall: uninstall_aria.sh"
 echo
 echo "Run: sudo systemctl [ start /stop ] aria2"
 echo "Startup: sudo systemctl [ enable /disable ] aria2"

@@ -11,7 +11,9 @@ wget -qN https://raw.githubusercontent.com/rern/title_script/master/title.sh; . 
 
 gitpath=https://raw.githubusercontent.com/rern/OSMC/master/motd
 title -l = "$bar Install OSMC logo motd ..."
-wget -qN --show-progress $gitpath/uninstall_motd.sh; chmod +x uninstall_motd.sh
+wget -qN --show-progress $gitpath/uninstall_motd.sh -P /usr/local/bin
+chmod +x /usr/local/bin/uninstall_motd.sh
+
 echo "
                ,:x0XNlNX0x:,             
            .oONWKOfffffffOKWNOo.         
@@ -60,5 +62,5 @@ PS1=\x27\\[\\e[38;5;\x27$color\x27m\\]\\u@\\h:\\[\\e[0m\\]\\w \\$ \x27
 # \w         - current directory
 # \$         - promt symbol: <$> users; <#> root
 
-echo -e "\nUninstall: ./uninstall_motd.sh"
+echo -e "\nUninstall: uninstall_motd.sh"
 title -nt "$info Relogin to see new OSMC logo motd."

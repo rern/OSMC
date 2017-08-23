@@ -30,8 +30,8 @@ else # with arguments
 	(( $# > 2 )) && ansstartup=$3 || ansstartup=0
 fi
 
-wget -qN --show-progress https://raw.githubusercontent.com/rern/OSMC/master/transmission/uninstall_tran.sh
-chmod +x uninstall_tran.sh
+wget -qN --show-progress https://raw.githubusercontent.com/rern/OSMC/master/transmission/uninstall_tran.sh -P /usr/local/bin
+chmod +x /usr/local/bin/uninstall_tran.sh
 
 title -l = "$bar Install Transmission ..."
 # skip with any argument
@@ -118,7 +118,7 @@ update-rc.d transmission-daemon remove
 
 timestop
 title -l = "$bar Transmission installed and started successfully."
-echo "Uninstall: ./uninstall_tran.sh"
+echo "Uninstall: uninstall_tran.sh"
 echo "Run: sudo systemctl [ start / stop ] trans"
 echo "Startup: sudo systemctl [ enable / disable ] trans"
 echo

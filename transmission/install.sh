@@ -72,7 +72,6 @@ ln -s /lib/systemd/system/trans{mission-daemon,}.service
 file=$path/settings.json
 [[ -e $file ]] && rm $file
 systemctl start trans
-sleep 1
 systemctl stop trans
 
 sed -i -e 's|"download-dir": ".*"|"download-dir": "'"$path"'"|
@@ -109,7 +108,7 @@ systemctl start trans
 # web ui alternative
 if [[ $answebui == 1 ]]; then
 	wgetnc https://github.com/ronggang/transmission-web-control/raw/master/release/transmission-control-full.tar.gz
-	cp -rf /usr/share/transmission/web/* $path
+	mv /usr/share/transmission/web $path
 	mv $path/web/index{,.original.}.html
 	bsdtar -xf transmission-control-full.tar.gz -C $path
 	rm transmission-control-full.tar.gz

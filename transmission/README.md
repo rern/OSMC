@@ -11,8 +11,6 @@ wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/in
 ```
 
 **Start transmission**  
-warning! - run as `root`  
-`transmission-daemon -d` will not correctly show `settings.json`   
 ```sh
 sudo systemctl start transmission
 ```
@@ -22,7 +20,11 @@ sudo systemctl start transmission
 sudo systemctl stop transmission
 ```
 
-Browser URL:  
+**settings**  
+`/path/transmission/settings.json` must be edited after stop transmission  
+`transmission-daemon -d` will not correctly show `settings.json`  
+
+**Browser URL:**  
 _[RuneAudio IP]_:9091 (eg: 192.168.1.11:9091)  
 
 **auto start download**  

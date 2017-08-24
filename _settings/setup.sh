@@ -13,7 +13,7 @@
 rm $0
 
 # import heading function
-wget -qN --show-progress --no-check-certificate https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
+wget -qN --show-progress https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 timestart l
 
 gitpath=https://github.com/rern/OSMC/raw/master

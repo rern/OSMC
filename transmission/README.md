@@ -7,12 +7,7 @@ OSMC Transmission
 **Install**    
 ```sh
 sudo su
-wget -qN --show-progress https://raw.githubusercontent.com/rern/OSMC/master/transmission/install.sh; chmod +x install.sh; ./install.sh
-```
-
-**Uninstall**  
-```sh
-sudo ./uninstall_tran.sh
+wget -qN --show-progress --no-check-certificate https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh
 ```
 
 **Start transmission**  

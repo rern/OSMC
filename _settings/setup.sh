@@ -29,7 +29,7 @@ wgetnc $gitpath/motd/install.sh; chmod +x install.sh; ./install.sh
 touch /root/.hushlogin
 
 # passwords for samba and transmission
-echo -e "$bar root password for Samba and Transmission ...\n"
+echo -e "$bar root password for Samba and Transmission ..."
 setpwd
 
 # hdmi mode, fstab, apt cache

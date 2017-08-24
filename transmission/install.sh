@@ -58,7 +58,6 @@ mkdir -p $path/{incomplete,watch}
 systemctl stop transmission-daemon
 systemctl disable transmission-daemon
 
-ln -s /lib/systemd/system/trans{mission-daemon,}.service
 dir=/etc/systemd/system/trans.service.d
 mkdir $dir
 echo "[Service]
@@ -67,6 +66,7 @@ Environment=TRANSMISSION_HOME=$path
 Environment=TRANSMISSION_WEB_HOME=$path/web
 " > $dir/override.conf
 systemctl daemon-reload
+ln -s /lib/systemd/system/trans{mission-daemon,}.service
 
 # create settings.json
 file=$path/settings.json

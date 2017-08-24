@@ -9,7 +9,6 @@ rm $0
 
 # import heading function
 wget -qN --show-progress --no-check-certificate https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
-timestart
 
 if type transmission-daemon &>/dev/null; then
 	echo -e "$info Transmission already installed."
@@ -29,6 +28,8 @@ else # with arguments
 	(( $# > 1 )) && answebui=$2 || answebui=0
 	(( $# > 2 )) && ansstartup=$3 || ansstartup=0
 fi
+
+timestart
 
 wgetnc https://github.com/rern/OSMC/raw/master/transmission/uninstall_tran.sh -P /usr/local/bin
 chmod +x /usr/local/bin/uninstall_tran.sh

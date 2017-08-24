@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # import heading function
-wget -qN https://raw.githubusercontent.com/rern/title_script/master/title.sh; . title.sh; rm title.sh
+wget -qN --show-progress --no-check-certificate https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 
 # check installed #######################################
 if ! type transmission-daemon &>/dev/null; then

@@ -12,8 +12,12 @@
 
 rm $0
 
+wgetnc() {
+    wget -qN --show-progress --no-check-certificate $@
+}
+
 # import heading function
-wget -qN --no-check-certificate https://raw.githubusercontent.com/rern/title_script/master/title.sh; . title.sh; rm title.sh
+wgetnc https://raw.githubusercontent.com/rern/title_script/master/title.sh; . title.sh; rm title.sh
 timestart l
 
 gitpath=https://raw.githubusercontent.com/rern/OSMC/master
@@ -24,8 +28,8 @@ pkgpath=$addonpath/packages
 dbpath=$kodipath/Database
 
 # command shortcuts and motd
-[[ ! -e /etc/profile.d/cmd.sh ]] && wget -qN --show-progress $gitpath/_settings/cmd.sh -P /etc/profile.d
-wget -qN --show-progress --no-check-certificate $gitpath/motd/install.sh; chmod +x install.sh; ./install.sh
+[[ ! -e /etc/profile.d/cmd.sh ]] && wgetnc$gitpath/_settings/cmd.sh -P /etc/profile.d
+wgetnc $gitpath/motd/install.sh; chmod +x install.sh; ./install.sh
 touch /root/.hushlogin
 
 # passwords for samba and transmission
@@ -34,7 +38,7 @@ setpwd
 
 # hdmi mode, fstab, apt cache
 if [[ ! -e /walkthrough_completed ]]; then
-    wget -qN --show-progress --no-check-certificate $gitpath/_settings/presetup.sh
+    wgetnc $gitpath/_settings/presetup.sh
     . presetup.sh
     echo
 fi
@@ -49,9 +53,9 @@ echo
 
 title "$bar Install skin.shortcuts addons ..."
 #################################################################################
-wget -qN --show-progress --no-check-certificate https://github.com/BigNoid/script.skinshortcuts/archive/master.zip -O $pkgpath/script.skinshortcuts.zip
-wget -qN --show-progress --no-check-certificate https://github.com/XBMC-Addons/script.module.simplejson/archive/master.zip -O $pkgpath/script.module.simplejson.zip
-wget -qN --show-progress --no-check-certificate http://mirrors.kodi.tv/addons/jarvis/script.module.unidecode/script.module.unidecode-0.4.16.zip -O $pkgpath/script.module.unidecode.zip
+wgetnc https://github.com/BigNoid/script.skinshortcuts/archive/master.zip -O $pkgpath/script.skinshortcuts.zip
+wgetnc https://github.com/XBMC-Addons/script.module.simplejson/archive/master.zip -O $pkgpath/script.module.simplejson.zip
+wgetnc http://mirrors.kodi.tv/addons/jarvis/script.module.unidecode/script.module.unidecode-0.4.16.zip -O $pkgpath/script.module.unidecode.zip
 bsdtar -xf $pkgpath/script.skinshortcuts.zip -C $addonpath
 bsdtar -xf $pkgpath/script.module.simplejson.zip -C $addonpath
 bsdtar -xf $pkgpath/script.module.unidecode.zip -C $addonpath
@@ -73,11 +77,11 @@ echo
 
 title "$bar Restore settings ..."
 #################################################################################
-wget -qN --show-progress --no-check-certificate $gitpath/_settings/advancedsettings.xml -P $kodipath                              # hide directory
-wget -qN --show-progress --no-check-certificate $gitpath/_settings/guisettings.xml -P $kodipath                                   # all settings
-wget -qN --show-progress --no-check-certificate $gitpath/_settings/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts # hide home menu item
-wget -qN --show-progress --no-check-certificate $gitpath/_settings/rpi_2708_1001_CEC_Adapter.xml -P $kodipath/peripheral_data     # disable cec adapter
-wget -qN --show-progress --no-check-certificate $gitpath/_settings/settings.xml -P $kodipath/addon_data/script.module.osmcsetting.updates # websocket
+wgetnc $gitpath/_settings/advancedsettings.xml -P $kodipath                              # hide directory
+wgetnc $gitpath/_settings/guisettings.xml -P $kodipath                                   # all settings
+wgetnc $gitpath/_settings/mainmenu.DATA.xml -P $kodipath/addon_data/script.skinshortcuts # hide home menu item
+wgetnc $gitpath/_settings/rpi_2708_1001_CEC_Adapter.xml -P $kodipath/peripheral_data     # disable cec adapter
+wgetnc $gitpath/_settings/settings.xml -P $kodipath/addon_data/script.module.osmcsetting.updates # websocket
 chown -R osmc:osmc $kodipath
 
 # extra command for some settings
@@ -91,7 +95,7 @@ title -l = "$bar Install Samba ..."
 #################################################################################
 timestart
 apt install -y samba
-wget -q --show-progress --no-check-certificate $gitpathrune/_settings/smb.conf -O /etc/samba/smb.conf
+wgetnc $gitpathrune/_settings/smb.conf -O /etc/samba/smb.conf
 
 # set samba password
 (echo $pwd1; echo $pwd1) | smbpasswd -s -a root
@@ -102,18 +106,18 @@ echo
 
 # Transmission
 #################################################################################
-wget -qN --show-progress --no-check-certificate $gitpath/transmission/install.sh; chmod +x install.sh; ./install.sh $pwd1 0 1
+wgetnc $gitpath/transmission/install.sh; chmod +x install.sh; ./install.sh $pwd1 0 1
 echo
 
 # Aria2
 #################################################################################
-wget -qN --show-progress --no-check-certificate $gitpath/aria2/install.sh; chmod +x install.sh; ./install.sh 1
+wgetnc $gitpath/aria2/install.sh; chmod +x install.sh; ./install.sh 1
 echo
 
 # GPIO
 #################################################################################
-wget -qN --show-progress --no-check-certificate $gitpathrune/_settings/gpio.json -P /home/osmc
-wget -qN --show-progress --no-check-certificate $gitpath/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh 1
+wgetnc $gitpathrune/_settings/gpio.json -P /home/osmc
+wgetnc $gitpath/OSMC_GPIO/install.sh; chmod +x install.sh; ./install.sh 1
 # ir remote keymap
 sed -i -e 's|<homepage></homepage>|<homepage>RunScript(/home/osmc/gpioon.py)</homepage>|
 ' -e 's|<f4 mod="alt"></f4>|<f4 mod="alt">RunScript(/home/osmc/gpiooff.py)</f4>|

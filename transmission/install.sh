@@ -55,10 +55,11 @@ fi
 mkdir -p $path/{incomplete,watch}
 
 # custom systemd unit
-systemctl stop transmission-daemon
-systemctl disable transmission-daemon
+ln -s /lib/systemd/system/trans{mission-daemon,}.service
+systemctl stop trans
+systemctl disable trans
 
-dir=/etc/systemd/system/trans.service.d
+dir=/etc/systemd/system/transmission-daemon.service.d
 mkdir $dir
 echo "[Service]
 User=root
@@ -66,7 +67,6 @@ Environment=TRANSMISSION_HOME=$path
 Environment=TRANSMISSION_WEB_HOME=$path/web
 " > $dir/override.conf
 systemctl daemon-reload
-ln -s /lib/systemd/system/trans{mission-daemon,}.service
 
 # create settings.json
 file=$path/settings.json

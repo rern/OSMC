@@ -7,7 +7,7 @@ OSMC Transmission
 **Install**    
 ```sh
 sudo su
-wget -qN --show-progress --no-check-certificate https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/transmission/install.sh; chmod +x install.sh; ./install.sh
 ```
 
 **Start transmission**  

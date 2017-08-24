@@ -17,7 +17,7 @@ apt remove -y transmission-daemon transmission-cli
 echo -e "$bar Remove files ..."
 rm -rfv /etc/transmission-daemon
 systemctl disable transmission
-rm -r /etc/systemd/system/transmission.service.d
+rm -r /etc/systemd/system/transmission-daemon.service.d
 systemctl daemon-reload
 rm /lib/systemd/system/trans.service
 if mount | grep -q '/dev/sda1'; then

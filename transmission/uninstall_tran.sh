@@ -20,6 +20,12 @@ systemctl disable transmission
 rm -r /etc/systemd/system/transmission.service.d
 systemctl daemon-reload
 rm /lib/systemd/system/trans.service
+if mount | grep -q '/dev/sda1'; then
+	mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
+	rm -r $mnt/transmission/web
+else
+	rm -r /root/transmission/web
+fi
 
 title -l = "$bar Transmission uninstalled successfully."
 

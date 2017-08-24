@@ -5,8 +5,7 @@ wget -qN https://raw.githubusercontent.com/rern/title_script/master/title.sh; . 
 title -l = "$bar Uninstall OSMC logo motd ..."
 
 mv /etc/motd{.original,}
-rm /etc/motd.logo
-rm /etc/profile.d/motd.sh
+rm /etc/motd.logo /etc/profile.d/motd.sh
 
 sed -i -e '/^PS1=/ d
 ' -e '/^#PS1=/ s/^#//

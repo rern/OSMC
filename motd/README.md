@@ -6,8 +6,8 @@ For SSH terminal login screen
 
 (created with [**jp2a**](https://github.com/cslarsen/jp2a))  
 
-![motd](https://raw.githubusercontent.com/rern/OSMC/master/motd/motdo.png)  
+![motd](https://github.com/rern/OSMC/blob/master/motd/motdo.png)  
 **Install**  
 ```sh
-wget -qN --show-progress https://raw.githubusercontent.com/rern/OSMC/master/motd/install.sh; chmod +x install.sh; ./install.sh
+wget -qN --show-progress --no-check-certificate https://github.com/rern/OSMC/raw/master/motd/install.sh; chmod +x install.sh; ./install.sh
 ```

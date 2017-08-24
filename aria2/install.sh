@@ -7,7 +7,7 @@
 rm $0
 
 # import heading function
-wget -qN https://raw.githubusercontent.com/rern/title_script/master/title.sh; . title.sh; rm title.sh
+wget -qN --show-progress --no-check-certificate https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 timestart
 
 if type aria2c &>/dev/null; then
@@ -21,7 +21,7 @@ else
 	answer=1
 fi
 
-wget -qN --show-progress https://raw.githubusercontent.com/rern/OSMC/master/aria2/uninstall_aria.sh -P /usr/local/bin
+wgetnc https://github.com/rern/OSMC/raw/master/aria2/uninstall_aria.sh -P /usr/local/bin
 chmod +x /usr/local/bin/uninstall_aria.sh
 
 title -l = "$bar Install Aria2 ..."
@@ -47,7 +47,7 @@ else
 fi
 if (( $# == 0 )); then
 	echo -e "$bar Get WebUI files ..."
-	wget -qN --show-progress https://github.com/ziahamza/webui-aria2/archive/master.zip
+	wgetnc https://github.com/ziahamza/webui-aria2/archive/master.zip
 	mkdir -p $path/web
 	bsdtar -xf master.zip --strip 1 -C $path/web
 	rm master.zip

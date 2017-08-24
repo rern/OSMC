@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # import heading function
-wget -qN --show-progress --no-check-certificate https://github.com/rern/title_script/master/raw/title.sh; . title.sh; rm title.sh
+wget -qN --show-progress https://github.com/rern/title_script/master/raw/title.sh; . title.sh; rm title.sh
 
 # check installed #######################################
 if ! type aria2c &>/dev/null; then

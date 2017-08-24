@@ -9,5 +9,5 @@ For SSH terminal login screen
 ![motd](https://github.com/rern/OSMC/blob/master/motd/motdo.png)  
 **Install**  
 ```sh
-wget -qN --show-progress --no-check-certificate https://github.com/rern/OSMC/raw/master/motd/install.sh; chmod +x install.sh; ./install.sh
+wget -qN --show-progress https://github.com/rern/OSMC/raw/master/motd/install.sh; chmod +x install.sh; ./install.sh
 ```

@@ -7,7 +7,7 @@ if [[ -e /etc/motd.logo ]]; then
   exit
 fi
 
-wget -qN --show-progress --no-check-certificate https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
+wget -qN --show-progress https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 
 title -l = "$bar Install OSMC logo motd ..."
 wget -qN --show-progress https://github.com/rern/OSMC/raw/master/motd/uninstall_motd.sh -P /usr/local/bin

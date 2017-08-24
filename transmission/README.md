@@ -28,7 +28,7 @@ sudo systemctl stop transmission
 _[RuneAudio IP]_:9091 (eg: 192.168.1.11:9091)  
 
 **auto start download**  
-add torrent files to `/media/[label]/transmission/torrents` will auto start download  
+add torrent files to `/path/transmission/torrents` will auto start download  
 
 [optional] **set specific client IP**  
 allow only IP

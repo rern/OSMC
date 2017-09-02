@@ -13,6 +13,8 @@ title -l = "$bar Install OSMC logo motd ..."
 wgetnc https://github.com/rern/OSMC/raw/master/motd/uninstall_motd.sh -P /usr/local/bin
 chmod +x /usr/local/bin/uninstall_motd.sh
 
+echo -e "$bar Modify files ..."
+
 echo "
                ,:x0XNlNX0x:,             
            .oONWKOfffffffOKWNOo.         
@@ -61,5 +63,6 @@ PS1=\x27\\[\\e[38;5;\x27$color\x27m\\]\\u@\\h:\\[\\e[0m\\]\\w \\$ \x27
 # \w         - current directory
 # \$         - promt symbol: <$> users; <#> root
 
+title -l = "$bar OSMC logo motd installed successfully."
 echo -e "\nUninstall: uninstall_motd.sh"
 title -nt "$info Relogin to see new OSMC logo motd."

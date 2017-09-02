@@ -2,12 +2,12 @@
 
 rm $0
 
+wget -qN --show-progress https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
+
 if [[ -e /etc/motd.logo ]]; then
-  echo -e '\n"OSMC logo motd" already installed.\n'
+  echo -e "$info OSMC logo motd already installed."
   exit
 fi
-
-wget -qN --show-progress https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 
 title -l = "$bar Install OSMC logo motd ..."
 wgetnc https://github.com/rern/OSMC/raw/master/motd/uninstall_motd.sh -P /usr/local/bin

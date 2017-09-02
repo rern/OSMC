@@ -9,6 +9,8 @@ fi
 
 title -l = "$bar Uninstall OSMC logo motd ..."
 
+echo -e "$bar Restore files ..."
+
 mv /etc/motd{.original,}
 rm /etc/motd.logo /etc/profile.d/motd.sh
 
@@ -16,6 +18,7 @@ sed -i -e '/^PS1=/ d
 ' -e '/^#PS1=/ s/^#//
 ' /etc/bash.bashrc
 
+title -l = "$bar OSMC logo motd uninstalled successfully."
 title -nt "\n$info Relogin to see original motd."
 
 rm $0

@@ -86,9 +86,8 @@ timestop
 title -l = "$bar Aria2 installed and started successfully."
 echo "Uninstall: uninstall_aria.sh"
 echo
-echo "Run: sudo systemctl [ start /stop ] aria2"
-echo "Startup: sudo systemctl [ enable /disable ] aria2"
+echo "Run: sudo systemctl < start /stop > aria2"
+echo "Startup: sudo systemctl < enable /disable > aria2"
 echo
 echo "Download directory: $path"
-echo -e "$info OSMC web interface changed to port:80"
-title -nt "WebUI: [OSMC_IP]/aria2/"
+title -nt "WebUI: < OSMC_IP >/aria2/"

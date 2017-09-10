@@ -121,9 +121,9 @@ update-rc.d transmission-daemon remove
 timestop
 title -l = "$bar Transmission installed and started successfully."
 echo "Uninstall: uninstall_tran.sh"
-echo "Run: sudo systemctl [ start / stop ] trans"
-echo "Startup: sudo systemctl [ enable / disable ] trans"
+echo "Run: sudo systemctl < start / stop > trans"
+echo "Startup: sudo systemctl < enable / disable > trans"
 echo
 echo "Download directory: $path"
-echo "Web UI: [OSMC_IP]:9091"
+echo "Web UI: < OSMC_IP >:9091"
 title -nt "User: root"

@@ -4,7 +4,7 @@
 wget -qN --show-progress https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 
 # check installed #######################################
-if ! type transmission-daemon &>/dev/null; then
+if [[ ! -e /usr/local/bin/uninstall_tran.sh ]]; then
 	echo -e "$info Transmission not found."
 	exit
 fi

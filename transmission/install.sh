@@ -10,7 +10,7 @@ rm $0
 # import heading function
 wget -qN --show-progress https://github.com/rern/title_script/raw/master/title.sh; . title.sh; rm title.sh
 
-if type transmission-daemon &>/dev/null; then
+if [[ -e /usr/local/bin/uninstall_tran.sh ]]; then
 	echo -e "$info Transmission already installed."
 	exit
 fi

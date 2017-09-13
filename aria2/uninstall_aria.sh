@@ -4,7 +4,7 @@
 wget -qN --show-progress https://github.com/rern/title_script/master/raw/title.sh; . title.sh; rm title.sh
 
 # check installed #######################################
-if ! type aria2c &>/dev/null; then
+if [[ ! -e /usr/local/bin/uninstall_aria.sh ]]; then
 	title "$info Aria2 not found."
 	exit
 fi

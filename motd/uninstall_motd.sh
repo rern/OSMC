@@ -14,7 +14,7 @@ echo -e "$bar Restore files ..."
 mv /etc/motd{.original,}
 rm /etc/motd.logo /etc/profile.d/motd.sh
 
-sed -i -e '/^PS1=/ d
+sed -i -e '/^colo=/, /^PS1=/ d
 ' -e '/^#PS1=/ s/^#//
 ' /etc/bash.bashrc
 

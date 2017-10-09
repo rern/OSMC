@@ -59,7 +59,7 @@ setup() {
 resetrune() {
 	. runereset n
 	if [[ $success != 1 ]]; then
-		echo -e "\e[37m\e[41m ! \e[0m OSMC reset failed."
+		echo -e "\e[37m\e[41m ! \e[0m RuneAudio reset failed."
 		return
 	fi
 	# preload command shortcuts

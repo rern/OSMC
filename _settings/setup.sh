@@ -39,7 +39,7 @@ if [[ ! -e /walkthrough_completed ]]; then
     echo
 fi
 
-title "$bar Update package database ..."
+echo -e "$bar Update package database ..."
 #################################################################################
 apt update
 
@@ -72,7 +72,7 @@ sqlite3 $dbpath/Addons27.db "UPDATE installed SET enabled = 1 WHERE addonID = 's
 #title "Skin reloaded"
 echo
 
-title "$bar Restore settings ..."
+echo -e "$bar Restore settings ..."
 #################################################################################
 wgetnc $gitpath/_settings/advancedsettings.xml -P $kodipath                              # hide directory
 wgetnc $gitpath/_settings/guisettings.xml -P $kodipath                                   # all settings
@@ -120,10 +120,6 @@ sed -i -e 's|<homepage></homepage>|<homepage>RunScript(/home/osmc/gpioon.py)</ho
 ' -e 's|<f4 mod="alt"></f4>|<f4 mod="alt">RunScript(/home/osmc/gpiooff.py)</f4>|
 ' /home/osmc/.kodi/userdata/keymaps/keyboard.xml
 echo
-
-#echo -e "$bar System upgrade ..."
-#################################################################################
-#apt -y upgrade
 
 #systemctl daemon-reload # done in GPIO install
 systemctl restart nmbd smbd mediacenter

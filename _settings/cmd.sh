@@ -48,12 +48,12 @@ bootrune() {
 }
 
 setup() {
-	if [[ ! -e /etc/motd.logo ]]; then
+	if [[ -e /usr/local/bin/uninstall_motd.sh ]]; then
+		echo -e "\n\e[30m\e[43m ! \e[0m Already setup."
+	else
 		wget -qN --show-progress https://github.com/rern/OSMC/raw/master/_settings/setup.sh
 		chmod +x setup.sh
 		./setup.sh
-	else
-		echo -e "\n\e[30m\e[43m ! \e[0m Already setup."
 	fi
 }
 resetrune() {

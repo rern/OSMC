@@ -14,6 +14,8 @@ For less than $4, free shipping from ebay, this remote set was detected and can 
 - Restart (Power > Exit) once to load the file. 
 - Then on finish editing, just press the green button to 'ReloadKeymaps' without restart.
 
+![buttoncode](https://github.com/rern/_assets/blob/master/OSMC_GPIO/usb_pc_remote_button_code.jpg)
+
 **/root/osmc/.kodi/userdata/keymaps/keyboard.xml**
 ```sh
 <?xml version="1.0" encoding="UTF-8"?>

@@ -6,7 +6,7 @@ For less than $4, free shipping from ebay, this remote set was detected and can 
 - Use in Kodi without any settings. (no more CEC hassels)
 - Use as a keyboard to select an OS in NOOBS boot menu.
 
-![remote](https://github.com/rern/Assets/blob/master/OSMC_GPIO/usb_pc_remote_button_code.jpg)  
+![remote](https://github.com/rern/_assets/blob/master/RPi2-3.Dual.Boot-Rune.OSMC/irremote.jpg)  
 
 **How to customize with keymaps:**  
 - Create the following code file

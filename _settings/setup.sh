@@ -126,7 +126,7 @@ systemctl restart nmbd smbd mediacenter
 echo -e "$bar OSMC restarted.\n"
 
 # show installed packages status
-echo -e "$bar Installed packages status"
+title "$bar Installed packages status"
 systemctl | egrep 'aria2|nmbd|smbd|transmission'
 
 timestop l

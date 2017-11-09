@@ -24,7 +24,7 @@ pkgpath=$addonpath/packages
 dbpath=$kodipath/Database
 
 # command shortcuts and motd
-[[ ! -e /etc/profile.d/cmd.sh ]] && wgetnc$gitpath/_settings/cmd.sh -P /etc/profile.d
+[[ ! -e /etc/profile.d/cmd.sh ]] && wgetnc $gitpath/_settings/cmd.sh -P /etc/profile.d
 wgetnc $gitpath/motd/install.sh; chmod +x install.sh; ./install.sh
 touch /root/.hushlogin
 

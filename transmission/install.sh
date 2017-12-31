@@ -55,9 +55,9 @@ fi
 mkdir -p $path/{incomplete,watch}
 
 # custom systemd unit
-ln -s /lib/systemd/system/trans{mission-daemon,}.service
-systemctl stop trans
-systemctl disable trans
+ln -s /lib/systemd/system/tran{smission-daemon,}.service
+systemctl stop tran
+systemctl disable tran
 
 dir=/etc/systemd/system/transmission-daemon.service.d
 mkdir $dir
@@ -71,8 +71,8 @@ systemctl daemon-reload
 # create settings.json
 file=$path/settings.json
 [[ -e $file ]] && rm $file
-systemctl start trans
-systemctl stop trans
+systemctl start tran
+systemctl stop tran
 
 sed -i -e 's|"download-dir": ".*"|"download-dir": "'"$path"'"|
 ' -e 's|"incomplete-dir": ".*"|"incomplete-dir": "'"$path"'/incomplete"|
@@ -101,9 +101,9 @@ if ! grep -q 'net.core.rmem_max=4194304' /etc/sysctl.conf; then
 fi
 
 # start
-[[ $ansstartup == 1 ]] && systemctl enable trans
+[[ $ansstartup == 1 ]] && systemctl enable tran
 echo -e "$bar Start Transmission ..."
-systemctl start trans
+systemctl start tran
 
 # web ui alternative
 if [[ $answebui == 1 ]]; then
@@ -121,8 +121,8 @@ update-rc.d transmission-daemon remove
 timestop
 title -l = "$bar Transmission installed and started successfully."
 echo "Uninstall: uninstall_tran.sh"
-echo "Run: sudo systemctl < start / stop > trans"
-echo "Startup: sudo systemctl < enable / disable > trans"
+echo "Run: sudo systemctl < start / stop > tran"
+echo "Startup: sudo systemctl < enable / disable > tran"
 echo
 echo "Download directory: $path"
 echo "Web UI: < OSMC_IP >:9091"

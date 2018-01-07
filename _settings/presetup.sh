@@ -23,8 +23,8 @@ hdmi_group=1
 hdmi_mode=31 
 hdmi_ignore_cec=1'
 
-mmc 6
-! grep -q '^hdmi_mode=' /tmp/p6/config.txt && echo "$hdmimode" >> /tmp/p6/config.txt
+mmc 8
+! grep -q '^hdmi_mode=' /tmp/p6/config.txt && echo "$hdmimode" >> /tmp/p8/config.txt
 sed -i '/gpio/ s/^/#/' /tmp/p6/config.txt
 echo
 
@@ -34,8 +34,8 @@ mnt0=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
 label=${mnt0##/*/}
 mnt="/mnt/$label"
 mkdir -p "$mnt"
-mmc 7
-mntroot=/tmp/p7
+mmc 9
+mntroot=/tmp/p9
 echo "/dev/sda1  $mnt  ext4  defaults,noatime" >> $mntroot/etc/fstab
 echo
 

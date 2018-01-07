@@ -4,6 +4,7 @@
     </excludefromscan>
     <excludefromlisting>
       <regexp>/aria2</regexp>
+		<regexp>/lyrics</regexp>
       <regexp>/Music</regexp>
       <regexp>/transmission</regexp>
       <regexp>/varcache</regexp>

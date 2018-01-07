@@ -40,11 +40,26 @@ mmc() {
 	fi
 }
 
+bootx() {
+ 	if [[ -e /root/reboot.py ]]; then
+	 	/root/reboot.py $1
+		exit
+	fi
+ 	echo $1 > /sys/module/bcm2709/parameters/reboot_part
+ 	/var/www/command/rune_shutdown
+ 	reboot
+}
+bootarch() {
+ 	bootx 6 &
+}
 bootosmc() {
-	/home/osmc/rebootosmc.py
+	bootx 8 &
+}
+bootrune04() {
+	bootx 10 &
 }
 bootrune() {
-	/home/osmc/rebootrune.py
+	bootx 12 &
 }
 
 setup() {

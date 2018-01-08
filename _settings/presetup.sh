@@ -26,12 +26,13 @@ else
 	#sed -i '/gpio/ s/^/#/' $file
 fi
 
-if ! grep -q '^hdmi_mode=' $mntroot/boot/config.txt; then
+file=$mntroot/boot/config.txt
+if ! grep -q '^hdmi_mode=' $file; then
 sed -i '$ a\
 hdmi_group=1\
 hdmi_mode=31\
 hdmi_ignore_cec=1	
-' $mntroot/boot/config.txt
+' $file
 fi
 echo
 

@@ -94,6 +94,7 @@ boot() {
 	echo 'Which ? '
 	read -n 1 ans
 	echo
+	[[ -z $ans || $ans == 0 ]] && exit
 	partboot=$(( ans * 2 + 4 ))
  	if [[ -e /root/reboot.py ]]; then
 	 	/root/reboot.py $partboot

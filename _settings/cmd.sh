@@ -80,8 +80,6 @@ boot() {
 	mmc 5
 	part=$( sed -n '/name/,/mmcblk/ p' /tmp/p5/installed_os.json | sed '/part/ d; s/\s//g; s/"//g; s/,//; s/name://; s/\/dev\/mmcblk0p//' )
 	partarray=( $( echo $part ) )
-	partname=${partarray[0]}
-	partnum=${partarray[1]}
 
 	ilength=${#partarray[*]}
 

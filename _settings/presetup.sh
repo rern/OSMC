@@ -23,9 +23,14 @@ hdmi_group=1
 hdmi_mode=31 
 hdmi_ignore_cec=1'
 
-mmc 8
-! grep -q '^hdmi_mode=' /tmp/p6/config.txt && echo "$hdmimode" >> /tmp/p8/config.txt
-sed -i '/gpio/ s/^/#/' /tmp/p6/config.txt
+if (( $# == 0 )); then
+	file=/boot/config.txt
+else
+	file=/tmp/p$1/config.txt
+	mmc $1
+	#sed -i '/gpio/ s/^/#/' /tmp/p6/config.txt
+fi
+! grep -q '^hdmi_mode=' $file && echo "$hdmimode" >> $file
 echo
 
 echo -e "$bar Mount USB drive to /mnt/hdd ..."

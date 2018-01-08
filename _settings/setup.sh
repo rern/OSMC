@@ -23,6 +23,13 @@ addonpath=/home/osmc/.kodi/addons
 pkgpath=$addonpath/packages
 dbpath=$kodipath/Database
 
+echo -e "$bar Set apt cache ..."
+#################################################################################
+mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
+mkdir -p $mnt/varcache/apt
+rm -rf /var/cache/apt
+ln -sf $mnt/varcache/apt /var/cache/apt
+
 # command shortcuts and motd
 [[ ! -e /etc/profile.d/cmd.sh ]] && wgetnc $gitpath/_settings/cmd.sh -P /etc/profile.d
 wgetnc $gitpath/motd/install.sh; chmod +x install.sh; ./install.sh

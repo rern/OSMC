@@ -43,7 +43,6 @@ mnt="/mnt/$label"
 mkdir -p "$mnt"
 
 echo "/dev/sda1  $mnt  ext4  defaults,noatime" >> $mntroot/etc/fstab
-mount -a
 echo
 
 # disable setup marker files

@@ -18,19 +18,21 @@ mmc() {
 echo -e "$bar Set HDMI mode ..."
 #################################################################################
 # force hdmi mode
-hdmimode='
-hdmi_group=1
-hdmi_mode=31 
-hdmi_ignore_cec=1'
-
 if (( $# == 0 )); then
 	file=/boot/config.txt
 else
-	file=/tmp/p$1/config.txt
 	mmc $1
-	#sed -i '/gpio/ s/^/#/' /tmp/p6/config.txt
+	file=/tmp/p$1/boot/config.txt
+	#sed -i '/gpio/ s/^/#/' $file
 fi
-! grep -q '^hdmi_mode=' $file && echo "$hdmimode" >> $file
+
+if ! grep -q '^hdmi_mode=' $file; then
+sed -i '$ a\
+hdmi_group=1\
+hdmi_mode=31\
+hdmi_ignore_cec=1	
+' $file
+fi
 echo
 
 echo -e "$bar Mount USB drive to /mnt/hdd ..."
@@ -39,9 +41,13 @@ mnt0=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
 label=${mnt0##/*/}
 mnt="/mnt/$label"
 mkdir -p "$mnt"
-mmc 9
-mntroot=/tmp/p9
-echo "/dev/sda1  $mnt  ext4  defaults,noatime" >> $mntroot/etc/fstab
+if (( $# == 0 )); then
+	file=/etc/fstab
+else
+	mmc $1
+	file=/tmp/p$1/etc/fstab
+fi
+echo "/dev/sda1  $mnt  ext4  defaults,noatime" >> $file
 echo
 
 echo -e "$bar Set apt cache ..."

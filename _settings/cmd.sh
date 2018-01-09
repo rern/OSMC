@@ -56,18 +56,26 @@ boot() {
 	partarray=( $( echo $part ) )
 
 	ilength=${#partarray[*]}
-
+	bootarray=(0)
+	
 	echo -e "\n\e[30m\e[43m ? \e[0m Reboot to OS:"
 	echo -e '  \e[36m0\e[m Cancel'
 	for (( i=0; i < ilength; i++ )); do
-		(( $(( i % 2 )) == 0 )) && echo -e "  \e[36m$(( i / 2 + 1 ))\e[m ${partarray[ i ]}"
+		if (( $(( i % 2 )) == 0 )); then
+			echo -e "  \e[36m$(( i / 2 + 1 ))\e[m ${partarray[i]}"
+		else
+			bootarray+=(${partarray[i]})
+		fi
 	done
 	echo
-	echo 'Which ? '
+	list=$( seq $(( ${#bootarray[*]} - 1 )) )
+	list=$( echo $list )
+	echo -e "\e[36m0\e[m / ${list// / \/ } ? "
 	read -n 1 ans
 	echo
 	[[ -z $ans || $ans == 0 ]] && return
-	partboot=$(( ans * 2 + 4 ))
+	
+	partboot=${bootarray[$ans]}
  	if [[ -e /root/reboot.py ]]; then
 	 	/root/reboot.py $partboot
 		exit

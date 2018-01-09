@@ -49,33 +49,7 @@ setup() {
 		./setup.sh
 	fi
 }
-resetrune() {
-	. runereset n
-	if [[ $success != 1 ]]; then
-		echo -e "\e[37m\e[41m ! \e[0m RuneAudio reset failed."
-		return
-	fi
-	# preload command shortcuts
-	mmc 9
-	wget -qN --show-progress https://github.com/rern/RuneAudio/raw/master/_settings/cmd.sh -P /tmp/p9/etc/profile.d
-	
-	[[ $ansre == 1 ]] && bootrune
-}
-hardreset() {
-	echo -e "\n\e[30m\e[43m ? \e[0m Reset to virgin OS:"
-	echo -e '  \e[36m0\e[m Cancel'
-	echo -e '  \e[36m1\e[m Rune'
-	echo -e '  \e[36m2\e[m NOOBS: OSMC + Rune'
-	echo
-	echo -e '\e[36m0\e[m / 1 / 2 ? '
-	read -n 1 ans
-	echo
-	case $ans in
-		1) resetrune;;
-		2) noobsreset;;
-		*) ;;
-	esac
-}
+
 boot() {
 	mmc 5
 	part=$( sed -n '/name/,/mmcblk/ p' /tmp/p5/installed_os.json | sed '/part/ d; s/\s//g; s/"//g; s/,//; s/name://; s/\/dev\/mmcblk0p//' )

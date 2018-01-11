@@ -27,7 +27,7 @@ srel() {
 	echo -e '\n'$( tcolor "systemctl reload $1" )
 	systemctl reload $1
 }
-sdrel() {
+sdre() {
 	echo -e '\n'$( tcolor "systemctl daemon-reload" )'\n'
 	systemctl daemon-reload
 }
@@ -37,16 +37,6 @@ mmc() {
 	if ! mount | grep "$mntdir "; then
 		mkdir -p $mntdir
 		mount /dev/mmcblk0p$1 $mntdir
-	fi
-}
-
-setup() {
-	if [[ -e /usr/local/bin/uninstall_motd.sh ]]; then
-		echo -e "\n\e[30m\e[43m ! \e[0m Already setup."
-	else
-		wget -qN --show-progress https://github.com/rern/OSMC/raw/master/_settings/setup.sh
-		chmod +x setup.sh
-		./setup.sh
 	fi
 }
 
@@ -82,4 +72,14 @@ boot() {
 	fi
 	
 	reboot $partboot
+}
+
+setup() {
+	if [[ -e /usr/local/bin/uninstall_motd.sh ]]; then
+		echo -e "\n\e[30m\e[43m ! \e[0m Already setup."
+	else
+		wget -qN --show-progress https://github.com/rern/OSMC/raw/master/_settings/setup.sh
+		chmod +x setup.sh
+		./setup.sh
+	fi
 }

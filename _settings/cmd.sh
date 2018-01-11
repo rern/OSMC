@@ -34,7 +34,7 @@ sdrel() {
 
 mmc() {
 	[[ $2 ]] && mntdir=/tmp/$2 || mntdir=/tmp/p$1
-	if [[ ! $( mount | grep $mntdir ) ]]; then
+	if ! mount | grep "$mntdir "; then
 		mkdir -p $mntdir
 		mount /dev/mmcblk0p$1 $mntdir
 	fi

@@ -44,9 +44,8 @@ fi
 echo -e "$bar Set apt cache ..."
 #################################################################################
 mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
-mkdir -p $mnt/varcache/apt
-rm -rf /var/cache/apt
-ln -sf $mnt/varcache/apt /var/cache/apt
+mkdir -p $mnt/varcache/apt/archives
+echo "Dir::Cache::Archives $mnt/varcache/apt;" > /etc/apt/apt.conf.d/70dir-cache
 
 echo -e "$bar Update package database ..."
 #################################################################################

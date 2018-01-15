@@ -38,19 +38,16 @@ echo
 
 echo -e "$bar Mount USB drive to /mnt/hdd ..."
 #################################################################################
-mnt0=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
-label=${mnt0##/*/}
+label=$( e2label /dev/sda1 )
 mnt="/mnt/$label"
 mkdir -p "$mnt"
 
-mountlist="/dev/sda1  $mnt  ext4  defaults,noatime
+mountlist="/dev/sda1       $mnt   ext4  defaults,noatime
 "
 echo
 
 echo -e "$bar Disable SD card automount ..."
 #################################################################################
-umount /dev/mmcblk0* 2> /dev/null
-
 rootnum=$( mount | grep 'on / ' | cut -d' ' -f1 | cut -d'p' -f2  )
 bootnum=$(( rootnum - 1 ))
 
@@ -64,7 +61,7 @@ umount part1 2> /dev/null
 umount /dev/mmcblk0p1 2> /dev/null
 umount /dev/mmcblk0p5 2> /dev/null
 
-partlist=$( fdisk -l /dev/mmcblk0 | grep mmcblk0p | awk -F' ' '{print $1}' | sed "/p1$\|p2$\|p5$\|$part1\|$part2/ d; sed s/\/dev\/mmcblk0p//" )
+partlist=$( fdisk -l /dev/mmcblk0 | grep mmcblk0p | awk -F' ' '{print $1}' | sed "/p1$\|p2$\|p5$\|$bootnum$\|$rootnum$/ d" | sed 's/\/dev\/mmcblk0p//' )
 partarray=( $( echo $partlist ) )
 ilength=${#partarray[*]}
 for (( i=0; i < ilength; i++ )); do
@@ -74,7 +71,7 @@ for (( i=0; i < ilength; i++ )); do
   umount /dev/mmcblk0p$p 2> /dev/null
 done
 
-echo "mountlist" >> $mntroot/etc/fstab
+echo -e "$mountlist" >> $mntroot/etc/fstab
 
 # disable setup marker files
 touch $mntroot/walkthrough_completed # initial setup

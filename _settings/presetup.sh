@@ -39,8 +39,8 @@ echo
 echo -e "$bar Mount USB drive to /mnt/hdd ..."
 #################################################################################
 label=$( e2label /dev/sda1 )
-mnt="/mnt/$label"
-mkdir -p "$mnt"
+mnt=$mntroot/mnt/$label
+mkdir -p $mnt
 
 mountlist="/dev/sda1       $mnt   ext4  defaults,noatime
 "

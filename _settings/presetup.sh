@@ -71,7 +71,7 @@ for (( i=0; i < ilength; i++ )); do
   umount /dev/mmcblk0p$p 2> /dev/null
 done
 
-echo -e "$mountlist" >> $mntroot/etc/fstab
+echo -e "$mountlist" > $mntroot/etc/fstab
 
 # disable setup marker files
 touch $mntroot/walkthrough_completed # initial setup

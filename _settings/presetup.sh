@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# stand alone usage: presetup.sh [partN]
+
 # for source in: setup.sh, cmd.sh - resetosmc
 # hdmi mode
 # fstab usb mount

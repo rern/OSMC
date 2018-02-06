@@ -9,14 +9,6 @@
 
 rm presetup.sh
 
-mmc() {
-	[[ $2 ]] && mntdir=/tmp/$2 || mntdir=/tmp/p$1
-	if [[ ! $( mount | grep $mntdir ) ]]; then
-		mkdir -p $mntdir
-		mount /dev/mmcblk0p$1 $mntdir
-	fi
-}
-
 echo -e "$bar Set HDMI mode ..."
 #################################################################################
 # force hdmi mode
@@ -25,7 +17,8 @@ if (( $# == 0 )); then
 else
 	mmc $1
 	mntroot=/tmp/p$1
-	#sed -i '/gpio/ s/^/#/' $file
+	mkdir -p $mntroot
+	mount /dev/mmcblk0p$1
 fi
 
 file=label=$( e2label /dev/sda1 )
@@ -46,7 +39,7 @@ label=$( e2label /dev/sda1 )
 mnt=$mntroot/mnt/$label
 mkdir -p $mnt
 
-sed "1 i\/dev/sda1       $mnt   ext4  defaults,noatime" $mntroot/etc/fstab
+sed "1 i\/dev/sda1       /mnt/$label   ext4  defaults,noatime" $mntroot/etc/fstab
 umount -l /dev/sda1
 mount -a
 echo

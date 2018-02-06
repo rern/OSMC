@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# for source in: setup.sh, cmd.sh - resetosmc
+# for source in: setup.sh
 # hdmi mode
 # fstab usb mount
 # apt cache

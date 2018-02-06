@@ -42,7 +42,7 @@ echo
 
 echo -e "$bar Set apt cache ..."
 #################################################################################
-mnt=$( mount | grep '/dev/sda1' | awk '{ print $3 }' )
+mnt=$( mount | grep '/dev/sda1' | cut -d' ' -f3 )
 mkdir -p $mnt/varcache/apt/archives
 echo "Dir::Cache::Archives $mnt/varcache/apt;" > /etc/apt/apt.conf.d/70dir-cache
 

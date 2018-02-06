@@ -11,19 +11,22 @@ rm presetup.sh
 
 echo -e "$bar Set HDMI mode ..."
 #################################################################################
-# force hdmi mode
-if (( $# == 0 )); then
-	mntroot=''
-else
-	mmc $1
-	mntroot=/tmp/p$1
-	mkdir -p $mntroot
-	mount /dev/mmcblk0p$1
-fi
+mntsettings=/tmp/SETTINGS
+mkdir -p $mntsettings
+mount /dev/mmcblk0p5 $mntsettings 2> /dev/null
+installedlist=$( grep 'name\|mmc' $mntsettings/installed_os.json | sed 's/[",]//g; s/\/dev\/mmcblk0p//' )
+bootnum=$( echo "$installedlist" | sed -n '/OSMC/{n; p}' )
+rootnum=$( echo "$installedlist" | sed -n '/OSMC/{n;n; p}' )
 
-file=label=$( e2label /dev/sda1 )
-mnt=$mntroot/mnt/$label
-mkdir -p $mntboot/config.txt
+mntboot=/tmp/p$bootnum
+mntroot=/tmp/p$rootnum
+mkdir -p $mntboot
+mkdir -p $mntroot
+mount /dev/mmcblk0p$bootnum $mntboot
+mount /dev/mmcblk0p$rootnum $mntroot
+
+# force hdmi mode
+file=$mntboot/config.txt
 if ! grep -q '^hdmi_mode=' $file; then
 sed -i '$ a\
 hdmi_group=1\

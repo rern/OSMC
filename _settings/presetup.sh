@@ -28,7 +28,9 @@ else
 	#sed -i '/gpio/ s/^/#/' $file
 fi
 
-file=$mntroot/boot/config.txt
+file=label=$( e2label /dev/sda1 )
+mnt=$mntroot/mnt/$label
+mkdir -p $mntboot/config.txt
 if ! grep -q '^hdmi_mode=' $file; then
 sed -i '$ a\
 hdmi_group=1\
@@ -44,41 +46,10 @@ label=$( e2label /dev/sda1 )
 mnt=$mntroot/mnt/$label
 mkdir -p $mnt
 
-mountlist="/dev/sda1       $mnt   ext4  defaults,noatime
-"
+sed "1 i\/dev/sda1       $mnt   ext4  defaults,noatime" $mntroot/etc/fstab
 umount -l /dev/sda1
+mount -a
 echo
-
-echo -e "$bar Disable SD card automount ..."
-#################################################################################
-mntsettings=/tmp/SETTINGS
-mkdir -p $mntsettings
-mount /dev/mmcblk0p5 $mntsettings 2> /dev/null
-installedlist=$( grep 'name\|mmc' $mntsettings/installed_os.json )
-umount -l $mntsettings
-
-echo $installedlist | sed -n '/OSMC/N;N; p'
-part1=$( echo "$installedlist" | sed -n '/OSMC/ {n; p}' )
-part2=$( echo "$installedlist" | sed -n '/OSMC/ {n;n; p}' )
-noautoarray=( $( echo "$installedlist" | sed '/OSMC/{N;N; d}; /name/ d; s/\/dev\/mmcblk0p//; s/[",]//g' ) )
-
-mountlist+="$part1  /boot      vfat  defaults,noatime,noauto,x-systemd.automount    0   0
-/dev/mmcblk0p1  /media/p1  vfat  noauto,noatime
-/dev/mmcblk0p5  /media/p5  ext4  noauto,noatime
-"
-umount part1 2> /dev/null
-umount -l /dev/mmcblk0p1 2> /dev/null
-umount -l /dev/mmcblk0p5 2> /dev/null
-
-ilength=${#noautoarray[*]}
-for (( i=0; i < ilength; i++ )); do
-  (( $(( i % 2 )) == 0 )) && parttype=vfat || parttype=ext4
-  p=${noautoarray[i]}
-  mountlist+="/dev/mmcblk0p$p  /media/p$p  $parttype  noauto,noatime\n"
-  umount -l /dev/mmcblk0p$p 2> /dev/null
-done
-
-echo -e "$mountlist" > $mntroot/etc/fstab
 
 # disable setup marker files
 touch $mntroot/walkthrough_completed # initial setup

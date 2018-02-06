@@ -51,11 +51,18 @@ echo
 
 echo -e "$bar Disable SD card automount ..."
 #################################################################################
-rootnum=$( mount | grep 'on / ' | cut -d' ' -f1 | cut -d'p' -f2  )
-bootnum=$(( rootnum - 1 ))
+mntsettings=/tmp/SETTINGS
+mkdir -p $mntsettings
+mount /dev/mmcblk0p5 $mntsettings 2> /dev/null
+installedlist=$( grep 'name\|mmc' $mntsettings/installed_os.json )
+umount -l $mntsettings
+rm -r $mntsettings
 
-part1=/dev/mmcblk0p$bootnum
-part2=/dev/mmcblk0p$rootnum
+echo $installedlist | sed -n '/OSMC/N;N; p'
+part1=$( echo "$installedlist" | sed -n '/OSMC/ {n; p}' )
+part2=$( echo "$installedlist" | sed -n '/OSMC/ {n;n; p}' )
+noautoarray=( $( echo "$installedlist" | sed '/OSMC/{N;N; d}; /name/ d; s/\/dev\/mmcblk0p//; s/[",]//g' ) )
+
 mountlist+="$part1  /boot      vfat  defaults,noatime,noauto,x-systemd.automount    0   0
 /dev/mmcblk0p1  /media/p1  vfat  noauto,noatime
 /dev/mmcblk0p5  /media/p5  ext4  noauto,noatime
@@ -64,12 +71,10 @@ umount part1 2> /dev/null
 umount -l /dev/mmcblk0p1 2> /dev/null
 umount -l /dev/mmcblk0p5 2> /dev/null
 
-partlist=$( fdisk -l /dev/mmcblk0 | grep mmcblk0p | awk -F' ' '{print $1}' | sed "/p1$\|p2$\|p5$\|$bootnum$\|$rootnum$/ d" | sed 's/\/dev\/mmcblk0p//' )
-partarray=( $( echo $partlist ) )
-ilength=${#partarray[*]}
+ilength=${#noautoarray[*]}
 for (( i=0; i < ilength; i++ )); do
   (( $(( i % 2 )) == 0 )) && parttype=vfat || parttype=ext4
-  p=${partarray[i]}
+  p=${noautoarray[i]}
   mountlist+="/dev/mmcblk0p$p  /media/p$p  $parttype  noauto,noatime\n"
   umount -l /dev/mmcblk0p$p 2> /dev/null
 done

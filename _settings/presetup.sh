@@ -56,7 +56,6 @@ mkdir -p $mntsettings
 mount /dev/mmcblk0p5 $mntsettings 2> /dev/null
 installedlist=$( grep 'name\|mmc' $mntsettings/installed_os.json )
 umount -l $mntsettings
-rm -r $mntsettings
 
 echo $installedlist | sed -n '/OSMC/N;N; p'
 part1=$( echo "$installedlist" | sed -n '/OSMC/ {n; p}' )

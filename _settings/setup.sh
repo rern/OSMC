@@ -37,9 +37,8 @@ if [[ ! -e /walkthrough_completed ]]; then
 	umount /dev/sda1
     wgetnc $gitpath/_settings/presetup.sh
     . presetup.sh
-	mount -a
-    echo
 fi
+echo
 
 echo -e "$bar Set apt cache ..."
 #################################################################################

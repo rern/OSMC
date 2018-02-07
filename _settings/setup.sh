@@ -34,7 +34,6 @@ setpwd
 
 # hdmi mode, fstab, apt cache
 if [[ ! -e /walkthrough_completed ]]; then
-	umount /dev/sda1
     wgetnc $gitpath/_settings/presetup.sh
     . presetup.sh
 fi

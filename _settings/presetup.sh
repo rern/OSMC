@@ -13,10 +13,15 @@ mntsettings=/tmp/SETTINGS
 mkdir -p $mntsettings
 mount /dev/mmcblk0p5 $mntsettings 2> /dev/null
 bootpart=$( sed -n '/"OSMC"/{n;n; p}' $mntsettings/installed_os.json | sed 's/[",]//g' )
+rootpart=$( sed -n '/"OSMC"/{n;n;n; p}' $mntsettings/installed_os.json | sed 's/[",]//g' )
 mntboot=${bootpart/dev\/mmcblk0/\tmp\/}
+mntroot=${rootpart/dev\/mmcblk0/\tmp\/}
 
 mkdir -p $mntboot
+mkdir -p $mntroot
 mount $bootpart $mntboot
+mkdir -p $mntroot
+mount $rootpart $mntroot
 
 # force hdmi mode
 file=$mntboot/config.txt

@@ -103,6 +103,7 @@ fi
 # start
 [[ $ansstartup == 1 ]] && systemctl enable tran
 echo -e "$bar Start Transmission ..."
+systemctl daemon-reload
 systemctl start tran
 
 # web ui alternative

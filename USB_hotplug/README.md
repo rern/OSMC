@@ -26,6 +26,11 @@ ACTION=="add", KERNEL=="controlC1", SUBSYSTEM=="sound", RUN+="/home/osmc/usbsoun
 ACTION=="remove", KERNEL=="controlC1", SUBSYSTEM=="sound", RUN+="/home/osmc/hdmisound.sh"
 ```
 
+**Test rules**
+```sh
+udevadm test /devices/path.../card1
+```
+
 **Create json-rpc command files**  
 change 'audiooutput' in 'guisettings.xml'  
 /home/osmc/usbsound.sh  

@@ -31,6 +31,12 @@ ACTION=="remove", KERNEL=="controlC1", SUBSYSTEM=="sound", RUN+="/home/osmc/hdmi
 udevadm test /devices/path.../card1
 ```
 
+**Reload modified rules**
+```sh
+udevadm control --reload-rules && udevadm trigger
+```
+
+
 **Create json-rpc command files**  
 change 'audiooutput' in 'guisettings.xml'  
 /home/osmc/usbsound.sh  
